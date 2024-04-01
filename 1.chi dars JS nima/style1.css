@@ -1,0 +1,46 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: #000000f1;
+    margin: 20px;
+}
+
+.aaa a{
+    color:white;
+    font-weight: 900;
+    font-size: large;
+}
+
+.aaa a:hover{
+    color:red;
+}
+
+.bir{
+    margin-top: 40px;
+}
+
+.bir h1,h2{
+    color: yellow;
+}
+
+.bir button{
+    margin-top: 20px;
+    height: 25px;
+    padding: 5px;
+    border: 0;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 0, 0.808);
+}
+
+button a{
+    color: black;
+}
+
+.bir button:hover{
+    background-color:red;
+}
