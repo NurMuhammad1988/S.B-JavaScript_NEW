@@ -1,19 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style4.css">
     <title>Malumot turlari</title>
 </head>
-<body>
-    <a class="aaa" href="../index.html">Bosh Sahifa</a>
 
-    <h1>Malumot turlari</h1>
+<body>
+    <div class="aaa">
+         <a class="aaa" href="../index.html">Bosh Sahifa</a> 
+    </div>
+  
+
+    <h1>Malumot turlari </h1>
+
+    <div>
+
+        <p>JS da malumot turlari ikki turga bo'linadi yani <strong> Primitive </strong>va <strong>Object </strong>
+            primitivga: <strong>boolen, null, undefind, number, string, sybol, va yangi qo'shilgani bigInt </strong>
+            <br><br>
+            <strong> Object</strong>
+            malumot turlariga esa <strong> array, object, function, regex, date</strong> malumot turlari kiradi
+        </p> <br>
+
+        <p class="two_p">Number malumot turi:</p> 
+        <p class="one_p">let number = 5.6 + 4.4; <strong>// data type number yani number malumot turi
+                <b class="one_p">console.log(number);</b> (shunday chaqiriladi)</strong></p> <br>
+        <strong>Number</strong> malumot turini ichida yana ikkita qiymati bor <strong>Infinitiy</strong> va
+        <strong>NaN</strong>
+        <b>console.log(-8 / 0);</b> Infinity yani cheksiz minus qo'yilsa -Infinity chiqadi yani matematikada
+        yo'q narsani bajarish so'ralsa Infinity chiqadi yani 8 ni 0 ga yoki -8 ni nolga bo'lishni matematikida iloji
+        yo'q <br><br>
+
+
+        <b class="one_p">console.log("Nur" * 8);</b> <strong>NaN</strong> yani not a number yani raqam emas (number
+        malumot turi emas) qisqartirib NaN
+        deyiladi NaN ikkihil malumot turi bir biriga qo'shilganda chiqadi yani bu yerda string malumot turini number
+        malumot turiga ko'paytirish yozilgan bu holatda NaN chiqadi <br><br>
+
+       <p class="two_p"> String malumot turi:</p> <br>
+        <b class="one_p">const clientName = "Nur";</b>
+        <p>String qo'shtirnoq ichida yoziladigan malumot turi yani asosan text yani malumotlarni matn ko'rinishidagi
+            turi </p> <br>
+        <b class="one_p">const clientName1 = `Nur`;</b> Stringni shu bektegni ichiga yozsaham bo'ladi buni sababi
+        bektegni ichiga boshqa
+        qiymatlarham yozish mumkun masalan class va js kodlar <br> <br>
+
+        <p class="two_p">Boolean malumot turi: (mantiqiy):</p>  <br>
+       <b class="one_p">const isMarried = false;</b>  Yoki true qilib qo'yish mumkun  true degani ha || to'g'ri degani false degani yo'q ||
+        noto'g'ri degani <br><br>
+
+        <p class="two_p">Null malumot turi:</p> <br>
+        <b class="one_p">console.log(clientAge);</b>  yani yo'q o'zgaruvchi chaqirilganda yani ishlatilganda logda Null malumot turi
+        chiqadi chunki <b class="one_p">clientAge</b> degan o'zgaruvchi hech qayerda elon qilinmagan <br><br>
+
+     
+        <p class="two_p">   Undefined malumot turi:</p>  <br>
+
+        <b class="one_p">let und;</b> Agar o'zgaruvchi elon qilingan va logda chaqirilgan lekin o'zgaruvchi ichida hech qanday malumot yo'q
+        yani o'zgaruvchini qiymati yo'q bunday holatda undefind chiqadi yani bunday holatda logdan kelgan malumot
+        undefind malumot deyiladi
+        <b class="one_p">console.log(und) </b>; <b>bu joyda und o'zgaruvchi chaqirilgan lekin hech qanday qiymat berilmagan bu holatda logda  Undefined chiqadi </b>  <br><br>
 
     
+        <p class="two_p">Object malumot turi:</p> <br/>
+        Objectni ichiga har qanday malumot turlarini yozish mumkun masalan pastdagi <strong>theif</strong> o'zgaruvchisida 
+        <strong>number, string, boolean</strong> malumot turlarini bor <br>
+
+        <p class="one_p">  const theif = { <br>
+        <b>key yani kaliti : value yani qiymat</b> <br>
+        age: 30, //number <br>
+        jacket: "black", //string <br>
+        isLong: false, //boolean <br>
+        }; <br></p>
+     
+
+       <p>     yani <strong>age: jacket: isLong</strong>  key yani Objectni kalit so'zlari: <strong>30 "black" false</strong>  value yani Objeckni qiymatlari
+      Objectni butunligicha chaqirish <b class="one_p"> console.log(theif);</b> <br/>
+
+        <b class="one_p">console.log(theif.age);</b> Objectni chaqirib nuqta qo'yilsa ichidagi qiymatlari chiqadi kerak bo'lsa har bir
+        qiymatni alohida chaqirish mumkun objectni kerakli qiymatini unga berilgan property yani keyi orqali alohida
+        chaqirish mumkun <br>
+        <b class="one_p">console.log(theif.jacket);</b>  Objectni chaqirib nuqta qo'ilsa ichidagi qiymatlari chiqadi kerak bo'lsa har bir
+        qiymatni alohida chaqirish mumkun objectni kerakli qiymatini unga berilgan propert yani keyi orqali alohida
+        chaqirish mumkun <br>
+        <b class="one_p">console.log(theif.isLong);</b>  Objectni chaqirib nuqta qo'ilsa ichidagi qiymatlari chiqadi kerak bo'lsa har bir
+        qiymatni alohida chaqirish mumkun objectni kerakli qiymatini unga berilgan propert yani keyi orqali alohida
+        chaqirish mumkun </p>  <br>
+
+
+        <p class="two_p">Array malumot turi:</p> <br/>
+
+        Aarraydaham string number massiv va abject malumotlariniham qo'shish mumkun arrayham objectday ko'p narsani o'z
+        ichiga oladi <br>
+        yani arrayda JS o'zi kalit so'zlarni raqam bilan beradi bu raqamlar esa 0 dan boshlanadi huddi pastdagiday
+                       <br><br>
+       <b class="one_p">const colors = ["⁰ red", "¹ black", "² green", ³ 10, ⁴ [], ⁵ {}];</b><br> 
+        <b class="one_p">console.log(colors)</b> bu holatda array to'liq chaqirildi <br/>
+         Arrayda ichidagi qiymatlarni alohida alohida chaqirish uchun <b class="one_p">console.log(colors[0])</b> [] qavusdan foydalanish kerak yani [] shuni yozib ichiga 0 dan boshlab raqamlar bilan arrayni ichidagi malumotlarni chaqirish mumkun bu yerda 0 chaqirildi shunda red chaqirilgan hissoblanadi chunki dasturlashda 0 ham raqam hissoblanadi <br>
+
+  <b class="one_p">console.log(colors[1]);</b> bu yerda black chiqadi
+
+
+
+    </div>
+
+
 
     <script src="./script4.js"></script>
-    
+
 </body>
+
 </html>

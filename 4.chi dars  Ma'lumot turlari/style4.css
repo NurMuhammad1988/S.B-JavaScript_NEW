@@ -1,0 +1,43 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    padding: 20px;
+    background: rgb(78, 76, 76);
+}
+
+h1 {
+    padding-top: 10px;
+}
+
+p {
+    padding-top: 10px;
+
+}
+
+.one_p {
+    color: green;
+}
+
+.two_p {
+    color: red;
+}
+
+strong {
+    color: black;
+}
+
+.aaa a {
+    color: white;
+    font-weight: 900;
+    font-size: large;
+}
+
+.aaa a:hover {
+    color: red;
+}
+
