@@ -1,0 +1,19 @@
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.aaa a {
+    color: rgb(40, 39, 39);
+    font-weight: 900;
+    font-size: large;
+}
+
+.aaa a:hover {
+    color: red;
+}
+
+
+
