@@ -6,7 +6,10 @@
 // const channel = prompt("What`s your favourite youtuber?")
 // console.log(`https://youtube.com/${channel}`); //interpolatsiya shu yani `` shu becetni ichiga url yozilib yonidan ${yani object} shu belgi ichiga o'zgaruvchini chaqirish mumkun
 
-const user = "Nur";
-const job = "JavaScript developer"
-console.log(`User name is ${user}, he is ${job}  `);
+// const user = "Nur";
+// const job = "JavaScript developer";
+// console.log(`User name is ${user}, he is ${job}  `); //interpolatsiya shunday yoziladi
 
+//alert prompt run codeda ishlamaydi alert prompt faqat browserni ichidagi funksoiyanal hissoblanadi
+// const client = prompt("hello javaswcritp")
+// console.log(client);
