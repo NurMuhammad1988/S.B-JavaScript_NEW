@@ -67,4 +67,4 @@ console.log(2 + 2 * 2 === 8); //birinchi ko'paytiruvamalyotini bajaradi yani 2 *
 
 console.log(2 + 2 * 2 != 8); //yani ! bu belgi 6 8 bilan teng emasmi degan savolni qo'yadi javob ture yani  ha teng emas //yani bu yerda true chunki ! belgisi falseni true qilib beradi
 
-console.log(2 + 2 * 2 !== "6"); // true yani 2 * 2 = 4; 4 + 2 = 6; qattiy ten emasmi ha qattiy teng javob true
+console.log(2 + 2 * 2 !== "6"); // true yani 2 * 2 = 4; 4 + 2 = 6; "6" ga qattiy teng emasmi (==) ha qattiy teng javob true
