@@ -1,0 +1,47 @@
+"use strict";
+
+//Tsikl
+
+//Tsiklni 3 hil yo'l bilan chaqirish mumkun
+
+//1 chi yo'li While yordamida
+// let startNum = 1;
+// while (startNum <= 20) {//while tsikli bilan 20 gacha sonni chiqarib ber deyish yani log birinchi startnumdagi 1 ni chiqaradi keyin pastga tushub incrementni ishlatib 1 ni qo'shib boraveradi yani startnum 1 har logga chiqqanda startnum++ yani intiratsa 1 ni qo'shib boradi qachongacha yani while bo'lgancha yani 20 gacha yani 20 gacha buyurilgan shartni bajarmagancha
+//     console.log(startNum);
+//     startNum++;//intiratssa
+
+// }
+
+// //2 chi yo'li do, while yordamida
+// let startNum1 = 1;
+// do {
+//     //do yani bajar degan buyruq
+//     console.log(startNum1);
+//     startNum1++;
+// } while (startNum1 <= 20);//yani startNum1dagi 1 ni logda chiqar va har chiqganda 1 ni qo'shib bor qachongacha? malum vaqtgacha yani whilegacha whileda esa roppa rossa 20 gacha deb yozilgan yani 20 gacha sanab beradi yani 1 chi yo'li bilan bir hil faqat cod sintaksizi o'zgaradi holos
+
+// //3 chi yo'li for yani eng ko'p ishlatiladigan yo'li for tsikli o'ziga uchta argument qabul qiladi
+// for (let i = 1; i < 8; i++) {
+//     //i yani interatsa forni ichida shunday yangi o'zgaruvchi ochish mumkun
+//     console.log(i); //yani  for tsiklini ichida ochilgan o'zgaruvchi i 1 ga teng keyin i kichkina bo'lsa 8 dan increment++  qachongacha ? 8 bo'lguncha yani noldan boshlanadi shunda 7 bo'lguncha agar <= qilinsa aniq 8 bo'lguncha masalan >>>> (let i = 1; i <= 8; i++)
+// }
+
+// let num = 10;
+// for (let i = 1; i <= 8; i++) {
+//     console.log(num);
+//     num++
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//     if (i === 8) {
+//         break;
+//     }
+//     console.log(i);
+// }//yani for tsiklini ichida o'zgaruvchi yaratib i bilan intregatsa qilib shu i 10 dan kichik bo'lganda yani bu bir ++ qo'shilsin va i 8 ga teng bo'lganda yani 8 gacha teng bo'lganda break bo'lsin yani to'htasin yani 7 da to'htasin
+
+for (let i = 1; i <= 10; i++) {
+    if (i === 8) {
+        continue; //yani continue 8 ga yetganda 8 ni udalit qib beradi yani 8 ni udalit qiladi yani sakkizni tashlab o'tib ketadi va 10 gacha sanashni davom ettiradi
+    }
+    console.log(i);
+}
