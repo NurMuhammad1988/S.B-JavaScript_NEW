@@ -4,7 +4,7 @@ alert("Hello JavaScript");// sayt refresh bo'lganda madal bo'lib string malumot 
 
 //Confirm()
 const place = confirm("Are you here?"); //Confirm (eng-tasdiqlash) funksiyasi JavaScript-dagi tasdiqlash funktsiyasi xabar va ikkita tugmachali modal dialog oynasini ko'rsatish uchun ishlatiladi: "OK" va "Bekor qilish" . U odatda veb-ilovadagi harakat yoki qaror uchun foydalanuvchi tasdiqlashini olish uchun ishlatiladi
-console.log(place); //confirmni alertdan farqi salovlga ok yoki bekor qilishni bosganda bu javobni yani qiymatni shu place o'zgaruvchisiga saqlab qolish mumkun confirm faqat ikkita qiymat qaytaradi true va false  ok bo'lsa true bekor qilish bo'lsa false chiqadi yani confirim boolean malumot turi asosida ishlaydi
+console.log(place); //confirmni alertdan farqi savolga ok yoki bekor qilishni bosganda bu javobni yani qiymatni shu place o'zgaruvchisiga saqlab qolish mumkun confirm faqat ikkita qiymat qaytaradi true va false  ok bo'lsa true bekor qilish bo'lsa false chiqadi yani confirim boolean malumot turi asosida ishlaydi
 
 //Prompt()
 const currentPlace = prompt("Where are you" , "Nur:");//prompt yani (eng-taklif)  ikkita malumot qabul qiladi ikkinchisiga default qiymat berib qo'ysaham bo'ladi masalan "Nur"
