@@ -66,9 +66,34 @@
 // console.log(calc1(111,4));
 /////////////////////////////////////////////////////////////////////////////////
 
-function calc1(a, b) {
-    return a + b;
-}
-console.log(calc1(10, 5));
-const sumOfAandB = calc1(10,10)//returnni yana bir yahshi tarafi returinni boshqa bit funksiyagaham alohida chaqirib olib qiymatlarini o'zgartirish va bitta funksiydan qayta qayta foydalanish imkonini beradi
-console.log(sumOfAandB);
+// function calc1(a, b) {
+//     return a + b;
+// }
+// const sumOfAandB = calc1(10, 5); //returnni yana bir yahshi tarafi returinni boshqa bir  funksiyagaham alohida chaqirib olib qiymatlarini o'zgartirish va bitta funksiydan qayta qayta foydalanish imkonini beradi yani return bilan boshqa o'zgaruvchiga chaqirib ishlatishxam mumkun yani funksiyadan kelayotgan har qanday malumotni global o'zgaruvchiga olib hohlagan joyda ishlatish mumkun bo'ladi masalan boshqa js papkadaham yani import export qilib
+// console.log(sumOfAandB);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// //function turlari 3 ta turi
+
+//1-chisi function declaration yani aslida function avvaldan yaratilgan hissoblanadi yani masalan logni teparoqda calc1 dan oldin chaqirsaham ishlayveradi
+// const sumOfAandB = calc1(10, 5);
+// console.log(sumOfAandB);
+// function calc1(a, b) {
+//     return a + b;
+// }//chunki jsda funksiya avvaldan yaratib qo'yilgan functsiya declaration shu
+
+// //2-chisi function expression es6 dan chqishni boshlaganyani
+// const logger = function(){
+//     console.log("Hello World");
+// }
+// logger()//yani expression functionda function yozilgandan keyin chaqirilishi kerak masalan funksiya 30 qatorda yaratilsa chaqirish shundan pastda bo'lish kerak
+
+//3-chisi Arrow function kodlarni qisqartirib beradi yanitepada yozilgan calc funksiyarni 3 qatorda yozdik arrow funksia bilan esa bir qatorda yozdik lekin aslida arrow funksiyada return aftamatik tarzda yozilgan bo'ladi=> shudnan keyin masalan>>> const calc = (a, b) => return a + b;
+// const calc = (a, b) => a + b;
+// console.log(calc(10, 5));
+
+// //aga arrowfunksiyada kodlar ko'proq yoziladigan bo'lsa >>> shunday holatda yozishimiz mumkun const calcc = (a) => {}; yani {}<<<shuni ichiga hohlagancha kod yozish mumkun
+// const calcc = (a) =>{}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
