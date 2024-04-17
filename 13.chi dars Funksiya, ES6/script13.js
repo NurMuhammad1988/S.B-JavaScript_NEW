@@ -17,12 +17,58 @@
 // }
 // calc("10 ", 5, " salom");
 ///////////////////////////////////////////////////////////////
-function calc(a, b) {
-   
-    console.log(a + b);
+// function calc(a, b) {
+
+//     console.log(a + b);
+// }
+// calc(10, 5);
+// calc(9, 10)
+///////////////////////////////////////////////////////////////
+
+// function sayMyName(name, nickname) {//name va nickname parametrlarni becit ichida chaqirish mumkun yonigab string malumotlarham qo'shish  mumkun
+//     console.log(`My name is ${name} my nickname is ${nickname} `);// `bectik` aynan manashu narsa uchun kerak
+// }
+// sayMyName("Nur,", "Dev.");
+///////////////////////////////////////////////////////////////////
+
+// function sayMyName(name, nickname) {
+//     let age = 30//yani funksiyani ichida o'zgaruvchi elon qilinganda u o'zgaruvchi faqat funksiyani ichida chaqirilganda ishlaydi funksiyadan tashqarida chaqirilganda ishlamaydi yani bu holat local variable yani mahalliy o'zgaruvchi bu faqat funksiyani ichida ishlaydi va faqat funksiyani ichida chaqirilishi kerak
+//     console.log(`My name is ${name} my nickname is ${nickname} `);
+//     console.log(age);
+// }
+// sayMyName("Nur,", "Dev.");
+
+///////////////////////////////////////////////////////////////////
+// let age = 30;
+// function sayMyName(name, nickname) {
+//     let age = 20;//bu local o'zgaruvchi
+//     console.log(`My name is ${name} my nickname is ${nickname} `);
+//     console.log(age);
+// }//funksiyani ichida mahalliy o'zgaruvchi yaratilganda birinchi shu  funksiyani o'zini ichidan izleydi agar funksiyani ichida io'zgaruvchini topolmasa keyin tashqariga chiqib izlaydi
+// sayMyName("Nur,", "Dev.");
+// console.log(age);
+////////////////////////////////////////////////////////////////////////
+
+// let age = 30;//bu global o'zgaruvchi
+// function sayMyName(name, nickname) {
+//     age = 20//bu local o'zgaruvchi
+//     console.log(`My name is ${name} my nickname is ${nickname} `);
+//     console.log(age);
+// }
+// sayMyName("Nur,", "Dev.");
+// console.log(age);//yani funksiyadan tashqarida age=30 global o'zgaruvchi bor va funksiyani ichida age=20 local o'zagruvchi bor logda birinchi funksiyani ichidagi local o'zgaruvchi chaqirildi va u o'zgaruvchi 20 ga teng keyin funksiyadan pastda age=30 global o'zgaruvchi yana chaqirildi va local o'zgaruvchini ichidagi log global o'zgaruvchiga tasir qilib ikkala o'zgaruvchiniham qiymatini 20 ga teng qilib qo'ydi???????????????? chunki
+/////////////////////////////////////////////////////////////////////////////
+
+// function calc1(a , b ) {
+// return a + b// return yani return yozilganda funksiya shu joyida to'htaydi returndan keyin shu funksiydaniichida yozilgan kod ishlameydi return eng ohirida yozilishi kerak yani funksiyada kerakli hamma narsa yozilib bo'lgandan keyin ohirida return yoziladi// va yana returni global o'zgaruvchini chaqirishdaham yordam beradi masalan
+// }
+// console.log(calc1(10,5));// yani returndan keyin funksiyani emas log bilan chaqirish kerak masalan calc1()<shunday qilib chaqirib bo'lmaydi
+// console.log(calc1(111,4));
+/////////////////////////////////////////////////////////////////////////////////
+
+function calc1(a, b) {
+    return a + b;
 }
-calc(10, 5);
-calc(9, 10)
-
-
-
+console.log(calc1(10, 5));
+const sumOfAandB = calc1(10,10)//returnni yana bir yahshi tarafi returinni boshqa bit funksiyagaham alohida chaqirib olib qiymatlarini o'zgartirish va bitta funksiydan qayta qayta foydalanish imkonini beradi
+console.log(sumOfAandB);
