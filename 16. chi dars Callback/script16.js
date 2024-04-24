@@ -47,22 +47,22 @@
 //YANI CALLBACK FUNKSIYA
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// function first(cb) {
+//     //code //yani suniy ravsishda huddi serverdan kechikib kelayotgan funksiyaga o'hshtilgan code
+//     setTimeout(() => {
+//         //suniy ravsishda huddi serverdan kechikib kelayotgan funksiyaga o'hshtildi
+//         console.log(1);
+//         cb();
+//     }, 1000);
+// }
 
-function first(cb) {
-    //code //yani suniy ravsishda huddi serverdan kechikib kelayotgan funksiyaga o'hshtilgan code
-    setTimeout(() => {
-        //suniy ravsishda huddi serverdan kechikib kelayotgan funksiyaga o'hshtildi
-        console.log(1);
-        cb();
-    }, 1000);
-}
+// function second() {
+//     //code
+//     console.log(2);
+// } //yani bir sikunddan keyinikkala funksiya birga ishladi
 
-function second() {
-    //code
-    console.log(2);
-} //yani bir sikunddan keyinikkala funksiya birga ishladi
-
-first(second); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!yani first funksiyasi birinchi bo'lib second funksiyasini ishlatdi callback funksiya yordamida shunda first funkiya serverdan ichidagi narsalarini yuklab kelguncha second funksiya kutib turdi va bir sikunddan keyin birga ishladi
+// first(second); //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!yani first funksiyasi birinchi bo'lib second funksiyasini ishlatdi callback funksiya yordamida shunda first funkiya serverdan ichidagi narsalarini yuklab kelguncha second funksiya kutib turdi va bir sikunddan keyin birga ishladi
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//run codega qaralsin!!! yani second funksiyasi first funksiyani kutib turib birga  ishladi yani second funksiyasi first funksiyani 1 ms kechikgan holatida kutib turib birga  ishladi tassavur qilamiz first funksiyasi serverdan keladi kelgancha esa 1 ms vaqt o'tadi shu vaqtda pastdagi qolgan funksiyalar ishlab ketmaydi serverdan keladigan first funksiyani kutib turadi aks holda loyiha bzulishi kerakli componentlar ishlamasligi stylelar sochilib ketishi mumkun bu vaqt orasiga biror narsaham qo'yish mumkun masalan kutib turadigan yuklanishga o'hshagan loading iconlar
 
 //CALLBACKLAR
