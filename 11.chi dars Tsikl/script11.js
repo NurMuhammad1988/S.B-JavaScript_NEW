@@ -1,6 +1,6 @@
 "use strict";
 
-//Tsikl
+//Tsikl yani intrigatsa
 
 //Tsiklni 3 hil yo'l bilan chaqirish mumkun
 
