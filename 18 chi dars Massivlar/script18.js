@@ -52,6 +52,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //length metodi massivlarni uzunligini berish holatidagi lengthni hato keltirib chiqaradigan holati
-const arr9 = [1, 2, 3, 4];
-arr9[99] = 0;//yani bu holatda arr8 o'zgaruvchisida tushuntirilganday arr9 ga 99 chi element qo'shilganda length ohiriga 1 ni qo'shib arrayni lengthsini 100 qilib qo'ydi bu arrayni buzib yuboradi
-console.log(arr9.length);
+// const arr9 = [1, 2, 3, 4];
+// arr9[99] = 0;//yani arraylarga bunaqa qiymat berish hato hissoblanadi chunki >>//yani bu holatda arr8 o'zgaruvchisida tushuntirilganday arr9 ga 99 chi element qo'shilganda length ohiriga 1 ni qo'shib arrayni lengthsini 100 qilib qo'ydi bu arrayni buzib yuboradi
+// console.log(arr9.length);
+// const arr9 = [1, 2, 3, 4];
+// arr9[99] = 0; //yani arraylarga bunaqa qiymat berish hato hissoblanadi chunki >>//yani bu holatda arr8 o'zgaruvchisida tushuntirilganday arr9 ga 99 chi element qo'shilganda length ohiriga 1 ni qo'shib arrayni lengthsini 100 qilib qo'ydi bu arrayni buzib yuboradi
+// console.log(arr9); //yani [99] hatosi sababli 95 ta empty yani bo'sh items yani element paydo bo'ldi yani 1 2 3 4 orada bo'sh 95 ta items va 99 chi element 0 jami 100 ta
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//forEach metodi eng ko'p ishlatiladigan intirgatsa yani tsikli qilib bberadigan metod hozirgi kunda eng ko'p ishlatiladi
+const arr10 = [1, 2, 3, 4];
+arr10.forEach(function (item, index) {
+    //yani foreach metodi array functsiya bilan 3 ta parametr qabul qiladi  1 chi parameter VALUE    yani qiymati 2 chi parameetr INDEX 3 parameter butun MASSIVNI  o'zi!!! //foreach metodi array function qabul qiladi parametridagi 1 chi parametr item arr10 o'zgaruvchi ichidagi qiymatlar hissoblanadi 2 chi parametr esa index esa yani arr10ni raqamalari hissoblanadi uchinchi 3 chi parametr esa o'zgaruvchi yani arr10
+    console.log(`${index} : ${item} into arr ${arr10}`);
+    //logni javobi pastda yani yani 0 dan boshlab indexni qaytarayapti 1 dan boshlab qiymatni qaytarayapti va arr10 ni to'liq yozilgan holida qaytarayapti
+    //0 : 1 into arr 1,2,3,4
+    //1 : 2 into arr 1,2,3,4
+    //2 : 3 into arr 1,2,3,4
+    //3 : 4 into arr 1,2,3,4
+});//foreachni afzal tarafi yani callback qaytaradi yani bu callback function massiv uchun har safar intirigatsa bo'lganda ishlaydi foreachni for of va for in dan farqi for of va for in larda break va continu qilsa bo'ladi
+
+20:37 chi minutda qoldi
