@@ -1,24 +1,22 @@
 "use strict";
 
-//Callback yani bu qaysidur belgilab qo'yiladigan funksya  ishga tushgandan keyin ishga tushadigan funksiya
-function first() {
-    //yani masalan loyihada shu funksiya birinchi bo'lib ishlashi kerak aks holda loyiha buzulib ketishi yoki juda kech ishlashi mumkun
-    //masalan bu joyga code yoziladi
-    setTimeout(() => {
-        //settimeout qilib bu birinchi ishlashi kerak bo'lgan funksiyani 1000 ms ga suniy kechiktirdik setTimeout funksiyasi vaqtlar bilan ishlaydi   //YANI MASALAN FIRST FUNKSIYASI BIRINCHI ISHLASHI KERAK EDI LEKIN TASSAVUR QILAMIZ BIRINCHI ISHLASHI KERAK BO'LGAN FIRST FUNKSIYASI SERVERDA KELAYOTGANDA NECHCHIDIR ML SIKUNNDA KELADI SHUNDA JS BIRINCHI FUNKSIYADAGI MALUMOTLAR SERVERDAN KELGANCHA IKKINCHI YANI SECONd FUNKSIYASINI CHAQIRIB ISHLATIB YUBORADI MASALAN JORIY HOLATDA RUN CODDA BIRINCHI BO'LIB SECOND FUNKSIYASI ISHLADI 1000 MS DAN KEYIN ESA IKKINCHI SECON FUNKSIYASI ISHLADI CHUNKI BROWSER CODNI 1 CHI QATORDAN BOSHLAB O'QIB KELADI shu sabab bu holat HATO YANI NOTO'G'RI HISSOBLANADI chunki kodlar ketma ket yozilgan masalan 1 chi 2 chi qator qilib run codedaham kodlar huddi shunday 1 chi 2 chi bo'lib ishlash kerak
-        console.log(1);
-    }, 1000);
-}
-function second() {
-    //masalan bu joyga code yozildi
-    console.log(2);
-}
-
+// //Callback yani bu qaysidur belgilab qo'yiladigan funksya  ishga tushgandan keyin ishga tushadigan funksiya
+// function first() {
+//     //yani masalan loyihada shu funksiya birinchi bo'lib ishlashi kerak aks holda loyiha buzulib ketishi yoki juda kech ishlashi mumkun
+//     //masalan bu joyga code yoziladi
+//     setTimeout(() => {
+//         //settimeout qilib bu birinchi ishlashi kerak bo'lgan funksiyani 1000 ms ga suniy kechiktirdik setTimeout funksiyasi vaqtlar bilan ishlaydi   //YANI MASALAN FIRST FUNKSIYASI BIRINCHI ISHLASHI KERAK EDI LEKIN TASSAVUR QILAMIZ BIRINCHI ISHLASHI KERAK BO'LGAN FIRST FUNKSIYASI SERVERDA KELAYOTGANDA NECHCHIDIR ML SIKUNNDA KELADI SHUNDA JS BIRINCHI FUNKSIYADAGI MALUMOTLAR SERVERDAN KELGANCHA IKKINCHI YANI SECONd FUNKSIYASINI CHAQIRIB ISHLATIB YUBORADI MASALAN JORIY HOLATDA RUN CODDA BIRINCHI BO'LIB SECOND FUNKSIYASI ISHLADI 1000 MS DAN KEYIN ESA IKKINCHI SECON FUNKSIYASI ISHLADI CHUNKI BROWSER CODNI 1 CHI QATORDAN BOSHLAB O'QIB KELADI shu sabab bu holat HATO YANI NOTO'G'RI HISSOBLANADI chunki kodlar ketma ket yozilgan masalan 1 chi 2 chi qator qilib run codedaham kodlar huddi shunday 1 chi 2 chi bo'lib ishlash kerak
+//         console.log(1);
+//     }, 1000);
+// }
+// function second() {
+//     //masalan bu joyga code yozildi
+//     console.log(2);
+// }
 // first(); // bu ikkinchi bo'lib ishladi  CHUNKI TIMEOUT FUNKSIYASI BOR!!!
 // second(); //bu birinchi bo'lib ishladi
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 // //Callback yani bu qaysidur  funksiya ishga tushgandan keyin ishga tushadigan funksiya
 // 1 chi sintaksis qisqasi
 // function edu(subject, callback) {
@@ -31,9 +29,7 @@ function second() {
 //     //ananim funksiya bilan yozilgani
 //     console.log("That`s great");
 // });
-
 ////////
-
 // //2 chi sintaksis
 // function edu(subject, callback) {
 //     console.log(`I want to teach ${subject}`);
@@ -46,7 +42,7 @@ function second() {
 // edu("JavaScript", done);// yani callback funksiya hech qachon chaqirilmaydi chunki chaqirilsa aftamatik tarza ishlab ketadi shu sabab done dan keyin () qo'yilmadi done ni o'zi yozildi
 //YANI CALLBACK FUNKSIYA
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 // function first(cb) {
 //     //code //yani suniy ravsishda huddi serverdan kechikib kelayotgan funksiyaga o'hshtilgan code
 //     setTimeout(() => {

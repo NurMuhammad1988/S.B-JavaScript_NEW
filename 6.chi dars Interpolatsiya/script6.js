@@ -10,6 +10,6 @@
 // const job = "JavaScript developer";
 // console.log(`User name is ${user}, he is ${job}  `); //interpolatsiya shunday yoziladi
 
-//alert prompt run codeda ishlamaydi alert prompt faqat browserni ichidagi funksoiyanal hissoblanadi
-const client = prompt("hello javaswcritp")//yani savol berildi javobno esa client o'zgaruvchi o'z ichiga olib qo'yadi
-console.log(client);
+// //alert prompt run codeda ishlamaydi alert prompt faqat browserni ichidagi funksoiyanal hissoblanadi
+// const client = prompt("hello javaswcritp")//yani savol berildi javobni esa client o'zgaruvchi o'z ichiga olib qo'yadi
+// console.log(client);

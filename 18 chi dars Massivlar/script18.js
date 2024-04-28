@@ -95,13 +95,13 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////sort metodi array number malumot turlari bilan ishlaganda 
-const arr12 = [2, 13, 14, 25, 8, 0];
-arr12.sort(compereFn);////sort metodi array number malumot turlari bilan ishlaganda tartiblashni noldan boshlaydi masalan bu joyda javob [ 0, 13, 14, 2, 25, 8 ] chunki sort metodi array ichidagi numberlarni 1 dan boshlab  tartib bilan tartiblab chiqadi
-console.log(arr12);
-function compereFn(a , b){//yani sort metodi va function compereFn array funksiyasi bilan raqamlarni shunday tartibda [ 0, 2, 8, 13, 14, 25 ] yani array ichidagi numberlarni haqiqiy matematik yo' bilan 0 dan boshlab 1 2 3 4 5 6 qilib tartiblab chiqadi
-    return a - b
-}
+// const arr12 = [2, 13, 14, 25, 8, 0];
+// arr12.sort(compereFn);////sort metodi array number malumot turlari bilan ishlaganda tartiblashni noldan boshlaydi masalan bu joyda javob [ 0, 13, 14, 2, 25, 8 ] chunki sort metodi array ichidagi numberlarni 1 dan boshlab  tartib bilan tartiblab chiqadi
+// console.log(arr12);
+// function compereFn(a , b){//yani sort metodi va function compereFn array funksiyasi bilan raqamlarni shunday tartibda [ 0, 2, 8, 13, 14, 25 ] yani array ichidagi numberlarni haqiqiy matematik yo' bilan 0 dan boshlab 1 2 3 4 5 6 qilib tartiblab chiqadi
+//     return a - b
+// }
 ///// sort va function compereFn ni yozilishini ikkinchi sintaksisi yani qisqa yozilishi
-const arr13 = [2, 13, 14, 25, 8, 0];
-arr13.sort((a, b) => a - b);//yani compereFn array functionni qisqa yozilishi
-console.log(arr13);
+// const arr13 = [2, 13, 14, 25, 8, 0];
+// arr13.sort((a, b) => a - b);//yani compereFn array functionni qisqa yozilishi
+// console.log(arr13);
