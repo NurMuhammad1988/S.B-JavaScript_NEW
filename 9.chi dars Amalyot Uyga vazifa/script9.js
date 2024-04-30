@@ -1,9 +1,9 @@
 "use strict";
 
-const numberOfSeries = +prompt("Nechta serial ko'rdingiz?", ""); //+ promptda + belgisi javoblar asosan number malumot turi bo'lganligi sababli qo'yildi
+const numberOfSeries = +prompt("Nechta serial ko'rdingiz?", ""); //+ promptda + belgisi javoblar asosan number malumot turi bo'lganligi sababli qo'yildi 
 
 const seriesDB = {
-    count: numberOfSeries, //yani birnchi nechta serial ko'rdingizsavolini javobini shu object ichiga qiymat sifatida berib qo'yildi shunda logga savolga berilgan javob chiqadi yani numberOfSeriesda berilgan savolni javobi shu countni ichiga tushadi // bu +prompt bo'lgani uchun agar javob number malumot turi bo'lmasa NaN chiqadi yani not a number
+    count: numberOfSeries, //yani birnchi nechta serial ko'rdingiz savolini javobini shu object ichiga qiymat sifatida berib qo'yildi shunda logga savolga berilgan javob chiqadi yani numberOfSeriesda berilgan savolni javobi shu countni ichiga tushadi // bu +prompt bo'lgani uchun agar javob number malumot turi bo'lmasa NaN chiqadi yani not a number
     series: {},
     actors: {},
     genres: [],

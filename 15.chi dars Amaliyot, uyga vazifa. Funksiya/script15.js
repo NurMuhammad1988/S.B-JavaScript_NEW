@@ -1,5 +1,5 @@
 "use strict";
-let numberOfSeries; //global o'zgaruvchi yani buni pastda hohlagancha o'zgartirrish boshqa funksiyalarham qo'shish mumkun
+let numberOfSeries; //global o'zgaruvchi yani buni pastda hohlagancha o'zgartirish boshqa funksiyalarham qo'shish mumkun
 
 function startApp() {
     numberOfSeries = +prompt("Nechta serial ko'rdingiz?", ""); //+ promptda + belgisi javoblar asosan number malumot turi bo'lganligi sababli qo'yildi
@@ -7,7 +7,7 @@ function startApp() {
         //yani while if elsni boshqacha ko'rinishi
         numberOfSeries == "" ||
         numberOfSeries == null ||
-        isNaN(numberOfSeries) //isNaN()bu metod yani javob agar number bo'lmasa javobni qabul qilmaydi yani odalda faqat raqamni qabul qiladi
+        isNaN(numberOfSeries) //isNaN()bu metod yani javob agar number bo'lmasa javobni qabul qilmaydi yani modalda faqat raqamni qabul qiladi
     )
         //yani agar numberOfSeriesdagi savolni javobi "" bo'sh katak bo'lsa yani ok bosgan bo'lsa yokida null bo'lsa yani otmenni bosgan bo'lsa yokida isNaN bo'lsa yani javob raqam bo'lmasa yani oddiy harif bo'lsa ogohlantirish bilan savolni qaytadan berish//SHunda user modalda ochilgan savolga javob berishga majbur qilinadi aks holda saytda boshqa ish harakatini qila  olmaydi
         numberOfSeries = +prompt(
@@ -17,7 +17,7 @@ function startApp() {
 }
 startApp();
 const seriesDB = {
-    count: numberOfSeries, //yani birnchi nechta serial ko'rdingiz savolini javobini shu object ichiga qiymat sifatida berib qo'yildi shunda logga savolga berilgan javob chiqadi yani numberOfSeriesda berilgan savolni javobi shu countni ichiga tushadi // bu +prompt bo'lgani uchun agar javob number malumot turi bo'lmasa NaN chiqadi yani not a number
+    count: numberOfSeries, //yani birinchi nechta serial ko'rdingiz savolini javobini shu object ichiga qiymat sifatida berib qo'yildi shunda logga savolga berilgan javob chiqadi yani numberOfSeriesda berilgan savolni javobi shu countni ichiga tushadi // bu +prompt bo'lgani uchun agar javob number malumot turi bo'lmasa NaN chiqadi yani not a number
     series: {},
     actors: {},
     genres: [],
@@ -29,7 +29,7 @@ function rememberMySeries() {
     for (let i = 0; i < 2; i++) {
         //yani tsikil faqat 2 martta ishlaydi 0 va 1
         const a = prompt("Ohirgi ko'rgan serialingiz?"),
-            b = prompt("Nechchi baho berasiz?"); //yani tsikl yordamida savollarni ikki marttadan berildi yani a o'zgaruvchidagi savol berildi javobi esa  seriesDB.series[a] = b; ga verib qo'yildi yani a va b o'zgaruvchidagi savollar seriesDB ni ichidagi seeies objectiga berib qo'yildi shunda user savollarga javob berganda javoblari seriesDBni ichidagi series objectiga borib tushadi
+            b = prompt("Nechchi baho berasiz?"); //yani tsikl yordamida savollarni ikki marttadan berildi yani a o'zgaruvchidagi savol berildi javobi esa  seriesDB.series[a] = b; ga berib qo'yildi yani a va b o'zgaruvchidagi savollar seriesDB ni ichidagi seeies objectiga berib qo'yildi shunda user savollarga javob berganda javoblari seriesDBni ichidagi series objectiga borib tushadi
 
         if (a != null && b != null && a != "" && b != "") {
             //agarda a o'zgaruvchini javobi null bo'masa va b o'zgaruvchini javobiham null bo'masa va a o'zgaruvchiniham javobi "" bo'lmasa va b o'zgaruvchiniham javobi "" bo'lmasa seriesDBni ichidagi seriesga chaqirilgab a va b o'zgaruvchilari chaqirilib logda Done chiqsin yoki logda error chiqsin va savol orqaga qaytsin yani takrorlansin bu kodlar 4 qator pastda yozilgan
@@ -77,11 +77,11 @@ function writeGenres() {
     } //boshqacha sintaksisiham bor masalan>>>
     //for (let i = 1; i <= 3; i++) {
     //const genre = prompt(`Yahshi ko'rgan janiringiz? ${i}`);
-    //seriesDB.genres[i - 1] = genre;//shunda user uchun baribir savol 1 raqamidan boshlanadi
+    //seriesDB.genres[i - 1] = genre;//shunda user   uchun baribir savol 1 raqamidan boshlanadi
     // }
-} //yani writeGenres degan funksiya yaratildi(kerak bolsa boshqa joydaham shu funksiyani chaqirib qayta qayta ishlatish mumkun) writeGenres funksiyasida for tsikli ochilib unga (let i = 0; i <= 2; i++) qilib uch martta savol berish buyurildi genre degan local o'zgaruvchi ochib prompt bilan becetni ichiga Yahshi ko'rgan janiringiz? deb uch martta so'ralish buyurildi va ${i + 1} qilib salov user uchun modalda noldanmas 1 dan boshlanishi buyurildi va seriesDb.genres[i] = genre qilib seriesDb o'zgaruvchi ichidagi countdagi asosiy let o'zgaruvchi ichidagi genres massiviga intrigatsa qilib genresni genre o'zgaruvchiga teng qilib qo'yildi shunda Yahshi ko'rgan janiringiz? degan savolga user tomondan berilgan javoblar shu seriesDb o'zgaruvchi ichidagi genres arrayiga yani massiviga birib tushadi konsolda javoblarni ko'rish mumkun
+} //yani writeGenres degan funksiya yaratildi(kerak bolsa boshqa joydaham shu funksiyani chaqirib qayta qayta ishlatish mumkun) writeGenres funksiyasida for tsikli ochilib unga (let i = 0; i <= 2; i++) qilib uch martta savol berish buyurildi genre degan local o'zgaruvchi ochib prompt bilan becetni ichiga Yahshi ko'rgan janiringiz? deb uch martta so'ralish buyurildi va ${i + 1} qilib savol user uchun modalda noldanmas 1 dan boshlanishi buyurildi va seriesDb.genres[i] = genre qilib seriesDb o'zgaruvchi ichidagi countdagi asosiy let o'zgaruvchi ichidagi genres massiviga intrigatsa qilib genresni genre o'zgaruvchiga teng qilib qo'yildi shunda Yahshi ko'rgan janiringiz? degan savolga user tomondan berilgan javoblar shu seriesDb o'zgaruvchi ichidagi genres arrayiga yani massiviga borib tushadi konsolda javoblarni ko'rish mumkun
 
-//// kodnisal qisqaroq sintaksisi>>>>
+//// kodn isal qisqaroq sintaksisi>>>>
 //for (let i = 0; i <= 2; i++) {
 //seriesDB.genres[i] = prompt(`Yahshi ko'rgan janiringiz? ${i + 1}`);
 //}

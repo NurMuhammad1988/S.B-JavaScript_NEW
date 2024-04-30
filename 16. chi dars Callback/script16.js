@@ -17,8 +17,10 @@
 // second(); //bu birinchi bo'lib ishladi
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-// //Callback yani bu qaysidur  funksiya ishga tushgandan keyin ishga tushadigan funksiya
-// 1 chi sintaksis qisqasi
+//Callback yani bu qaysidur  funksiya ishga tushgandan keyin ishga tushadigan funksiya
+
+
+// //1 chi sintaksis qisqasi
 // function edu(subject, callback) {
 //     //yani bu joyda ichida callback funksiyasi bor edu funksiya ishga tushgandan keyin callback funksiyasi ishga tushdi
 //     console.log(`I want to teach ${subject}`);
@@ -29,8 +31,10 @@
 //     //ananim funksiya bilan yozilgani
 //     console.log("That`s great");
 // });
-////////
-// //2 chi sintaksis
+// //////
+
+
+//2 chi sintaksis
 // function edu(subject, callback) {
 //     console.log(`I want to teach ${subject}`);
 //     callback(); // yani bu joyda subjectdagi object done funksiyasidan oldin kelayapti sabab  callback aslida birinchi i want to teach, thats great chiqishi kerak edi lekin subjectdagi object yani "JavaScript" bu joyda ikkinchi bo'lib kelayapti aslida esa 3 chi bo'lib kelishi kerak edi
@@ -40,7 +44,7 @@
 //     console.log("That`s great");
 // }
 // edu("JavaScript", done);// yani callback funksiya hech qachon chaqirilmaydi chunki chaqirilsa aftamatik tarza ishlab ketadi shu sabab done dan keyin () qo'yilmadi done ni o'zi yozildi
-//YANI CALLBACK FUNKSIYA
+// //YANI CALLBACK FUNKSIYA
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // function first(cb) {
@@ -63,4 +67,4 @@
 
 //CALLBACKLAR
 //callback qaysidur funksyani boshqa hamma funksiydan oldin ishlatish uchun kerak
-//chunki serverdan keladigan malumot har doim kechroq keladi shu kelish jarayonida kutish bo'lib qoladi bu holatda sayt buzulib ketadi shu sabab callback funksiya ishlatiladi callback funksiya aynan qaysudir funksiyani birinchi ishlatadi mazkur holatda masalan loader funksiyani birinchi ishlatadi yani serverdan hamma malumotlar yetib kelguncha
+//chunki serverdan keladigan malumot har doim kechroq keladi shu kelish jarayonida kutish bo'lib qoladi bu holatda sayt buzulib ketadi shu sabab callback funksiya ishlatiladi callback funksiya aynan qaysudur funksiyani birinchi ishlatadi mazkur holatda masalan loader funksiyani birinchi ishlatadi yani serverdan hamma malumotlar yetib kelguncha

@@ -10,7 +10,7 @@ const seriesDB = {
 for (let i = 0; i < 2; i++) {
     //yani tsikil faqat 2 martta ishlaydi 0 va 1
     const a = prompt("Ohirgi ko'rgan serialingiz?"),
-        b = prompt("Nechchi baho berasiz?"); //yani tsikl yordamida savollarni ikki marttadan berildi yani a o'zgaruvchidagi savol berildi javobi esa  seriesDB.series[a] = b; ga verib qo'yildi yani a va b o'zgaruvchidagi savollar seriesDB ni ichidagi seeies objectiga berib qo'yildi shunda user savollarga javob berganda javoblari seriesDBni ichidagi series objectiga borib tushadi
+        b = prompt("Nechchi baho berasiz?"); //yani tsikl yordamida savollarni ikki marttadan berildi yani a o'zgaruvchidagi savol berildi javobi esa  seriesDB.series[a] = b; ga berib qo'yildi yani a va b o'zgaruvchidagi savollar seriesDB ni ichidagi series objectiga berib qo'yildi shunda user savollarga javob berganda javoblari seriesDBni ichidagi series objectiga borib tushadi
 
     if (a != null && b != null && a != "" && b != "") {
         //agarda a o'zgaruvchini javobi null bo'masa va b o'zgaruvchini javobiham null bo'masa va a o'zgaruvchiniham javobi "" bo'lmasa va b o'zgaruvchiniham javobi "" bo'lmasa seriesDBni ichidagi seriesga chaqirilgab a va b o'zgaruvchilari chaqirilib logda Done chiqsin yoki logda error chiqsin va savol orqaga qaytsin yani takrorlansin bu kodlar 4 qator pastda yozilgan
@@ -31,8 +31,8 @@ if (seriesDB.count < 5) {
     console.log("Siz classik tomoshabin ekansiz");
 } else if (seriesDB.count >= 10) {
     console.log("Siz serialchi zvezda ekansiz");
-}else{
-    console.log("Error");//error baribir ishlamaydi chunki if (seriesDB.count < 5) deyilganda 5 dan kichik har qanday son deyilgan yani +prompt qilib birinchi savol berilgan agar javob number malumot turi bo'lmasa aftamatik tarzda javob nol bo'ladi yani nolham agar user savollargga javob berishda number string turdagi javoblargaham har qanday javobni bergan taqdirdaham 5 dan kichik deganda nolham raqam hissoblanadi AGAR   vatsikilda savollarga javob berish userga majburiy qilib qo'yilgan
+} else {
+    console.log("Error"); //error baribir ishlamaydi chunki if (seriesDB.count < 5) deyilganda 5 dan kichik har qanday son deyilgan yani +prompt qilib birinchi savol berilgan agar javob number malumot turi bo'lmasa aftamatik tarzda javob nol bo'ladi yani nolham agar user savollargga javob berishda number string turdagi javoblargaham har qanday javobni bergan taqdirdaham 5 dan kichik deganda nolham raqam hissoblanadi AGAR   va tsikilda savollarga javob berish userga majburiy qilib qo'yilgan
 }
 
 console.log(seriesDB);
