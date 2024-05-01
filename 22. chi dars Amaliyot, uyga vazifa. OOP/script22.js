@@ -61,16 +61,27 @@ const seriesDB = {
     },
 
     writeGenres: function () {
-        for (let i = 0; i <= 2; i++) {
-            const genre = prompt(`Yahshi ko'rgan janringiz? ${i + 1}`);
-            if (genre === "" || genre === null) {
-                console.log("Siz noto'g'ri malumot kirgizdingiz!");
-                i--;
-            } else {
-                seriesDB.genres[i] = genre;
-            }
-        }
+        // for (let i = 0; i <= 2; i++) {
+        //     // const genre = prompt(`Yahshi ko'rgan janringiz? ${i + 1}`);
+        //     // if (genre === "" || genre === null) {
+        //     //     console.log("Siz noto'g'ri malumot kiritdingiz!");
+        //     //     i--;
+        //     // } else {
+        //     //     seriesDB.genres[i] = genre;
+        //     // }
+        // }
 
+        let genres = prompt(
+            "Yahshi ko'rgan janringizni vergul yordamida yozing"
+        ).toLowerCase(); //foydalanuvchini hamma kirtigan malumotlarini kichkina hariflarga aylatrib oldik
+        // console.log(genres);
+        if (genres === "" || genres === null) {
+            console.log("Siz noto'g'ri malumot kiritdingiz!");
+            i--;
+        } else {
+            seriesDB.genres = genres.split(", "); //yani vergul va probeldan keyin massivga o'girib beradi
+            seriesDB.genres.sort();
+        }
         seriesDB.genres.forEach((item, idx) => {
             console.log(`Yahshi ko'rgan janringiz? ${idx + 1} - nomi  ${item}`);
         });
