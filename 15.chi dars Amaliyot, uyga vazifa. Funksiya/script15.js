@@ -77,11 +77,11 @@ function writeGenres() {
     } //boshqacha sintaksisiham bor masalan>>>
     //for (let i = 1; i <= 3; i++) {
     //const genre = prompt(`Yahshi ko'rgan janiringiz? ${i}`);
-    //seriesDB.genres[i - 1] = genre;//shunda user   uchun baribir savol 1 raqamidan boshlanadi
+    //seriesDB.genres[i - 1] = genre;//shunda user uchun baribir savol 1 raqamidan boshlanadi
     // }
-} //yani writeGenres degan funksiya yaratildi(kerak bolsa boshqa joydaham shu funksiyani chaqirib qayta qayta ishlatish mumkun) writeGenres funksiyasida for tsikli ochilib unga (let i = 0; i <= 2; i++) qilib uch martta savol berish buyurildi genre degan local o'zgaruvchi ochib prompt bilan becetni ichiga Yahshi ko'rgan janiringiz? deb uch martta so'ralish buyurildi va ${i + 1} qilib savol user uchun modalda noldanmas 1 dan boshlanishi buyurildi va seriesDb.genres[i] = genre qilib seriesDb o'zgaruvchi ichidagi countdagi asosiy let o'zgaruvchi ichidagi genres massiviga intrigatsa qilib genresni genre o'zgaruvchiga teng qilib qo'yildi shunda Yahshi ko'rgan janiringiz? degan savolga user tomondan berilgan javoblar shu seriesDb o'zgaruvchi ichidagi genres arrayiga yani massiviga borib tushadi konsolda javoblarni ko'rish mumkun
+} //yani writeGenres degan funksiya yaratildi(kerak bolsa boshqa joydaham shu funksiyani chaqirib qayta qayta ishlatish mumkun) writeGenres funksiyasida for tsikli ochilib unga (let i = 0; i <= 2; i++) qilib uch martta savol berish buyurildi genre degan local o'zgaruvchi ochib prompt bilan becetni ichiga Yahshi ko'rgan janiringiz? deb uch martta so'ralish buyurildi va ${i + 1} qilib savlov user uchun modalda noldanmas 1 dan boshlanishi buyurildi va seriesDb.genres[i] = genre qilib seriesDb o'zgaruvchi ichidagi countdagi asosiy let o'zgaruvchi ichidagi genres massiviga intrigatsa qilib genresni genre o'zgaruvchiga teng qilib qo'yildi shunda Yahshi ko'rgan janiringiz? degan savolga user tomondan berilgan javoblar shu seriesDb o'zgaruvchi ichidagi genres arrayiga yani massiviga birib tushadi konsolda javoblarni ko'rish mumkun
 
-//// kodn isal qisqaroq sintaksisi>>>>
+//// kodnisal qisqaroq sintaksisi>>>>
 //for (let i = 0; i <= 2; i++) {
 //seriesDB.genres[i] = prompt(`Yahshi ko'rgan janiringiz? ${i + 1}`);
 //}
