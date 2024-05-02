@@ -56,7 +56,7 @@ function detectLevelSeries() {
     } else if (seriesDB.count >= 10) {
         console.log("Siz serialchi zvezda ekansiz");
     } else {
-        console.log("Error"); //error baribir ishlamaydi chunki if (seriesDB.count < 5) deyilganda 5 dan kichik har qanday son deyilgan yani +prompt qilib birinchi savol berilgan agar javob number malumot turi bo'lmasa aftamatik tarzda javob nol bo'ladi yani nolham agar user savollargga javob berishda number string turdagi javoblargaham har qanday javobni bergan taqdirdaham 5 dan kichik deganda nolham raqam hissoblanadi AGAR   vatsikilda savollarga javob berish userga majburiy qilib qo'yilgan
+        console.log("Error"); //error baribir ishlamaydi chunki if (seriesDB.count < 5) deyilganda 5 dan kichik har qanday son deyilgan yani +prompt qilib birinchi savol berilgan agar javob number malumot turi bo'lmasa aftamatik tarzda javob nol bo'ladi yani nolham agar user savollargga javob berishda number string turdagi javoblargaham har qanday javobni bergan taqdirdaham 5 dan kichik deganda nolham raqam hissoblanadi // AGAR   va tsikilda savollarga javob berish userga majburiy qilib qo'yilgan
     }
 }
 

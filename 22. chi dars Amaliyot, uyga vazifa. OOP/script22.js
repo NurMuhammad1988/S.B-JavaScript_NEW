@@ -1,17 +1,22 @@
 "use strict";
 
 const seriesDB = {
-    count: 0,
+    count: 0, //yani default holati 0 // //yani birinchi nechta serial ko'rdingiz savolini javobini shu object ichiga qiymat sifatida berib qo'yildi shunda logga savolga berilgan javob chiqadi yani seriesDB.countda berilgan savolni javobi shu countni ichiga tushadi // bu +prompt bo'lgani uchun agar javob number malumot turi bo'lmasa NaN chiqadi yani not a number
     series: {},
     actors: {},
     genres: [],
     private: false,
     start: function () {
-        seriesDB.count = +prompt("Nechta serial ko'rdingiz?", "");
+        //yani bu metod objectni function metodi hissoblanadi function ekanligini sababi qulay yani boshqa joyddaham shu function metodni chaqirib hohlagancha ishlatish mumkun
+        seriesDB.count = +prompt("Nechta serial ko'rdingiz?", ""); //+ promptda + belgisi javoblar asosan number malumot turi bo'lganligi sababli qo'yildi
+
         while (
+            //yani while if elsni boshqacha ko'rinishi
             seriesDB.count == "" ||
             seriesDB.count == null ||
-            isNaN(seriesDB.count)
+            isNaN(seriesDB.count) //isNaN()bu metod yani javob agar number bo'lmasa javobni qabul qilmaydi yani modalda faqat raqamni qabul qiladi
+
+            //yani agar seriesDB ichidagi countdagi savolni javobi "" bo'sh katak bo'lsa yoki ok bosgan bo'lsa yokida null bo'lsa yani otmenni bosgan bo'lsa yokida isNaN bo'lsa yani javob raqam bo'lmasa yani oddiy harif bo'lsa ogohlantirish bilan savolni qaytadan berish//SHunda user modalda ochilgan savolga javob berishga majbur qilinadi aks holda saytda boshqa ish harakatini qila  olmaydi
         ) {
             seriesDB.count = +prompt(
                 "Nechta serial ko'rdingiz? savoliga javob bermadingiz Nechta serial ko'rdingiz?",
@@ -21,12 +26,16 @@ const seriesDB = {
     },
 
     rememberMySeries: function () {
+        //yani bu metod objectni function metodi qo'lda yozilgan hissoblanadi function ekanligini sababi qulay yani boshqa joyddaham shu function metodni chaqirib hohlagancha ishlatish mumkun
         for (let i = 0; i < 2; i++) {
+            //yani for tsikli funksiya ichiga yozildi masalan endi bu funksiyani boshqa har qanday joyda ishlatish kerak bo'lsa shunchaki chaqirib qo'yilsa bo'ldi
+            //yani tsikil faqat 2 martta ishlaydi 0 va 1
             const a = prompt("Ohirgi ko'rgan serialingiz?"),
                 b = prompt("Nechchi baho berasiz?");
             if (a != null && b != null && a != "" && b != "") {
-                seriesDB.series[a] = b;
-                console.log("Done");
+                //agarda a o'zgaruvchini javobi null bo'masa va b o'zgaruvchini javobiham null bo'masa va a o'zgaruvchiniham javobi "" bo'lmasa va b o'zgaruvchiniham javobi "" bo'lmasa seriesDBni ichidagi seriesga chaqirilgan a va b o'zgaruvchilari chaqirilib logda Done chiqsin yoki logda error chiqsin va savol orqaga qaytsin yani takrorlansin bu kodlar 4 qator pastda yozilgan
+                seriesDB.series[a] = b; //objectga tashqarida hususiyat berilganda masalan bu holatda [a] shunday to'rtburchak qavus ichida berilishi kerak yani [a] va [c] o'zgaruvchilardagi savollarga javoblar seriesDBni ichidagi series objectiga tushurib olindi
+                console.log("Done"); //yani userni savollarga javob berishga majbur qilindi aks holda error chiqadi agar savollarga to'liq javob bersda done chiqadi
             } else {
                 console.log("Error");
                 i--;
@@ -35,25 +44,31 @@ const seriesDB = {
     },
 
     detectLevelSeries: function () {
+        //yani bu metod objectni function metodi hissoblanadi function ekanligini sababi qulay yani boshqa joyddaham shu function metodni chaqirib hohlagancha ishlatish mumkun ////yani funksiya ichiga qo'lda yozilgan local metod sifatida yozildi masalan endi bu funksiya metodni boshqa har qanday joyda ishlatish kerak bo'lsa shunchaki chaqirib qo'yilsa bo'ldi
         if (seriesDB.count < 5) {
+            //yani seriesDB object o'zgaruvchi ichidagi count qiymati bor yani count o'zgaruvchsidagi +prompt bilan berilgan savolni javobi seriesDB o'zgaruvchini ichidagi countga tushadi shu uchun agar seriesDB.countni javobi 5 dan kichik bo'lsa kam serial ko'ripsiz
             console.log("Kam serial ko'ripsiz");
         } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+            //yani agar seriesDB countga tushaydigan javob 5 ga teng yoki 5 dan katta va yoki 10 dan kichik bo'lsa
             console.log("Siz classik tomoshabin ekansiz");
         } else if (seriesDB.count >= 10) {
             console.log("Siz serialchi zvezda ekansiz");
         } else {
-            console.log("Error");
+            console.log("Error"); //error baribir ishlamaydi chunki if (seriesDB.count < 5) deyilganda 5 dan kichik har qanday son deyilgan yani +prompt qilib birinchi savol berilgan agar javob number malumot turi bo'lmasa aftamatik tarzda javob nol bo'ladi yani nolham agar user savollargga javob berishda number string turdagi javoblargaham har qanday javobni bergan taqdirdaham 5 dan kichik deganda nolham raqam hissoblanadi // AGAR   va tsikilda savollarga javob berish userga majburiy qilib qo'yilgan
         }
     },
 
     showDb: function () {
+        //yani bu metod objectni function metodi hissoblanadi function ekanligini sababi qulay yani boshqa joyddaham shu function metodni chaqirib hohlagancha ishlatish mumkun
         if (!seriesDB.private) {
-            console.log(seriesDB);
+            console.log(seriesDB); //bu saytni asosiy ishlatib turgan o'zgaruvchi
         }
     },
 
     visibleDb: function () {
+        //yani bu metod objectni function metodi hissoblanadi function ekanligini sababi qulay yani boshqa joyddaham shu function metodni chaqirib hohlagancha ishlatish mumkun
         if (seriesDB.private) {
+            //yani seriesDB objectini private qiymati default holatda false bo'lib turipti if argumentiga birinchi trueni oladi shunda agar seriesDB.private false bo'lsa true bo'lsin elseda esa yokida false bo'lsa true bo'lsin deyildi
             seriesDB.private = false;
         } else {
             seriesDB.private = true;
@@ -61,6 +76,7 @@ const seriesDB = {
     },
 
     writeGenres: function () {
+        //yani bu metod objectni function metodi hissoblanadi function ekanligini sababi qulay yani boshqa joyddaham shu function metodni chaqirib hohlagancha ishlatish mumkun
         // for (let i = 0; i <= 2; i++) {
         //     // const genre = prompt(`Yahshi ko'rgan janringiz? ${i + 1}`);
         //     // if (genre === "" || genre === null) {
@@ -69,18 +85,18 @@ const seriesDB = {
         //     // } else {
         //     //     seriesDB.genres[i] = genre;
         //     // }
-        // }//yani tsikil bilan promptdagi savol 3 martta qayta berilgan edi
+        // }//yani tsikil bilan promptdagi savol 3 martta qayta berilgan edi pastdagi sitaksisda esa savol bir martta berildi
 
         let genres = prompt(
             "Yahshi ko'rgan janringizni vergul yordamida yozing"
-        ).toLowerCase(); //foydalanuvchini hamma kirtigan malumotlarini kichkina hariflarga aylatrib oldik//pastdagi sort metodi faqat kickina hariflarni tartiblab bera oladi (katta ariflarni esa birinchiga qo'yadi yani tartibni boshiga qo'yadi) shu sabab promptga kirgizilgan javoblarni kichkina harif qilib oldik yani genresga tushadigan javobnlarni
+        ).toLowerCase(); //foydalanuvchini hamma kirtigan malumotlarini kichkina hariflarga aylatrib oldik//pastdagi sort metodi faqat kickina hariflarni tartiblab bera oladi (katta ariflarni esa birinchiga qo'yadi yani tartibni boshiga qo'yadi) shu sabab promptga kirgizilgan javoblarni kichkina harif qilib oldik yani genresga tushadigan javoblarni
         // console.log(genres);
 
         if (genres === "" || genres === null) {
             console.log("Siz noto'g'ri malumot kiritdingiz!");
             i--;
         } else {
-            seriesDB.genres = genres.split(", "); //yani split metodi stringni arrayga o'girib beradi yani aylantirib beradi //yani bu holatda vergul va probeldan keyin massivga o'girib beradiva massivga joylab beradi yani genres massiviga masiivga ega foreach metodi orqali chiqarib berayapti
+            seriesDB.genres = genres.split(", "); //yani split metodi stringni arrayga o'girib beradi yani aylantirib beradi //yani bu holatda vergul va probeldan keyin massivga o'girib beradi va massivga joylab beradi yani genres massiviga massivga ega foreach metodi orqali chiqarib berayapti
             seriesDB.genres.sort(); //yani bu harflarni tartiblab beradi yani alphabet tartibida a....z qilib tartib bo'yicha terib beradi
         }
 
