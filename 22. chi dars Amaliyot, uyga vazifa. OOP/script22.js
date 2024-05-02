@@ -69,19 +69,21 @@ const seriesDB = {
         //     // } else {
         //     //     seriesDB.genres[i] = genre;
         //     // }
-        // }
+        // }//yani tsikil bilan promptdagi savol 3 martta qayta berilgan edi
 
         let genres = prompt(
             "Yahshi ko'rgan janringizni vergul yordamida yozing"
-        ).toLowerCase(); //foydalanuvchini hamma kirtigan malumotlarini kichkina hariflarga aylatrib oldik
+        ).toLowerCase(); //foydalanuvchini hamma kirtigan malumotlarini kichkina hariflarga aylatrib oldik//pastdagi sort metodi faqat kickina hariflarni tartiblab bera oladi (katta ariflarni esa birinchiga qo'yadi yani tartibni boshiga qo'yadi) shu sabab promptga kirgizilgan javoblarni kichkina harif qilib oldik yani genresga tushadigan javobnlarni
         // console.log(genres);
+
         if (genres === "" || genres === null) {
             console.log("Siz noto'g'ri malumot kiritdingiz!");
             i--;
         } else {
-            seriesDB.genres = genres.split(", "); //yani vergul va probeldan keyin massivga o'girib beradi
-            seriesDB.genres.sort();
+            seriesDB.genres = genres.split(", "); //yani split metodi stringni arrayga o'girib beradi yani aylantirib beradi //yani bu holatda vergul va probeldan keyin massivga o'girib beradiva massivga joylab beradi yani genres massiviga masiivga ega foreach metodi orqali chiqarib berayapti
+            seriesDB.genres.sort(); //yani bu harflarni tartiblab beradi yani alphabet tartibida a....z qilib tartib bo'yicha terib beradi
         }
+
         seriesDB.genres.forEach((item, idx) => {
             console.log(`Yahshi ko'rgan janringiz? ${idx + 1} - nomi  ${item}`);
         });
