@@ -17,7 +17,7 @@ const seriesDB = {
             isNaN(seriesDB.count) //isNaN()bu metod yani javob agar number bo'lmasa javobni qabul qilmaydi yani modalda faqat raqamni qabul qiladi
 
             //yani agar seriesDB ichidagi countdagi savolni javobi "" bo'sh katak bo'lsa yoki ok bosgan bo'lsa yokida null bo'lsa yani otmenni bosgan bo'lsa yokida isNaN bo'lsa yani javob raqam bo'lmasa yani oddiy harif bo'lsa ogohlantirish bilan savolni qaytadan berish//SHunda user modalda ochilgan savolga javob berishga majbur qilinadi aks holda saytda boshqa ish harakatini qila  olmaydi
-        ) {
+        ) {//bu holati huddi elsega o'shaydi  
             seriesDB.count = +prompt(
                 "Nechta serial ko'rdingiz? savoliga javob bermadingiz Nechta serial ko'rdingiz?",
                 ""
@@ -85,7 +85,7 @@ const seriesDB = {
         //     // } else {
         //     //     seriesDB.genres[i] = genre;
         //     // }
-        // }//yani tsikil bilan promptdagi savol 3 martta qayta berilgan edi pastdagi sitaksisda esa savol bir martta berildi
+        // }//yani tsikil bilan promptdagi savol 3 martta qayta berilgan edi pastdagi sitaksisda esa savol bir martta berildi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         let genres = prompt(
             "Yahshi ko'rgan janringizni vergul yordamida yozing"
