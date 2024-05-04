@@ -37,7 +37,7 @@
 ////1-)
 const age1 = 0;
 if (age1) {
-    console.log("a");
+    console.log("a");   
 }
 
 let age2 = 0;
