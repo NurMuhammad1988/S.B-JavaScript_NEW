@@ -1,56 +1,72 @@
 "use strict";
 
-////Dynamic typing
+// ////Dynamic typing
 
-/////////////////////////////////////////////////Dynamic to STRING///////////////////////////////
+// /////////////////////////////////////////////////Dynamic to STRING///////////////////////////////
 
 // //1-)//Dynamic to STRING yani number malumot turlaridan matin malumot turlariga o'tish
 // console.log(typeof String(4)); //yani string malumot turi
 
 // //2-)//Dynamic to STRING yani number malumot turlaridan matin malumot turlariga o'tish
 // console.log("Nurik " + 35); //yani string
-// console.log(typeof ("Nurik " + 35)); //bu holatda numberham stringga qo'shilib ketadi yani hammasi string hissoblanadi
+// console.log(typeof ("Nurik " + 35)); //bu holatda numberham stringga qo'shilib ketadi yani hammasi string hissoblanadi chunki + operatori bor yani stringga 35 ni yani numberni + qil degan buyruq
 
-// //3-)//Dynamic to STRING yani number malumot turlaridan matin malumot turlariga o'tish
+//3-)//Dynamic to STRING yani number malumot turlaridan matin malumot turlariga o'tish
 // const youtubeChannel = 10;
-// console.log(`youtube.com/channel/` + youtubeChannel);
+// console.log(`youtube.com/channel/` + youtubeChannel);//yani bu holatda youtubeChannel o'zgaruvchidagi 10 qiymatidan oldin logda string malumot turi yozildi va bu stringga + operatori orqali 10 qiymati qo'shildi va hamma malumot turi stringga aylandi
 
 // //////////////////////////////////////////Dynamic to NUMBER/////////////////////////////////////
 
 // //1-)//Java Scriptdagi default Number objecti bilan
+// console.log(Number("4"));//Number
 // console.log(typeof Number("4")); //aslida esa run codeda string malumot turini qaytarish kerak edi lekin Number objecti sabab (typeof) number qaytardi
 
-// //2-) bu yerda + yani pilus sababliham number malumot turiga o'tish mumkun
-// console.log(typeof +"5"); //pilus sababli bu "5" ham number malumot turi hissoblanadi
+//2-) bu yerda + yani pilus sababliham number malumot turiga o'tish mumkun
+// console.log( +"5"); //number
+// console.log(typeof +"5"); //pilus sababli bu "5" ham number malumot turi hissoblanadi bu narsa +promptdaham ishlaydi aslida prompda default holatida + bo'lmas edi + qo'yilsa aftamatik tarzda numberga aylanadi
 
-// //3-) parseInt() metodi orqaliham stringni  Numberga o'tqazish va chaqirish mumkun
-// console.log(typeof parseInt("15"));
+// 3-) parseInt() metodi orqaliham stringni  Numberga o'tqazish va chaqirish mumkun
+// console.log(parseInt("15"));//number yani string numberga aylandi parseint metodi bilan
+// console.log(typeof parseInt("15"));//number
 
-// //4-)parseInt va prompt orqali stringni numberga o'tqazish
-// const names = parseInt(prompt("age"));
+//4-)parseInt va prompt orqali stringni numberga o'tqazish
+// const names = parseInt(prompt("age"));//yani bu holatda pareint metodi orqali stringni numberga aylantirdik yani paseint parametriga prompda savol berdik va agar javobi number bulmasa NaN chiqadi chunku parseint shunday ishlaydi yani parametrida berilga savolni javobi faqat number bo'lsa true bo'ladi yani qabul qiladi aks holda NaN yani not a number
+// console.log( names); //logda number
 // console.log(typeof names); //console.logga qaralsin
 
-///////////////////////////////////////////////////Dynamic to BOOLEAN///////////////////////////////
+// /////////////////////////////////////////////////Dynamic to BOOLEAN///////////////////////////////
 
 //0, "", null, undefined, NaN, === har doim false qaytaradi
 
-// ////1-)
+////1-)yo'li
 // const age1 = 0;
 // if (age1) {
-//     console.log("a");   
-// }
-
-// let age2 = 0;
-// if (age2) {
+//     //yani agarda age1 true bo'lsa logda "a" chiqsin //LEKIN: logda "a" chiqamadi sababi if elsa yani mantiqiy operatorlarda 0 false bo'ladi
 //     console.log("a");
 // }
-// age2 = 18;
+// console.log(age1); ///yani agarda age1 true bo'lsa logda "a" chiqsin lekin chiqmadi
+// console.log(Boolean(age1)); //yani Boolean bilan tekshirilganda  age1 o'zgaruvchi false chiqdi chunki 0 har doim false bo'ladi
+// ////////////////
+// const age2 = "0";
 // if (age2) {
-//     console.log("a");
+//     console.log("a"); //yani agarda (if) age2 true bo'lsa logda "a" chiqsin CHIQDI!!!//yani agarda age2 true bo'lsa logda "a" chiqsin "a" chiqdi chunku bu true yani id tru bilan tekshiradi
+// }
+// console.log(age2);
+// console.log(Boolean(age2)); //TRUE//logga va run codega yahshilab qaralsin/yani Boolean bilan tekshirilganda  age2 o'zgaruvchi true chiqdi chunki "0" har doim true bo'ladi yani bo'sh string bo'lmasaham true bo'ladi
+//////////////////////////////////
+// let age3 = 0;//boshida 0 turganligi uchun false bo'ldi
+// if (age3) {
+//     console.log("a");//logda "a" chiqmadi chunki if else birinchi trueni qabul qiladi age3 o'zgaruvchida esa qiymat 0 bo'lib turipti bu esa false hissoblanadi shu sabab asosiy qiymat 0 bo'lgani uchun false chiqadi va pastda age3 ni qiymati 18 ga o'zgartirilgani sabab endi if age3 ni true deb qabul qiladi va logda "g" ni chiqaradi
+// }
+// age3 = 18//va age3 ni qiymati 0 ga emas 18 ga o'zgargani uchun endi true bo'ldi
+// if (age3) {
+//     console.log ("g");
 // }
 
-// ////2-)
-// console.log(typeof Boolean("4")); //yani malumot turini Boolean qilib beradi
+// ////2-)yo'li
+// console.log(typeof "4"); //string
+// console.log(typeof Boolean("4")); //yani malumot turi Boolean yani true yani true yani stringni boolean qilib berdi
 
-// ////3-)
-// console.log(typeof !!"4"); //yani malumot turini Boolean qilib beradi
+// // ////3-) yo'li
+// console.log(typeof "4"); //string
+// console.log(typeof !!"4"); //yani malumot turi Boolean yani true yani stringni boolean qilib berdi
