@@ -34,23 +34,23 @@
 
 //0, "", null, undefined, NaN, === har doim false qaytaradi
 
-////1-)
-const age1 = 0;
-if (age1) {
-    console.log("a");   
-}
+// ////1-)
+// const age1 = 0;
+// if (age1) {
+//     console.log("a");   
+// }
 
-let age2 = 0;
-if (age2) {
-    console.log("a");
-}
-age2 = 18;
-if (age2) {
-    console.log("a");
-}
+// let age2 = 0;
+// if (age2) {
+//     console.log("a");
+// }
+// age2 = 18;
+// if (age2) {
+//     console.log("a");
+// }
 
-////2-)
-console.log(typeof Boolean("4")); //yani malumot turini Boolean qilib beradi
+// ////2-)
+// console.log(typeof Boolean("4")); //yani malumot turini Boolean qilib beradi
 
-////3-)
-console.log(typeof !!"4"); //yani malumot turini Boolean qilib beradi
+// ////3-)
+// console.log(typeof !!"4"); //yani malumot turini Boolean qilib beradi
