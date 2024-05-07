@@ -29,10 +29,10 @@
 // const hearts1 = document.querySelector(".heart");//yani bu yerda htmldan heart nomli classni olish buyurildi lekin querySelector doim faqat birinchi elementni oladi yani htmldagi documentni 0 chi elementini oladi
 // console.log(hearts1);
 
-const wrapper = document.querySelector(".wrapper"); //yani bu holatda querySelector butun document bo'yicha yani html bo'yicha shu classni wrapperni izlaydi pastdagi wrapper1 o'zgaruvchida esa wrapperni ichidagi heartni olish buyurildi yani aniqroq adrees bo'yicha buyruq berildi
-console.log(wrapper);
-const wrapper1 = wrapper.querySelector(".heart"); //yani aftamatic tarzda birinchi elementni oladi
-console.log(wrapper1); //yani bu joyda wrapper o'zgaruvchini ichidan heartni old deyildi yani yangi o'zgaruvchiga eski o'zgaruvchini ulab ichidagini old deyish mumkun ekan
+// const wrapper = document.querySelector(".wrapper"); //yani bu holatda querySelector butun document bo'yicha yani html bo'yicha shu classni wrapperni izlaydi pastdagi wrapper1 o'zgaruvchida esa wrapperni ichidagi heartni olish buyurildi yani aniqroq adrees bo'yicha buyruq berildi
+// console.log(wrapper);
+// const wrapper1 = wrapper.querySelector(".heart"); //yani aftamatic tarzda birinchi elementni oladi
+// console.log(wrapper1); //yani bu joyda wrapper o'zgaruvchini ichidan heartni old deyildi yani yangi o'zgaruvchiga eski o'zgaruvchini ulab ichidagini old deyish mumkun ekan
 
 ////querySelectorAll
 // const hearts2 = document.querySelectorAll(".heart")//yani hamma html documentlarni massivga olinishi yani massivda nodeListga olinadi HTML.Collectiondan farqi faqat ichidagi qiymatlarda yani propertylarda console logda ko'rinadi yani NodeListda ko'roq metodlar bor
@@ -47,78 +47,4 @@ console.log(wrapper1); //yani bu joyda wrapper o'zgaruvchini ichidan heartni old
 //     console.log(item);
 // });//yani NodeListning afzalligi NodeListda forEach metodi bor yani massivdan elementni olish uchun intrigatsa qilib olish kerak yani foreach metodi bilan
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// "use strict";
-
-// const box = document.querySelector("#box");
-// const buttons = document.querySelectorAll("button");
-// const circles = document.querySelectorAll(".circle");
-// const circle = document.querySelector(".circle");
-// const hearts = document.querySelectorAll(".heart");
-// const circleWrapper = document.querySelector(".circle__wrapper");
-
-// box.style.cssText = "background-color: red; width: 100px; height: 100px";
-
-// buttons[0].style.width = "100px";
-// circles[1].style.backgroundColor = "yellow";
-// circle.style.backgroundColor = "yellow";
-
-// //// for (let i = 0; i < hearts.length; i++) {
-// ////   hearts[i].style.backgroundColor = 'green'
-// //// }
-
-// //// hearts.forEach((item) => {
-// ////   item.style.backgroundColor = 'gray'
-// //// })
-
-// const btn = document.createElement("button");
-// //// const text = document.createTextNode('I am text')
-
-// document.body.append(btn);
-
-// const myCircle = document.createElement("div");
-
-// myCircle.classList.add("circle");
-
-// //// circleWrapper.append(myCircle)
-// //// circleWrapper.before(myCircle)
-// ////circleWrapper.after(myCircle)
-// //// circles[0].after(myCircle)
-// //// circles[1].remove()
-// //// circles[1].replaceWith(myCircle)
-// //// circleWrapper.append(myCircle)
-// //// myCircle.innerHTML = '<pre>E</pre>'
-// //// myCircle.textContent = 'E'
-// //// circleWrapper.insertAdjacentHTML('beforeend', '<pre>E</pre>')
 //////////////////////////////////////////////////////////////////////////////////////////////////////
