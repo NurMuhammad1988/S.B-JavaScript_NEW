@@ -85,7 +85,7 @@
 // circles[0].after(myCircle);//bu holatda circlesni ichidagi divlarni 1 chisi 1 chisidan keyinga yani  2 chi bo'lib turadi
 //before va after metodlari bilan ona divni ichidagi elementlarni shu bilan>>[] ichiga tartib raqamlarini berib joylarini hohlagancha o'zgartirish mumkun
 
-// circles[1].remove()//remov metodi bilan circles o'zgaruvchini ichidagi elementlarni shu bilan >>[] ichiga tartib raqamini yozib udalit qilish mumkun//LEKIN DYNAMIC TARZDA QO'SHILGAN DIVNI BROWSERDA NECHCHANCHI O'RINDA TURGAN BO'LSAHAM  YANIBEFOR AFTER METODLARI BILAN JOYLARI O'ZGARTIRILGAM BO'LSAHAM DIYNAMIC TARZDA QO'SHILGAN DIV DOIM OHIRGI TARTIB RAQAMIDA BO'LADIMASALAN BU HOLATDA [4] ELEMENT BO'LIB TURIPTI YANI NOLDAN BOSHLANGANDA [4] CHI ELEMENT HISSOBLANADI
+// circles[1].remove()//remove metodi bilan circles o'zgaruvchini ichidagi elementlarni shu bilan >>[] ichiga tartib raqamini yozib udalit qilish mumkun//LEKIN DYNAMIC TARZDA QO'SHILGAN DIVNI BROWSERDA NECHCHANCHI O'RINDA TURGAN BO'LSAHAM  YANI BEFOR AFTER METODLARI BILAN JOYLARI O'ZGARTIRILGAM BO'LSAHAM DIYNAMIC TARZDA QO'SHILGAN DIV DOIM OHIRGI TARTIB RAQAMIDA BO'LADIMASALAN BU HOLATDA [4] ELEMENT BO'LIB TURIPTI YANI NOLDAN BOSHLANGANDA [4] CHI ELEMENT HISSOBLANADI
 
 // circles[2].replaceWith(myCircle)//yani replaceWith metodi bilan circles o'zgaruvchi ichidagi 2 chi elementni o'rniga yani dynamic tarzda ochilib qo'shilgan myCircle o'zgaruvchi ichidagi yangi divni qo'ydik yani replaceWith metodi boshqa bir divni ustiga argumentidagi divni qo'yib beradi
 
