@@ -55,7 +55,7 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////Dynamic tarzda html elementlar ochish yani html documentda divlar va buttonlar ochish
+///////////////////////Dynamic tarzda html elementlar ochish yani html documentda divlar va buttonlar ochish va metodlari
 
 ////createTextNode() metodi
 // const text = document.createTextNode("I am a text");//yani dynamic tarzda text qo'shish metodi
@@ -67,12 +67,12 @@
 // document.body.append(btn); // yani bu holatda html documentga umumiy bodyni ichiga tartib bo'yicha eng pastiga yangi button tegi dynamic tarzda qo'shildi
 
 ////createElement() metodi va append() va add() metodi
-const circleWrapper = document.querySelector(".circle__wrapper"); //yani html documentdagi ona divi chaqirildi
-const myCircle = document.createElement("div"); //yani yangi div ochildi
+// const circleWrapper = document.querySelector(".circle__wrapper"); //yani html documentdagi ona divi chaqirildi
+// const myCircle = document.createElement("div"); //yani yangi div ochildi
 // console.log(btn);
-myCircle.classList.add("circle"); //yangi divni classnameni classList bilan add metodi bilan circle qildik
-circleWrapper.append(myCircle); //yani myCircle o'zgaruvchini ichiga yangi div ochib claslist va add metodi bilan divga circle degan classname berib ichida yangi divi va divini classi bor tayyor myCircle o'zgaruvchini append metodi bilan circleWrapper o'zgaruvchiga chaqirildi//yani circleWrapper o'zgaruvchida ona div bor yani ona divni ichiga  myCircle o'zgaruvchi chaqirildi
-//////yani bu holatda circleWrapper nomli o'zgaruvchi yaratilib unga document.querySelector metodi bilan html documentdagi circle__wrapper classi chaqirildi va myCircle nomli o'zgaruvchi yaratilib unda createElement metodi bilan html documentga bitta div dynamic tarzda qo'shildi va myCircle o'zgaruvchiga (yani ichida yangi divi bor o'zgaruvchiga) clastlis va append metodi bilan htmlda mavjud bo'lgan (yani 4 dona circle nomli classlar bor) cercle classlariga yangi circle classi berildi (yani yangi divga circle clasi berildi bu degani htmlda endi circle 4 emas 5 ta degani va cssdagi classlar bu beshinchi yangi dynamic tarzda berilgan  divga yani circle nomli divgaham tasir qiladi va browserdagi dumaloqchalar bittaga ko'payadi) va circleWrapper o'zgaruvchiga append metodi bilan append metodini argumentiga  myCircle o'zgaruvchi chaqirildi
+// myCircle.classList.add("circle"); //yangi divni classnameni classList qiymati bilan add metodi bilan circle qildik
+// circleWrapper.append(myCircle); //yani myCircle o'zgaruvchini ichiga yangi div ochib claslist va add metodi bilan divga circle degan classname berib ichida yangi divi va divini classi bor tayyor myCircle o'zgaruvchini append metodi bilan circleWrapper o'zgaruvchiga chaqirildi//yani circleWrapper o'zgaruvchida ona div bor yani ona divni ichiga  myCircle o'zgaruvchi chaqirildi
+//////yani bu holatda circleWrapper nomli o'zgaruvchi yaratilib unga document.querySelector metodi bilan html documentdagi circle__wrapper classi chaqirildi va myCircle nomli o'zgaruvchi yaratilib unda createElement metodi bilan html documentga bitta div dynamic tarzda qo'shildi va myCircle o'zgaruvchiga (yani ichida yangi divi bor o'zgaruvchiga) clastlist qiymati va append metodi bilan htmlda mavjud bo'lgan (yani 4 dona circle nomli classlar bor) cercle classlariga yangi circle classi berildi (yani yangi divga circle clasi berildi bu degani htmlda endi circle 4 emas 5 ta degani va cssdagi classlar bu beshinchi yangi dynamic tarzda berilgan  divga yani circle nomli divgaham tasir qiladi va browserdagi dumaloqchalar bittaga ko'payadi) va circleWrapper o'zgaruvchiga append metodi bilan append metodini argumentiga  myCircle o'zgaruvchi chaqirildi
 
 //yani bunday holatda yani ona div ichiga yangi div dynamic qo'shilgandaham tartib bo'yicha ohiriga borib turadi
 
@@ -80,58 +80,24 @@ circleWrapper.append(myCircle); //yani myCircle o'zgaruvchini ichiga yangi div o
 
 // circleWrapper.after(myCircle); //after metodi bilan yangi divni joyini o'zgartirdik//yani bu holatda circle__wrapper ona dividan tashqariga chiqadi yani ona divdan pastda chiqdi
 
-const circles = document.querySelectorAll(".circle");//yani bu holatda circles o'zgaruvchida html documentda chaqirilgan circle classlari ichida yangi dynamic tarzda qo'shilgan divni joylarini o'zgartirish
+// const circles = document.querySelectorAll(".circle"); //yani bu holatda circles o'zgaruvchida html documentda chaqirilgan circle classlari ichida yangi dynamic tarzda qo'shilgan divni joylarini o'zgartirish
 // circles[0].before(myCircle);// bu holatda circlesni ichidagi divlarni 1 chisi eng birinchi turadi
 // circles[0].after(myCircle);//bu holatda circlesni ichidagi divlarni 1 chisi 1 chisidan keyinga yani  2 chi bo'lib turadi
 //before va after metodlari bilan ona divni ichidagi elementlarni shu bilan>>[] ichiga tartib raqamlarini berib joylarini hohlagancha o'zgartirish mumkun
 
 // circles[1].remove()//remov metodi bilan circles o'zgaruvchini ichidagi elementlarni shu bilan >>[] ichiga tartib raqamini yozib udalit qilish mumkun//LEKIN DYNAMIC TARZDA QO'SHILGAN DIVNI BROWSERDA NECHCHANCHI O'RINDA TURGAN BO'LSAHAM  YANIBEFOR AFTER METODLARI BILAN JOYLARI O'ZGARTIRILGAM BO'LSAHAM DIYNAMIC TARZDA QO'SHILGAN DIV DOIM OHIRGI TARTIB RAQAMIDA BO'LADIMASALAN BU HOLATDA [4] ELEMENT BO'LIB TURIPTI YANI NOLDAN BOSHLANGANDA [4] CHI ELEMENT HISSOBLANADI
 
-circles[2].replaceWith(myCircle)//yani replaceWith metodi bilan circles o'zgaruvchi ichidagi 2 chi elementni o'rniga yani dynamic tarzda ochilib qo'shilgan myCircle o'zgaruvchi ichidagi yangi divni qo'ydik yani replaceWith metodi boshqa bir divni ustiga argumentidagi divni qo'yib beradi
+// circles[2].replaceWith(myCircle)//yani replaceWith metodi bilan circles o'zgaruvchi ichidagi 2 chi elementni o'rniga yani dynamic tarzda ochilib qo'shilgan myCircle o'zgaruvchi ichidagi yangi divni qo'ydik yani replaceWith metodi boshqa bir divni ustiga argumentidagi divni qo'yib beradi
 
+// myCircle.innerHTML = "E"; //yani bu holatda myCircle ichidagi dynamic holatda qo'shilgan divga yozuv qo'shdik innerHTML bilan qo'shilgan yozuvga myCircle ni ichidagi classga yani cssdagi circle classiga berilgan stylelarham  umumiy amal qiladi
 
+// myCircle.innerHTML = "<pre>E</pre>";
+// myCircle.innerHTML = "<h6>E</h6>"; //yani innerHTML qiymati bilan shuni ichiga>> "" html teglarniham yozishxam mumkun masalan bold, p, h1, h6 va hakozo yani js ni ichida bemmalol htmlni teglarni ishlatishxam mumkun ekan
 
+// myCircle.textContent = "J"; //textContent qiymatiham huddi innerHTML qiymati kabi ishlaydi faqat textContentda html taglar ishlamaydi imkon qadar shu textContentdan foydalanish kerak masalan yaniqsa inputda
+// myCircle.textContent = "<pre>J</pre>"; //browserga qaralsin
 
-
-///////////////////////////////////////////////////////////////////////////////////////////
-// const box = document.querySelector("#box");
-// const buttons = document.querySelectorAll("button");
-// const circles = document.querySelectorAll(".circle");
-// const circle = document.querySelector(".circle");
-// const hearts = document.querySelectorAll(".heart");
-// const circleWrapper = document.querySelector(".circle__wrapper");
-
-// box.style.cssText = "background-color: red; width: 100px; height: 100px";
-
-// buttons[0].style.width = "100px";
-// circles[1].style.backgroundColor = "yellow";
-// circle.style.backgroundColor = "yellow";
-
-// //// for (let i = 0; i < hearts.length; i++) {
-// ////   hearts[i].style.backgroundColor = 'green'
-// //// }
-
-// //// hearts.forEach((item) => {
-// ////   item.style.backgroundColor = 'gray'
-// //// })
-
-// const btn = document.createElement("button");
-// //// const text = document.createTextNode('I am text')
-
-// document.body.append(btn);
-
-// const myCircle = document.createElement("div");
-
-// myCircle.classList.add("circle");
-
-// //// circleWrapper.append(myCircle)
-// //// circleWrapper.before(myCircle)
-// ////circleWrapper.after(myCircle)
-// //// circles[0].after(myCircle)
-// //// circles[1].remove()
-// //// circles[1].replaceWith(myCircle)
-// //// circleWrapper.append(myCircle)
-// //// myCircle.innerHTML = '<pre>E</pre>'
-// //// myCircle.textContent = 'E'
-// //// circleWrapper.insertAdjacentHTML('beforeend', '<pre>E</pre>')
-///////////////////////////////////////////////////////////////////////////////////////////
+// circleWrapper.insertAdjacentHTML("afterbegin" , "<pre>p</pre>")//insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi p harfini circleWrapper ichida ona divni boshiga qo'shib berdi yani circleWrapper o'zgaruvchi ichidagi ona divni ichida boshiga p harfini qo'shib beradi
+// circleWrapper.insertAdjacentHTML("beforeend" , "<pre>p</pre>")//insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi p harfini circleWrapper ichida ona divni ohiriga qo'shib berdi yani circleWrapper o'zgaruvchi ichidagi ona divni ichida ohiriga p harfini qo'shib beradi
+// circleWrapper.insertAdjacentHTML("beforebegin" , "<pre>p</pre>")//insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi p harfini circleWrapper tashqarisida circleWrapperni ichidagi ona divdan oldinga qo'shib berdi
+// circleWrapper.insertAdjacentHTML("afterend" , "<pre>p</pre>")//insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi p harfini circleWrapper tashqarisida circleWrapperni ichidagi ona divdan keyinga qo'shib berdi
