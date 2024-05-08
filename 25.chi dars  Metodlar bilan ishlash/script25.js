@@ -24,24 +24,34 @@
 
 ////Htmlda berilgan classlarga Dynamic stylelar qo'shish
 
-const circles = document.querySelectorAll(".circle"); //bu holatdaham o'zgarishlarni console logda elements va elements csslarda element.style failida yellowga o'zgarganini ko'rish mumkun
-// console.log(circles);//yani NodeLinstda chiqadi ichida ko'plab metodlar bor foreach metodiham bor va bu metod juda kerak
-circles[1].style.backgroundColor = "yellow"; //yani All umumiy massiv qaytaradi shu uchun massivdagi qaysi yani nechchinchi elementga style berishni aytish kerak yani manabunday>>[1]//LEKIN!!! [1,2,3] qilib circle classlari ichidan bazilarini tanlab olib sttyle berib bo'lmaydi agar shuday qilinsa doim faqat ohiri kiritilgan tartib raqamidagi elementga ishlaydi yani o'zgarishlar faqat ohirgi raqam ostidagi elemetga tasir qiladi YANI faqat bittagina elementga tasir qiladi
+// const circles = document.querySelectorAll(".circle"); //bu holatdaham o'zgarishlarni console logda elements va elements csslarda element.style failida yellowga o'zgarganini ko'rish mumkun
+// // console.log(circles);//yani NodeLinstda chiqadi ichida ko'plab metodlar bor foreach metodiham bor va bu metod juda kerak
+// circles[1].style.backgroundColor = "yellow"; //yani All umumiy massiv qaytaradi shu uchun massivdagi qaysi yani nechchinchi elementga style berishni aytish kerak yani manabunday>>[1]//LEKIN!!! [1,2,3] qilib circle classlari ichidan bazilarini tanlab olib sttyle berib bo'lmaydi agar shuday qilinsa doim faqat ohiri kiritilgan tartib raqamidagi elementga ishlaydi yani o'zgarishlar faqat ohirgi raqam ostidagi elemetga tasir qiladi YANI faqat bittagina elementga tasir qiladi
 
-// // //cssText tegi bilan HTML CLASSGA umumiy dynamic style berish
+// // cssText tegi bilan HTML CLASSGA umumiy dynamic style berish
 // circles[1].style.cssText = "background-color:brown; width:100px; border-radius:10px; border:2px solid red; height:100px; color:red"//yani cssText tegi bilan circles o'zgaruvchi ichidagi tegnemga umumiy style berildi cssText tegi sabab yuqoridagiga o'hshab har bir classni alohida alohida yozib o'tirish shartmas//YANI QISQA KOD YOZIB STYLELARNI YOZISH//yani shu qatordagi dynamic style codlar ishladi yuqoridagilar emas chunki dasturlashda kodlar yuqoridan o'qib kelinadi yani kompyuter kodlarni birinchi qatordan boshlab o'qib keladi va ohirgi qatorda yuqoridagi kodlarni o'zgartiradigan kodlar bo'lsa ohirgi qatordagi kodlar ishlaydi shu sabab box buttonsga berilgan kodlarni eng pastidagi yani shu koment yozilgan koddagi dynamic stylelar ishladi(BU QATORDAGI KODLARNI CHERNAVIKGGA OLIB TURIB DARS TAKRORLANSIN!!!!!!!!!!)
 
-const circle = document.querySelector(".circle");
-circle.style.backgroundColor = "black"; //yani bu holatda querySelector ni o'zi bilan  chaqirilganda faqat bittasini yani birinchisi keladi va style dynamic tarzda o'zgaradi
+// const circle = document.querySelector(".circle");
+// circle.style.backgroundColor = "black"; //yani bu holatda querySelector ni o'zi bilan  chaqirilganda faqat bittasini yani birinchisi keladi va style dynamic tarzda o'zgaradi
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
+//// for tsikli yordamida clasllarni intirgatsa qilish yani NodeList sabab hamma claslarga birday style berish (All) buni ikkita yo'li bor for tsikli va forEach metodi orqali
+const hearts = document.querySelectorAll(".heart");
+console.log(hearts); //yani NodeLinstda chiqadi ichida ko'plab metodlar bor foreach metodiham bor va bu metod juda kerak
+// //for tsikli orqali htmldan massiv holatda keladigan classlarga bittada dynamic style berish
+// for (let i = 0; i < hearts.length; i++) {
+//     hearts[i].style.backgroundColor = "green"; //yani for tsikli bilan hearts o'zgaruvchi ichidagi html documenlar hammasi intrigatsa qilinib bittada stylelariga dynamic umumiy style berildi
+//     hearts[i].style.cssText =
+//         "background:white; padding:20px; margin-right:30px";//endi yuqoridagi "green" style o'rniga cssText orqali umumiy berilgan backgroundi white bo'lgan style ishladi (kod yuqoridan o'qib kelinishi hissobiga)
+// }
 
-
-
-
-
-
-
+//forEch tsikli orqali htmldan massiv holatda keladigan classlarga bittada dynamic style berish
+hearts.forEach((item) => {
+    item.style.backgroundColor = "brown";
+    // item.style.cssText =
+    //         "background:white; padding:20px; margin-right:30px";//endi yuqoridagi "brown" style o'rniga cssText orqali umumiy berilgan backgroundi white bo'lgan style ishladi (kod yuqoridan o'qib kelinishi hissobiga) foreachda yuqoridagi umumiy style berishlardan farqi umumiy styleni o'zgaruvchini o'ziga emas metodni argumentidagi elementlarga yani itemga berish kerak
+}); //yani forEch metodi bilab umumiy style berish oson va ko'p ishlatiladigan yo'li hissoblanadi
 
 
 
