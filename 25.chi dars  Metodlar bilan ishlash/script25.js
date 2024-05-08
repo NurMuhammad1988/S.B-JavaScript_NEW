@@ -37,8 +37,8 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 //// for tsikli yordamida clasllarni intirgatsa qilish yani NodeList sabab hamma claslarga birday style berish (All) buni ikkita yo'li bor for tsikli va forEach metodi orqali
-const hearts = document.querySelectorAll(".heart");
-console.log(hearts); //yani NodeLinstda chiqadi ichida ko'plab metodlar bor foreach metodiham bor va bu metod juda kerak
+// const hearts = document.querySelectorAll(".heart");
+// console.log(hearts); //yani NodeLinstda chiqadi ichida ko'plab metodlar bor foreach metodiham bor va bu metod juda kerak
 // //for tsikli orqali htmldan massiv holatda keladigan classlarga bittada dynamic style berish
 // for (let i = 0; i < hearts.length; i++) {
 //     hearts[i].style.backgroundColor = "green"; //yani for tsikli bilan hearts o'zgaruvchi ichidagi html documenlar hammasi intrigatsa qilinib bittada stylelariga dynamic umumiy style berildi
@@ -46,23 +46,39 @@ console.log(hearts); //yani NodeLinstda chiqadi ichida ko'plab metodlar bor fore
 //         "background:white; padding:20px; margin-right:30px";//endi yuqoridagi "green" style o'rniga cssText orqali umumiy berilgan backgroundi white bo'lgan style ishladi (kod yuqoridan o'qib kelinishi hissobiga)
 // }
 
-//forEch tsikli orqali htmldan massiv holatda keladigan classlarga bittada dynamic style berish
-hearts.forEach((item) => {
-    item.style.backgroundColor = "brown";
-    // item.style.cssText =
-    //         "background:white; padding:20px; margin-right:30px";//endi yuqoridagi "brown" style o'rniga cssText orqali umumiy berilgan backgroundi white bo'lgan style ishladi (kod yuqoridan o'qib kelinishi hissobiga) foreachda yuqoridagi umumiy style berishlardan farqi umumiy styleni o'zgaruvchini o'ziga emas metodni argumentidagi elementlarga yani itemga berish kerak
-}); //yani forEch metodi bilab umumiy style berish oson va ko'p ishlatiladigan yo'li hissoblanadi
+// //forEch tsikli orqali htmldan massiv holatda keladigan classlarga bittada dynamic style berish
+// hearts.forEach((item) => {
+//     item.style.backgroundColor = "brown";
+//     // item.style.cssText =
+//     //         "background:white; padding:20px; margin-right:30px";//endi yuqoridagi "brown" style o'rniga cssText orqali umumiy berilgan backgroundi white bo'lgan style ishladi (kod yuqoridan o'qib kelinishi hissobiga) foreachda yuqoridagi umumiy style berishlardan farqi umumiy styleni o'zgaruvchini o'ziga emas metodni argumentidagi elementlarga yani itemga berish kerak
+// }); //yani forEch metodi bilab umumiy style berish oson va ko'p ishlatiladigan yo'li hissoblanadi
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
+////////////Dynamic tarzda html elementlar ochish yani html documentda divlar va buttonlar ochish
 
+////createTextNode() metodi
+// const text = document.createTextNode("I am a text");//yani dynamic tarzda text qo'shish metodi
+// console.log(text);
 
+////createElement() metodi va append() metodi
+// const btn = document.createElement("button");
+// // console.log(btn);
+// document.body.append(btn); // yani bu holatda html documentga umumiy bodyni ichiga tartib bo'yicha eng pastiga yangi button tegi dynamic tarzda qo'shildi
 
+////createElement() metodi va append() va add() metodi
+const circleWrapper = document.querySelector(".circle__wrapper"); //yani html documentdagi ona divi chaqirildi
+const myCircle = document.createElement("div"); //yani yangi div ochildi
+// console.log(btn);
+myCircle.classList.add("circle"); //yangi divni classnameni classList bilan add metodi bilan circle qildik
+circleWrapper.append(myCircle); //yani myCircle o'zgaruvchini ichiga yangi div ochib claslist va add metodi bilan divga circle degan classname berib ichida yangi divi va divini classi bor tayyor myCircle o'zgaruvchini append metodi bilan circleWrapper o'zgaruvchiga chaqirildi//yani circleWrapper o'zgaruvchida ona div bor yani ona divni ichiga  myCircle o'zgaruvchi chaqirildi
+//////yani bu holatda circleWrapper nomli o'zgaruvchi yaratilib unga document.querySelector metodi bilan html documentdagi circle__wrapper classi chaqirildi va myCircle nomli o'zgaruvchi yaratilib unda createElement metodi bilan html documentga bitta div dynamic tarzda qo'shildi va myCircle o'zgaruvchiga (yani ichida yangi divi bor o'zgaruvchiga) clastlis va append metodi bilan htmlda mavjud bo'lgan (yani 4 dona circle nomli classlar bor) cercle classlariga yangi circle classi berildi (yani yangi divga circle clasi berildi bu degani htmlda endi circle 4 emas 5 ta degani va cssdagi classlar bu beshinchi yangi dynamic tarzda berilgan  divga yani circle nomli divgaham tasir qiladi va browserdagi dumaloqchalar bittaga ko'payadi) va circleWrapper o'zgaruvchiga append metodi bilan append metodini argumentiga  myCircle o'zgaruvchi chaqirildi
 
+//yani bunday holatda yani ona div ichiga yangi div dynamic qo'shilgandaham tartib bo'yicha ohiriga borib turadi
 
+circleWrapper.before(myCircle)//before metodi bilan yangi divni joyini o'zgartirdik//yani bu holatda circle__wrapper ona dividan tashqariga chiqadi yani oldinga chiqdi 
 
-
-
-
+circleWrapper.after(myCircle)//after metodi bilan yangi divni joyini o'zgartirdik//yani bu holatda circle__wrapper ona dividan tashqariga chiqadi yani ona divdan pastda chiqdi 
 
 
 
