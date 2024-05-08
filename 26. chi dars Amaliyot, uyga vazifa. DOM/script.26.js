@@ -1,4 +1,24 @@
 "use strict";
+const adv = document.querySelectorAll(".promo__adv img"),
+wrapper = document.querySelector(".promo__bg"),
+genre = document.querySelector(".promo__genre"),
+seriesList = document.querySelector(".promo__intreactive-list")
+
+const seriesDB = {
+    series:[
+        "OMAR",
+        "THE FINAL LEGACY",
+        "ERTUGRUL",
+        "MAGNIFICENT CENTURY",
+        "THE GREAT SELJUCKS GUARDIANS..."
+
+    ]
+}
+
+
+
+
+
 
 
 
@@ -43,3 +63,4 @@
 // deleteHtml[2].remove();
 // deleteHtml[3].remove();
 // deleteHtml[4].remove();
+// ///////////////////////////O'ZIM BAJARGANIM////////////////////////////////////////////////
