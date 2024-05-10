@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style29.css">
+    <title>29.chi dars Amaliyot, uyga vazifa. DOM XODISA</title>
+</head>
+
+<body>
+
+    <br>
+    <a href="../index.html">Bosh sahifa</a>
+    <br><br>
+    <h1>29. chi dars Amaliyot, uyga vazifa. DOM XODISA</h1>
+
+    <br><br>
+
+    <a target="_blank"
+        href="https://sammi.ac/course/javascript/dashboard/653d3a2728da4c78b7e07a79?section=653d2cef28da4c78b7e0794b">29.
+        chi dars Amaliyot, uyga vazifa. DOM XODISA darsi videosi</a>
+    <br><br>
+    <p>////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    </p>
+    <br>
+
+    <!-- ..////////////////////////////////////////////////////////////////////////////////////////// -->
+    <main class="promo">
+        <div class="promo__content">
+            <div class="promo__bg">
+                <div class="promo__genre">DRAMA</div>
+                <div class="promo__title">BEST EARTH</div>
+                <div class="promo__descr">
+                    THE STORY OF A MAN WHO SURVIVED ON AN ALIEN PLANET ALONE
+                </div>
+                <div class="promo__ratings">
+                    <span>IMDb: 8.0</span>
+                    <span>Movie star: 7.7</span>
+                </div>
+            </div>
+            <div class="promo__interactive">
+                <div>
+                    <div class="promo__interactive-title">RECENT SERIES</div>
+                    <ul class="promo__interactive-list">
+                        <li class="promo__interactive-item">
+                            OMAR
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">
+                            The Final Legacy
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">
+                            ERTUGRUL
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">
+                            MAGNIFICENT CENTURY
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">
+                            GREAT SELJUKS: GUARDIANS...
+                            <div class="delete"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <form class="add">
+                        <div class="promo__interactive-title">ADD NEW SERIES</div>
+                        <span>Name of series</span>
+                        <input class="adding__input" type="text" placeholder="What has already been viewed.?" />
+                        <span>Make it your favorite?</span>
+                        <input type="checkbox" />
+                        <span class="yes">Yes!</span>
+                        <button>Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="promo__adv">
+            <div class="promo__adv-title">Advertising from sponsors</div>
+            <img src="./img/facebook.jpg" alt="some picture" />
+            <img src="./img/media.png" alt="some picture" />
+            <img src="./img/content_2.jpg" alt="some picture" />
+            <img src="./img/content_3.png" alt="some picture" />
+        </div>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>const adv = document.querySelectorAll(".promo__adv img"),
+        genre = document.querySelector(".promo__genre"),
+        wrapper = document.querySelector(".promo__bg"),
+        seriesList = document.querySelector(".promo__interactive-list");
+        const seriesDB = {
+        series: [
+        "OMAR",
+        "THE FINAL LEGACY",
+        "ERTUGRUL",
+        "MAGNIFICENT CENTURY",
+        "THE GREAT SELJUCKS GUARDIANS...",
+        ],
+        };
+        // console.log(adv);
+        adv.forEach((item) => {
+        item.remove();
+        }); //yani adv o'zgaruvchi ichidagi promo__adv classini ichidagi img lar udalit qilindi yani bittada foreach
+        metodi bilan intrigatsa qilib udalit qilindi
+        genre.textContent = "Comedy"; //yani genre o'zgaruvchi ichidafi promo__genre clasidagi drama texti dynamic
+        tarzda comedyga o'zgardi
+        wrapper.style.backgroundImage = 'url("img/1.jpg")'; //yani wrapper o'zgaruvchi ichidagi promo__bg clasiga cssda
+        berilgan background imge dynamic tarzda boshqa imga o'zgartirildi
+        console.log((seriesList.innerHTML = "")); //yani serieslist o'zgaruvchi ichidagi promo__interactive-list ona
+        divli classni innerHTML qiymati bilan (innerHtml qiymati dynamic tazda textlar qo'shadi lekin bu yerda bo'sh
+        katak "" berilgani uchun promo__interactive-list classidagi html textlar yo'q bo'ldi yani ko'rinmay qoldi chunki
+        innerHTML doim string qaytaradi stringni esa " bu bilan ichiga yozmay bo'sh qilib qo'yish mumkun")
+        seriesDB.series.forEach((item, index) => {
+        seriesList.innerHTML += `
+        <!-- <li class="promo__interactive-item"> ${index + 1} ${item}
+        <div class="delete"></div>
+    </li> -->
+        `;
+        }); //yani seriesdb objecti foreach meofi bilan intrigatsa qilinib ichidagi itemlar innerHTML qiymati orqali
+        promo__interactive-item clasiga itrigatsa bo'lgan objectdagi itemlar yani qiymatlar dynamic tarzda kiritib
+        qo'yildi seriesdbdagi series massiv bo'lgani uchun tartib raqamlar noldan boshlanadi shu uchun massivni
+        indexlariham olinib userga tushunarli bo'lishu uchun 1 dan boslanadigan qilib qo'yildi>>${index + 1}
+    </p>
+    <script src="./script.29.js"></script>
+</body>
+
+</html>
