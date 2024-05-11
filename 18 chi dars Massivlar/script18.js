@@ -84,11 +84,11 @@
 // console.log(userMovies1.join('- '));////join metodi matnlarni orasini - <<<manashi bilan bo'lib beradi yani yani split bilan matndan massivga join metodi bilan esa massivdan matinga o'tkazishimiz mumkun
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-// //sort metodi yani  hariflarni alphabet shaklida (alfabet)  a, b  qilib beradi yani alfabet shaklida tartibida terib beradi
-// const movies2 = prompt("What's your favorute movies?" , "");
-// const userMovies2 = movies2.split(", ")
-// userMovies2.sort()//sort metodi alfabet shaklida a dan boshlab terib beradi sartirofka qilib
-// console.log(userMovies2.join('- '));
+//sort metodi yani  hariflarni alphabet shaklida (alfabet)  a, b  qilib beradi yani alfabet shaklida tartibida terib beradi
+const movies2 = prompt("What's your favorute movies?" , "");
+const userMovies2 = movies2.split(", ")
+userMovies2.sort()//sort metodi alfabet shaklida a dan boshlab terib beradi sartirofka qilib
+console.log(userMovies2.join('- '));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ////sort metodi array number malumot turlari bilan ishlaganda
