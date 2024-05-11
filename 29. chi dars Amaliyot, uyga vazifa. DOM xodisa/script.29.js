@@ -21,13 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
     addForm.addEventListener("submit", (event) => {
         event.preventDefault(); //yani bu holatda addEventListener metodi bilan addForm o'zgaruvchi ichidagi formni add classidagi formga elementiga submit yani harakat bosilganda event parametriga preventDefault hodisasi qo'shildi yani submit bo'lganda sayt qayta yuklanmasdan faqat bosilgan submit formini o'zi yuklanadi va bu JS hissoblanadi yani saytni faqat kerakli joyini ishlatish yani har saafar qandaydur hodisa sodir etilganda saytni qayta qayta yklamasdan tez ishlashi uchun kerak metodlar
 
-        const newSeries = inputVal.value; //yani bu holatda newSeries nomli yangi o'zgaruvchi ochilib ichiga inputVal nomli o'zgaruvchi ichida chaqirilgan addForm o'zgaruvchi ichidagi yani htmlda form elementi ichidagi adding__input classi olinib unga yani form ichidagi inputga yoziladigan yani tushadigan qiymat yani valuesi olindi//logga qaralsin
+        let newSeries = inputVal.value; //letni const bilan farqi constni o'zgartirish qiyin letni esa o'zgartirish oson //yani bu holatda newSeries nomli yangi o'zgaruvchi ochilib ichiga inputVal nomli o'zgaruvchi ichida chaqirilgan addForm o'zgaruvchi ichidagi yani htmlda form elementi ichidagi adding__input classi olinib unga yani form ichidagi inputga yoziladigan yani tushadigan qiymat yani valuesi olindi//logga qaralsin
         const favorite = checkbox.checked; //yani  bu holatda favorite nomli o'zgaruvchi yaratilib ichiga checkbox o'zgaruvchi ichidagi addForm o'zgaruvchidan chaqirilgan [type='checkbox'] atributi checked qilindi yani htmldagi input elementidagi checkbox atributi shunday hususiyatga egaki yani false va true operatori bilan ishlaydi  yani checked to'g'ri bo'lsa true hato bo'lsa false qaytaradi shu true yoki falseni checked qiymati bilan olindi//logga qaralsin
         //// console.log(newSeries);
         //// console.log(favorite);
 
         if (newSeries) {
             //yani agar inputni ichi bo'sh bo'lmasa yani true bo'lsa yani biror narsa yozilgan bo'lsagina pastdagi metod va funcsiyalar ishlasin false bo'lsa ishlamasin
+            if (newSeries.length > 18) {
+                newSeries = `${newSeries.substring(0, 18)}...`;
+            }
             seriesDB.series.push(newSeries);
             sortArr(seriesDB.series); //yani bu funksiya seriesDB ichidagi arraylardagi ro'yhatni alphabet bo'yicha a, z qilib terib beradi yani har safar yangi text qo'shilgandaham doim bosh hariflar alphabet tartibida tartiblanadi
             createSeriesList(seriesDB.series, seriesList);
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function createSeriesList(series, parent) {
-        //createSeriesList parent ona divlarga berildi
+        //createSeriesList (parent), ona divlarga berildi
         parent.innerHTML = ""; //yani serieslist o'zgaruvchi ichidagi promo__interactive-list ona divli classni (ul) innerHTML qiymati bilan (innerHtml qiymati dynamic tazda textlar qo'shadi lekin bu yerda bo'sh katak "" berilgani uchun promo__interactive-list classidagi html textlar yo'q bo'ldi yani ko'rinmay qoldi chunki innerHTML  doim string qaytaradi stringni esa "" bu bilan ichiga yozmay bo'sh qilib qo'yish mumkun")
         series.forEach((item, index) => {
             parent.innerHTML += `
