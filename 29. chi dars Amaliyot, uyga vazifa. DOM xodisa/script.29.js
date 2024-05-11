@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 trash.parentElement.remove();
                 seriesDB.series.splice(idx, 1);
                 createSeriesList(series, parent);
-            }); //yani bu holatda  document.querySelectorAll bilan htmldagi hamma delete nomli classlar chaqirildi va fir each metodi bilan intirgatsa qilindi va click hodisasi sodir bo'lganda yani delete clasida bor musur paqirchaga click bo'lganda shu delete classini ona divi remove metodi bilan udalit qilindi va splice metodi bilan massivdagi har qanday tartib raqamli elementlar udalit bo'lganda raqamlari yana 1 dan boshlanadigan qilib qo'yildi va createSeriesList funksiyasi yana chaqirilib endi parametrida seriesdb objecti ichidagi series massivi va paren parametri chaqirib qo'yildi bu holatda parent parametri ona divni nazarda tutadi
+            }); //yani bu holatda  document.querySelectorAll bilan htmldagi hamma delete nomli classlar chaqirildi va fir each metodi bilan intirgatsa qilindi va click hodisasi sodir bo'lganda yani delete clasida bor musur paqirchaga click bo'lganda shu delete classini ona divi remove metodi bilan udalit qilindi va splice metodi bilan massivdagi har qanday tartib raqamli elementlar udalit bo'lganda raqamlari yana 1 dan boshlanadigan qilib qo'yildi va createSeriesList funksiyasi yana chaqirilib endi parametrida seriesdb objecti ichidagi series massivi va paren parametri chaqirib qo'yildi bu holatda parent parametri ona divni delete clasini ona divini yani promo__interactive-item classini  nazarda tutadi
         });
     }
 
