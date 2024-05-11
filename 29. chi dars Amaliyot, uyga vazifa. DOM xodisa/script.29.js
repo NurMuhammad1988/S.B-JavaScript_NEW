@@ -27,12 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
         //// console.log(favorite);
 
         if (newSeries) {
-            //yani agar inputni ichi bo'sh bo'lmasa yani true bo'lsa yani biror narsa yozilgan bo'lsagina pastdagi metod va funcsiyalar ishlasin false bo'lsa ishlamasin
+            //yani if else operatoridi parametrida (argumentida) shu ichida>>()mantiqan nimadur qilinishi kerak bo'lgan o'zgaruvchi yoki funksiya yoziladi
+
             if (newSeries.length > 18) {
-                newSeries = `${newSeries.substring(0, 18)}...`;
+                //yani agar inputni ichi bo'sh bo'lmasa yani true bo'lsa yani biror narsa yozilgan bo'lsagina pastdagi metod va funcsiyalar ishlasin false bo'lsa ishlamasin
+                newSeries = `${newSeries.substring(0, 18)}...`; //yani agar let newSeries o'zgaruvchi ichidagi inputVal o'zgaruvchisi ichida chaqirilgan .adding__input classli inputga user tomonidan kiritiladigan textlar 19 tadan ko'p bo'lsa substring metodi bilan qolganini yashirib text 19 tadan uzun ekanligini bildirish uchun uchta nuqta qo'yildi yani becet ichida interpalatsa orqali yozildi
             }
+
+            if (favorite) {
+                //yani agar checked true bo'lsa yani checkedda >>>✔ bo'lsa logda sevimli serial qo'shildi texti chiqsin
+                console.log("Sevimli serial qo`shildi");
+            }
+
             seriesDB.series.push(newSeries);
-            sortArr(seriesDB.series); //yani bu funksiya seriesDB ichidagi arraylardagi ro'yhatni alphabet bo'yicha a, z qilib terib beradi yani har safar yangi text qo'shilgandaham doim bosh hariflar alphabet tartibida tartiblanadi
+            sortArr(seriesDB.series); //yani bu funksiya seriesDB ichidagi arraylardagi ro'yhatni alphabet bo'yicha a, z qilib terib beradi yani har safar yangi text qo'shilgandaham doim bosh hariflar alphabet tartibida tartiblanadi yani bu faqat yangi qo'shiladigan arraylarga tegishli
             createSeriesList(seriesDB.series, seriesList);
         }
 
@@ -57,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createSeriesList(series, parent) {
         //createSeriesList (parent), ona divlarga berildi
         parent.innerHTML = ""; //yani serieslist o'zgaruvchi ichidagi promo__interactive-list ona divli classni (ul) innerHTML qiymati bilan (innerHtml qiymati dynamic tazda textlar qo'shadi lekin bu yerda bo'sh katak "" berilgani uchun promo__interactive-list classidagi html textlar yo'q bo'ldi yani ko'rinmay qoldi chunki innerHTML  doim string qaytaradi stringni esa "" bu bilan ichiga yozmay bo'sh qilib qo'yish mumkun")
+        sortArr(series)
         series.forEach((item, index) => {
             parent.innerHTML += `
     <li class="promo__interactive-item"> ${index + 1} ${item}
@@ -64,6 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
 </li>
     `;
         }); //yani seriesDB objecti foreach metodi bilan  intrigatsa qilinib ichidagi itemlar innerHTML qiymati orqali promo__interactive-item clasiga itrigatsa bo'lgan objectdagi itemlar yani qiymatlar dynamic tarzda kiritib qo'yildi  seriesdbdagi series massiv bo'lgani uchun tartib raqamlar noldan boshlanadi shu uchun massivni indexlariham olinib userga tushunarli bo'lishi uchun 1 dan boshlanadigan qilib qo'yildi>>${index + 1}
+        document.querySelectorAll(".delete").forEach((trash, idx) => {
+            trash.addEventListener("click", () => {
+                trash.parentElement.remove();
+                seriesDB.series.splice(idx, 1);
+                // console.log(seriesDB.series);
+                createSeriesList(series, parent);
+            });
+        });
     }
 
     sortArr(seriesDB.series);
