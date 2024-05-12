@@ -1,22 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background-color: rgb(68, 61, 61);
+  background-color: rgba(0, 0, 0, 0.844);
   color: white;
   margin: 30px;
 }
 
-a{
+a {
   color: white;
   text-decoration: none;
   font-size: 20px;
 }
 
-a:hover{
+a:hover {
   text-decoration: underline;
   color: red;
 }

@@ -1,5 +1,5 @@
 "use strict";
-// const btns = document.querySelectorAll("button"); //yani bu holatda querySelectorAll metodi bilan htmldagi button elementlarini hammasini oldik
+const btns = document.querySelectorAll("button"); //yani bu holatda querySelectorAll metodi bilan htmldagi button elementlarini hammasini oldik
 // console.log(btns);//yani querySelectorAll doim nodelistda massiv qaytaradi
 
 //length metodi
@@ -30,15 +30,13 @@
 // }
 
 ////addEventListener metodi bilan toggle qilish
-// btns[0].addEventListener("click", () => {
-//     //yani agar btns o'zgaruvchi ichidagi button elementlarni 0 chi elementiga click hodisasi sodir bo'lganda
-//     if (!btns[1].classList.contains("red")) {//yani agarda  btns o'zgaruvchi ichidagi button elementlarni 1 chi elementida red classi yo'q bo'lsa red classini add metodi bilan qo'shamiz
-//         btns[1].classList.add("red");
-//     } else {
-//         btns[1].classList.remove("red");//yokida 1 chi elementda red classi bor bo'lsa remove yani udalit qilinsin//yani nima bo'lganda shunday bo'lsin? !!!0 chi elementda addEventListener metodi bilan click hodisasi bo'lganda
-//     }
+btns[0].addEventListener("click", () => {
+    //yani agar btns o'zgaruvchi ichidagi button elementlarni 0 chi elementiga click hodisasi sodir bo'lganda
+    if (!btns[1].classList.contains("red")) {//yani agarda  btns o'zgaruvchi ichidagi button elementlarni 1 chi elementida red classi yo'q bo'lsa red classini add metodi bilan qo'shamiz
+        btns[1].classList.add("red");
+    } else {
+        btns[1].classList.remove("red");//yokida 1 chi elementda red classi bor bo'lsa remove yani udalit qilinsin//yani nima bo'lganda shunday bo'lsin? !!!0 chi elementda addEventListener metodi bilan click hodisasi bo'lganda
+    }
 
-//     // btns[1].classList.toggle("red"); //toggle metodi bilan yuqoridagi to'rt qator kod bir qatorda  yozildi togleni faqat bitta class qo'shish va o'chirish kerak bo'lganda ishlatgan yahshi lekin boshqa addEventListener bilan boshqa funksiyalarham qo'shish kerakbo'lgan paytda yuqoridagi if else bilan qilgan yahshiroq hissoblanadi
-// });
-
-
+    // btns[1].classList.toggle("red"); //toggle metodi bilan yuqoridagi to'rt qator kod bir qatorda  yozildi togleni faqat bitta class qo'shish va o'chirish kerak bo'lganda ishlatgan yahshi lekin boshqa addEventListener bilan boshqa funksiyalarham qo'shish kerakbo'lgan paytda yuqoridagi if else bilan qilgan yahshiroq hissoblanadi
+});
