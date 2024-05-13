@@ -32,7 +32,7 @@ const btns = document.querySelectorAll("button"); //yani bu holatda querySelecto
 ////addEventListener metodi bilan toggle qilish
 btns[0].addEventListener("click", () => {
     //yani agar btns o'zgaruvchi ichidagi button elementlarni 0 chi elementiga click hodisasi sodir bo'lganda
-    if (!btns[1].classList.contains("red")) {//yani agarda  btns o'zgaruvchi ichidagi button elementlarni 1 chi elementida red classi yo'q bo'lsa red classini add metodi bilan qo'shamiz
+    if (!btns[1].classList.contains("red")) {//yani agarda  btns o'zgaruvchi ichidagi button elementlarni 1 chi elementida red classi yo'q bo'lsa YANI FALSE BO'LSA red classini add metodi bilan qo'shamiz//yani bu holatda >>! belgisi YANI UNDOV BELGISI falseni trugga aylatrib beradi yani bu holatda??? UNDOVSIZ IF OPERATORIGA BERILGAN SAVOL FALSEDAN BOSHLANIB QOLARDI LEKIN ASLIDA IF FAQAT TRU BO'LSAGINA ISHLAYDI SHU SABAB UNDOV BILAN FALSE TRU QILIB OLINDI YANI AGAR BTNSNI 1 CHI ELEMENTIDA RED CLASSI BO'LMASA ADD METODI BILAN RED CLASSINI QO'SH AGAR BOR BO'LSA YANI TRUE BO'LSA REMOVE METODI BILAN UDALIT QIL DEGAN KOD YOZILDI
         btns[1].classList.add("red");
     } else {
         btns[1].classList.remove("red");//yokida 1 chi elementda red classi bor bo'lsa remove yani udalit qilinsin//yani nima bo'lganda shunday bo'lsin? !!!0 chi elementda addEventListener metodi bilan click hodisasi bo'lganda

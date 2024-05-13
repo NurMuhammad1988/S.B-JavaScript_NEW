@@ -54,14 +54,14 @@
 // console.log(isAge && isClose && isCheked);//javob false//yokida yani orda ichida bitta false bo'lsaham javob false bo'ladi vani ishlatganda hammasi true bo'lishi kerak shunda javob true bo'ladi lekin yokida bitta bo'lsaham false bo'lsa javob hammasi false bo'ladi
 
 
-// const isAge = true;
-// const isClose = true;
-// const isCheked = false;
-// console.log(isAge && isClose && !isCheked);//bu belgi ! yani undov falseni teskarisiga yani truega almashtiradi isCheked false ekanligiga etibor ber ! undov belgisi faqat falseni turuga aylantirib beradi
-// console.log(!isCheked);//true ! shu belgi sabab aslida esa bu false edi
+const isAge = true;
+const isClose = true;
+const isCheked = false;
+console.log(isAge && isClose && !isCheked);//bu belgi ! yani undov falseni teskarisiga yani truega almashtiradi isCheked false ekanligiga etibor ber ! undov belgisi faqat falseni turuga aylantirib beradi
+console.log(!isCheked);//true ! shu belgi sabab aslida esa bu false edi
 
-console.log(2 + 2 * 2 === 8); //birinchi ko'paytiruv amalyotini bajaradi yani 2 * 2 = 4; 4 + 2 = 6 javobi 6 lekin savolda 2 + 2 * 2 === 8 javob sakkiz to'g'rimi deyildi javob esa yo'q false bo'ladi chunki js birinchi ko'paytiruvni hissoblaydi
+// console.log(2 + 2 * 2 === 8); //birinchi ko'paytiruv amalyotini bajaradi yani 2 * 2 = 4; 4 + 2 = 6 javobi 6 lekin savolda 2 + 2 * 2 === 8 javob sakkiz to'g'rimi deyildi javob esa yo'q false bo'ladi chunki js birinchi ko'paytiruvni hissoblaydi
 
-console.log(2 + 2 * 2 != 8); //yani ! bu belgi 6 8 bilan teng emasmi degan savolni qo'yadi javob ture yani  ha teng emas //yani bu yerda true chunki ! belgisi falseni true qilib beradi
+// console.log(2 + 2 * 2 != 8); //yani ! bu belgi 6 8 bilan teng emasmi degan savolni qo'yadi javob ture yani  ha teng emas //yani bu yerda true chunki ! belgisi falseni true qilib beradi
 
-console.log(2 + 2 * 2 !== "6"); // true yani 2 * 2 = 4; 4 + 2 = 6; "6" ga qattiy teng emasmi (==) ha qattiy teng  javob true
+// console.log(2 + 2 * 2 !== "6"); // true yani 2 * 2 = 4; 4 + 2 = 6; "6" ga qattiy teng emasmi (==) ha qattiy teng  javob true
