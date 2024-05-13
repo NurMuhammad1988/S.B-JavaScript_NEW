@@ -20,13 +20,61 @@
 //     }
 // });
 
-const btn = document.querySelector(".btn-block");
-btn.addEventListener("click", (event) => {
-    if (event.target && event.target.classList.contains("blue")) {
-        //yani agar addEventListener funksya metodini maqsadi bo'lgan click hodisasida (event yani voqelikda) blue classi bor bo'lsa logda 'blue classli btn bosildi' textni chiqsin//yani classListida blue classi bor bo'lsa yani containsida yani blue classiga o'ralgan bo'lsa //YANI CLASSLIST, CONTAINS QIYMAT VA METODLARI HTMLDAN ULANGAN HAR QANDAY ELEMENTI OBJECT QILIB OLADI CHUNKI YANI BU HOLATDA MASSIV ASLIDA MASSIVHAM OBJECTNI BOSHQACHA TURI HISSOBLANADI  YANI BU HOLATDA CLASSLIST VA CONTAINSLAR BLUE OBJECTINI BOR YO'QLIGINI DOMDAN BILIB OLDI YANI HTML JS GA ULANGANDA HAMMASI JS GA MOSLASHADI OBJECT KO'RINISHIDA OBJECTDA ESA HAMMA MAYDA DETALLARGACHA HATTO BO'SH KATAKLARGACHA DALNILAR BOR HTMLDAGI ALL HTMLDA BU KO'RINIB TURIPTI SHU SABABHAM AGAR HODISA SODIR BO;O'LISHI KERAK BO'LGAN ELEMENTDA BLUE CLASSI BOR BO'LSA LOGDA TEXT CHIQSIN DEGAN BUYRUQ BAJARILDI BU !!!MENIMCHAAAAAA!!!  
-        console.log("blue classli btn bosildi");
+// const btn = document.querySelector(".btn-block");
+// btn.addEventListener("click", (event) => {
+//     if (event.target && event.target.classList.contains("blue")) {
+//         //yani agar addEventListener funksya metodini maqsadi bo'lgan click hodisasida (event yani voqelikda) blue classi bor bo'lsa logda 'blue classli btn bosildi' textni chiqsin//yani classListida blue classi bor bo'lsa yani containsida yani blue classiga o'ralgan bo'lsa //YANI CLASSLIST, CONTAINS QIYMAT VA METODLARI HTMLDAN ULANGAN HAR QANDAY ELEMENTI OBJECT QILIB OLADI CHUNKI YANI BU HOLATDA MASSIV ASLIDA MASSIVHAM OBJECTNI BOSHQACHA TURI HISSOBLANADI  YANI BU HOLATDA CLASSLIST VA CONTAINSLAR BLUE OBJECTINI BOR YO'QLIGINI DOMDAN BILIB OLDI YANI HTML JS GA ULANGANDA HAMMASI JS GA MOSLASHADI OBJECT KO'RINISHIDA OBJECTDA ESA HAMMA MAYDA DETALLARGACHA HATTO BO'SH KATAKLARGACHA DALNILAR BOR HTMLDAGI ALL HTMLDA (console dirda ko'rinadi) BU KO'RINIB TURIPTI SHU SABABHAM AGAR HODISA SODIR BO;O'LISHI KERAK BO'LGAN ELEMENTDA BLUE CLASSI BOR BO'LSA LOGDA TEXT CHIQSIN DEGAN BUYRUQ BAJARILDI BU !!!MENIMCHAAAAAA!!!
+//         console.log("blue classli btn bosildi");
+//     }
+// });
+// console.dir(btn);// if (event.target && event.target.classList.contains("blue")) ning holatini jsda ko'rish uchun dir ishlatildi katta harifli komentlar shu sabab yozildi
 
+// ////Delegatsiyani muhumligi sababi???
+// const btn = document.querySelector(".btn-block"),
+//     btns = document.querySelectorAll("button");
+// btns.forEach((item) => {
+//     //yani btn nomli o'zgaruvchiga btn-block nomli ona div chaqirilib btns nomli yangi local o'zgaruvchi yaratib unga (ona) o'zgaruvchisidagi btn-block ichidagi buttonlar chaqirildi va btns foreach metodi bilan itemlari yani btnsni elementlari intrigatsa qilinib itemlarga hammasiga bittada addEventListener objectidagi click hodisasi qo'shildi click hodisasida logda "bosildi" texti chiqishi buyurildi lekin pastroqda shu btn-block diviga dynamic qo'shilgan buttonda bu click hodisasi ishlamadi???
+//     item.addEventListener("click", () => {
+//         console.log("bosildi");
+//     });
+// }); //yani bu holatda dynamic tarzda qo'shilgan red classli buttonga logdagi "bosildi" texti ishlamadi yani buttonlarga foreach metodi bilan berilgan adeventlistenerdagi click hodisasi dynamic tarzda qo'shilgan lekin yangi buttonda ishlamadi chunki yangi button dynamic qo'shildi yani addEventListenerni itemlarida yo'q
+// const dynamicBtn = document.createElement("button");
+// dynamicBtn.classList.add("red");
+// btn.append(dynamicBtn);
+// dynamicBtn.textContent = "9";
+// dynamicBtn.style.cssText = "color:white";
+
+////////////////////////////////////////Delegatsiyani to'gri qilish
+const btn = document.querySelector(".btn-block"),
+    btns = document.querySelectorAll("button");
+btns[0].addEventListener("click", () => {
+    btns[1].classList.toggle("red");
+});
+btn.addEventListener("click", (event) => {
+    if (event.target && event.target.classList.contains("red")) {
+        console.log("All the btns click");
     }
 });
+const dynamicBtn = document.createElement("button");
+dynamicBtn.classList.add("red");
+btn.append(dynamicBtn);
+dynamicBtn.textContent = "9";
+dynamicBtn.style.cssText = "color:white"; // delegatsya qanday ishlaydi?? yani bu holatda btn o'zgaruvchidagi ona div yani btn-block classi chaqirildi va btns o'zgaruvchida esa btn-classini bollari  yani elementlari hissoblangan buttonlar chaqirildi va buttonlarni nolinchisiga addEventListener hodisa objecti bilan event.targetida red classi bor bo'lsa buttonni birinchi elementiga red clasini qo'shish agar yo'q bo'sa o'chirish agar bor bo'lsa click bo'lgabda logda "All the btns click" texti chiqsin deyildi  red classi esa  dynamic tarza berib qo'yildi va asosiy btn o'zgaruvchiga click hodisasi sodir bo'lganda elementlarida event targetida red classi bor bo'lsa "All the btns click" texti chiqsin deyildi
 
-console.dir(btn);
+////////////////////////////delegetsiyada matches metodi bilan ishlash buham bir hil ishlaydi faqat sintaksiz murakkabroq
+// const btn = document.querySelector(".btn-block"),
+//     btns = document.querySelectorAll("button");
+
+//     btns[0].addEventListener("click", ()=>{
+//         btns[1].classList.toggle("red")
+//     })
+// btn.addEventListener("click", (event) => {
+//     if (event.target && event.target.matches("button.red")) {//delegatsyada matches metodini ishlatish
+//         console.log("All the btns click");
+//     }
+// });
+// const dynamicBtn = document.createElement("button");
+// dynamicBtn.classList.add("red");
+// btn.append(dynamicBtn);
+// dynamicBtn.textContent = "9";
+// dynamicBtn.style.cssText = "color:blue";
