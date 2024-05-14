@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 
-////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab BOSHLANDI
+//34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab BOSHLANDI
 window.addEventListener("DOMContentLoaded", () => {
     //yani butun window bo'yicha DOMContentLoaded hodisasi qo'shildi yani html DOMdocumentlar butunlay ochilib bo'lgandan keyingina js kodlarimiz ishlaydi
 
@@ -49,3 +49,9 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 ////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab TUGADI
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+////35.chi dars (Web Loyiha-2 chi darsi)  Animatsiya. setTimeOut & setInterval BOSHLANDI
+
+////35.chi dars (Web Loyiha-2 chi darsi)  Animatsiya. setTimeOut & setInterval TUGADI
