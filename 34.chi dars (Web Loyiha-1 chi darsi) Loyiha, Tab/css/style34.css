@@ -8,8 +8,10 @@
 }
 
 /* my own classsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
-/* .own-div{
+.own-div{
   background-color: #2d3436;
+  color: silver;
+
 }
 .own-a{
   color: silver;
@@ -20,9 +22,9 @@
   color: red;
 }
 .own-h1{
-  color: silver;
   margin: 10px;
-} */
+}
+
 /* my own classssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
 a {
   text-decoration: none;
