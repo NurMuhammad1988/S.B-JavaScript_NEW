@@ -53,6 +53,7 @@ btns[0].addEventListener("click", () => {
 btn.addEventListener("click", (event) => {
     if (event.target && event.target.classList.contains("red")) {
         console.log("All the btns click");
+        // prompt("salom")
     }
 });
 const dynamicBtn = document.createElement("button");
