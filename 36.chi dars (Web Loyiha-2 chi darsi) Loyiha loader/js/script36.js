@@ -11,8 +11,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const tabsParent = document.querySelector(".tabheader__items"), //htmldagi preview katta ona dividagi tabheader__items bola divi chaqirib olindi yani bu bola div saytdagi  Category Of Series bolimi hissoblanadi Category Of Series bo'limi esa preview bo'limini boshi yani catrgoryalarni tanlash bo'limi hissoblanadi
         tabs = document.querySelectorAll(".tabheader__item"), //tabheader__item classli divlar categoreylarni nomi yani comedy sport fantastic bo'limlarga olib o'tish uchun kerak bo'ladigan html documentlar chaqirib olindi
-        tabsContent = document.querySelectorAll(".tabcontent"); //htmldagi tabcontent classlari yani divlari 5 ta bo'lgani uchun komentariyga olingan edi endi esa komentariydan chiqariladi chunki js bilan dynamic tarzda o'zgartirilishlar kiritilishi kerak yani Category Of Series bo'limidagi categoriylarga bosilganda yani har biriga bosilgada shu categoriyga tegishli content tabcontent diviga asoisy bo'lib kelishi kerak !!!console.log(tabParent)!!!
+        tabsContent = document.querySelectorAll(".tabcontent"), //htmldagi tabcontent classlari yani divlari 5 ta bo'lgani uchun komentariyga olingan edi endi esa komentariydan chiqariladi chunki js bilan dynamic tarzda o'zgartirilishlar kiritilishi kerak yani Category Of Series bo'limidagi categoriylarga bosilganda yani har biriga bosilgada shu categoriyga tegishli content tabcontent diviga asoisy bo'lib kelishi kerak !!!console.log(tabParent)!!!
+        loader = document.querySelector(".loader"); //htmldagi section divini classi loaderga cssda ichiga paper man nomli animatsya berilgan
 
+    ////LOADER
+    ////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader darsi
+    setTimeout(() => {
+        loader.style.opacity = "0"; //yani loader o'zgaruvchi ichidagi htmlda ichida animatsya bor loader classli div chaqirib olingan settimeout funksiyani ichida shu loader o'zgaruvchi chaqirib olinib dynamic tarzda opacityi nol qilindi yani 2000mlsdan keyin animatsiyani opacitysi 0 bo'lib qoladi yani ko'rinmey qoladi  va ikkinchi settimeotga esa yana shu loader o'zgaruvchiga dynamic tarzda style none berildi yani 2000mlsdan keyin 500 mls davomida yani sekiiin animatsya ekrandan yo'q bo'ldi bu holatni logdaham ko'rish mumkun yani elementda classlarni qo'shilishini!!!
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500); //yani bu holatda birinchi settimeout funksiyasi loader o'zgaruvchi ichidagi loader paper man animatsiyasini 2000msldan keyin o'chirishni va  loaderni opaciyiysini 0 qilishni bajardi va ikkinchi settimeoutda esa shu ekrandan animatsiyani o'chirish uchun display none dynamic tarzda qo'shildi va shu o'chirilish 500mls vaqt davomida bo'lishi buyurildi shunda animatsya sekiiin yo'q bo'ldi
+    }, 2000);
+    ////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader darsi
+
+
+    ////TAB
     function hideTabContent() {
         tabsContent.forEach((item) => {
             //item bu yerda querySelectorAll bilan chaqirilgan massivni ichidagi elementlar yani tabcontent classlari
@@ -49,8 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-//////////////////////////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab TUGADI!!
+//////////////////////////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
+//va
+//////////////////////////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader darsi
 
-//////////////////////////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader BOSHLANDI
-
-//////////////////////////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader TUGADI
