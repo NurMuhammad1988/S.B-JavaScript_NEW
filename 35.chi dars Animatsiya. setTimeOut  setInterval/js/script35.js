@@ -1,5 +1,50 @@
 "use strict";
 
+////////////////////setTimeout va clearInterval setinterfal funksiyasi
+
+// const btn = document.querySelector("#btn");
+// let timerId;//bu timeidham pastda o'zgarishi kerak bo'lgani uchun let yani o'zgaradigan o'zgaruvchi qilib olindi
+// let i = 0;//yani boshlang'ich indexsi 0 bo'lgan let o'zgaruvchi chunki letni pastroqda o'zgartirimamiz masalan 0 qimatiga i++ qilib increment qilib boramiz
+// btn.addEventListener("click", () => {
+//     timerId = setInterval(logger, 500);//setinterfalda ikkinchi parametrida aytilgan vaqt har safar tugaganda parametridagi birinchi funksiyaga qaytib keladi qachongacha logger funksiyadi i o'zgaruvchidan olingan i 0 dan 3 ga yetgancha va ikkinchi klickda har 500 mlda infinity
+// });
+// function logger() {
+//     if (i == 3) {
+//         clearInterval(timerId);//yani agar i o'zgaruvchi 3 ga teng bo'lganda clearinterval ishga tushib jarayonni to'htatadi
+//     }
+//     console.log("set time out ");
+//     i++;
+// }
+// let id = setTimeout(function log (){
+//   console.log("Hello log");
+//   id =  setTimeout(log, 500);
+// },500)
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+const btn = document.querySelector("#btn"); //html DOMdagi btn idsi chaqirib olindi btn id da  move car textli button bor
+function myAnimation() {
+    const car = document.querySelector(".car");
+    let pos = 0;
+    const timerId = setInterval(frame, 10); //YANI HAR 10 MLSDA FRAME QAYTA ISHLASIN
+    function frame() {
+        if (pos == 700) {
+            clearInterval(timerId); //YANI POS O'ZGARUVCHI 700PX BO'LGANDA CLEARINTERVAL ISHGA TUSHIB SETINTERVAL TO'HTATILSIN
+        } else {
+            // console.log(pos);//
+            pos++;
+            car.style.left = pos + "px";//CAR YANI ONA DIVNI LEFT TOMONDAN POS O'ZGARUVCHINING NOLIGA PX QO'SHIB BERSIN
+        }
+    }
+}
+btn.addEventListener("click", myAnimation);
+//myAnimation nomli funksiya yaratib ichida car nomli o'zgaruvchi yaratib html DOMdagi car ona divini chaqirdik bu car ona divini ichida moshin rasmi bor va shu myAnimation funksyasida local holatda let pos = 0 yani o'zgaradigan o'zgaruvchi yaratildi va timerId nomli yangi local o'zgaruvchi yaratib setinterval funksiyasi chaqirildi va birinchi parametriga pastda yaratilgan frame local funskiyasi chaqirib qo'yildi va ikkinchi parametrida esa har 10 mlsda qayta ishlashi aytildi va frame funksiyasiga agar qiymati 0 bo'lib turgan pos o'zgaruvchimiz 700 bo'lganda (yani 700 ligini sababi cssda pxli hissoblanadi yani car ona diviga cssda 700px width berilgan)va frame funksiyasiga agar qiymati 0 bo'lib turgan pos o'zgaruvchimiz 700 bo'lganda clearinterval funksiyasi timerid o'zgaruvchini to'htatadi va yoki pos o'zgaruvchiga ++ bo'ladi yani pos + "px" pos o'zgaruvchiga yani0 qiymatli pos o'zgaruvchiga noldan keyingi px stringni qo'shib dynamic tarzda 700px qildi va btnga click hodisasi qo'shilganda myAnimation funksiyasi chaqirib qo'yildi
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+////setInterval funksiyasi yani bu holatda loggda 1 ni chiqarish aytildi va setintervalni pastki parametrida 1000 mls yozildi yani endi har 1000 mlsda logdagi 1 qayta ishlaydi
+// setInterval(()=>{
+//   console.log(1);
+// },1000)
+
 // //setTimeout callback funksiyasi
 // //// 1-sintaksis)
 // setTimeout(() => {
@@ -22,22 +67,6 @@
 // function logger(){
 //   console.log("set time out 3");
 // }
-
-
-////setTimeout va clearInterval funksiyasi
-
-const btn = document.querySelector("#btn");
-
-let timerId;
-
-btn.addEventListener("click", () => {
-     timerId = setTimeout(logger, 1000);//bu holatda timerid local o'zgaruvchi hissoblanadi
-});
-clearInterval(timerId);
-function logger() {
-    //lekin real loyihalarda settimeout funksiyasini o'zgaruvchi ichiga yozgan yahshi chunki clearinterval funksiyasi bilan settimeoutni to'htatish kerak bo'ladi
-    console.log("set time out ");
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // const btn = document.querySelector('#btn');
