@@ -14,9 +14,8 @@ window.addEventListener("DOMContentLoaded", () => {
         tabsContent = document.querySelectorAll(".tabcontent"), //htmldagi tabcontent classlari yani divlari 5 ta bo'lgani uchun komentariyga olingan edi endi esa komentariydan chiqariladi chunki js bilan dynamic tarzda o'zgartirilishlar kiritilishi kerak yani Category Of Series bo'limidagi categoriylarga bosilganda yani har biriga bosilgada shu categoriyga tegishli content tabcontent diviga asoisy bo'lib kelishi kerak !!!console.log(tabParent)!!!
         loader = document.querySelector(".loader"); //htmldagi section divini classi loaderga cssda ichiga paper man nomli animatsya berilgan
 
-     
     ////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader darsi
-    ////LOADER 
+    ////LOADER
     setTimeout(() => {
         loader.style.opacity = "0"; //yani loader o'zgaruvchi ichidagi htmlda ichida animatsya bor loader classli div chaqirib olingan settimeout funksiyani ichida shu loader o'zgaruvchi chaqirib olinib dynamic tarzda opacityi nol qilindi yani 2000mlsdan keyin animatsiyani opacitysi 0 bo'lib qoladi yani ko'rinmey qoladi  va ikkinchi settimeotga esa yana shu loader o'zgaruvchiga dynamic tarzda style none berildi yani 2000mlsdan keyin 500 mls davomida yani sekiiin animatsya ekrandan yo'q bo'ldi bu holatni logdaham ko'rish mumkun yani elementda classlarni qo'shilishini!!!
         setTimeout(() => {
@@ -64,3 +63,15 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 //////////////////////////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
 
+//38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
+//Timer
+const dedadLine = "2024-19-05"; //19 chi may
+
+// console.log(Date.parse("2022-08-11"));//run kodega qaralsin
+
+function getTimeRemaining(endtime) {
+    const timer = Date.parse(endtime - Date.parse(new Date())),
+    days = Math.floor
+}
+
+//38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
