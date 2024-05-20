@@ -65,13 +65,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
 //Timer
-const dedadLine = "2024-19-05"; //19 chi may
-
 // console.log(Date.parse("2022-08-11"));//run kodega qaralsin
-
+const dedadLine = "2024-19-05"; //19 chi may
 function getTimeRemaining(endtime) {
     const timer = Date.parse(endtime - Date.parse(new Date())),
-    days = Math.floor
+    days = Math.floor(timer / (1000 * 60 * 60 * 24))
 }
 
 //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
