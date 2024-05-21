@@ -79,20 +79,35 @@ window.addEventListener("DOMContentLoaded", () => {
             hours,
             minutes,
             seconds,
-        }; //yani getTimeRemaining local funksiyasi bizga object qaytaradi
+        };//return qilingani uchun bu funksiyani boshqa o'zgaruvchigaham chaqirib ishlatish mumkun //yani getTimeRemaining local funksiyasi bizga object qaytaradi
     }
-
     function setClock(selector, endtime) {//selector yani tomer o'zgaruvchi ichidagi ona div hissoblanadi
         const timer = timer.querySelector(selector),//yani parametrdagi selector ona div bo'lgani uchun ichidagi hamma html elementlarni olish mumkun
             days = timer.querySelector("#days"),
             hours = timer.querySelector("#hours"),
             minutes = timer.querySelector("#minutes"),
-            seconds = timer.querySelector("#seconds");
+            seconds = timer.querySelector("#seconds"),
+            timeInterval = setInterval(updateClock,1000)
+
+            updateClock()
 
             function updateClock(){
-                
+
+                const t = getTimeRemaining(endtime)
+                days.innerHTML = t.days 
+                hours.innerHTML = t.hours
+                minutes.innerHTML = t.minutes
+                seconds.innerHTML = t.seconds
+
+                if(t.timer <= 0){
+                    clearInterval(timeInterval)
+
+                }
+
             }
     }
+
+    setClock(".timer", deadLine)//bu joyda .timer ni nuqta bilan yozilishini sababi htmldagi timer ona classi selector ko'rinishida kelgani uchun jsga classligi aytilmagan edi shu uchun .timer deb bu class deyildi 
 
     //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
 });
