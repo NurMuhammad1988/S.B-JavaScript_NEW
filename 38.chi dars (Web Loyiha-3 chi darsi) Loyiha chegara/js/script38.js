@@ -60,16 +60,39 @@ window.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
+
+    //////////////////////////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
+
+    //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
+    //Timer
+    // console.log(Date.parse("2022-08-11"));//run kodega qaralsin//yani 1970 chi yildan buyog'iga yani parse metodini parametridagi dategacha bo'lgan vaqtni millisekundda olib beradi >>1660176000000 millisekund//yani 11 chi avgustgacha bo'lgan vaqtni milliskundda olib beradi
+    const deadLine = "2024-31-12";
+    function getTimeRemaining(endtime) {
+        const timer = Date.parse(endtime) - Date.parse(new Date()), //yani bu joyda parse metodi date bilan birga kelgani sabab parametrdagi stringni object holatiga aylantiradi//yani ikkinchi new Dateda hozirgi joriy vaqt yashingan
+            days = Math.floor(timer / (1000 * 60 * 60 * 24)), //yani timer o'zgaruvchidagi 1970 chi yildan hozir shu kiment yozilayotgan kungacha bo'lgan vaqtni millisekunga bo'lib uni 60 ga kopeytirib yani 60 siniyaga ko'peytirib 60 soniyani esa 60 daqiqaga yani soatga ko'peytirib 60 daqiqani esa 24 ga ko'ytridik shunda timer o'zgaruvchidagi 1970 yil 00:00 dan boshlanib shu coment yozilgan vaqtgacha o'tgan millisekundda hissoblanadigan vaqtni soniyaga soatga kunga bo'lib oldik
+            hours = Math.floor((timer / (1000 * 60 * 60)) % 24), //yani bu holatda timerni ichidagi vaqtni soatga bo'lib oldik
+            minutes = Math.floor((timer / 1000 / 60) % 60), //yani bu holatda timerni ichidagi vaqtni soatdan minutga yani 60 minutga bo'lib oldik
+            seconds = Math.floor((timer / 1000) % 60);
+        return {
+            total,
+            days,
+            hours,
+            minutes,
+            seconds,
+        }; //yani getTimeRemaining local funksiyasi bizga object qaytaradi
+    }
+
+    function setClock(selector, endtime) {//selector yani tomer o'zgaruvchi ichidagi ona div hissoblanadi
+        const timer = timer.querySelector(selector),//yani parametrdagi selector ona div bo'lgani uchun ichidagi hamma html elementlarni olish mumkun
+            days = timer.querySelector("#days"),
+            hours = timer.querySelector("#hours"),
+            minutes = timer.querySelector("#minutes"),
+            seconds = timer.querySelector("#seconds");
+
+            function updateClock(){
+                
+            }
+    }
+
+    //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
 });
-//////////////////////////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
-
-//38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
-//Timer
-// console.log(Date.parse("2022-08-11"));//run kodega qaralsin
-const dedadLine = "2024-19-05"; //19 chi may
-function getTimeRemaining(endtime) {
-    const timer = Date.parse(endtime - Date.parse(new Date())),
-    days = Math.floor(timer / (1000 * 60 * 60 * 24))
-}
-
-//38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
