@@ -63,10 +63,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //////////////////////////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
 
-    //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
+    //38.chi va 39.chi darslar (Web Loyiha-3 va 4 chi darslari) 38.chi dars Loyiha chegara va 39.chi dars Qo'shimcha loyihaga
     //Timer
     // console.log(Date.parse("2022-08-11"));//run kodega qaralsin//yani 1970 chi yildan buyog'iga yani parse metodini parametridagi dategacha bo'lgan vaqtni millisekundda olib beradi >>1660176000000 millisekund//yani 11 chi avgustgacha bo'lgan vaqtni milliskundda olib beradi
-    const deadLine = "2024-12-31";
+    const deadLine = "2026-12-31";
     function getTimeRemaining(endtime) {
         let days, hours, minutes, seconds;
 
@@ -79,10 +79,10 @@ window.addEventListener("DOMContentLoaded", () => {
             minutes = 0;
             seconds = 0;
         } else {
-            (days = Math.floor(timer / (1000 * 60 * 60 * 24))), //yani timer o'zgaruvchidagi 1970 chi yildan hozir shu kiment yozilayotgan kungacha bo'lgan vaqtni millisekunga bo'lib uni 60 ga kopeytirib yani 60 siniyaga ko'peytirib 60 soniyani esa 60 daqiqaga yani soatga ko'peytirib 60 daqiqani esa 24 ga ko'ytridik shunda timer o'zgaruvchidagi 1970 yil 00:00 dan boshlanib shu coment yozilgan vaqtgacha o'tgan millisekundda hissoblanadigan vaqtni soniyaga soatga kunga bo'lib oldik
-                (hours = Math.floor((timer / (1000 * 60 * 60)) % 24)), //yani bu holatda timerni ichidagi vaqtni soatga bo'lib oldik
-                (minutes = Math.floor((timer / 1000 / 60) % 60)), //yani bu holatda timerni ichidagi vaqtni soatdan minutga yani 60 minutga bo'lib oldik
-                (seconds = Math.floor((timer / 1000) % 60));
+            days = Math.floor(timer / (1000 * 60 * 60 * 24)); //yani timer o'zgaruvchidagi 1970 chi yildan hozir shu kiment yozilayotgan kungacha bo'lgan vaqtni millisekunga bo'lib uni 60 ga kopeytirib yani 60 siniyaga ko'peytirib 60 soniyani esa 60 daqiqaga yani soatga ko'peytirib 60 daqiqani esa 24 ga ko'ytridik shunda timer o'zgaruvchidagi 1970 yil 00:00 dan boshlanib shu coment yozilgan vaqtgacha o'tgan millisekundda hissoblanadigan vaqtni soniyaga soatga kunga bo'lib oldik
+            hours = Math.floor((timer / (1000 * 60 * 60)) % 24); //yani bu holatda timerni ichidagi vaqtni soatga bo'lib oldik
+            minutes = Math.floor((timer / 1000 / 60) % 60); //yani bu holatda timerni ichidagi vaqtni soatdan minutga yani 60 minutga bo'lib oldik
+            seconds = Math.floor((timer / 1000) % 60);
         }
 
         return {
@@ -129,5 +129,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
     setClock(".timer", deadLine); //bu joyda .timer ni nuqta bilan yozilishini sababi htmldagi timer ona classi selector ko'rinishida kelgani uchun jsga classligi aytilmagan edi shu uchun .timer deb jsga bu class deyildi
 
-    //38.chi dars (Web Loyiha-3 chi darsi) Loyiha chegara
+    //38.chi va 39.chi darslar (Web Loyiha-3 va 4 chi darslari) 38.chi dars Loyiha chegara va 39.chi dars Qo'shimcha loyihaga
 });

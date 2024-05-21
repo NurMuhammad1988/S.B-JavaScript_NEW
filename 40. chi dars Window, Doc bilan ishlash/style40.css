@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(41, 4, 76);
+}
+
+a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+a:hover{
+    text-decoration: underline;
+    color: red;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+
+.box{
+    box-sizing: border-box;
+    width: 400px;
+    height: 350px;
+    overflow: scroll;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: rgb(96, 93, 93);
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.576);
+    border: none;
+    color: white;
+    
+}
