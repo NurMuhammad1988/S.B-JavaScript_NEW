@@ -72,7 +72,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const timer = Date.parse(endtime) - Date.parse(new Date()); //yani bu joyda parse metodi date bilan birga kelgani sabab parametrdagi stringni object holatiga aylantiradi//yani ikkinchi new Dateda hozirgi joriy vaqt yashingan
 
-        if (timer <= 0) {//yani belgilangan muddat tugagandan keyin kun soat daqiqa soniyalar 00 ga aylanadi yani - minusga qarab ketmaydi
+        if (timer <= 0) {
+            //yani belgilangan muddat tugagandan keyin kun soat daqiqa soniyalar 00 ga aylanadi yani - minusga qarab ketmaydi
             days = 0;
             hours = 0;
             minutes = 0;
