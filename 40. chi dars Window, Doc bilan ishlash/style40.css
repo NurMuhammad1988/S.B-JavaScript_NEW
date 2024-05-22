@@ -1,21 +1,22 @@
-body{
+body {
     background-color: rgb(41, 4, 76);
 }
 
-a{
+a {
     color: white;
     font-size: 20px;
     text-decoration: none;
 
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
     color: red;
 }
+
 /* ///////////////////////////////////////////////////////////////////////// */
 
-.box{
+.box {
     box-sizing: border-box;
     width: 400px;
     height: 350px;
@@ -26,14 +27,17 @@ a:hover{
     background-color: rgb(96, 93, 93);
 }
 
-button{
+button {
     width: 100px;
     height: 40px;
     display: block;
     margin: 0 auto;
     margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.576);
     border: none;
+}
+
+button:hover {
+    background-color: red;
+    border: 4px solid black;
     color: white;
-    
 }
