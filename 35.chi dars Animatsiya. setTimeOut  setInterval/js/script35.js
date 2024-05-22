@@ -32,7 +32,7 @@ function myAnimation() {
         } else {
             // console.log(pos);//
             pos++;
-            car.style.left = pos + "px";//CAR YANI ONA DIVNI LEFT TOMONDAN POS O'ZGARUVCHINING NOLIGA PX QO'SHIB BERSIN
+            car.style.left = pos + "px";//CAR YANI ONA DIVNI LEFT TOMONDAN POS O'ZGARUVCHINING NOLIGA PXni QO'SHIB BERSIN
         }
     }
 }

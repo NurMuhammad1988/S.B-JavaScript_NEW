@@ -27,6 +27,10 @@ a:hover {
     background-color: rgb(96, 93, 93);
 }
 
+.box:hover{
+    background-color: rgb(134, 128, 128);
+   
+}
 button {
     width: 100px;
     height: 40px;
