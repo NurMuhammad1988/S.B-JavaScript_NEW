@@ -25,11 +25,11 @@
 // console.log( +"5"); //number
 // console.log(typeof +"5"); //pilus sababli bu "5" ham number malumot turi hissoblanadi bu narsa +promptdaham ishlaydi aslida prompda default holatida + bo'lmas edi + qo'yilsa aftamatik tarzda numberga aylanadi
 
-// 3-) parseInt() metodi orqaliham stringni  Numberga o'tqazish va chaqirish mumkun
+// //3-) parseInt() metodi orqaliham stringni  Numberga o'tqazish va chaqirish mumkun
 // console.log(parseInt("15"));//number yani string numberga aylandi parseint metodi bilan
 // console.log(typeof parseInt("15"));//number
 
-//4-)parseInt va prompt orqali stringni numberga o'tqazish
+// //4-)parseInt va prompt orqali stringni numberga o'tqazish
 // const names = parseInt(prompt("age"));//yani bu holatda pareint metodi orqali stringni numberga aylantirdik yani paseint parametriga prompda savol berdik va agar javobi number bulmasa NaN chiqadi chunku parseint shunday ishlaydi yani parametrida berilga savolni javobi faqat number bo'lsa true bo'ladi yani qabul qiladi aks holda NaN yani not a number
 // console.log( names); //logda number
 // console.log(typeof names); //console.logga qaralsin

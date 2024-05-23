@@ -45,3 +45,7 @@ button:hover {
     border: 4px solid black;
     color: white;
 }
+
+p{
+    color: gray;
+}
