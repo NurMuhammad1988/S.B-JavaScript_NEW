@@ -124,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
     ////Modal
-    const modalTrigger = document.querySelector("[data-modal]"), //data atribut bilan modal oynaga aloqador buttonlarni jsga chaqirvoldik
+    const modalTrigger = document.querySelectorAll("[data-modal]"), //data atribut bilan modal oynaga aloqador buttonlarni jsga chaqirvoldik data atributlar htmlda bir nechta bo'lsa querySelector bilan chaqirilganda js codlar faqat birinchisiga tasir qilar ekan va agar htmlda data atributlar yozilib lekin jsda ishlatilmasaham hech narsa qilmaydi chunki data atributlar birinchi qiymati false teng bo'ladi yani hech narsaga tasir qilmaydi //querySelectorAll bilan chaqirilganda esa htmldagi hamma data-modal atributlarni jsga chaqirib oladi
         modal = document.querySelector(".modal"), //yani modal ona divini jsga chaqirvoldik
         modalCloseBtn = document.querySelector("[data-close]");
 
@@ -132,17 +132,20 @@ window.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("hide");
         modal.classList.remove("show");
         document.body.style.overflow = ""; //yani hide classi ishga tushganda overflow hiddenmas yani bo'sh qilib qo'yiladi shunda bodyda scroll qiymati paydo bo'ladi
-        clearInterval(modalTimerId)
     }
 
     function openModal() {
         modal.classList.add("show");
         modal.classList.remove("hide");
         document.body.style.overflow = "hidden";
+        clearInterval(modalTimerId);
     }
 
-    modalTrigger.addEventListener("click", openModal);
-    //yani bu holatda modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi
+    modalTrigger.forEach((item) => {
+        item.addEventListener("click", openModal); //yani bitta click hodisasini barcha data-modal atributibor elementlarga berib chiqdik
+    });
+
+    ////yani bu holatda modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi////
 
     modalCloseBtn.addEventListener("click", closeModal); //addEventListener metodini parametriga funksiya chaqirilganda (shu) chaqirilish qavusi ishlatilmaydi yani addEventListener ishlaganda aftamatik tarzda parametrda chaqirilgan funksiya ishga tushadi
 
@@ -161,6 +164,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const modalTimerId = setTimeout(openModal, 5000);
 
-    //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
+    // console.log(window.scrollY);    //darsda pageYOffset qiymati bilan qilindi lekin bu jsda eskirgan o'rniga yangisi scrollY qiymati bo'lgan//bu scrollY bo'yiga o'lchasa scrollX eniga o'lchaydi
+    // console.log(window.scrollY + document.documentElement.clientHeight);//yani bu holatda scrolly bilanyani ekrani tepadan pastga ko'rinib turgan qismi bilan butun documentni bo'yi qo'shildi shunda saytni butun bo'yi nechchi pixel ekanligi bilinadi//bu scrollY bo'yiga o'lchasa scrollX eniga o'lchaydi
 
+    function showModalByScroll(){
+        if(){
+
+        }
+    }
+
+    //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
 });
