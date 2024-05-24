@@ -14,12 +14,12 @@
 // console.log(height);
 
 //scrollHeight qiymati
-// const box = document.querySelector(".box"),
-//     btn = document.querySelector("button");
-// btn.addEventListener("click", () => {
-//     box.style.height = box.scrollHeight + "px";//yani scrollHeight bu joyda boxni asil bo'yini uzunligini ko'rsatadi va + "px" bilan numberni stringga o'girvoldik
-// });
-// console.log(box.scrollHeight); //yani bu holatda box nomli o'zgaruvchi yaratib ichiga htmldagi box divini jsga ovoldik va yana btn nomli o'zgaruvchi yaratib htmldagi buttonni jsga chaqirvoldik va btnga click hodisasi sodir bo'lganda box o'zgaruvchi ichidagi box classiga height qo'shamiz ysni boxni ichidagi elementlar butunlay ko'rinadi yani asil uzunligini ko'rsatadi
+const box = document.querySelector(".box"),
+    btn = document.querySelector("button");
+btn.addEventListener("click", () => {
+    box.style.height = box.scrollHeight + "px";//yani scrollHeight bu joyda boxni asil bo'yini uzunligini ko'rsatadi va + "px" bilan numberni stringga o'girvoldik
+});
+console.log(box.scrollHeight); //yani bu holatda box nomli o'zgaruvchi yaratib ichiga htmldagi box divini jsga ovoldik va yana btn nomli o'zgaruvchi yaratib htmldagi buttonni jsga chaqirvoldik va btnga click hodisasi sodir bo'lganda box o'zgaruvchi ichidagi box classiga height qo'shamiz ysni boxni ichidagi elementlar butunlay ko'rinadi yani asil uzunligini ko'rsatadi
 
 //scrollTop qiymati
 // const box = document.querySelector(".box"),
