@@ -122,14 +122,45 @@ window.addEventListener("DOMContentLoaded", () => {
     setClock(".timer", deadLine); //bu joyda .timer ni nuqta bilan yozilishini sababi htmldagi timer ona classi selector ko'rinishida kelgani uchun jsga classligi aytilmagan edi shu uchun .timer deb jsga bu class deyildi
     //38.chi va 39.chi darslar (Web Loyiha-3 va 4 chi darslari) 38.chi dars Loyiha chegara va 39.chi dars Qo'shimcha loyihaga
 
-    //41.chi dars(Web loyiha 5 chi dars) Modal
+    //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
     ////Modal
-    const modalTrigger = document.querySelector("[data-modal]"),
-        modal = document.querySelector(".modal"),
+    const modalTrigger = document.querySelector("[data-modal]"), //data atribut bilan modal oynaga aloqador buttonlarni jsga chaqirvoldik
+        modal = document.querySelector(".modal"), //yani modal ona divini jsga chaqirvoldik
         modalCloseBtn = document.querySelector("[data-close]");
-        modalTrigger.addEventListener("click", ()=>{
-            modal.classList.add("show")
-        })
 
-    //41.chi dars(Web loyiha 5 chi dars) Modal
+    function closeModal() {
+        modal.classList.add("hide");
+        modal.classList.remove("show");
+        document.body.style.overflow = ""; //yani hide classi ishga tushganda overflow hiddenmas yani bo'sh qilib qo'yiladi shunda bodyda scroll qiymati paydo bo'ladi
+        clearInterval(modalTimerId)
+    }
+
+    function openModal() {
+        modal.classList.add("show");
+        modal.classList.remove("hide");
+        document.body.style.overflow = "hidden";
+    }
+
+    modalTrigger.addEventListener("click", openModal);
+    //yani bu holatda modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi
+
+    modalCloseBtn.addEventListener("click", closeModal); //addEventListener metodini parametriga funksiya chaqirilganda (shu) chaqirilish qavusi ishlatilmaydi yani addEventListener ishlaganda aftamatik tarzda parametrda chaqirilgan funksiya ishga tushadi
+
+    modal.addEventListener("click", (e) => {
+        if (e.target == modal) {
+            //yani agar e.target ichida yani document ichida modal o'zgaruvchi yani modal o'zgaruvchini html elementlari bor bo'lsa yani butun html documentda event targetda pastdagi classlar bor bo'lsa click hodisasi sodir bo'lganda pastdagi classlar ishlasin
+            closeModal(); //bu joyda funksiya parametrda chaqirilmagani sabab alohida(shu) bilan chaqiriladi
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Escape" && modal.classList.contains("show")) {
+            closeModal();
+        }
+    });
+
+    const modalTimerId = setTimeout(openModal, 5000);
+
+    //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
+
 });
