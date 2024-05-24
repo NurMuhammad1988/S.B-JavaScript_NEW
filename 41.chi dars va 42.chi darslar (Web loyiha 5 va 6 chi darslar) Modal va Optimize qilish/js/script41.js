@@ -163,7 +163,7 @@ window.addEventListener("DOMContentLoaded", () => {
             document.documentElement.scrollHeight - 1
         ) {
             openModal();
-            window.removeEventListener("scroll", showModalByScroll); //yani open modal bir martta ishlagandan keyingi qatorda removeEventListener metodi sihga tushib openmodalni o'chiradi
+            window.removeEventListener("scroll", showModalByScroll); //yani open modal bir martta ishlagandan keyingi qatorda removeEventListener metodi ishga tushib openmodalni o'chiradi
         }
     }
     window.addEventListener("scroll", showModalByScroll);
