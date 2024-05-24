@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // console.log(Date.parse("2022-08-11"));//run kodega qaralsin//yani 1970 chi yildan buyog'iga yani parse metodini parametridagi dategacha bo'lgan vaqtni millisekundda olib beradi >>1660176000000 millisekund//yani 11 chi avgustgacha bo'lgan vaqtni milliskundda olib beradi
     const deadLine = "2026-12-31";
     function getTimeRemaining(endtime) {
-        let days, hours, minutes, seconds;//bitta let o'zgaruvchi ichida bir nechta o'zgaruvchi yaratish!!! 
+        let days, hours, minutes, seconds; //bitta let o'zgaruvchi ichida bir nechta o'zgaruvchi yaratish!!!
         const timer = Date.parse(endtime) - Date.parse(new Date()); //yani bu joyda parse metodi date bilan birga kelgani sabab parametrdagi stringni object holatiga aylantiradi//yani ikkinchi new Dateda hozirgi joriy vaqt yashiringan//yani bu holatda joriy vaqt bilan 1970 yil oralig'idagi vaqt olindi
         if (timer <= 0) {
             //yani belgilangan muddat tugagandan keyin kun soat daqiqa soniyalar 00 ga aylanadi yani - minusga qarab ketmaydi
@@ -121,4 +121,15 @@ window.addEventListener("DOMContentLoaded", () => {
     } //yani getzero funksiyasini updateClock funksiyasiga ulab qo'ydik yani 10 dan kichkina sonlarda  09 08 07 05 04 03 02 01 00 bo'lib chiqadi
     setClock(".timer", deadLine); //bu joyda .timer ni nuqta bilan yozilishini sababi htmldagi timer ona classi selector ko'rinishida kelgani uchun jsga classligi aytilmagan edi shu uchun .timer deb jsga bu class deyildi
     //38.chi va 39.chi darslar (Web Loyiha-3 va 4 chi darslari) 38.chi dars Loyiha chegara va 39.chi dars Qo'shimcha loyihaga
+
+    //41.chi dars(Web loyiha 5 chi dars) Modal
+    ////Modal
+    const modalTrigger = document.querySelector("[data-modal]"),
+        modal = document.querySelector(".modal"),
+        modalCloseBtn = document.querySelector("[data-close]");
+        modalTrigger.addEventListener("click", ()=>{
+            modal.classList.add("show")
+        })
+
+    //41.chi dars(Web loyiha 5 chi dars) Modal
 });

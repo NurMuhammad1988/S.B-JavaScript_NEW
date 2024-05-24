@@ -10,7 +10,7 @@
 
 <body>
 <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="own-div">
+    <!-- <div class="own-div">
       <br>
       <a class="own-a" href="../index.html">Bosh sahifa</a>
       <br>
@@ -23,7 +23,7 @@
       <br>
       <a class="own-a" target="_blank" href="https://sammi.ac/course/javascript/dashboard/653d41cd28da4c78b7e07af3?section=653d2d0528da4c78b7e07950">41.chi dars(Web loyiha 5 chi dars) Modal darsi videosi >>></a>
       <br>
-    </div>
+    </div> -->
 <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
 
   <!-- Loader -->
@@ -71,8 +71,8 @@
       <div class="header__content">
         <h2>Central Intellegance</h2>
         <div class="btn__group">
-          <button class="button arrow">Read more</button>
-          <button class="button phone">Contact Us</button>
+          <button data-modal class="button arrow">Read more</button>
+          <button data-modal class="button phone">Contact Us</button>
         </div>
       </div>
     </div>
@@ -193,17 +193,17 @@
   </div>
 
   <!-- Order -->
-  <!-- <div class="order">
+  <div class="order">
     <div class="container">
       <div class="title">Order the best place!</div>
       <form action="#" class="order__form">
         <input required placeholder="Name" name="name" type="text" class="order__input" />
         <input required placeholder="Number" name="phone" type="phone" class="order__input" />
         <img src="icons/right.svg" alt="right" />
-        <button class="button phone order_btn">Contact Us</button>
+        <button data-modal class="button phone order_btn">Contact Us</button>
       </form>
     </div>
-  </div> -->
+  </div>
 
   <!-- Offer -->
   <div class="offer">
@@ -372,7 +372,7 @@
     <div class="modal__dialog">
       <div class="modal__content">
         <form action="#">
-          <div class="modal__close">&times;</div>
+          <div data-close class="modal__close">&times;</div>
           <div class="modal__title">
             Мы свяжемся с вами как можно быстрее!
           </div>
