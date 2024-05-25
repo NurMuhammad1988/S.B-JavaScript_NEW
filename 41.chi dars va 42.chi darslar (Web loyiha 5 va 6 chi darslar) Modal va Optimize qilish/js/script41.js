@@ -140,7 +140,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     modalTrigger.forEach((item) => {
         //yani madal bo'yicha asosiy  o'zgaruvchi hissoblangan modalTrigger o'zgaruvchisini itemlarini yani elementlari foreach metodi bilan intirgatsa qilib shu itemlar yani elementlarga click hodisasi sodir bo'lganda openmodal funksiyasi ishga tushirilsin deyildi
-        item.addEventListener("click", openModal); //yani bitta click hodisasini barcha data-modal atributibor elementlarga berib chiqdik va keyinchalik faqat bitta joyda data atributni qoldirdik???
+        item.addEventListener("click", openModal); //yani bitta click hodisasini barcha data-modal atributibor elementlarga berib chiqdik va keyinchalik faqat bitta joyda data atributni qoldirdik???=> sababi bir nechta buttongaham bitta funksiyasni ishlatib ko'rdik
     });
 
     modalCloseBtn.addEventListener("click", closeModal); //yani bu holatda modalCloseBtn o'zgaruvchisi ichida chaqirilgan htmldagi close-modal atributiga click hodisasi sodir bo'lganda yuqoridagi closemodal funksiyasi ishga tushishi buyurildi shunda close-modal atributiga ega buttondagi x belgisiga bosilganda modal yopiladi yani closemodal funksiyasi ishga tushadi
