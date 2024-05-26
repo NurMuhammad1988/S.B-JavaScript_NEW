@@ -8,7 +8,7 @@
 function Car(name, color, mph) {
     //construktor  bu o'zgaruvchining objekt namunasini yaratadigan va ishga tushiradigan maxsus funktsiya  JavaScriptda ob'ekt new kalit so'zi yordamida yaratilganda konstruktor chaqiriladi Konstruktorning maqsadi yangi ob'ekt yaratish va har qanday mavjud objekt xususiyatlari uchun qiymatlarni o'rnatishdir //huddi cssdagi rootga o'hshar ekan
     this.name = name;
-    this.color = color;
+    this.color = color;// this kalit so'zi konstruktorda ishlatilsa, u yangi yaratilgan ob'ektga ishora qiladi
     this.mph = mph;
     this.isAirbag = true;
     this.speed = function () {
@@ -16,8 +16,8 @@ function Car(name, color, mph) {
     };
 } //yani construktor class  funksiya yaratildi bunda har bir this huddi rootga o'hshab ichiga qiymat yani funksiyani argumentidagi qiymatni qabul qiladi va boshqa o'zgaruvcilarga argumentiga chaqirilganda shu thislar ishlaydi bu construktorni ichiga hatto local funksiyalar va metodlarniham chaqirib ishlatish mumkun
 
-const bmw = new Car("bmw", "red", 200); //bu holatda constructor funksiyadago thislar qanday chaqirilishi ko'rsatilgan//yani new kalit so'zi bilan chaqiriladi//new kalit so'zi huddiki Car constructor funksiyasiga new yani yangi qiymatlar qo'shish deganday
-const merc = new Car("merc", "black", 300); //bu holatda constructor funksiyadago thislar qanday chaqirilishi ko'rsatilgan//yani new kalit so'zi bilan chaqiriladi//new kalit so'zi huddiki Car constructor funksiyasiga new yani yangi qiymatlar qo'shish deganday
+const bmw = new Car("bmw", "red", 200);//bu holatda bmw Car constructor funksiyadan vorislanadi //bu holatda constructor funksiyadago thislar qanday chaqirilishi ko'rsatilgan//yani new kalit so'zi bilan chaqiriladi//new kalit so'zi huddiki Car constructor funksiyasiga new yani yangi qiymatlar qo'shish deganday
+const merc = new Car("merc", "black", 300);//bu holatda bmw Car constructor funksiyadan vorislanadi //bu holatda constructor funksiyadago thislar qanday chaqirilishi ko'rsatilgan//yani new kalit so'zi bilan chaqiriladi//new kalit so'zi huddiki Car constructor funksiyasiga new yani yangi qiymatlar qo'shish deganday
 //// console.log(bmw);//yani agar constructor funksiyani ichida local funksiya bor bo'lsa joriy holatdagiday faqat logni o'zi bila chaqirilmaydi pastki qatordagiday qilib local funksiyaham kitobidagiday chaqiriladi!!!
 Car.prototype.sayHello = function () {
     console.log(`Car name of ${this.name} say hello`);

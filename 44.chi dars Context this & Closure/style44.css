@@ -1,16 +1,17 @@
-*{
+* {
     text-decoration: none;
 }
-body{
+
+body {
     background-color: rgb(66, 4, 124);
     color: whitesmoke;
 }
 
-a{
+a {
     color: wheat;
     font-size: 25px;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
