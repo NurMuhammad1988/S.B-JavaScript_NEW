@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 ////Contex this =  har doim  har doim nimagadur qaram hissoblanadi yani osiladi
 
@@ -37,4 +37,33 @@
 // log2();
 
 //4-)contex this objectlar bilan ishlar
-//10:16 chi minutda qoldi
+// const objs = {
+//     x: 10,
+//     y: 15,
+//     sum: function () {
+//         console.log(this);
+//     },
+// }; //contex this objectni ichida objectni o'ziga teng bo'ladi yani masalan bu holatda objs object o'zgaruvchini parametri hissoblangan sum local funksiyasida this contex chaqirilganda shu objectni o'zini chiqardi yani this objectni ichidagi  local funksiyasini ichidaham this objectni yani objs objectini o'ziga teng bo'ladi//yani contex this objektni ichidagi metodda objectni o'ziga teng!!!
+// objs.sum();
+
+// const objs = {
+//     x: 10,
+//     y: 15,
+//     sum: function () {
+//         function logger() {
+//             console.log(this); //undefined//chunki bu joyda contex this objs objectiga yoki objectni qiymatiga(:)tegishli emas logger funksiyaga tegishli bo'lepti va shu uchun undefined chiqadi chunki js loggerni ichidagi logdagi thisni birinchi shu loggerni o'zini ichidan izlaydi va qattiy rejim yoniq bo'lgani uchun undefined agar qattiy rejim o'chiq bo'lsa huddi yuqoridagi darslar kabi yani window global objectiga osiladi yani qaram bo'ladi//yani oddiy funksiyani contexi window objectiga teng
+//         }
+//         logger();
+//     },
+// };
+// objs.sum();//yani o'zgaruvchilar ichida funksiya bo'lsa hsunday chaqiriladi
+
+////5-)contex thisni  construktorda ishlashi yani contex this construktor funksiyada nimaga teng??? yani yangi objectni nusxasiga exsemlpayeriga teng
+// function Car(name, color) {
+//     this.name = name;
+//     this.color = color;
+//     this.isAirbag = true;
+// }
+// const bmw = new Car("BMW", "Black"); //shunday qilib Car constructordan nushalangan obje yani this hissoblanadi yani bmw ni parametrida ishlatildi//bmw o'zgaruvchida isAirbag boolen qiymati chaqirilmasaham isairbag true keldi shundan malumki contex this constructor funksiya ichidagi objectga teng yani bmw new Car qilib constructordan nusxa olganda butunlay nusxaladi faqat parametridagi nolinchi va birinchi qiymatlarni emas cardagi 2 chi qiymatbni yani isairbagniham oldi run code    >>>Car { name: 'BMW', color: 'Black', isAirbag: true }CHAQIRILAMASAHAM!!!
+// // const bmw = new Car(1,+ 2);//PAREMTRDA ISHLASHI!!!
+// console.log(bmw);
