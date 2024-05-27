@@ -1,0 +1,15 @@
+body{
+    background: rgb(36, 28, 79);
+    color: silver;
+}
+
+a{
+    color:silver;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
