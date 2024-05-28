@@ -13,3 +13,9 @@ a:hover{
     color: red;
     text-decoration: underline;
 }
+
+button{
+    display: flex;
+    margin: auto;
+   
+}
