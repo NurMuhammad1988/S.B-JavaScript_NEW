@@ -64,6 +64,6 @@
 //     this.color = color;
 //     this.isAirbag = true;
 // }
-// const bmw = new Car("BMW", "Black"); //shunday qilib Car constructordan nushalangan obje yani this hissoblanadi yani bmw ni parametrida ishlatildi//bmw o'zgaruvchida isAirbag boolen qiymati chaqirilmasaham isairbag true keldi shundan malumki contex this constructor funksiya ichidagi objectga teng yani bmw new Car qilib constructordan nusxa olganda butunlay nusxaladi faqat parametridagi nolinchi va birinchi qiymatlarni emas cardagi 2 chi qiymatbni yani isairbagniham oldi run code    >>>Car { name: 'BMW', color: 'Black', isAirbag: true }CHAQIRILAMASAHAM!!!
+// const bmw = new Car("BMW", "Black"); //shunday qilib Car constructordan nusxalangan obje yani this hissoblanadi yani bmw ni parametrida ishlatildi//bmw o'zgaruvchida isAirbag boolen qiymati chaqirilmasaham isairbag true keldi shundan malumki contex this constructor funksiya ichidagi objectga teng yani bmw new Car qilib constructordan nusxa olganda butunlay nusxaladi faqat parametridagi nolinchi va birinchi qiymatlarni emas cardagi 2 chi qiymatni yani isairbagniham oldi run code>>>Car { name: 'BMW', color: 'Black', isAirbag: true }CHAQIRILAMASAHAM!!!
 // // const bmw = new Car(1,+ 2);//PAREMTRDA ISHLASHI!!!
 // console.log(bmw);

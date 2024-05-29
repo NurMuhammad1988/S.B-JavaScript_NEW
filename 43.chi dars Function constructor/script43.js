@@ -6,7 +6,7 @@
 ////Construktor
 ////Constructorda class yozilganda doim kattahariflar bilan yozilishi kerak!!!
 function Car(name, color, mph) {
-    //construktor  bu o'zgaruvchining objekt namunasini yaratadigan va ishga tushiradigan maxsus funktsiya  JavaScriptda objekt new kalit so'zi yordamida yaratilganda konstruktor chaqiriladi Konstruktorning maqsadi yangi ob'ekt yaratish va har qanday mavjud objekt xususiyatlari uchun qiymatlarni o'rnatishdir //huddi cssdagi rootga o'hshar ekan
+    //construktor  bu o'zgaruvchining objekt namunasini yaratadigan va ishga tushiradigan maxsus funktsiya  JavaScriptda objekt new kalit so'zi yordamida yaratilganda konstruktor chaqiriladi Konstruktorning maqsadi yangi objekt yaratish va har qanday mavjud objekt xususiyatlari uchun qiymatlarni o'rnatishdir //huddi cssdagi rootga o'hshar ekan
     this.name = name;
     this.color = color;// this kalit so'zi konstruktorda ishlatilsa, u yangi yaratilgan ob'ektga ishora qiladi
     this.mph = mph;
