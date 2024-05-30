@@ -174,4 +174,42 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     window.addEventListener("scroll", showModalByScroll); //yani bu holatda windowga scroll hodisasi berilganda showModalByScroll funksiyasi chaqirildi showModalByScroll local funksiyasi esa yuqorida yozilgan yani user saytni eng ohiriga tushganda openModal funksiyasi yana ishga tushadi
     //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
+
+    //47.chi dars (Web loyiha 7 chi darsi) Class darsi
+    ////Class
+    class MenuCard {
+        //jsda classlar doim katta hariflar bilan yoziladi shunda js Carni class component ekanligini tushunadi
+        constructor(src, alt, title, descr, price) {
+            //bu holatda MenuCard nomli class yaratilib unga konstructor chaqirildi va parametriga kelejakda ishlatilishi rejalashtirilgan qiymatlar berib chiqildi this contex bilan har biri chaqirildi
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.transfer = 12000; //dollorni so'mga ko'paytirish
+            this.changeToUZS();
+        }
+
+        changeToUZS() {
+            //qo'lda yozilgan metod
+            this.price = this.price * this.transfer; //yani endi procega qandaydir narh qo'shsak transferdagi 12000 ga ko'paytiriliadi
+        }
+
+        render() {
+            const element = document.createElement("div");
+            element.innerHTML = `
+            <div class="menu__item">
+            <img src=${this.src} alt=${this.alt} />
+            <h3 class="menu__item-subtitle">${this.title}</h3>
+            <div class="menu__item-descr">${this.descr}</div>
+            <div class="menu__item-divider"></div>
+            <div class="menu__item-price">
+              <div class="menu__item-cost">Price:</div>
+              <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
+            </div>
+          </div>
+`;
+        }
+    }
+    //47.chi dars (Web loyiha 7 chi darsi) Class darsi
 });
