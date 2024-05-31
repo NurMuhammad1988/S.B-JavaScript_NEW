@@ -233,7 +233,7 @@ window.addEventListener("DOMContentLoaded", () => {
         "1-BU BIRINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
         10,
         ".menu .container"
-        //default bo'yicha rest operatori sabab bu joyda class menu__item yo'q yani defaul holatida massivni nolinchi elementiga class berib qo'yildi yuqoridagi if else bilan
+        //default bo'yicha rest operatori sabab bu joyda class menu__item yo'q yani default holatida massivni nolinchi elementiga class berib qo'yildi yuqoridagi if else bilan
     ).render();
 
     new MenuCard( //ikkinchi card
