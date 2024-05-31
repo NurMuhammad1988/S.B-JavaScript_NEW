@@ -179,23 +179,23 @@ window.addEventListener("DOMContentLoaded", () => {
     ////Class
     class MenuCard {
         //jsda classlar doim katta hariflar bilan yoziladi shunda js Carni class component ekanligini tushunadi
-        constructor(src, alt, title, descr, price) {
+        constructor(src, alt, title, descr, price, parentSelector) {
             //bu holatda MenuCard nomli class yaratilib unga konstructor chaqirildi va parametriga kelejakda ishlatilishi rejalashtirilgan qiymatlar berib chiqildi this contex bilan har biri chaqirildi
-            this.src = src;
-            this.alt = alt;
+            this.src = src; //rasim uchun atribut
+            this.alt = alt; //rasim  uchun atribut
             this.title = title;
             this.descr = descr;
             this.price = price;
+            this.parent = document.querySelector(parentSelector);
             this.transfer = 12000; //dollorni so'mga ko'paytirish
-            this.changeToUZS();
+            this.changeToUZS(); //yani har safar menucard classi ishlaganda bu metodham ishlaydi
         }
-
         changeToUZS() {
             //qo'lda yozilgan metod
-            this.price = this.price * this.transfer; //yani endi procega qandaydir narh qo'shsak transferdagi 12000 ga ko'paytiriliadi
+            this.price = this.price * this.transfer; //yani endi pricega qandaydir narh qo'shsak transferdagi 12000 ga ko'paytiriliadi
         }
-
         render() {
+            //qo'lda yozilgan metod
             const element = document.createElement("div");
             element.innerHTML = `
             <div class="menu__item">
@@ -207,9 +207,36 @@ window.addEventListener("DOMContentLoaded", () => {
               <div class="menu__item-cost">Price:</div>
               <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
             </div>
-          </div>
-`;
+          </div>`;
+            this.parent.append(element); //yani bu holatda menucard classiga dynamic tarzda html element qo'shildi yani menucardda parentselector bor constructori ichida esa  this.parent = document.querySelector(parentSelector); qilib ona div chaqirilgan va parentga append qilib yangi dynamic yaratilgan divi  bor element nomli o'zgaruvchi kiritilgan
         }
     }
+
+    new MenuCard( //birnchi card
+        "img/tabs/1.png",
+        "vegy",
+        "Plan 'Usual'",
+        " BU BIRINCHI CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+        10,
+        ".menu .container"
+    ).render();
+
+    new MenuCard( //ikkinchi card
+        "img/tabs/2.jpg",
+        "elite",
+        "Plan 'Premium'",
+        "BU IKKINCHI CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+        20,
+        ".menu .container"
+    ).render();
+
+    new MenuCard( //uchinchi card
+        "img/tabs/3.jpg",
+        "post",
+        "Plan 'VIP'",
+        "BU UCHINCHI CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+        30,
+        ".menu .container"
+    ).render();
     //47.chi dars (Web loyiha 7 chi darsi) Class darsi
 });

@@ -66,13 +66,13 @@
 // // console.log(btn);
 // document.body.append(btn); // yani bu holatda html documentga umumiy bodyni ichiga tartib bo'yicha eng pastiga yangi button tegi dynamic tarzda qo'shildi
 
-////createElement() metodi va append() va add() metodi
+// //createElement() metodi va append() va add() metodi
 // const circleWrapper = document.querySelector(".circle__wrapper"); //yani html documentdagi ona divi chaqirildi
 // const myCircle = document.createElement("div"); //yani yangi div ochildi
 // console.log(btn);
 // myCircle.classList.add("circle"); //yangi divni classnameni classList qiymati bilan add metodi bilan circle qildik
 // circleWrapper.append(myCircle); //yani myCircle o'zgaruvchini ichiga yangi div ochib claslist va add metodi bilan divga circle degan classname berib ichida yangi divi va divini classi bor tayyor myCircle o'zgaruvchini append metodi bilan circleWrapper o'zgaruvchiga chaqirildi//yani circleWrapper o'zgaruvchida ona div bor yani ona divni ichiga  myCircle o'zgaruvchi chaqirildi
-//////yani bu holatda circleWrapper nomli o'zgaruvchi yaratilib unga document.querySelector metodi bilan html documentdagi circle__wrapper classi chaqirildi va myCircle nomli o'zgaruvchi yaratilib unda createElement metodi bilan html documentga bitta div dynamic tarzda qo'shildi va myCircle o'zgaruvchiga (yani ichida yangi divi bor o'zgaruvchiga) clastlist qiymati va append metodi bilan htmlda mavjud bo'lgan (yani 4 dona circle nomli classlar bor) cercle classlariga yangi circle classi berildi (yani yangi divga circle clasi berildi bu degani htmlda endi circle 4 emas 5 ta degani va cssdagi classlar bu beshinchi yangi dynamic tarzda berilgan  divga yani circle nomli divgaham tasir qiladi va browserdagi dumaloqchalar bittaga ko'payadi) va circleWrapper o'zgaruvchiga append metodi bilan append metodini argumentiga  myCircle o'zgaruvchi chaqirildi
+// ////yani bu holatda circleWrapper nomli o'zgaruvchi yaratilib unga document.querySelector metodi bilan html documentdagi circle__wrapper classi chaqirildi va myCircle nomli o'zgaruvchi yaratilib unda createElement metodi bilan html documentga bitta div dynamic tarzda qo'shildi va myCircle o'zgaruvchiga (yani ichida yangi divi bor o'zgaruvchiga) clastlist qiymati va append metodi bilan htmlda mavjud bo'lgan (yani 4 dona circle nomli classlar bor) cercle classlariga yangi circle classi berildi (yani yangi divga circle clasi berildi bu degani htmlda endi circle 4 emas 5 ta degani va cssdagi classlar bu beshinchi yangi dynamic tarzda berilgan  divga yani circle nomli divgaham tasir qiladi va browserdagi dumaloqchalar bittaga ko'payadi) va circleWrapper o'zgaruvchiga append metodi bilan append metodini argumentiga  myCircle o'zgaruvchi chaqirildi
 
 //yani bunday holatda yani ona div ichiga yangi div dynamic qo'shilgandaham tartib bo'yicha ohiriga borib turadi
 
