@@ -134,7 +134,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Spread operatori ... yani (aylantirish operatori) yani massivni shunchaki yangi massivga aylantirib beradi
+////Spread operatori ... yani (aylantirish operatori) yani massivni shunchaki yangi massivga aylantirib beradi
 // const liverpool = ["Salah", "Mane"];
 // const manCity = ["Mahrez"]
 // const mixPlayer = [...liverpool, ...manCity]//yani mixPlayer o'zgaruvchi yuqoridagi liverpool va mancity o'zgaruvchilaridagi qiymatlarni nusxalab yani aynann nusxalab shunchaki linkini emas nusxasini oldi va spread yani uchta nuqta operatori bilan liverpool va mancity o'zgaruvchilarni birlashtirib yubordi shunda mixplayer o'zgaruvchida yuqiridagi ikkala o'zgaruvchidagi qiymatlarni nusxasi birlashtirildix //spread operatorini yozilish belgisi yani chaqirish belgisi uchta nuqta hissoblanadi yani bitta massivga ikkita massivni joylab qo'yildi yani nusxalari bitta arrayga joylab qo'yildi
