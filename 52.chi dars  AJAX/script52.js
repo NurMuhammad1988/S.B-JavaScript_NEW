@@ -1,3 +1,79 @@
 "use strict";
-/////////A        J          A   X
+///////  A        J          A   X
 ////AJAX Asinhron Javascript And XML
+////AJAX serverga so'rov yuborish texnalogiyasi
+////AJAX web sahifani yangilamasdan serverga so'rov jo'natish va serverdan malumotlarni qabul qilis yani web sahifani faqat kerakli joyinigina ishlatish yani yangilash
+
+// const uzs = document.querySelector("#uzs"),
+//     usd = document.querySelector("#usd");
+
+// uzs.addEventListener("input", (e) => {//YANI BU HODISANI ICHIDA YANA HODISA BOR
+//     //yani input htmlni default elementi bo'lgani sabab oldiga nuqta yoki # reshotka qo'yilmadi chunki class yoki id mas//bu holatda uzs o'zgaruvchi ichida chaqirilgan htmldagi uzs nomli idisi bor input chaqirildi
+//     ////yani inputni ichidagi qanaqadur qiymat o'zgarganda shu addeventlisstener ishga tushadi
+//     const request = new XMLHttpRequest(); //XMLHttpRequest objecti//yangi constructor OBJECTNI!!! qaytaradi (new) //Serverlar bilan ishlash uchun XMLHttpRequest (XHR) objektlaridan foydalanish To'liq sahifani yangilamasdan turib URL manzilidan malumotlarni olish mumkin Bu veb sahifani foydalanuvchi qilayotgan ishiga xalaqit bermasdan sahifaning faqat bir qismini yangilash imkonini beradi yani sahifani faqat kerakli joyigina yangilanadi////bu XMLHttpRequest bilan ishlash eski kam ishlatiladigan qiyinroq yo'li hissoblanadi
+//     request.open("GET", "json/current.json"); //open metodi yani serverdan so'rovni nastroykasi deyiladi////YANI BU HOLATDA REQUEST O'ZGARUVCHI GET BUYRUG'I BILAN 'json/current.json' GA SO'ROV YUBORADI BU JOYDA HAR HILI APILAR YOKI SAYTGA SSILKALAR YOKI REAL SERVERNI HTTPS MANZILLARIHAM BO'LISHI MUMKUN YANI 'GET' FAQATGINA MALUMOTNI OLADI//yani jsonpapkani ichidagi current.json fieli bu holatda server vazifasida //open metodi ikkita parametr qabul qiladi birinchisi metodlar yani 'GET' VA 'POST' va boshqa metodlarni qabul qiladi ikkinchisi URL>>> yani (Uniform Resource Locator)  yani qaysi urlga so'rov yuborishni aytish joyi hozir bizda url emas o'zimizni shu darslik fileda bor json filega yuboramiz//YANI AGAR ENDI "json/current.json" SERVERDAGI FILENI SSILKASI NOTO'G'RI YOZILSA YANI HATO ADRESS BILAN CHAQIRILSA MASLAN>>.=>"json/current1.json" SHUNDA SERVER LOGDA 404 (Not Found) HATOSINI YUBORADI VA BU HOLAT CHAQIRILGAN INPUT ICHIDAHAM SODIR BO'LADI YANI DOLLIRNI QIYMATINI KO'RSATADIGAN INPUTDA SOMETHING WENT WRONG TEXTINI KO'RISH MUMKUN
+//     request.setRequestHeader("Content-Type", "application/json; charset=utf8"); //setRequestHeadermetodi//sarlafha qo'yish yani yani serverdan keladigan so'rovga sarlavha qo'yish//uani urldan yani serverdan keladigan malumot qanaqa malumot ekanligini yani kadirofkasi qanaqa malumot ekanligini bilish kerak yani aytish kerak 'Content-Type' yani contentni malumot turi yani serverdan kelayotgan contentni malumot turi yani 'application/json; charset=utf8' yani json formatda htmlga shu bilan sarlavha o'rnatildi
+//     request.send(); //send metodi yani so'rov yuborildi va bu endi nimadur qaytaradi
+//     //  Qaytaradigan narsalari!!!
+//     //1 chisi STATUS qaytaradi STATUS 200-ok yani ok bo'lishi mumkun yoki 404-not-found yani topilmadi yoki 500-server error yani serverda hatolik 400-client error yani clentni interneti yoki browserida muammo bo'lishi mumkun send shu Statuslarni qaytarishi mumkun
+//     //2 chisi statusText shu raqamlardan keladigan statusni textlari// gogledan shunday izlab ko'rilsa qanaqa nomerlar bilan statuslar kelishini ko'rish mumkun>>>(list of status request)
+//     //3 chisi response yani reqestdan yani so'rovdan kelgan javob
+//     //4 chisi readyState yani holatni aniqlab beradi //googledan shunday izlab ko'rilsa qanaqa holatlari borligini ko'rish mumkun>>>xmlhttprequest readystate statelari 0 dan 4 gacha mavjud ayani 5 ta 0 bo'lsa unsent yani jo'natilmagan bo'ladi 1 bo'lsa sarlavha qo'yilsa 2 bo'ladi 3 bo'lsa loading bo'ladi 4 bo'lsa done bo'ladi yani bajarilgan bo'ladi yani done bo'lsa hammasi tog'ro bo'lgan bo'ladi yani so'rov serverga jo'natilgan va serverdan javobham kelgan hissoblanadi
+//     request.addEventListener("readystatechange", () => {//YANI BU HODISANI USTIDA ASOSIY HODISA BOR
+//         //yani readystatechange parametri addeventlistenerni parametrlaridan biri hissoblanadi bu holatda readystatechange parametri requestni yani serverga so'rov yuborish holatini eshtib turadi va statusga moslashib shu yoziladigan hodisani qo'yib beradi
+//         if (request.readyState === 4 && request.status === 200) {
+//             // console.log(request.response); //bu inputga har bosilganda serverdan keladigan json formatni logda browserda ko'rish uchun yozildi
+//             //yani huddiki serverdan keladigan javobni ovoldik yani jsonnformatda//yani reqestni response reqest serverdan so'rovni  javobi bu joyda readyState,status,response lar qo'lda yozilgan qiymatlar emas js qiymatlar ko'rinishidan metodlarga>>() o'hshamasligi mumkun lekin bular js server bilan ishlashga aloqador buyruqlar hissoblanadi endu bu serverdan kelayotgan jjon fileni objectga yani js va browser tushunadigan object ko'rinishiga keltirvolish kerak
+//             const data = JSON.parse(request.response);//yani bu holatda serverdan yani json filedan kelayotgan malumotni objectga o'girvoldk yani bu joyda json objecti parse metodi bilan request yani serverga so'rov jo'natish o'zgaruvchisini javobini oldik
+//             // usd.value = +uzs.value / data.current.usd;//yani bu joydagi data o'zgaruvchi JSON objectini parse metodi bilan object qaytaradi va shu objectni ichidagi va currentni ichidagi usdga kirildi yani serverdagi bu malumot kerakli inputlarg achaqirildi //+ sabab bu faqat raqamni hissoblaydi//tofixedsiz holati //YANI BU HOLATDA uzsnivaluesi yani qiymati current jsondan keladigan qiymatga bo'linayapti yani jsondagi usdga yani 12000 mingga bo'linayapti
+//             usd.value = (+uzs.value / data.current.usd).toFixed(2);//yani bu joydagi data o'zgaruvchi JSON objectini parse metodi bilan object qaytaradi va shu objectni ichidagi va currentni ichidagi usdga kirildi yani serverdagi bu malumot kerakli inputlarg achaqirildi//+ sabab bu faqat raqamni hissoblaydi//YANI BU HOLATDA uzsni valuesi yani qiymati current jsondan keladigan qiymatga bo'linayapti yani jsondagi usdga yani 12000 mingga bo'linayapti//tofixed metodi bilan uzun raqamlarni qisqartrib yozish mumkun
+//         } else {
+//             // yani bu holatda hato bo'lib qolishiham mumkun shu sabab hato bo'lsa shu text chiqadi yani something went wrong
+//             usd.value = "Something went wrong";
+//         }
+//     });
+
+//     ////LIVE SERVERDA YANI WEB SAHIFA HTMLDAN OCHILGANDA SERVERGA GET SO'ROV YUBORISH MUMKUN LEKIN POST SO'ROV YUBORADIGAN BO'LSAK SERVER KERAK BO'LADI
+
+//     /////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     ////reqest yuqoridagi  serverga so'rov jo'natish hodisasini qisqaroq boshqacha varyanti yani addeventlistenerni serverga aloqador load parametri bilan yozilgan varyanti yani bu holatda endi qachonki readstate 4 yani done bo'lgandan keyingina bu hodisa ishga tushadi va readiystateni tekshirini hojati yo'q hissoblanadi faqatgina stus kodni yani 200 ni tekshirib koddni yani addeventlistenerni ishlatadi
+//     // request.addEventListener("load", () => {
+//     //     if (request.status === 200) {
+//     //         console.log(request.response);
+//     //         const data = JSON.parse(request.response);
+
+//     //         usd.value = (+uzs.value / data.current.usd).toFixed(2);
+//     //     } else {
+//     //         usd.value = "Something went wrong";
+//     //     }
+//     // });
+//     /////////////////////////////////////////////////////////////////////////////////////////////////////////
+// });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////KODNI O'QISH UCHUN YUQORIDAGI SERVERGA SO'ROV JO'NATISH VA QABUL QILISH KODINI COMMENTLARSIZ VA TOFIXSED METODISIZ YOZILGAN HOLATDI YUQORIDA HUDDI SHU  KOD JUDA KO'P COMMENT BILAN YOZILGAN
+
+///////  A        J          A   X
+////AJAX Asinhron Javascript And XML
+const uzs = document.querySelector("#uzs"),
+    usd = document.querySelector("#usd");
+
+uzs.addEventListener("input", (e) => {
+    //
+    const request = new XMLHttpRequest();
+    request.open("GET", "json/current.json");
+    request.setRequestHeader("Content-Type", "application/json; charset=utf8");
+    request.send();
+
+    request.addEventListener("readystatechange", () => {
+        if (request.readyState === 4 && request.status === 200) {
+            console.log(request.response);
+            const data = JSON.parse(request.response);
+            usd.value = +uzs.value / data.current.usd;
+        } else {
+            usd.value = "Something went wrong";
+        }
+    });
+    //
+});
