@@ -56,6 +56,7 @@
 
 ///////  A        J          A   X
 ////AJAX Asinhron Javascript And XML
+////bu kod o'qish uchun kommentsi yozilgani
 const uzs = document.querySelector("#uzs"),
     usd = document.querySelector("#usd");
 
