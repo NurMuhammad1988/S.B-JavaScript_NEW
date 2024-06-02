@@ -1,14 +1,15 @@
-body{
+body {
     background: rgb(71, 18, 18);
     color: silver;
 }
 
-a{
+a {
     color: silver;
     font-size: 25px;
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     color: red;
     text-decoration: underline;
 }
