@@ -257,7 +257,6 @@ window.addEventListener("DOMContentLoaded", () => {
     ).render(); //new MenuCard ga parametr sifatida MenuCard classidagi parametrlar chaqirilgan bu parametrlarda esa css qiymatlar mavjud shu ona divlar sabab>>>.menu .container
 
     //MenuCard nomli class yaratib parametrlariga src, alt, title, descr, price, parentSelector nomli qiymatlar berib chiqildi bular htmldagi atributlar yani atrtibutlar bilan html elementlar chaqirildi masalar src=imgni atributi alt=imgni atributi???  descr=descrni titeli va hakozo bu htmldagi filelarni atribut va atributsizham jsga kelishiga sabab this.parent = document.querySelector(parentSelector); shu bilan ona div .menu va .container classlarini olib kelinishi sabab quereselector bilan parentselector qilib ona div chaqirilganda ichidagi elementlar 0 dan boshlab 0,1,2,3 bo'lib massivda keladi shu sabab har bir html element alohida chaqirib o'tirilmadi uchta cardni classlari esa cssda yozib qo'yilgan va shu sabab yangi ochilgan element o'zgaruvchidagi yangi divga innerhtml bilan yozilgani uchun classlarham keldi
-    //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
 
     //48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi kospekti
     ////rest operatori argumentlarni bitta joyga massiv ichiga yig'ib beradi misollar>>>
@@ -273,4 +272,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // }
     // calc(10);
     //48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi konspekti
+    //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
+
+    ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
+    ////FORM
+
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+        postData(form);
+    });
+
+    function postData(form) {}
+
+    ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
 });
