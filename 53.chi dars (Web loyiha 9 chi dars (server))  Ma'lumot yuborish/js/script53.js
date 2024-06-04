@@ -275,15 +275,93 @@ window.addEventListener("DOMContentLoaded", () => {
     //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
 
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
-    ////FORM
+    ////FORM  //Form darsi xamppda ochilishi kerak bo'lmasa hato ishlaydi yani xampp local server yani tushunishimcha xampp bilan server sotib olmasdan o'z kompyuterimdan server sifatida foydalanashim uchun  kerak dastur yani masalan pullik server kompyuterlar kuchli himoyalangan va uzluksiz tok bilan taminlanib ishlab turadi bu joyda esa xammp shu vazifada yani local server sifatida ishlaydigan dastur lekin bitta savolim ochiq qoldi js server bilan ishlashda serverni hafsiz yoki hafsuz emasligini qayerdan biladi masalan xammpda ochmaganimcha form darsida qilingan narsalar o'hshamadi yani open live servisda ishlamadi lekin xammp local hostda ochganimda ishladi shu savol???
 
+    ////darsi takr0rlayotganda xamppda ochish shart bo'lmasa form datalar bilan ishlash darsini natijalarini ko'rib bo'lmaydi agar aynan form data darsi kerak bo'lsa yani shu 53 chi dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 53 chi dars filega yozib turildi)
+    // const forms = document.querySelectorAll("form");
+
+    // forms.forEach((form) => {
+    //     postData(form);
+    // });
+
+    // const msg = {
+    //     loading: "Loading...",
+    //     success: "Thank's for submiting our form",
+    //     failre: "Something went wrong",
+    // };
+
+    // function postData(form) {
+    //     form.addEventListener("submit", (e) => {
+    //         e.preventDefault();
+
+    //         const statusMessage = document.createElement("div");
+    //         statusMessage.textContent = msg.loading;
+    //         form.append(statusMessage);
+
+    //         const raequest = new XMLHttpRequest();
+    //         raequest.open("POST", "server.php");
+
+    //         const formData = new FormData(form); ////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
+    //         raequest.send(formData);
+    //         raequest.addEventListener("load", () => {
+    //             if (raequest.status === 200) {
+    //                 console.log(raequest.response);
+    //                 statusMessage.textContent = msg.success;
+
+    //                 form.reset();
+    //                 setTimeout(() => {
+    //                     statusMessage.remove();
+    //                 }, 2000);
+    //             } else {
+    //                 statusMessage.textContent = msg.failre;
+    //             }
+    //         });
+    //     });
+    // }
+     
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey 
     const forms = document.querySelectorAll("form");
-
     forms.forEach((form) => {
         postData(form);
     });
-
-    function postData(form) {}
+    const msg = {
+        loading: "Loading...",
+        success: "Thank's for submiting our form",
+        failre: "Something went wrong",
+    };
+    function postData(form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const statusMessage = document.createElement("div");
+            statusMessage.textContent = msg.loading;
+            form.append(statusMessage);
+            const raequest = new XMLHttpRequest();
+            raequest.open("POST", "server.php");
+            raequest.setRequestHeader("Content-Type", "application/json");
+            const obj = {};
+            const formData = new FormData(form);
+            formData.forEach((val, key) => {
+                obj[key] = val;
+            });
+            const json = JSON.stringify(obj);
+            raequest.send(json);
+            raequest.addEventListener("load", () => {
+                if (raequest.status === 200) {
+                    console.log(raequest.response);
+                    statusMessage.textContent = msg.success;
+                    form.reset();
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 2000);
+                } else {
+                    statusMessage.textContent = msg.failre;
+                }
+            });
+        });
+    }
+    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
 });
