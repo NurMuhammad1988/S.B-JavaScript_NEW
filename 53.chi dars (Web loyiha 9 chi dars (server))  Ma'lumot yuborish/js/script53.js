@@ -275,39 +275,94 @@ window.addEventListener("DOMContentLoaded", () => {
     //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
 
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
+    ////malumot yuborish bu 53 chi darsda yozilgan server bilan muloqot kodlari eskiroq usullar hissoblanadi
     ////FORM  //Form darsi xamppda ochilishi kerak bo'lmasa hato ishlaydi yani xampp local server yani tushunishimcha xampp bilan server sotib olmasdan o'z kompyuterimdan server sifatida foydalanashim uchun  kerak dastur yani masalan pullik server kompyuterlar kuchli himoyalangan va uzluksiz tok bilan taminlanib ishlab turadi bu joyda esa xammp shu vazifada yani local server sifatida ishlaydigan dastur lekin bitta savolim ochiq qoldi js server bilan ishlashda serverni hafsiz yoki hafsuz emasligini qayerdan biladi masalan xammpda ochmaganimcha form darsida qilingan narsalar o'hshamadi yani open live servisda ishlamadi lekin xammp local hostda ochganimda ishladi shu savol???
 
     ////darsi takr0rlayotganda xamppda ochish shart bo'lmasa form datalar bilan ishlash darsini natijalarini ko'rib bo'lmaydi agar aynan form data darsi kerak bo'lsa yani shu 53 chi dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 53 chi dars filega yozib turildi)
-    // const forms = document.querySelectorAll("form");
 
+    const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bilar saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
+
+    forms.forEach((form) => {
+        ///intrigatsada parametrda form yozildi chunki bu form pastda postdata funksiyasida chaqiriladi shunda bu joyda intigatsa bo'lgan[] form classlarga post datada hodisa ilinadi
+        postData(form); ////yani endi ALL qilib chaqirilganda kelgan hamma massiv ichidagi form classlar endi postdata funksiyasiga tushadi
+    });
+
+    // console.log(forms);////formani ishlayotgan yoki ishlamayotganini tekshirish uchun yozildi logda ikkita formni kelganini ko'rish mumkun
+
+    const msg = {
+        //user form bilan ishlab submitlar qilganda yani malumotlar kirgizganda oladigan habarlari va sodir bo'ladigan hodislar davomi pastda nimaga pastda chunki bu kodni boshi bilan ohirini orasida serverga malumot jo'natish kodlari bor yani user serververga malumotlarni jonatganda yani jonatishga harakat qilgandan song chiqishi kerak bo'lgan malumnot bo'lganligi sababli bu objectni qanday ishlashi pastda yani server user malumot almashinib bo'lgandan keyingina chqadi shu sabab pastga yozildi (kod o'qish tartibi)
+        loading: "Loading...",
+        success: "Thank's for submiting our form",
+        failre: "Something went wrong",
+    };
+
+    function postData(form) {
+        form.addEventListener("submit", (e) => {
+            ////form o'zgaru vchisida ALL qilib chaqirilgan va postdataga form qilib berib qo'yilgan form classlariga submit hodisasi ilinepti chunki formda submit qilish bor (yani malumot jo'natilganda)
+            e.preventDefault(); ////preventdefault metodi kerakli documentlarga submit bo'lganda faqat kerakli joyni qayta yuklaydigan metod ////parametrda submitdan keyn (e) yani event olindi yani browserni odatiy holatdan chiqarish uchun masalan submit hodisasi sodir bo'lganda sahifa yangilanmasdan faqat shu form classlarini o'zi yangilanadi shunda sayt butunlay qayta yuklanmaydi
+
+            const statusMessage = document.createElement("div"); ////yani bu holatda yuqoridagi msg o'zgaruvchisi yani user bilan server malumot lamashunuvi jarayoni uchun yaratilgan msg o'zgaruvchisi uchun yangi div elementi dynamic tarzda yaratildi
+            statusMessage.textContent = msg.loading; //yani server bilan muloqot jarayoni aftamatik tarzda loading bo'ladi yani kutiladi
+            form.append(statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga append metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi div bor bu divga esa msg o'zgaruvchidagi qiymatlardan loading qiymati texcontent bilan qo'shib qo'yildi
+
+            const request = new XMLHttpRequest(); //yani bu XMLHttpRequest objecti server bilan ishlash objecti yani yangi constructor yani XMLHttpRequest o'zida constructor objectni saqlaydi yani bundan object keladi
+            request.open("POST", "server.php"); // xamppda ochilgani sababi serverga so'rov yuborish birinchi parametr metod qabul qiladi post yoki get bu joyda post ishlatilyapti chunki serverga malumot jo'natilepti ikkinchi parametr esa url qabul qiladi url esa doim serverni manzili bo'lishi kerak bu holatda server.php bo'lib turipti yani local server esa xampp bo'lib turipti shunda server.php faqat url vazifasida turipti
+
+            const formData = new FormData(form); //yani bu holatda FormDataga form classlarni malumotlari berildi yani FormData bu HTML formasi malumotlarini ko'rsatish objektidir yani serverga ko'rsatadi    yani FormData objecti formdagi yani o'ziga kirtilgan elementdagi namelarga qaraydi bu holatda htmldagi inputlarni namelariga qaraydi yani atributlarni nomlariga qarab malumotlarni serverga moslaydi??? yani masalan name atributi formdata objectini name hususiyatiga teng bo'ladi formdata objecti yani html atributlarni nomlariga mos o'z qiymatlariga ega construktor (huddiki this.name va hakozo) shu uchun forms o'zgaruvchisi all qilinib chaqirildi va foreach qilindi va form holatidda formdatani parametriga kiritildi va bu formdata objecti o'zini parametridagi malumotlarni server taniydigan mlumot turiga aylantiradi lekin json emas yani shunda formga kelgan malumot serverga jo'natishga serverbop malumot turiga aylantirilib tayyor qilindi yani FormDta objecti formga yoziladigan clien kirtgan malumotlarni va faillarni serverga server tushunadigan tilda tayyorlab beradi lekin json fileda emas ////FormData html form classidan yuboriladigan malumotlar formatlaridan biridir. Xususan, u shaklga kiritilgan qiymatlarni name: value juftlari sifatida kodlaydi va ularni Content-Type sarlavhasi bilan  multipart/form-data ga yuboradi FormDtaning asosiy xususiyatlariga quyidagilar kiradi: Faqat matnni emas, balki fayllarni ham yuborish imkoniyati.////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
+            request.send(formData); //yani bu holatda request o'zgaruvchi ichidagi constructor (XMLHttpRequest) va open metodlari bilan tayyor qilingan va formData o'zgaruvchi ichida FormData objecti bilan serverga jo'natishga tayyor qilingan formDta objecti send qilindi yani inputni ichiga tushadigan datalarni serverga jonatish sodir bolepti
+            request.addEventListener("load", () => {
+                //yani request o'zgaruvchidagi server bilan muloqot jarayonidagi load holati bu joyda load hodisani parametrlaridan biri hissoblanadi yani js biladi server bilan muloqot paytida qanchadur vaqt o'tishini va shu vaqt uchun js hodilalarda alohida load parametri mavjud
+                //yani hodisa ichiga hodisa osilayapti
+                if (request.status === 200) {
+                    //yani agar request o'zgaruvchida jonatilgan malumotlar statusi 200 kodiga ega bo'lsa yani omadli jo'natilsa logda request o'zgaruvchini response parametri bilan ko'ramiz yani formga malumot kiritilganda server buni qabul qilsa logda ko'rinadi//////FormData objecti bilan ishlanayotgani sababli form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
+                    console.log(request.response); ////serverga jo'natilgan nmalumotlarni logda ko'rish uchun
+                    statusMessage.textContent = msg.success; //endi agar hammasi to'g'ri bo'lsa yani 200 bo'lsa statusmeesagega textcontent bilan msgni .success qiymati berildi yani server bilan muloqot omadli bo'lsa
+
+                    form.reset(); ////JavaScript-da reset() metodi HTMLni tiklash tugmasi  form elementlarining barcha qiymatlarini tozalash uchun ishlatiladi. U qiymatlarni sukut bo'yicha o'rnatish uchun ishlatilishi mumkin. U hech qanday parametr qiymatlarini talab qilmaydi va hech qanday qiymatni qaytarmaydi va Elektron qurilmadagi reset tugmasi nima qiladi? Qayta tiklash tugmasi apparat yoki dasturiy ta'minot mexanizmi bo'lib, qurilma yoki tizimni asl holatiga qaytarish yoki noto'g'ri ishlash yoki muzlatish holatlarida uni qayta ishga tushirish imkonini beradi . Qayta tiklash tugmasini bosish orqali siz qurilmani qayta o'rnatish jarayonini boshlashingiz mumkin. yani malumotlar formga kiritilgandan keyin contact us ga bosilganda formlardagi inputlarni reset qiladi yani sukut default holatiga qaytaradi
+                    setTimeout(() => {
+                        //asinhron//yani bu holatda formga reset berildi yani yani resetda settimeout funksiyasi bilan  status messagga yani formga submit hodisasi sodir bo'lgandan keyin statusmessegdan kelgan malumotni 2 sekunddan keyin remove yani udalit qilish buyurildi
+                        statusMessage.remove();
+                    }, 2000);
+                } else {
+                    statusMessage.textContent = msg.failre; ////yokida //endi agar hammasi to'g'ri bo'lmasa yani 200 bo'lmasa statusmeesagega textcontent bilan msgni .failre qiymati berildi yani server bilan muloqot omadsiz bo'lsa
+                }
+            });
+        });
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey bo'lmasa serverga userni malmumotlarini jo'natishda hatolik sodir bo'ladi
+
+    // const forms = document.querySelectorAll("form");
     // forms.forEach((form) => {
     //     postData(form);
     // });
-
     // const msg = {
     //     loading: "Loading...",
     //     success: "Thank's for submiting our form",
     //     failre: "Something went wrong",
     // };
-
     // function postData(form) {
     //     form.addEventListener("submit", (e) => {
     //         e.preventDefault();
-
     //         const statusMessage = document.createElement("div");
     //         statusMessage.textContent = msg.loading;
     //         form.append(statusMessage);
-
     //         const raequest = new XMLHttpRequest();
     //         raequest.open("POST", "server.php");
-
-    //         const formData = new FormData(form); ////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
-    //         raequest.send(formData);
+    //         raequest.setRequestHeader("Content-Type", "application/json");
+    //         const obj = {};
+    //         const formData = new FormData(form);
+    //         formData.forEach((val, key) => {
+    //             obj[key] = val;
+    //         });
+    //         const json = JSON.stringify(obj);
+    //         raequest.send(json);
     //         raequest.addEventListener("load", () => {
     //             if (raequest.status === 200) {
     //                 console.log(raequest.response);
     //                 statusMessage.textContent = msg.success;
-
     //                 form.reset();
     //                 setTimeout(() => {
     //                     statusMessage.remove();
@@ -318,49 +373,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //         });
     //     });
     // }
-     
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey 
-    const forms = document.querySelectorAll("form");
-    forms.forEach((form) => {
-        postData(form);
-    });
-    const msg = {
-        loading: "Loading...",
-        success: "Thank's for submiting our form",
-        failre: "Something went wrong",
-    };
-    function postData(form) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const statusMessage = document.createElement("div");
-            statusMessage.textContent = msg.loading;
-            form.append(statusMessage);
-            const raequest = new XMLHttpRequest();
-            raequest.open("POST", "server.php");
-            raequest.setRequestHeader("Content-Type", "application/json");
-            const obj = {};
-            const formData = new FormData(form);
-            formData.forEach((val, key) => {
-                obj[key] = val;
-            });
-            const json = JSON.stringify(obj);
-            raequest.send(json);
-            raequest.addEventListener("load", () => {
-                if (raequest.status === 200) {
-                    console.log(raequest.response);
-                    statusMessage.textContent = msg.success;
-                    form.reset();
-                    setTimeout(() => {
-                        statusMessage.remove();
-                    }, 2000);
-                } else {
-                    statusMessage.textContent = msg.failre;
-                }
-            });
-        });
-    }
-    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey 
+    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey bo'lmasa serverga userni malmumotlarini jo'natishda hatolik sodir bo'ladi
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish

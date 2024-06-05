@@ -29,16 +29,16 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////Chuqur clonlash yani objectni ichidagi objectni clonlash JSON parse va JSON stringify metodlari bilan
-const carr = {
-    name: "bmw",
-    color: "red",
-    extra: {
-        //yani carr objectini icxhidagi local object OOP!
-        isAirbag: false,
-        tires: 5,
-    },
-};
-const clone = JSON.parse(JSON.stringify(carr)); //yani bu holatda clone deb nomlangan yangi o'zgaruvchi yaratib JSON objectini parse metodini chaqirdik bu parse metodi bu holatda ichma ich objectdan iborat carr objectni butunlay nusxalaydi parse metodini parametrida esa stringify metodi chaqirildi(shu joyiga izoh yo'q)??? //hullas js filedan json filega json filedan js filega aralashtirilib bir nimalar qilib hullas objectni ichidagi objectham clonlandi mana>>>{ name: 'bmw', color: 'red', extra: { isAirbag: false, tires: 10 } }
-clone.extra.tires = 10;
-console.log(clone); //{ name: 'bmw', color: 'red', extra: { isAirbag: false, tires: 10 } }//yani objectni ichidagi local objectham clonlandi
-console.log(carr);
+// const carr = {
+//     name: "bmw",
+//     color: "red",
+//     extra: {
+//         //yani carr objectini icxhidagi local object OOP!
+//         isAirbag: false,
+//         tires: 5,
+//     },
+// };
+// const clone = JSON.parse(JSON.stringify(carr)); //yani bu holatda clone deb nomlangan yangi o'zgaruvchi yaratib JSON objectini parse metodini chaqirdik bu parse metodi bu holatda ichma ich objectdan iborat carr objectni butunlay nusxalaydi parse metodini parametrida esa stringify metodi chaqirildi(shu joyiga izoh yo'q)??? //hullas js filedan json filega json filedan js filega aralashtirilib bir nimalar qilib hullas objectni ichidagi objectham clonlandi mana>>>{ name: 'bmw', color: 'red', extra: { isAirbag: false, tires: 10 } }
+// clone.extra.tires = 10;
+// console.log(clone); //{ name: 'bmw', color: 'red', extra: { isAirbag: false, tires: 10 } }//yani objectni ichidagi local objectham clonlandi
+// console.log(carr);
