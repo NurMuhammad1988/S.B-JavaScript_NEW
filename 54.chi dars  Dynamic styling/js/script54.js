@@ -375,7 +375,13 @@ window.addEventListener("DOMContentLoaded", () => {
     // }
     ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey bo'lmasa serverga userni malmumotlarini jo'natishda hatolik sodir bo'ladi
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //////////////////////////////////////////////////////////////////////////////////////////////////
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
+
+    ////54. chi dars  Dynamic styling
+
+    
+
+    ////54. chi dars  Dynamic styling
+
 });
