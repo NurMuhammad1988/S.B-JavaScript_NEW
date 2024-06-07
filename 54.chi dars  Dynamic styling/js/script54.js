@@ -382,7 +382,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ////54.chi dars Dynamuc styling
     ////54 chi darsni takrorlayotganda xamppda ochish shart bo'lmasa  Dynamic styling(54) dars natijalarini ko'rib bo'lmaydi agar aynan  dynamic styling darsi kerak bo'lsa yani shu 54  dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 54 chi dars filega yozib turildi va xampdan bu yerga copy qilib qo'yildi)
 
-    function showThanksModal() {
+    function showThanksModal(message) {
         const prevModalDialog = document.querySelector(".modal__dialog"); ////yani bu holatda htmldagi modal__dilaog classi yani sayt ochilganda va contact us buttoni bosilganda chiqadigan serverga clientni malumotlarini jo'natadigan modal__dialog classi chaqirib olindi va classlist parametri va add metodi bilan cssdagi hide classi qo'sgildi yani yo'q qilib qo'yildi cssdagi hide classida   display: none; qiymati bor
         prevModalDialog.classList.add("hide");
         openModal(); //yani modal oyna yuqorida hide classi bilan yopilib bu ancha yuqorida boshida yozilgan openmodal functsiyasi bilan yana ochildi
@@ -394,7 +394,7 @@ window.addEventListener("DOMContentLoaded", () => {
       <div class="modal__content">
       
       <div data-close class="modal__close">&times;</div>
-      <div class="modal__title"></div>
+      <div class="modal__title">${message}</div>
 
 
 
