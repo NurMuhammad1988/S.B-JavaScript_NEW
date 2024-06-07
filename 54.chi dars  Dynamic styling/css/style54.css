@@ -2,28 +2,32 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;  
+  margin: 0;
   padding: 0;
   font-family: Roboto, sans-serif;
 }
 
 /* my own classsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
-.own-div{
+.own-div {
   background-color: #2d3436;
   padding: 10px;
 }
-.own-a{
+
+.own-a {
   color: silver;
   margin: 10px;
   font-size: 20px;
 }
-.own-a:hover{
+
+.own-a:hover {
   color: red;
 }
-.own-h1{
+
+.own-h1 {
   color: silver;
   margin: 10px;
 }
+
 /* my own classssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
 a {
   text-decoration: none;
@@ -376,9 +380,9 @@ a {
   border: 1px solid #fff;
 }
 
-.menu__item-price:hover{
-  color:white;
-  }
+.menu__item-price:hover {
+  color: white;
+}
 
 .menu__item img {
   width: 100%;

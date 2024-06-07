@@ -125,8 +125,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
     ////Modal
     const modalTrigger = document.querySelectorAll("[data-modal]"), //data atribut bilan modal oynaga aloqador buttonlarni jsga chaqirvoldik data atributlar htmlda bir nechta bo'lsa querySelector bilan chaqirilganda js codlar faqat birinchisiga tasir qilar ekan va agar htmlda data atributlar yozilib lekin jsda ishlatilmasaham hech narsa qilmaydi chunki data atributlar birinchi qiymati falsga teng bo'ladi yani hech narsaga tasir qilmaydi //querySelectorAll bilan chaqirilganda esa htmldagi hamma data-modal atributlarni jsga chaqirib oladi
-        modal = document.querySelector(".modal"), //yani modal ona divini jsga chaqirvoldik
-        modalCloseBtn = document.querySelector("[data-close]"); //modal ona divi ichidagi x belgidsi yani modalni chiqgandan keyin o'chirish tugmasi
+        modal = document.querySelector(".modal"); //yani modal ona divini jsga chaqirvoldik
+
     function openModal() {
         modal.classList.add("show");
         modal.classList.remove("hide"); //yani openModal funksiyasi chaqirilganda modal ona divini  classiga show classini qo'sh va hide clasini udalit qil deyildi va overflovga hidden yani scrollni ko'rinmey turishi buyurildi
@@ -143,10 +143,10 @@ window.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("click", openModal); //yani bitta click hodisasini barcha data-modal atributibor elementlarga berib chiqdik va keyinchalik faqat bitta joyda data atributni qoldirdik???=> sababi bir nechta buttongaham bitta funksiyasni ishlatib ko'rdik
     });
 
-    modalCloseBtn.addEventListener("click", closeModal); //yani bu holatda modalCloseBtn o'zgaruvchisi ichida chaqirilgan htmldagi close-modal atributiga click hodisasi sodir bo'lganda yuqoridagi closemodal funksiyasi ishga tushishi buyurildi shunda close-modal atributiga ega buttondagi x belgisiga bosilganda modal yopiladi yani closemodal funksiyasi ishga tushadi
-    //addEventListener metodini parametriga funksiya chaqirilganda (shu) chaqirilish qavusi ishlatilmaydi yani addEventListener ishlaganda aftamatik tarzda parametrda chaqirilgan funksiya ishga tushadi
     modal.addEventListener("click", (e) => {
-        if (e.target == modal) {
+        if (e.target == modal || e.target.getAttribute("data-close") == "") {
+            ////54.chi darsda o'zgartirildi endiham openmodalda chiqadi x yani o'chirish tugmasiga bosilganda modal yopiladi yani event targetda yani butunlay html documentda modal o'zgaruvchi ichidagi modal ona divi bor bo'lsa va event targetga yani umumiy documentga getAttribute metodi bilan data-close attributi bor bo'lsa "" bo'sh katak yani shunda data close atributidagi stiker x ga bosilganda ekrandan o'chadi yani closeModal funksiyasi ishga tushadi  ////Element interfeysining getAttribute() metodi elementda belgilangan atributning qiymatini qaytaradi  Agar berilgan atribut mavjud bo'lmasa, qaytarilgan qiymat null bo'ladi 
+
             //yani modalga click hodisasi sodir bo'lganda yani umumiy html documentda modal classi yani o'zgaruvchisi aktiv bo'lsa closeModal funksiyasi chaqirilsin deyildi
             //yani agar e.target ichida yani document ichida modal o'zgaruvchi yani modal o'zgaruvchini html elementlari bor bo'lsa yani butun html documentda event targetda pastdagi classlar bor bo'lsa click hodisasi sodir bo'lganda pastdagi classlar ishlasin
             closeModal(); //bu joyda closeModal addEventListener funksiyasi parametrda chaqirilmagani sabab alohida(shu) bilan chaqiriladi
@@ -278,7 +278,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ////malumot yuborish bu 53 chi darsda yozilgan server bilan muloqot kodlari eskiroq usullar hissoblanadi
     ////FORM  //Form darsi xamppda ochilishi kerak bo'lmasa hato ishlaydi yani xampp local server yani tushunishimcha xampp bilan server sotib olmasdan o'z kompyuterimdan server sifatida foydalanashim uchun  kerak dastur yani masalan pullik server kompyuterlar kuchli himoyalangan va uzluksiz tok bilan taminlanib ishlab turadi bu joyda esa xammp shu vazifada yani local server sifatida ishlaydigan dastur lekin bitta savolim ochiq qoldi js server bilan ishlashda serverni hafsiz yoki hafsuz emasligini qayerdan biladi masalan xammpda ochmaganimcha form darsida qilingan narsalar o'hshamadi yani open live servisda ishlamadi lekin xammp local hostda ochganimda ishladi shu savol???
 
-    ////darsi takr0rlayotganda xamppda ochish shart bo'lmasa form datalar bilan ishlash darsini natijalarini ko'rib bo'lmaydi agar aynan form data darsi kerak bo'lsa yani shu 53 chi dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 53 chi dars filega yozib turildi)
+    ////53 chi darsni takrorlayotganda xamppda ochish shart bo'lmasa form datalar bilan ishlash darsini natijalarini ko'rib bo'lmaydi agar aynan form data darsi kerak bo'lsa yani shu 53 chi dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 53 chi dars filega yozib turildi va xampdan bu yerga copy qilib qo'yildi)
 
     const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bilar saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
 
@@ -376,12 +376,32 @@ window.addEventListener("DOMContentLoaded", () => {
     ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey bo'lmasa serverga userni malmumotlarini jo'natishda hatolik sodir bo'ladi
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
+
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
 
-    ////54. chi dars  Dynamic styling
+    ////54.chi dars Dynamuc styling
+    ////54 chi darsni takrorlayotganda xamppda ochish shart bo'lmasa  Dynamic styling(54) dars natijalarini ko'rib bo'lmaydi agar aynan  dynamic styling darsi kerak bo'lsa yani shu 54  dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 54 chi dars filega yozib turildi va xampdan bu yerga copy qilib qo'yildi)
 
-    
+    function showThanksModal() {
+        const prevModalDialog = document.querySelector(".modal__dialog"); ////yani bu holatda htmldagi modal__dilaog classi yani sayt ochilganda va contact us buttoni bosilganda chiqadigan serverga clientni malumotlarini jo'natadigan modal__dialog classi chaqirib olindi va classlist parametri va add metodi bilan cssdagi hide classi qo'sgildi yani yo'q qilib qo'yildi cssdagi hide classida   display: none; qiymati bor
+        prevModalDialog.classList.add("hide");
+        openModal(); //yani modal oyna yuqorida hide classi bilan yopilib bu ancha yuqorida boshida yozilgan openmodal functsiyasi bilan yana ochildi
 
-    ////54. chi dars  Dynamic styling
+        const thanksModal = document.createElement("div");
+        thanksModal.classList.add("modal__dialog");
+        //// thanksModal.innerHTML bilan dynamic content qo'shish
+        thanksModal.innerHTML = `
+      <div class="modal__content">
+      
+      <div data-close class="modal__close">&times;</div>
+      <div class="modal__title"></div>
 
+
+
+      </div>
+        
+        `;
+    }
+
+    ////54.chi dars Dynamuc styling
 });
