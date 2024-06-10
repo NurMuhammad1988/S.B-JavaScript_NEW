@@ -409,7 +409,7 @@ window.addEventListener("DOMContentLoaded", () => {
             prevModalDialog.classList.remove("hide"); //display: none;//yani endi yuqorida hide qilingan ichida modal__dialog classlari chaqirilgan  prevModalDialog o'zgaruvchini hide classini remove qildik yani udalit qildik va shundan so'ng closemodal funksiyasini chaqirib qo'ydik bu close modal funksiyasi modalni inputlari bilan tozalab yopadi
             closeModal();
         }, 4000);
-    }///yani endi user modal oynaga malumot kiritib contact us buttoniga bosgandan keyin 4 sekund vaqt o'tib modal yopiladi va modal yana qaytadan malumot jo'natish uchun top tozza holatga qaytadi
+    } ///yani endi user modal oynaga malumot kiritib contact us buttoniga bosgandan keyin 4 sekund vaqt o'tib modal yopiladi va modal yana qaytadan malumot jo'natish uchun top tozza holatga qaytadi
 
     ////54.chi dars Dynamuc styling
 });
