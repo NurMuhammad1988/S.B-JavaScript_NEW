@@ -97,19 +97,19 @@
 // //// console.log(theif);
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-// //Destruptizatsiya yani objectni ichidagi narsalarni tortib olish
-// const theif = {
-//     jacket: "black",
-//     height: 1.7,
-//     colors: {
-//         hair: "gray",
-//         style: "curley",
-//     },
-//     howOut: function () {
-//         console.log("Fast with help doors");
-//     },
-// };
+//Destruptizatsiya yani objectni ichidagi narsalarni tortib olish
+const theif = {
+    jacket: "black",
+    height: 1.7,
+    colors: {
+        hair: "gray",
+        style: "curley",
+    },
+    howOut: function () {
+        console.log("Fast with help doors");
+    },
+};
 // theif.howOut();
-// const { hair, style } = theif.colors; //Destruptizatsiya mana shunday yoziladi yani objectni ichidan kerakli valueni boshqa o'zgaruvchi ichiga olish bu joyda theif objectni ichidagi colors objectini ichidagi gray bilan curley olindi //Destruptizatsiya mana shunday yoziladi yani objectni o'zgaruvchi ichiga olib property va valuelarini nusxalab olish Destruptizatsiya deyiladi
-// //Destruptizatsiya massivni yoki objectni  yo'q qilmaydi. U objectni arrayni topshiriq va malumotlari bilan hech narsa qilmaydi; uning vazifasi faqat kerakli qiymatlarni o'zgaruvchilarga nusxalashdir
-// console.log(hair,style);
+const { hair, style } = theif.colors; //Destruptizatsiya mana shunday yoziladi yani objectni ichidan kerakli valueni boshqa o'zgaruvchi ichiga olish bu joyda theif objectni ichidagi colors objectini ichidagi gray bilan curley olindi //Destruptizatsiya mana shunday yoziladi yani objectni o'zgaruvchi ichiga olib property va valuelarini nusxalab olish Destruptizatsiya deyiladi
+//Destruptizatsiya massivni yoki objectni  yo'q qilmaydi. U objectni arrayni topshiriq va malumotlari bilan hech narsa qilmaydi; uning vazifasi faqat kerakli qiymatlarni o'zgaruvchilarga nusxalashdir
+console.log(hair,style);

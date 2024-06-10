@@ -144,8 +144,10 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     modal.addEventListener("click", (e) => {
+        ////bu joydagi(e) butun displayni nazarda tutadi yani event target yani userga ko'rinib turgan butun display
         if (e.target == modal || e.target.getAttribute("data-close") == "") {
-            ////x yani o'chirish tugmasiga bosilganda modal yopiladi //yani event targetda yani butunlay html documentda modal o'zgaruvchi ichidagi modal ona divi bor bo'lsa va event targetga yani umumiy documentga getAttribute metodi bilan data-close attributi bor bo'lsa "" bo'sh katak yani shunda data close atributidagi stiker x ga bosilganda ekrandan o'chadi //data-close atributi teng bo'lsa bo'sh katakga??  yani closeModal funksiyasi ishga tushadi  ////Element interfeysining getAttribute() metodi elementda belgilangan atributning qiymatini qaytaradi  Agar berilgan atribut mavjud bo'lmasa, qaytarilgan qiymat null bo'ladi
+            //distruptatsa//
+            ////x yani o'chirish tugmasiga bosilganda modal yopiladi //yani event targetda yani butunlay html documentda modal o'zgaruvchi ichidagi modal ona divi bor bo'lsa va event targetga yani umumiy documentga getAttribute metodi bilan data-close attributi bor bo'lsa "" bo'sh katak yani shunda data close atributidagi stiker x ga bosilganda ekrandan o'chadi //data-close atributi teng bo'lsa bo'sh katakga??  yani closeModal funksiyasi ishga tushadi  ////Element interfeysining getAttribute() metodi elementda belgilangan atributning qiymatini qaytaradi  agar berilgan atribut mavjud bo'lmasa qaytarilgan qiymat null bo'ladi
 
             //yani modalga click hodisasi sodir bo'lganda yani umumiy html documentda modal classi yani o'zgaruvchisi aktiv bo'lsa closeModal funksiyasi chaqirilsin deyildi
             //yani agar e.target ichida yani document ichida modal o'zgaruvchi yani modal o'zgaruvchini html elementlari bor bo'lsa yani butun html documentda event targetda pastdagi classlar bor bo'lsa click hodisasi sodir bo'lganda pastdagi classlar ishlasin
@@ -290,7 +292,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // console.log(forms);////formani ishlayotgan yoki ishlamayotganini tekshirish uchun yozildi logda ikkita formni kelganini ko'rish mumkun
 
     const msg = {
-        //user form bilan ishlab submitlar qilganda yani malumotlar kirgizganda oladigan habarlari va sodir bo'ladigan hodislar davomi pastda nimaga pastda chunki bu kodni boshi bilan ohirini orasida serverga malumot jo'natish kodlari bor yani user serververga malumotlarni jonatganda yani jonatishga harakat qilgandan song chiqishi kerak bo'lgan malumnot bo'lganligi sababli bu objectni qanday ishlashi pastda yani server user malumot almashinib bo'lgandan keyingina chqadi shu sabab pastga yozildi (kod o'qish tartibi)
+        //user form bilan ishlab submitlar qilganda yani malumotlar kirgizganda oladigan habarlari va sodir bo'ladigan hodislar davomi pastda nimaga pastda chunki bu kodni boshi bilan ohirini orasida serverga malumot jo'natish kodlari bor yani user serververga malumotlarni jonatganda yani jonatishga harakat qilgandan song chiqishi kerak bo'lgan malumot bo'lganligi sababli bu objectni qanday ishlashi pastda yani server user malumot almashinib bo'lgandan keyingina chiqadi shu sabab pastga yozildi (kod o'qish tartibi)
         loading: "img/spinner.svg", //yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi
         success: "Thank's for submiting our form",
         failre: "Something went wrong",
@@ -298,7 +300,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function postData(form) {
         form.addEventListener("submit", (e) => {
-            ////form o'zgaru vchisida ALL qilib chaqirilgan va postdataga form qilib berib qo'yilgan form classlariga submit hodisasi ilinepti chunki formda submit qilish bor (yani malumot jo'natilganda)
+            ////form o'zgaruvchisida ALL qilib chaqirilgan va postdataga form qilib berib qo'yilgan form classlariga submit hodisasi ilinepti chunki formda submit qilish bor (yani malumot jo'natilganda)
             e.preventDefault(); ////preventdefault metodi kerakli documentlarga submit bo'lganda faqat kerakli joyni qayta yuklaydigan metod ////parametrda submitdan keyn (e) yani event olindi yani browserni odatiy holatdan chiqarish uchun masalan submit hodisasi sodir bo'lganda sahifa yangilanmasdan faqat shu form classlarini o'zi yangilanadi shunda sayt butunlay qayta yuklanmaydi
 
             const statusMessage = document.createElement("img"); ////yani bu holatda yuqoridagi msg o'zgaruvchisi yani user bilan server malumot almashunuvi jarayoni uchun yaratilgan msg o'zgaruvchisi uchun yangi img elementi dynamic tarzda yaratildi
@@ -307,7 +309,7 @@ window.addEventListener("DOMContentLoaded", () => {
             statusMessage.style.cssText = `
            display: block;
            margin: 0 auto;`;
-            form.insertAdjacentElement("afterend", statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga insertAdjacentElement metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi img bor bu imgga esa msg o'zgaruvchidagi qiymatlardan loading qiymatidagi img qo'shib qo'yildi bu joyda afterend parametri spinnerni ohirida chiqishini nazarda tutadi yani insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi statusmessageni formdan keyinga qo'shib berdi yani loading sodir bo'layotgdan spinner.svg form classiga aloqador divdan keyin pastda turadi
+            form.insertAdjacentElement("afterend", statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga insertAdjacentElement metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi img bor bu imgga esa msg o'zgaruvchidagi qiymatlardan loading qiymatidagi img qo'shib qo'yildi bu joyda afterend parametri spinnerni ohirida chiqishini nazarda tutadi yani insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi statusmessageni formdan keyinga qo'shib berdi yani loading sodir bo'layotgdan spinner.svg form classiga aloqador divdan keyin pastda turadi margin 0 spinnerni o'rtada turishini taminlaydi
 
             const request = new XMLHttpRequest(); //yani bu XMLHttpRequest objecti server bilan ishlash objecti yani yangi constructor yani XMLHttpRequest o'zida constructor objectni saqlaydi yani bundan object keladi
             request.open("POST", "server.php"); // xamppda ochilgani sababi serverga so'rov yuborish birinchi parametr metod qabul qiladi post yoki get bu joyda post ishlatilyapti chunki serverga malumot jo'natilepti ikkinchi parametr esa url qabul qiladi url esa doim serverni manzili bo'lishi kerak bu holatda server.php bo'lib turipti yani local server esa xampp bo'lib turipti shunda server.php faqat url vazifasida turipti
@@ -319,8 +321,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 //yani hodisa ichiga hodisa osilayapti
                 if (request.status === 200) {
                     //yani agar request o'zgaruvchida jonatilgan malumotlar statusi 200 kodiga ega bo'lsa yani omadli jo'natilsa logda request o'zgaruvchini response parametri bilan ko'ramiz yani formga malumot kiritilganda server buni qabul qilsa logda ko'rinadi//////FormData objecti bilan ishlanayotgani sababli form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
-                    console.log(request.response); ////serverga jo'natilgan nmalumotlarni logda ko'rish uchun
-                    showThanksModal(msg.success); //endi agar hammasi to'g'ri bo'lsa yani 200 bo'lsa statusmeesagega textcontent bilan msgni .success qiymati berildi yani server bilan muloqot omadli bo'lsa// yani bu holatda showthanksmodal funksiyasi pastda yozilgan yani shu modal oynani dynamic holatda ishlaydigan qilingan pastda yozilgan funksiya
+                    console.log(request.response); ////serverga jo'natilgan malumotlarni logda ko'rish uchun
+                    showThanksModal(msg.success); //endi agar hammasi to'g'ri bo'lsa yani 200 bo'lsa statusmeesagega textcontent bilan msgni .success qiymati berildi yani server bilan muloqot omadli bo'lsa// yani bu holatda showthanksmodal funksiyasi pastda yozilgan yani shu modal oynani dynamic holatda ishlaydigan qilingan pastda yozilgan funksiya yani showThanksModal funksiyasi birinchi chaqirilib parametriga msg o'zgaruvchini success qiymati chaqirilib qo'yildi
 
                     form.reset(); ////JavaScript-da reset() metodi HTMLni tiklash tugmasi  form elementlarining barcha qiymatlarini tozalash uchun ishlatiladi. U qiymatlarni sukut bo'yicha o'rnatish uchun ishlatilishi mumkin. U hech qanday parametr qiymatlarini talab qilmaydi va hech qanday qiymatni qaytarmaydi va Elektron qurilmadagi reset tugmasi nima qiladi? Qayta tiklash tugmasi apparat yoki dasturiy ta'minot mexanizmi bo'lib, qurilma yoki tizimni asl holatiga qaytarish yoki noto'g'ri ishlash yoki muzlatish holatlarida uni qayta ishga tushirish imkonini beradi . Qayta tiklash tugmasini bosish orqali siz qurilmani qayta o'rnatish jarayonini boshlashingiz mumkin. yani malumotlar formga kiritilgandan keyin contact us ga bosilganda formlardagi inputlarni reset qiladi yani sukut default holatiga qaytaradi
                     setTimeout(() => {
@@ -387,26 +389,27 @@ window.addEventListener("DOMContentLoaded", () => {
     ////54 chi darsni takrorlayotganda xamppda ochish shart bo'lmasa  Dynamic styling(54) dars natijalarini ko'rib bo'lmaydi agar aynan  dynamic styling darsi kerak bo'lsa yani shu 54  dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 54 chi dars filega yozib turildi va xampdan bu yerga copy qilib qo'yildi)
 
     function showThanksModal(message) {
-        const prevModalDialog = document.querySelector(".modal__dialog"); ////yani bu holatda htmldagi modal__dilaog classi yani sayt ochilganda va contact us buttoni bosilganda chiqadigan serverga clientni malumotlarini jo'natadigan modal__dialog classi chaqirib olindi va classlist parametri va add metodi bilan cssdagi hide classi qo'sgildi yani yo'q qilib qo'yildi cssdagi hide classida   display: none; qiymati bor
+        ///madal oynani "THANK'S FOR SUBMITING OUR FORM" texti
+        const prevModalDialog = document.querySelector(".modal__dialog"); //yani modal dialogni eski holati ////yani bu holatda htmldagi modal__dilaog classi yani sayt ochilganda va contact us buttoni bosilganda chiqadigan serverga clientni malumotlarini jo'natadigan modal__dialog classi chaqirib olindi va classlist parametri va add metodi bilan cssdagi hide classi qo'shildi yani yo'q qilib qo'yildi cssdagi hide classida   display: none; qiymati bor
         prevModalDialog.classList.add("hide"); //display: none;
         openModal(); //yani modal oyna yuqorida hide classi bilan yopilib bu ancha yuqorida boshida yozilgan openmodal functsiyasi bilan yana ochildi
         const thanksModal = document.createElement("div"); //va dynamic yangi div ochib classiga modal__dialog classsi yana qo'shildi yani endi modal oyna dynamic tarzda qo'shilepti
         thanksModal.classList.add("modal__dialog");
-        //// thanksModal.innerHTML bilan dynamic content qo'shish yani htmldagi modal dynamic tarzda shu joyda yozildi
+        //// thanksModal.innerHTML bilan dynamic content qo'shish yani htmldagi modal dynamic tarzda shu joyda yozildi va htmlagi kodlar shu tartibda `becet` ichiga yoziladi shunda innerhtml parametri bilan js kodlar ichida html taglarni yozish mumkun
         thanksModal.innerHTML = `
       <div class="modal__content">
       <div data-close class="modal__close">&times;</div>
       <div class="modal__title">${message}</div>
       </div>
-        `;
+        `; //// cssdagi .modal__title classida bu messejni style classlari bor etibor ber masalan text-align: center;font-size: 22px;text-transform: uppercase;
         document.querySelector(".modal").append(thanksModal); //endi user dynamic tarzda qo'shilgan modal__dialog classi bor divdagi inputlarga hohlagancah malumotni serverga jo'natishi mumkun va bu holatdaham serverni linki hato bo'lsa yoki bu dars xamppda ochilmasa yani local serverda ochilmasa something went wrong texti chiqadi yani bu showThanksModal funksiyasi thanksModal o'zgaruvchiga append qilindi yani qo'shildi thanksModal o'zgaruvchiga esa yangi div createelement qilinib modal__dilaog classi add qilib qo'shilgan
         setTimeout(() => {
-            thanksModal.remove();
-            prevModalDialog.classList.add("show"); //display: block;
-            prevModalDialog.classList.remove("hide"); //display: none;
+            thanksModal.remove(); //yannisettimeout funksiyasi bilan 4 sekunddan keyin dynamic tarzda qo'shilhan thanksmodal o'zgaruvchini udalit qildik yani shunda user serverga malumotlarni jo'natgandan keyin 4 sekunddan keyin modal oyna aftamatik tarzda yopiladi
+            prevModalDialog.classList.add("show"); // display: block;//va add qilib ichida modal__dialog classlari chaqirilgan  prevModalDialog o'zgaruvchi classini qo'shdik
+            prevModalDialog.classList.remove("hide"); //display: none;//yani endi yuqorida hide qilingan ichida modal__dialog classlari chaqirilgan  prevModalDialog o'zgaruvchini hide classini remove qildik yani udalit qildik va shundan so'ng closemodal funksiyasini chaqirib qo'ydik bu close modal funksiyasi modalni inputlari bilan tozalab yopadi
             closeModal();
         }, 4000);
-    }
+    }///yani endi user modal oynaga malumot kiritib contact us buttoniga bosgandan keyin 4 sekund vaqt o'tib modal yopiladi va modal yana qaytadan malumot jo'natish uchun top tozza holatga qaytadi
 
     ////54.chi dars Dynamuc styling
 });
