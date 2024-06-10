@@ -21,8 +21,21 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////agar Promise objectni ishlatilmasa kodlarni qanday yozilishi
-
-
+// console.log("Request data..."); //sync kod//
+// setTimeout(() => {
+//     ////async kod
+//     console.log("Processing data...");
+//     const product = {
+//         name: "car",
+//         color: "Black",
+//     };
+//     setTimeout(() => {
+//         ////async kod
+//         product.status = "Order";
+//         console.log(product);
+//     }, 2000);
+// }, 2000); //yani bu holatda "Request data..." sinhron, "Processing data..." asinhron,  console.log(product) asinhron hissoblanadi yani sinhron kod bir boshodan o'qib kelinadi asinhron kod esa bu holatda settomeout funksiyasi bilan yozildi
+// //yani Promis objectisiz ishlaganda settimeout bilan ishlasa bo'ladi lekin bitt aminus tomoni bor serverdan keladigan malumotlarni qancha vaqtda kelishini hech kim bilmaydi masalan bu holatda 2000 millisundan keyin ishlashlar buyurlgan bo'lsada aslida serverdan malumotlarni kelishi bu vaqtdan farq qilishi mumkun lekin Promi objecti bilan ishlaganda vaqtnimas jarayonni yozib qo'yiladi yani masalan agar bunday holatda manabu(.then) yokida manabu(.catch) yokida nima bo'lgandaham esa manabu(.finally)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////W3Schools dan olingan kod
