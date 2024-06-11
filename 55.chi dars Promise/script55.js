@@ -21,38 +21,42 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////agar Promise objectni ishlatilmasa kodlarni qanday yozilishi
-// console.log("Request data..."); //sync kod//
+// console.log("Request data..."); //sync kod//yani kod o'qilish tartibi bo'yicha ketmaketlikda ishga tushadi
 // setTimeout(() => {
-//     ////async kod
+//     ////async kod//yani bu holatda kod o'qilish tartibidan tashqariga chiqib settimeout funksiyasi bilan aytilgan vaqtda ishga tsuhsadi yani kod o'qilish tartibini chetlab o'tadi parametrida nechchi sekunddan keyin ishlash buyurilsa o'sha vaqtdagina ishlaydi
 //     console.log("Processing data...");
 //     const product = {
 //         name: "car",
 //         color: "Black",
 //     };
-//     setTimeout(() => {
+//     setTimeout(() => {////asinhron kodlar yozish mumkun bo'lgan settimeout funksiyasini ichidaham yana asinhron kod yozish mumkun
 //         ////async kod
-//         product.status = "Order";
+//         product.status = "Order";////yani birinchi asinhron koddan keyin birinchi asinhron kodni malumotlari o'zgarib kelepti masalan endi birinchi koddan ikki sekund vaqt o'tib endi status order qiymati va logda asosoiy product objectiham chaqirilepti qo'shilepti
 //         console.log(product);
 //     }, 2000);
-// }, 2000); //yani bu holatda "Request data..." sinhron, "Processing data..." asinhron,  console.log(product) asinhron hissoblanadi yani sinhron kod bir boshodan o'qib kelinadi asinhron kod esa bu holatda settomeout funksiyasi bilan yozildi
-// //yani Promis objectisiz ishlaganda settimeout bilan ishlasa bo'ladi lekin bitt aminus tomoni bor serverdan keladigan malumotlarni qancha vaqtda kelishini hech kim bilmaydi masalan bu holatda 2000 millisundan keyin ishlashlar buyurlgan bo'lsada aslida serverdan malumotlarni kelishi bu vaqtdan farq qilishi mumkun lekin Promi objecti bilan ishlaganda vaqtnimas jarayonni yozib qo'yiladi yani masalan agar bunday holatda manabu(.then) yokida manabu(.catch) yokida nima bo'lgandaham esa manabu(.finally)
+// }, 2000); ////yani bu holatda birinchi logda synhron tarzda yani oddiy kod o'qilishi tartibida logda "Request data..." chiqsin va asnhron tarzda yani run kodedan keyin 2 sekund vaqt o'tib logda "Processing data..." chiqsin va yana asnhron kodda product o'zgaruvchini statusu "order" va logda product objecti chiqsin deyildi
+//yani bu holatda "Request data..." sinhron, "Processing data..." asinhron,  console.log(product) asinhron hissoblanadi yani sinhron kod bir boshidan o'qib kelinadi asinhron kod esa bu holatda settomeout funksiyasi bilan yozildi
+//yani Promis objectisiz ishlaganda settimeout bilan ishlasa bo'ladi lekin bitta minus tomoni bor serverdan keladigan malumotlarni qancha vaqtda kelishini hech kim bilmaydi masalan bu holatda 2000 millisekunddan keyin ishlashlar buyurlgan bo'lsada aslida serverdan malumotlarni kelishi bu vaqtdan farq qilishi mumkun lekin Promise objecti bilan ishlaganda vaqtnimas jarayonni yozib qo'yiladi yani masalan agar bunday holatda manabu(.then) yokida manabu(.catch) yokida nima bo'lgandaham esa manabu(.finally) yani vaqtni ahamiyati yo'q serverdan keladigan malumotga qarab promise objecti hodisalarni boshqaradi
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////Yuqoridagi promis objectisiz yozilgan kodni endi promise objecti bilan yozilishi
 
-// console.log("Request data..."); //sync kod//
-// const req = new Promise((resolve) => {
-//     ////bu holatda reject yo'q chunki hamma narsa aniq yozilepti
-//     setTimeout(() => {
-//         ////async kod////data so'rov yuborildi va ikki sekunndan keyin kelishi aytildi
-//         const product = {
-//             name: "car",
-//             color: "Black",
-//         };
-//         resolve(product);
-//     }, 2000);
-// });
-// // req.then((data) => console.log(data)).finally(() => console.log("Fetching and"))////then resolve parametrini ifoda qiladi yani thenni resolveni birinchi parametri desaham bo'ladi ////bu holatda data, req o'zgaruvchi ichida chaqirilgan Promise objectini datalari yani malumotlari hissoblanadi yani bu holatda product objectini datalari hissoblanadi////yani sinhron kod console.log("Request data...") dan 2 sekunndan keyin  resolve keyin esa .finally Fetching and
+console.log("Request data..."); //sync kod//
+const req = new Promise((resolve) => {
+    ////bu holatda reject yo'q chunki hamma narsa aniq yozilepti yani serverdan malumot kelmay qolsa degan gap yo'q desaham bo'ladi
+    setTimeout(() => {
+        ////async kod////data so'rov yuborildi va ikki sekunndan keyin kelishi aytildi
+        const product = {
+            name: "car",
+            color: "Black",
+        };
+        resolve(product);
+    }, 2000);
+});
+req.then((data) => console.log(data)).finally(() =>
+    console.log("Fetching and")
+);
+////then resolve parametrini ifoda qiladi yani thenni resolveni birinchi parametri desaham bo'ladi ////bu holatda data, req o'zgaruvchi ichida chaqirilgan Promise objectini datalari yani malumotlari hissoblanadi yani bu holatda product objectini datalari hissoblanadi////yani sinhron kod console.log("Request data...") dan 2 sekunndan keyin  resolve keyin esa .finally Fetching and
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////Promise ichida promise faqat resolve parametri bilan yozilishi
@@ -121,26 +125,26 @@
 //   document.getElementById("demo").innerHTML = value;
 // }
 
-console.log("Request data...");
-const req = new Promise((resolve) => {
-    setTimeout(() => {
-        const product = {
-            name: "car",
-            color: "Black",
-        };
-        console.log("Procssesing data... ");
-        resolve(product);
-    }, 2000);
-});
-req.then(
-    (data) =>
-        new Promise((resolve) => {
-            setTimeout(() => {
-                data.status = "ordered";
-                console.log("Get data...");
-                resolve(data);
-            }, 2000);
-        })
-)
-    .then((result) => console.log(result))
-    .finally(() => console.log("Fetching and"));
+// console.log("Request data...");
+// const req = new Promise((resolve) => {
+//     setTimeout(() => {
+//         const product = {
+//             name: "car",
+//             color: "Black",
+//         };
+//         console.log("Procssesing data... ");
+//         resolve(product);
+//     }, 2000);
+// });
+// req.then(
+//     (data) =>
+//         new Promise((resolve) => {
+//             setTimeout(() => {
+//                 data.status = "ordered";
+//                 console.log("Get data...");
+//                 resolve(data);
+//             }, 2000);
+//         })
+// )
+//     .then((result) => console.log(result))
+//     .finally(() => console.log("Fetching and"));
