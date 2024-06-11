@@ -20,7 +20,7 @@
 //Callback yani bu qaysidur  funksiya ishga tushgandan keyin ishga tushadigan funksiya
 
 
-// //1 chi sintaksis qisqasi
+////1 chi sintaksis qisqasi
 // function edu(subject, callback) {
 //     //yani bu joyda ichida callback funksiyasi bor edu funksiya ishga tushgandan keyin callback funksiyasi ishga tushdi
 //     console.log(`I want to teach ${subject}`);
@@ -31,10 +31,10 @@
 //     //ananim funksiya bilan yozilgani
 //     console.log("That`s great");
 // });
-// //////
+//////
 
 
-//2 chi sintaksis
+// //2 chi sintaksis
 // function edu(subject, callback) {
 //     console.log(`I want to teach ${subject}`);
 //     callback(); // yani bu joyda subjectdagi object done funksiyasidan oldin kelayapti sabab  callback aslida birinchi i want to teach, thats great chiqishi kerak edi lekin subjectdagi object yani "JavaScript" bu joyda ikkinchi bo'lib kelayapti aslida esa 3 chi bo'lib kelishi kerak edi
@@ -59,7 +59,7 @@
 // function second() {
 //     //code
 //     console.log(2);
-// } //yani bir sikunddan keyinikkala funksiya birga ishladi
+// } //yani bir sikunddan keyin ikkala funksiya birga ishladi
 
 // first(second); //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!yani first funksiyasi birinchi bo'lib second funksiyasini ishlatdi callback funksiya yordamida shunda first funkiya serverdan ichidagi narsalarini yuklab kelguncha second funksiya kutib turdi va bir sikunddan keyin birga ishladi
