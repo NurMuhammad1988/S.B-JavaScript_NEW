@@ -15,8 +15,9 @@
 //     .catch((err) => console.log(err))
 //     .finally(() => console.log("I'm colling you"));
 // // console.dir(meetingRequest);////objectligini ko'rish uchun yozildi
-// ////promise object hissoblanadi promis ikkita parametr qabul qiladi yani resolve va reject ikkalasiham qanaqadur qiymat qaytaradi  so'rov omadli bo'lsa resolve qaytaradi omadsiz bo'lsa reject bo'ladi //yani bu holatda isFrendCome nomli o'zgaruvchi yaratilib unga false qiymati berildi (boolean) va meetingRequest nomli o'zgaruvchi yaratilib unga Promisi js objecti new kalit so'zi bilan chaqirildi Promisi objecti vada manosini beradi yanni Promise objecti ikkita parametr qabul qiladi resolve va recect resolve meetingRequest chaqirilganda ohirida meetingRequest. nuqta qo'yilsa promisni parametrlari chiqadi masalan bu holatda .then resolvni nazarda tutadi .catch  rejectni nazarda tutadi .finally esa natija resolve(omadli) yoki recject(omadsiz) bo'lgan taqdirdaham yani nima bo'lgan taqdirdaham qanaqadur natijani beradi //yani bu holatda promise objecti chaqirilib parametriga o'zini ikkita qiymati resolve va reject chaqirildi va agar isfriendcome o'zgaruvchida holat resolve yani omadli bo'lsa resolve(msg)>>>"Friend I'm there" yokida omadsiz bo'lsa reject(err)>>"I can't come there" berildi va promise chaqirilgan meetingRequest objectidan keyin nuqta qo'yilib promisni chaquruvchi metodlar ishga solindi masalan then resolveni yani omadlini parametri hissoblanadi chunki promise chaqirilganda parametrida birinchi resolve turipti masalan .thendan keyin agar omadli bo'lsa qanday habar chiqishi aytildi yani (msg) .catch esa rejectni yani omadsizni parametri hissoblanadi promise chaqirilganda parametrida ikkinchi reject turipti masalan .catchdan keyin agar omadsiz bo'lsa qanday habar chiqishi aytildi yani (err) va ohirgi parametr finally hissoblanadi yani bu parametr tepadagi then va catch parametrlari ishlagan va ishlamagan taqdirdaham bitta javobni qaytaradi masalan bu holatda logda "I'm colling you" //Yani bu promise objecti server bilan ishlash uchun judaham kerak masalan serverdan malumot kelayotganda qandaydur holatlar sodir bo'lsa masalan server javob bermasa yoki kechiksa va hakozo holatlarda shu promise objecti bilan userga kerakli hodislarni ilish mumkun
-// ////const isFrendCome = true; qilinsa "Friend I'm there" javobini yani resolveni .then javobidagi msg ni olish mumkun
+//// Promis objectini 2 ta parametri va 3 ta metodi bor metodlari then, catch, finally
+// ////promise object hissoblanadi promis ikkita parametr qabul qiladi yani resolve va reject ikkalasiham qanaqadur qiymat qaytaradi  so'rov omadli bo'lsa resolve qaytaradi omadsiz bo'lsa reject bo'ladi //yani bu holatda isFrendCome nomli o'zgaruvchi yaratilib unga false qiymati berildi (boolean) va meetingRequest nomli o'zgaruvchi yaratilib unga Promis js objecti new kalit so'zi bilan chaqirildi Promis objecti vada manosini beradi yani Promise objecti ikkita parametr qabul qiladi resolve va recect resolve meetingRequest chaqirilganda ohirida meetingRequest. nuqta qo'yilsa promisni parametrlari chiqadi masalan bu holatda .then resolvni nazarda tutadi .catch  rejectni nazarda tutadi .finally esa natija resolve(omadli) yoki recject(omadsiz) bo'lgan taqdirdaham yani nima bo'lgan taqdirdaham qanaqadur natijani beradi //yani bu holatda promise objecti chaqirilib parametriga o'zini ikkita qiymati resolve va reject chaqirildi va agar isfriendcome o'zgaruvchida holat resolve yani omadli bo'lsa resolve(msg)>>>"Friend I'm there" yokida omadsiz bo'lsa reject(err)>>"I can't come there" berildi va promise chaqirilgan meetingRequest objectidan keyin nuqta qo'yilib promisni chaquruvchi metodlar ishga solindi masalan then resolveni yani omadlini parametri hissoblanadi chunki promise chaqirilganda parametrida birinchi resolve turipti masalan .thendan keyin agar omadli bo'lsa qanday habar chiqishi aytildi yani (msg) .catch esa rejectni yani omadsizni parametri hissoblanadi promise chaqirilganda parametrida ikkinchi reject turipti masalan .catchdan keyin agar omadsiz bo'lsa qanday habar chiqishi aytildi yani (err) va ohirgi parametr finally hissoblanadi yani bu parametr tepadagi then va catch parametrlari ishlagan va ishlamagan taqdirdaham bitta javobni qaytaradi masalan bu holatda logda "I'm colling you" //Yani bu promise objecti server bilan ishlash uchun judaham kerak masalan serverdan malumot kelayotganda qandaydur holatlar sodir bo'lsa masalan server javob bermasa yoki kechiksa va hakozo holatlarda shu promise objecti bilan userga kerakli hodislarni ilish mumkun
+// ////const isFrendCome = true; qilinsa "Friend I'm there" javobini yani resolveni .then javobidagi msg ni olish mumkun bu holatda if parametridagi object birinchi doim true bo'lishi kerak bu holatda false bo'lgani uchun promise biladiki so'rov bajarilmadi shu sabab catchni ishga tushuradi va err o'zgaruvchini qiymati bo'lgan I can't come there textini qaytarib beradi .finally esa so'rov true yokida false bo'lsaham finally o'ziga kiritilgan malumotni qaytarib beradi yani bu server bilan ishlashda juda qulay hissoblanadi yani faqat if else bilanmas uchunchi finally metodiham bor
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////agar Promise objectni ishlatilmasa kodlarni qanday yozilishi
@@ -55,30 +56,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////Promise ichida promise faqat resolve parametri bilan yozilishi
-console.log("Request data...");//darrov ishleydi
-const req = new Promise((resolve) => {
-    setTimeout(() => {
-        const product = {
-            name: "car",
-            color: "Black",
-        };
-        console.log("Procssesing data... ");//ikki sekunddan keyin ishleydi
-        resolve(product);
-    }, 2000);
-});
-req.then(
-    (data) =>
-        new Promise((resolve) => {//yani product objectdan kelayotgan resolveniham ichiga promise yozsa bo'ladi masalan bu holatda
-            setTimeout(() => {//datalarni serverga asinhron  jo'natish
-                ////async kod
-                data.status = "ordered";
-                console.log("Get data...");//yana ikki sekunddan keyin jami to'rt sekunddan keyin ishleydi
-                resolve(data);//yani omadli yani serverga so'rov omadli jo'natildi
-            }, 2000);
-        })
-)
-    .then((result) => console.log(result))
-    .finally(() => console.log("Fetching and"));
+// console.log("Request data...");//darrov ishleydi
+// const req = new Promise((resolve) => {
+//     setTimeout(() => {//yani serverga so'rov jonatildi shunga farazan ikki sekund vaqt ketadi
+//         const product = {
+//             name: "car",
+//             color: "Black",
+//         };
+//         console.log("Procssesing data... ");//ikki sekunddan keyin ishleydi
+//         resolve(product);
+//     }, 2000);
+// });
+// req.then(
+//     (data) =>
+//         new Promise((resolve) => {//yani product objectdan kelayotgan resolveniham ichiga promise yozsa bo'ladi masalan bu holatda
+//             setTimeout(() => {//datalarni serverga asinhron  jo'natish
+//                 ////async kod
+//                 data.status = "ordered";
+//                 console.log("Get data...");//yana ikki sekunddan keyin jami to'rt sekunddan keyin ishleydi
+//                 resolve(data);//yani omadli yani serverga so'rov omadli jo'natildi
+//             }, 2000);
+//         })
+// )
+//     .then((result) => console.log(result))
+//     .finally(() => console.log("Fetching and"));
 
 ////promislar bir biridan vorislanib ishlaydi
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -119,3 +120,27 @@ req.then(
 // function myFunction(value) {
 //   document.getElementById("demo").innerHTML = value;
 // }
+
+console.log("Request data...");
+const req = new Promise((resolve) => {
+    setTimeout(() => {
+        const product = {
+            name: "car",
+            color: "Black",
+        };
+        console.log("Procssesing data... ");
+        resolve(product);
+    }, 2000);
+});
+req.then(
+    (data) =>
+        new Promise((resolve) => {
+            setTimeout(() => {
+                data.status = "ordered";
+                console.log("Get data...");
+                resolve(data);
+            }, 2000);
+        })
+)
+    .then((result) => console.log(result))
+    .finally(() => console.log("Fetching and"));
