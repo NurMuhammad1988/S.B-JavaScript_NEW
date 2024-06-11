@@ -41,44 +41,47 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////Yuqoridagi promis objectisiz yozilgan kodni endi promise objecti bilan yozilishi
 
-console.log("Request data..."); //sync kod//
-const req = new Promise((resolve) => {
-    ////bu holatda reject yo'q chunki hamma narsa aniq yozilepti yani serverdan malumot kelmay qolsa degan gap yo'q desaham bo'ladi
-    setTimeout(() => {
-        ////async kod////data so'rov yuborildi va ikki sekunndan keyin kelishi aytildi
-        const product = {
-            name: "car",
-            color: "Black",
-        };
-        resolve(product);
-    }, 2000);
-});
-req.then((data) => console.log(data)).finally(() =>
-    console.log("Fetching and")
-);
-////then resolve parametrini ifoda qiladi yani thenni resolveni birinchi parametri desaham bo'ladi ////bu holatda data, req o'zgaruvchi ichida chaqirilgan Promise objectini datalari yani malumotlari hissoblanadi yani bu holatda product objectini datalari hissoblanadi////yani sinhron kod console.log("Request data...") dan 2 sekunndan keyin  resolve keyin esa .finally Fetching and
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////Promise ichida promise faqat resolve parametri bilan yozilishi
-// console.log("Request data...");//darrov ishleydi
+// console.log("Request data..."); //sync kod//
 // const req = new Promise((resolve) => {
-//     setTimeout(() => {//yani serverga so'rov jonatildi shunga farazan ikki sekund vaqt ketadi
+//     ////bu holatda reject yo'q chunki hamma narsa aniq yozilepti yani serverdan malumot kelmay qolsa degan gap yo'q desaham bo'ladi
+//     setTimeout(() => {
+//         ////async kod////data so'rov yuborildi va ikki sekunndan keyin kelishi aytildi
 //         const product = {
 //             name: "car",
 //             color: "Black",
 //         };
-//         console.log("Procssesing data... ");//ikki sekunddan keyin ishleydi
+//         resolve(product);
+//     }, 2000);
+// });
+// req.then((data) => console.log(data)).finally(() =>
+//     console.log("Fetching and")
+// );
+////then resolve parametrini ifoda qiladi yani thenni resolveni birinchi parametri desaham bo'ladi ////bu holatda data, req o'zgaruvchi ichida chaqirilgan Promise objectini datalari yani malumotlari hissoblanadi yani bu holatda product objectini datalari hissoblanadi////yani sinhron kod console.log("Request data...") dan 2 sekunndan keyin  resolve keyin esa .finally Fetching and
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////Promise ichida promise faqat resolve parametri bilan yozilishi
+// console.log("Request data..."); //darrov ishleydi
+// const req = new Promise((resolve) => {
+//     setTimeout(() => {
+//         //yani serverga so'rov jonatildi shunga farazan ikki sekund vaqt ketadi
+//         const product = {
+//             name: "car",
+//             color: "Black",
+//         };
+//         console.log("Procssesing data... "); //ikki sekunddan keyin ishleydi
 //         resolve(product);
 //     }, 2000);
 // });
 // req.then(
 //     (data) =>
-//         new Promise((resolve) => {//yani product objectdan kelayotgan resolveniham ichiga promise yozsa bo'ladi masalan bu holatda
-//             setTimeout(() => {//datalarni serverga asinhron  jo'natish
+//         new Promise((resolve) => {
+//             //yani product objectdan kelayotgan resolveniham ichiga promise yozsa bo'ladi masalan bu holatda
+//             setTimeout(() => {
+//                 //datalarni serverga asinhron  jo'natish
 //                 ////async kod
 //                 data.status = "ordered";
-//                 console.log("Get data...");//yana ikki sekunddan keyin jami to'rt sekunddan keyin ishleydi
-//                 resolve(data);//yani omadli yani serverga so'rov omadli jo'natildi
+//                 console.log("Get data..."); //yana ikki sekunddan keyin jami to'rt sekunddan keyin ishleydi
+//                 resolve(data); //yani omadli yani serverga so'rov omadli jo'natildi
 //             }, 2000);
 //         })
 // )
@@ -90,31 +93,30 @@ req.then((data) => console.log(data)).finally(() =>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////Promise ichida promise faqat reject parametri bilan yozilishi
-// console.log("Request data...");//darrov ishleydi
-// const req = new Promise((resolve ,reject) => {
-//     setTimeout(() => {
-//         const product = {
-//             name: "car",
-//             color: "Black",
-//         };
-//         console.log("Procssesing data... ");//ikki sekunddan keyin ishleydi
-//         resolve(product);
-//     }, 2000);
-// });
-// req.then(
-//     (data) =>
-//         new Promise((resolve, reject) => {//yani product objectdan kelayotgan resolveniham ichiga promise yozsa bo'ladi masalan bu holatda
-//             setTimeout(() => {//datalarni serverga asinhron  jo'natish
-//                 ////async kod
-//                 data.status = "ordered";
-//                 console.log("Get data...");//yana ikki sekunddan keyin jami to'rt sekunddan keyin ishleydi
-//                 reject();//yani omadli yani serverga so'rov omadli jo'natildi
-//             }, 2000);
-//         })
-// )
-//     .then((result) => console.log(result))
-//     .catch(()=> console.log("Something went wrong!"))
-//     .finally(() => console.log("Fetching and"));
+console.log("Request data..."); //darrov ishleydi
+const req = new Promise((resolve) => {
+    setTimeout(() => {
+        const product = {
+            name: "car",
+            color: "Black",
+        };
+        console.log("Procssesing data... ");
+        resolve(product);
+    }, 2000);
+});
+req.then(
+    (data) =>
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                data.status = "ordered";
+                console.log("Get data...");
+                reject();
+            }, 2000);
+        })
+)
+    .then((result) => console.log(result))
+    .catch(() => console.log("Something went wrong!"))////bu holatda run codeda shu "Something went wrong!" textini chiqishiga sabab reject() borligi hissoblanadi////yani get data qamalga oshmadi something went wrong bo'ldi degan manoda
+    .finally(() => console.log("Fetching and"));
 
 ////promislar bir biridan vorislanib ishlaydi
 ////////////////////////////////////////////////////////////////////////////////////////////////////
