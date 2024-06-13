@@ -277,115 +277,10 @@ window.addEventListener("DOMContentLoaded", () => {
     //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
 
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
-    ////malumot yuborish bu 53 chi darsda yozilgan server bilan muloqot kodlari eskiroq usullar hissoblanadi
-    ////FORM  //Form darsi xamppda ochilishi kerak bo'lmasa hato ishlaydi yani xampp local server yani tushunishimcha xampp bilan server sotib olmasdan o'z kompyuterimdan server sifatida foydalanashim uchun  kerak dastur yani masalan pullik server kompyuterlar kuchli himoyalangan va uzluksiz tok bilan taminlanib ishlab turadi bu joyda esa xammp shu vazifada yani local server sifatida ishlaydigan dastur lekin bitta savolim ochiq qoldi js server bilan ishlashda serverni hafsiz yoki hafsuz emasligini qayerdan biladi masalan xammpda ochmaganimcha form darsida qilingan narsalar o'hshamadi yani open live servisda ishlamadi lekin xammp local hostda ochganimda ishladi shu savol???
-
-    ////53 chi darsni takrorlayotganda xamppda ochish shart bo'lmasa form datalar bilan ishlash darsini natijalarini ko'rib bo'lmaydi agar aynan form data darsi kerak bo'lsa yani shu 53 chi dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 53 chi dars filega yozib turildi va xampdan bu yerga copy qilib qo'yildi)
-
-    const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bular saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
-
-    forms.forEach((form) => {
-        ///intrigatsada parametrda form yozildi chunki bu form pastda postdata funksiyasida chaqiriladi shunda bu joyda intigatsa bo'lgan[] form classlarga post datada hodisa ilinadi
-        postData(form); ////yani endi ALL qilib chaqirilganda kelgan hamma massiv ichidagi form classlar endi postdata funksiyasiga tushadi
-    });
-
-    // console.log(forms);////formani ishlayotgan yoki ishlamayotganini tekshirish uchun yozildi logda ikkita formni kelganini ko'rish mumkun
-
-    const msg = {
-        //user form bilan ishlab submitlar qilganda yani malumotlar kirgizganda oladigan habarlari va sodir bo'ladigan hodislar davomi pastda nimaga pastda chunki bu kodni boshi bilan ohirini orasida serverga malumot jo'natish kodlari bor yani user serververga malumotlarni jonatganda yani jonatishga harakat qilgandan song chiqishi kerak bo'lgan malumot bo'lganligi sababli bu objectni qanday ishlashi pastda yani server user malumot almashinib bo'lgandan keyingina chiqadi shu sabab pastga yozildi (kod o'qish tartibi)
-        loading: "img/spinner.svg", //yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi
-        success: "Thank's for submiting our form",
-        failre: "Something went wrong",
-    };
-
-    function postData(form) {
-        form.addEventListener("submit", (e) => {
-            ////form o'zgaruvchisida ALL qilib chaqirilgan va postdataga form qilib berib qo'yilgan form classlariga submit hodisasi ilinepti chunki formda submit qilish bor (yani malumot jo'natilganda)
-            e.preventDefault(); ////preventdefault metodi kerakli documentlarga submit bo'lganda faqat kerakli joyni qayta yuklaydigan metod ////parametrda submitdan keyn (e) yani event olindi yani browserni odatiy holatdan chiqarish uchun masalan submit hodisasi sodir bo'lganda sahifa yangilanmasdan faqat shu form classlarini o'zi yangilanadi shunda sayt butunlay qayta yuklanmaydi
-
-            const statusMessage = document.createElement("img"); ////yani bu holatda yuqoridagi msg o'zgaruvchisi yani user bilan server malumot almashunuvi jarayoni uchun yaratilgan msg o'zgaruvchisi uchun yangi img elementi dynamic tarzda yaratildi
-            statusMessage.src = msg.loading; ////yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi bu esa shu spinnerni dynamic tarzda qo'shilgan stylelari   statusMessage.style.cssText = `display: block;margin: 0 auto;`
-            //yani server bilan muloqot jarayoni aftamatik tarzda loading bo'ladi yani kutiladi masalan internet sekin bo'lsa yoki serverda muammmo bo'lsa shu holat uchun spinner ishlatildi
-            statusMessage.style.cssText = `
-           display: block;
-           margin: 0 auto;`;
-            form.insertAdjacentElement("afterend", statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga insertAdjacentElement metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi img bor bu imgga esa msg o'zgaruvchidagi qiymatlardan loading qiymatidagi img qo'shib qo'yildi bu joyda afterend parametri spinnerni ohirida chiqishini nazarda tutadi yani insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi statusmessageni formdan keyinga qo'shib berdi yani loading sodir bo'layotgdan spinner.svg form classiga aloqador divdan keyin pastda turadi margin 0 spinnerni o'rtada turishini taminlaydi
-
-            const request = new XMLHttpRequest(); //yani bu XMLHttpRequest objecti server bilan ishlash objecti yani yangi constructor yani XMLHttpRequest o'zida constructor objectni saqlaydi yani bundan object keladi
-            request.open("POST", "server.php"); // xamppda ochilgani sababi serverga so'rov yuborish birinchi parametr metod qabul qiladi post yoki get bu joyda post ishlatilyapti chunki serverga malumot jo'natilepti ikkinchi parametr esa url qabul qiladi url esa doim serverni manzili bo'lishi kerak bu holatda server.php bo'lib turipti yani local server esa xampp bo'lib turipti shunda server.php faqat url vazifasida turipti
-
-            const formData = new FormData(form); //yani bu holatda FormDataga form classlarni malumotlari berildi yani FormData bu HTML formasi malumotlarini ko'rsatish objektidir yani serverga ko'rsatadi    yani FormData objecti formdagi o'ziga kirtilgan elementdagi namelarga qaraydi bu holatda htmldagi inputlarni namelariga qaraydi yani atributlarni nomlariga qarab malumotlarni serverga moslaydi??? yani masalan name atributi formdata objectini name hususiyatiga teng bo'ladi formdata objecti yani html atributlarni nomlariga mos o'z qiymatlariga ega construktor (huddiki this.name va hakozo) shu uchun forms o'zgaruvchisi all qilinib chaqirildi va foreach qilindi va form holatidda formdatani parametriga kiritildi va bu formdata objecti o'zini parametridagi malumotlarni server taniydigan mlumot turiga aylantiradi lekin json emas yani shunda formga kelgan malumot serverga jo'natishga serverbop malumot turiga aylantirilib tayyor qilindi yani FormData objecti formga yoziladigan client kirtgan malumotlarni va faillarni serverga server tushunadigan tilda tayyorlab beradi lekin json fileda emas ////FormData html form classidan yuboriladigan malumotlar formatlaridan biridir. Xususan, u shaklga kiritilgan qiymatlarni name: value juftlari sifatida kodlaydi va ularni Content-Type sarlavhasi bilan  multipart/form-data ga yuboradi FormDtaning asosiy xususiyatlariga quyidagilar kiradi: Faqat matnni emas, balki fayllarni ham yuborish imkoniyati.////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
-            request.send(formData); //yani bu holatda request o'zgaruvchi ichidagi constructor (XMLHttpRequest) va open metodlari bilan tayyor qilingan va formData o'zgaruvchi ichida FormData objecti bilan serverga jo'natishga tayyor qilingan formDta objecti send qilindi yani inputni ichiga tushadigan datalarni serverga jonatish sodir bolepti
-            request.addEventListener("load", () => {
-                //yani request o'zgaruvchidagi server bilan muloqot jarayonidagi load holati bu joyda load hodisani parametrlaridan biri hissoblanadi yani js biladi server bilan muloqot paytida qanchadur vaqt o'tishini va shu vaqt uchun js hodilalarda alohida load parametri mavjud
-                //yani hodisa ichiga hodisa osilayapti
-                if (request.status === 200) {
-                    //yani agar request o'zgaruvchida jonatilgan malumotlar statusi 200 kodiga ega bo'lsa yani omadli jo'natilsa logda request o'zgaruvchini response parametri bilan ko'ramiz yani formga malumot kiritilganda server buni qabul qilsa logda ko'rinadi//////FormData objecti bilan ishlanayotgani sababli form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
-                    console.log(request.response); ////serverga jo'natilgan malumotlarni logda ko'rish uchun
-                    showThanksModal(msg.success); //endi agar hammasi to'g'ri bo'lsa yani 200 bo'lsa statusmeesagega textcontent bilan msgni .success qiymati berildi yani server bilan muloqot omadli bo'lsa// yani bu holatda showthanksmodal funksiyasi pastda yozilgan yani shu modal oynani dynamic holatda ishlaydigan qilingan pastda yozilgan funksiya yani showThanksModal funksiyasi birinchi chaqirilib parametriga msg o'zgaruvchini success qiymati chaqirilib qo'yildi
-
-                    form.reset(); ////JavaScript-da reset() metodi HTMLni tiklash tugmasi  form elementlarining barcha qiymatlarini tozalash uchun ishlatiladi. U qiymatlarni sukut bo'yicha o'rnatish uchun ishlatilishi mumkin. U hech qanday parametr qiymatlarini talab qilmaydi va hech qanday qiymatni qaytarmaydi va Elektron qurilmadagi reset tugmasi nima qiladi? Qayta tiklash tugmasi apparat yoki dasturiy ta'minot mexanizmi bo'lib, qurilma yoki tizimni asl holatiga qaytarish yoki noto'g'ri ishlash yoki muzlatish holatlarida uni qayta ishga tushirish imkonini beradi . Qayta tiklash tugmasini bosish orqali siz qurilmani qayta o'rnatish jarayonini boshlashingiz mumkin. yani malumotlar formga kiritilgandan keyin contact us ga bosilganda formlardagi inputlarni reset qiladi yani sukut default holatiga qaytaradi
-                    setTimeout(() => {
-                        //asinhron//yani bu holatda formga reset berildi yani yani resetda settimeout funksiyasi bilan  status messagga yani formga submit hodisasi sodir bo'lgandan keyin statusmessegdan kelgan malumotni 2 sekunddan keyin remove yani udalit qilish buyurildi
-                        statusMessage.remove();
-                    }, 2000);
-                } else {
-                    showThanksModal(msg.failre); ////yokida //endi agar hammasi to'g'ri bo'lmasa yani 200 bo'lmasa statusmeesagega textcontent bilan msgni .failre qiymati berildi yani server bilan muloqot omadsiz bo'lsa// yani bu holatda showthanksmodal funksiyasi pastda yozilgan yani shu modal oynani dynamic holatda ishlaydigan qilingan pastda yozilgan funksiya
-                }
-            });
-        });
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey bo'lmasa serverga userni malmumotlarini jo'natishda hatolik sodir bo'ladi
-
-    // const forms = document.querySelectorAll("form");
-    // forms.forEach((form) => {
-    //     postData(form);
-    // });
-    // const msg = {
-    //     loading: "Loading...",
-    //     success: "Thank's for submiting our form",
-    //     failre: "Something went wrong",
-    // };
-    // function postData(form) {
-    //     form.addEventListener("submit", (e) => {
-    //         e.preventDefault();
-    //         const statusMessage = document.createElement("div");
-    //         statusMessage.textContent = msg.loading;
-    //         form.append(statusMessage);
-    //         const raequest = new XMLHttpRequest();
-    //         raequest.open("POST", "server.php");
-    //         raequest.setRequestHeader("Content-Type", "application/json");
-    //         const obj = {};
-    //         const formData = new FormData(form);
-    //         formData.forEach((val, key) => {
-    //             obj[key] = val;
-    //         });
-    //         const json = JSON.stringify(obj);
-    //         raequest.send(json);
-    //         raequest.addEventListener("load", () => {
-    //             if (raequest.status === 200) {
-    //                 console.log(raequest.response);
-    //                 statusMessage.textContent = msg.success;
-    //                 form.reset();
-    //                 setTimeout(() => {
-    //                     statusMessage.remove();
-    //                 }, 2000);
-    //             } else {
-    //                 statusMessage.textContent = msg.failre;
-    //             }
-    //         });
-    //     });
-    // }
-    ////agar serverimiz json fileda yani hozirgiday phpda bo'lmaganda kodni yozilishi// phpdaham json fileni buyrug'i yozildi agar phpni o'zida ishlatilganda php faildagi json nastroyka o'chirilib turishi kerey bo'lmasa serverga userni malmumotlarini jo'natishda hatolik sodir bo'ladi
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////
-
+    ////53. chi darsdagi formda user server bilan muloqot yani malumot yuborish darsi 57.chi darsda Fetch API bilan pastroqda  qaytadan qilindi shu sabab bu 53 chi dars o'chirib turildi
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
 
-    ////54.chi dars Dynamuc styling
+    ////54.chi dars (Web loyiha 10 chi darsi) Dynamic styling
     ////54 chi darsni takrorlayotganda xamppda ochish shart bo'lmasa  Dynamic styling(54) dars natijalarini ko'rib bo'lmaydi agar aynan  dynamic styling darsi kerak bo'lsa yani shu 54  dars kerak bo'lsa bu failni xamppda ochib ishlatish kifoya (yani dars qilinayotganda github uchun  S B failida bajarildi va yozilgan kodlar xamppdagi huddi shu 54 chi dars filega yozib turildi va xampdan bu yerga copy qilib qo'yildi)
 
     function showThanksModal(message) {
@@ -409,7 +304,127 @@ window.addEventListener("DOMContentLoaded", () => {
             prevModalDialog.classList.remove("hide"); //display: none;//yani endi yuqorida hide qilingan ichida modal__dialog classlari chaqirilgan  prevModalDialog o'zgaruvchini hide classini remove qildik yani udalit qildik va shundan so'ng closemodal funksiyasini chaqirib qo'ydik bu close modal funksiyasi modalni inputlari bilan tozalab yopadi
             closeModal();
         }, 4000);
-    } ///yani endi user modal oynaga malumot kiritib contact us buttoniga bosgandan keyin 4 sekund vaqt o'tib modal yopiladi va modal yana qaytadan malumot jo'natish uchun top tozza holatga qaytadi
+    } ///yani endi user modal oynaga malumot kiritib contact us buttoniga bosgandan keyin 4 sekund vaqt o'tib modal yopiladi va  modal yana qaytadan malumot jo'natish uchun top tozza holatga qaytadi
 
-    ////54.chi dars Dynamuc styling
+    ////54.chi dars (Web loyiha 10 chi darsi) Dynamic styling
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ////57. chi dars  (Web loyiha 11 chi darsi) Fetch API
+    ////API  yani Application Programming Interface
+    ////API turlari DOM API, Google map API, Google place API, va Fetch API bu fetch api browserda bo'ladi yani bu fetch api browserdan tashqaridagi apilarga so'rov yuborishga yordam beradigan interface hissoblanadi masalan server bilan
+    //// tekin tajriba api saytlar https://jsonplaceholder.typicode.com/ Free fake api
+    //// tekin tajriba api internet magazin uchun Free fake api sayt  https://rapidapi.com/collection/shopping-products-apis   bu tekin apilar browserda bor fetch api bilan hamkorlikda ishlaydi yani fetch api bilan boshqa apilarga so'rov jonatish mumkun
+    ////fetch function metodi ikkita parametr qabul qiladi birinchi parametr url yani so'rovni urli va //fetch function metodi Promise qaytaradi fetch default yani sukut holatda doim get so'rov jo'natadi fetch api bilan server ishlarini bajarish XMLHttpRequest objectidan ko'ra qulayroq hissoblanadi
+    // fetch("https://jsonplaceholder.typicode.com/posts", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ name: "Nur" }),
+    // })
+    //     .then((response) => response.json())
+    //     .then((json) => console.log(json));//bu holatda  tekin tajriba serverlari bor jsonplaceholder.typicode.com saytidagi 100 ta posti bor posts papkasiga 101 chi post qilib Nur objecti qo'shildi
+    // ////server bilan muloqotni fetch api server.php bilan qilinagni php bilan ishlanganda server.php filedagi json nastroyka o'chirilib turilishi kerak
+    // const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bular saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
+    // forms.forEach((form) => {
+    //     ///intrigatsada parametrda form yozildi chunki bu form pastda postdata funksiyasida chaqiriladi shunda bu joyda intirigatsa bo'lgan[] form classlarga post datada hodisa ilinadi
+    //     postData(form); ////yani endi ALL qilib chaqirilganda kelgan hamma massiv ichidagi form classlar endi postdata funksiyasiga tushadi
+    // });
+    // // console.log(forms);////formani ishlayotgan yoki ishlamayotganini tekshirish uchun yozildi logda ikkita formni kelganini ko'rish mumkun
+    // const msg = {
+    //     //user form bilan ishlab submitlar qilganda yani malumotlar kirgizganda oladigan habarlari va sodir bo'ladigan hodislar davomi pastda nimaga pastda chunki bu kodni boshi bilan ohirini orasida serverga malumot jo'natish kodlari bor yani user serververga malumotlarni jonatganda yani jonatishga harakat qilgandan song chiqishi kerak bo'lgan malumot bo'lganligi sababli bu objectni qanday ishlashi pastda yani server user malumot almashinib bo'lgandan keyingina chiqadi shu sabab pastga yozildi (kod o'qish tartibi)
+    //     loading: "img/spinner.svg", //yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi
+    //     success: "Thank's for submiting our form",
+    //     failre: "Something went wrong",
+    // };
+    // function postData(form) {
+    //     form.addEventListener("submit", (e) => {
+    //         ////form o'zgaruvchisida ALL qilib chaqirilgan va postdataga form qilib berib qo'yilgan form classlariga submit hodisasi ilinepti chunki formda submit qilish bor (yani malumot jo'natilganda)
+    //         e.preventDefault(); ////preventdefault metodi kerakli documentlarga submit bo'lganda faqat kerakli joyni qayta yuklaydigan metod ////parametrda submitdan keyn (e) yani event olindi yani browserni odatiy holatdan chiqarish uchun masalan submit hodisasi sodir bo'lganda sahifa yangilanmasdan faqat shu form classlarini o'zi yangilanadi shunda sayt butunlay qayta yuklanmaydi
+    //         const statusMessage = document.createElement("img"); ////yani bu holatda yuqoridagi msg o'zgaruvchisi yani user bilan server malumot almashunuvi jarayoni uchun yaratilgan msg o'zgaruvchisi uchun yangi img elementi dynamic tarzda yaratildi
+    //         statusMessage.src = msg.loading; ////yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi bu esa shu spinnerni dynamic tarzda qo'shilgan stylelari   statusMessage.style.cssText = `display: block;margin: 0 auto;`
+    //         //yani server bilan muloqot jarayoni aftamatik tarzda loading bo'ladi yani kutiladi masalan internet sekin bo'lsa yoki serverda muammo bo'lsa shu holat uchun spinner ishlatildi
+    //         statusMessage.style.cssText = `
+    //        display: block;
+    //        margin: 0 auto;`;
+    //         form.insertAdjacentElement("afterend", statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga insertAdjacentElement metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi img bor bu imgga esa msg o'zgaruvchidagi qiymatlardan loading qiymatidagi img qo'shib qo'yildi bu joyda afterend parametri spinnerni ohirida chiqishini nazarda tutadi yani insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi statusmessageni formdan keyinga qo'shib berdi yani loading sodir bo'layotgda spinner.svg form classiga aloqador divdan keyin pastda turadi margin 0 spinnerni o'rtada turishini taminlaydi
+    //         const formData = new FormData(form); //yani bu holatda FormDataga form classlarni malumotlari berildi yani FormData bu HTML formasi malumotlarini ko'rsatish objektidir yani serverga ko'rsatadi    yani FormData objecti formdagi o'ziga kirtilgan elementdagi namelarga qaraydi bu holatda htmldagi inputlarni namelariga qaraydi yani atributlarni nomlariga qarab malumotlarni serverga moslaydi??? yani masalan name atributi formdata objectini name hususiyatiga teng bo'ladi formdata objecti yani html atributlarni nomlariga mos o'z qiymatlariga ega construktor (huddiki this.name va hakozo) shu uchun forms o'zgaruvchisi all qilinib chaqirildi va foreach qilindi va form holatida formdatani parametriga kiritildi va bu formdata objecti o'zini parametridagi malumotlarni server taniydigan mlumot turiga aylantiradi lekin json emas yani shunda formga kelgan malumot serverga jo'natishga serverbop malumot turiga aylantirilib tayyor qilindi yani FormData objecti formga yoziladigan client kirtgan malumotlarni va faillarni serverga server tushunadigan tilda tayyorlab beradi lekin json fileda emas ////FormData html form classidan yuboriladigan malumotlar formatlaridan biridir. Xususan, u shaklga kiritilgan qiymatlarni name: value juftlari sifatida kodlaydi va ularni Content-Type sarlavhasi bilan  multipart/form-data ga yuboradi FormDtaning asosiy xususiyatlariga quyidagilar kiradi: Faqat matnni emas, balki fayllarni ham yuborish imkoniyati.////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
+    //         fetch("server.php", {
+    //             ////fetch api bilan yozilganda server link fetch apini parametriga birinchi yoziladi
+    //             method: "POST",
+    //             body: formData, //FormData objecti bilan ishlangani sabab bu joyda sarlavha yozish shartmas
+    //         })
+    //             .then((data) => data.text()) //bu holatda .then Promise objectini metodi hissoblanadi lekin fetch bilan ishlaganda promiseni o'zini chaqirish shartmasmi??? yani .then va formni ifoda qiladigan data va text metodi bilan serverdan keladigan malumotni shunchaki text qilindi yani jsonmas shunchaki text //bu holatda data formData o'zgaruvchida chaqirilgan FormData objecti parametrida chaqirilgan All qilib htmldan chaqirilgan form classlarni  foreach qilinib yig'ilgan formalarni ifoda etadi
+    //             .then((data) => {
+    //                 console.log(data); ////yani tepadagi text metodi sabab formni inputlariga user tomonidan kiritiladigan malumotlar serverga jo'natilganda text holatida logda ko'rish uchun yozildi
+    //                 showThanksModal(msg.success); ////server urli hato bo'lganda shu funksiya ishlamasligi kerak edi lekin ishlab ketepti???////server urli hato bo'lganda shu funksiya ishlamasligi kerak edi lekin ishlab ketepti??? sabab fetch faqat urllarga yani server ssilkalarga faqat so'rov jo'natadi holos yani yani fetch api faqatgina statusni ko'rsatib beradi yani linklarga so'rovlarni jo'natib faqat statusni ko'rsatib beradi va fetch net o'chiq bo'lsa yani offline bo'lsagina hatoniham ko'rsatadi (something went wrong) yani offline holatida bo'lganda fetch api server.php ga so'rov yubormaydi shu sabab hatoni ko'rsatadi agar online bo'lsa so'rov jo'natilgani sabab hato ko'rsatmeydi
+    //                 form.reset(); //user serverga malumot jo'natib bo'lgandan keyin formni reset yani udalit qilib tozalab qo'yish reset metodi bilan buyurilib qo'yildi
+    //                 statusMessage.remove(); ////yani server malumotlarni omadli jo'natib bo'lgandan keyin spinner rasimi remove yani udalit qilindi aks holda spinner ishlab turaveradi yani contact us buttoniga qaytadan bosilgandaham spinner ishlab turgan bo'ladi shu sabab success holati sodir bo'lgandan keyin bu statsumessege o'zgaruvchi udalit qilinadi
+    //             })
+    //             .catch(() => {
+    //                 ///promise//yani agar server bilan muloqot yani serverga malumot jo'natish omadsiz bo'lsa  failre: "Something went wrong" qiymati ishga tushadi chunki .chatch metodi false bo'lgandagina ishga tushadi promiseni
+    //                 showThanksModal(msg.failre);
+    //             });
+    // ////server bilan muloqotni fetch api server.php bilan qilinagni php bilan ishlanganda server.php filedagi json nastroyka o'chirilib turilishi kerak
+    //     });
+    // }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////server bilan muloqotni fetch api json  bilan qilinagni json bilan ishlanganda server.php filedagi json nastroyka yoqib qo'yilishi kerak
+    const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bular saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
+    forms.forEach((form) => {
+        ///intrigatsada parametrda form yozildi chunki bu form pastda postdata funksiyasida chaqiriladi shunda bu joyda intirigatsa bo'lgan[] form classlarga post datada hodisa ilinadi
+        postData(form); ////yani endi ALL qilib chaqirilganda kelgan hamma massiv ichidagi form classlar endi postdata funksiyasiga tushadi
+    });
+    // console.log(forms);////formani ishlayotgan yoki ishlamayotganini tekshirish uchun yozildi logda ikkita formni kelganini ko'rish mumkun
+    const msg = {
+        //user form bilan ishlab submitlar qilganda yani malumotlar kirgizganda oladigan habarlari va sodir bo'ladigan hodislar davomi pastda nimaga pastda chunki bu kodni boshi bilan ohirini orasida serverga malumot jo'natish kodlari bor yani user serververga malumotlarni jonatganda yani jonatishga harakat qilgandan song chiqishi kerak bo'lgan malumot bo'lganligi sababli bu objectni qanday ishlashi pastda yani server user malumot almashinib bo'lgandan keyingina chiqadi shu sabab pastga yozildi (kod o'qish tartibi)
+        loading: "img/spinner.svg", //yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi
+        success: "Thank's for submiting our form",
+        failre: "Something went wrong",
+    };
+    function postData(form) {
+        form.addEventListener("submit", (e) => {
+            ////form o'zgaruvchisida ALL qilib chaqirilgan va postdataga form qilib berib qo'yilgan form classlariga submit hodisasi ilinepti chunki formda submit qilish bor (yani malumot jo'natilganda)
+            e.preventDefault(); ////preventdefault metodi kerakli documentlarga submit bo'lganda faqat kerakli joyni qayta yuklaydigan metod ////parametrda submitdan keyn (e) yani event olindi yani browserni odatiy holatdan chiqarish uchun masalan submit hodisasi sodir bo'lganda sahifa yangilanmasdan faqat shu form classlarini o'zi yangilanadi shunda sayt butunlay qayta yuklanmaydi
+            const statusMessage = document.createElement("img"); ////yani bu holatda yuqoridagi msg o'zgaruvchisi yani user bilan server malumot almashunuvi jarayoni uchun yaratilgan msg o'zgaruvchisi uchun yangi img elementi dynamic tarzda yaratildi
+            statusMessage.src = msg.loading; ////yani bu holatda serverdan keladigan javob 200 javobi kelguncha img papkani ichida spinner svg file ishlab turadi bu esa shu spinnerni dynamic tarzda qo'shilgan stylelari   statusMessage.style.cssText = `display: block;margin: 0 auto;`
+            //yani server bilan muloqot jarayoni aftamatik tarzda loading bo'ladi yani kutiladi masalan internet sekin bo'lsa yoki serverda muammo bo'lsa shu holat uchun spinner ishlatildi
+            statusMessage.style.cssText = `
+            display: block;
+            margin: 0 auto;`;
+            form.insertAdjacentElement("afterend", statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga insertAdjacentElement metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi img bor bu imgga esa msg o'zgaruvchidagi qiymatlardan loading qiymatidagi img qo'shib qo'yildi bu joyda afterend parametri spinnerni ohirida chiqishini nazarda tutadi yani insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi statusmessageni formdan keyinga qo'shib berdi yani loading sodir bo'layotgda spinner.svg form classiga aloqador divdan keyin pastda turadi margin 0 spinnerni o'rtada turishini taminlaydi
+            const formData = new FormData(form); //yani bu holatda FormDataga form classlarni malumotlari berildi yani FormData bu HTML formasi malumotlarini ko'rsatish objektidir yani serverga ko'rsatadi    yani FormData objecti formdagi o'ziga kirtilgan elementdagi namelarga qaraydi bu holatda htmldagi inputlarni namelariga qaraydi yani atributlarni nomlariga qarab malumotlarni serverga moslaydi??? yani masalan name atributi formdata objectini name hususiyatiga teng bo'ladi formdata objecti yani html atributlarni nomlariga mos o'z qiymatlariga ega construktor (huddiki this.name va hakozo) shu uchun forms o'zgaruvchisi all qilinib chaqirildi va foreach qilindi va form holatida formdatani parametriga kiritildi va bu formdata objecti o'zini parametridagi malumotlarni server taniydigan mlumot turiga aylantiradi lekin json emas yani shunda formga kelgan malumot serverga jo'natishga serverbop malumot turiga aylantirilib tayyor qilindi yani FormData objecti formga yoziladigan client kirtgan malumotlarni va faillarni serverga server tushunadigan tilda tayyorlab beradi lekin json fileda emas ////FormData html form classidan yuboriladigan malumotlar formatlaridan biridir. Xususan, u shaklga kiritilgan qiymatlarni name: value juftlari sifatida kodlaydi va ularni Content-Type sarlavhasi bilan  multipart/form-data ga yuboradi FormDtaning asosiy xususiyatlariga quyidagilar kiradi: Faqat matnni emas, balki fayllarni ham yuborish imkoniyati.////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
+            const obj = {}; ////yani serverga borgan malumotlar object ko'rinishida shu bo'sh objectga tushadi
+            formData.forEach((val, key) => {
+                ////yani formdata o'zgaruvchidagi FormData js objecti parametridagi form FormDataga intirigatsa qilinib formDatani valulari FormData objectiga keylariham FormDatani keylariga intirigatsa qilindi yani ulandi desaham bo'ladi shudna FormData objecti formga yanni parametrridagi formdan kelgan malumotlarni shunday context thizga o'hshab tartiblaydi va logda userni kiritgan malumotlariga qaralganda tartib bilan value keylari bilan tushadi
+                obj[key] = val;
+            });
+            fetch("server.php", {
+                ////fetch api bilan yozilganda server link fetch apini parametriga birinchi yoziladi
+                method: "POST", ////yani fetchni post metodidan foydalanish
+                headers: {
+                    "Content-Type": "application/json", ////sarlavha chunki server json bilan ishlanganda sarlavha yoziladi
+                },
+                body: JSON.stringify(obj), ///yani serverga jo'natilgan userni malumotlari jsonda object ko'rinisha o'tib obj objectiga jo'natilishi
+            })
+                .then((data) => data.text()) //bu holatda .then Promise objectini metodi hissoblanadi lekin fetch bilan ishlaganda promiseni o'zini chaqirish shartmasmi??? yani .then va formni ifoda qiladigan data va text metodi bilan serverdan keladigan malumotni shunchaki text qilindi yani jsonmas shunchaki text //bu holatda data formData o'zgaruvchida chaqirilgan FormData objecti parametrida chaqirilgan All qilib htmldan chaqirilgan form classlarni  foreach qilinib yig'ilgan formalarni ifoda etadi
+                .then((data) => {
+                    console.log(data); ////yani tepadagi text metodi sabab formni inputlariga user tomonidan kiritiladigan malumotlar serverga jo'natilganda text holatida logda ko'rish uchun yozildi
+                    showThanksModal(msg.success); ////server urli hato bo'lganda shu funksiya ishlamasligi kerak edi lekin ishlab ketepti??? sabab fetch faqat urllarga yani server ssilkalarga faqat so'rov jo'natadi holos yani yani fetch api faqatgina statusni ko'rsatib beradi yani linklarga so'rovlarni jo'natib faqat statusni ko'rsatib beradi va fetch net o'chiq bo'lsa yani offline bo'lsagina hatoniham ko'rsatadi (something went wrong) yani offline holatida bo'lganda fetch api server.php ga so'rov yubormaydi shu sabab hatoni ko'rsatadi agar online bo'lsa so'rov jo'natilgani sabab hato ko'rsatmeydi
+                    statusMessage.remove(); ////yani server malumotlarni omadli jo'natib bo'lgandan keyin spinner rasimi remove yani udalit qilindi aks holda spinner ishlab turaveradi yani contact us buttoniga qaytadan bosilgandaham spinner ishlab turgan bo'ladi shu sabab success holati sodir bo'lgandan keyin bu statsumessege o'zgaruvchi udalit qilinadi
+                })
+                .catch(() => {
+                    ///promise//yani agar server bilan muloqot yani serverga malumot jo'natish omadsiz bo'lsa  failre: "Something went wrong" qiymati ishga tushadi chunki .chatch metodi false bo'lgandagina ishga tushadi promiseni
+                    showThanksModal(msg.failre);
+                })
+                .finally(() => {
+                    form.reset(); //user serverga malumot jo'natib bo'lgandan keyin formni reset yani udalit qilib tozalab qo'yish reset metodi bilan buyurilib qo'yildi //user serverga malumot jo'natib bo'lgandan keyin formni reset yani udalit qilib tozalab qo'yish reset metodi bilan buyurilib qo'yildi yani promiseni .finally metodi yani nima bo'lgandaham server bilan bordi keldi omadli yoki omadsiz o'tgandaham form tozalansin yani reset qilinsin
+                });
+            console.log(obj); ////yani bu log text metodi bo'lsaham aslida jsda hamma narsa object ekanligini ko'rish uchun yani OOP objectga yo'naltirilgann programmalash
+            ////server bilan muloqotni fetch api json  bilan qilinagni json bilan ishlanganda server.php filedagi json nastroyka yoqib qo'yilishi kerak
+        });
+    }
+
+    ////57. chi dars  (Web loyiha 11 chi darsi) Fetch API
 });
