@@ -326,6 +326,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //     .then((response) => response.json())
     //     .then((json) => console.log(json));//bu holatda  tekin tajriba serverlari bor jsonplaceholder.typicode.com saytidagi 100 ta posti bor posts papkasiga 101 chi post qilib Nur objecti qo'shildi
     // ////server bilan muloqotni fetch api server.php bilan qilinagni php bilan ishlanganda server.php filedagi json nastroyka o'chirilib turilishi kerak
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////server.php bilan qilingani
     // const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bular saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
     // forms.forEach((form) => {
     //     ///intrigatsada parametrda form yozildi chunki bu form pastda postdata funksiyasida chaqiriladi shunda bu joyda intirigatsa bo'lgan[] form classlarga post datada hodisa ilinadi
@@ -370,6 +372,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //     });
     // }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////json bilan qilingani
     ////server bilan muloqotni fetch api json  bilan qilinagni json bilan ishlanganda server.php filedagi json nastroyka yoqib qo'yilishi kerak
     const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bular saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
     forms.forEach((form) => {
