@@ -431,3 +431,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ////57. chi dars  (Web loyiha 11 chi darsi) Fetch API
 });
+////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI 53 CHI DARSdan boshlab loyiha OCHILGANDA DOIM XAMPPDA VA 60 CHI DARSDAN BOSHLAB --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI!!!!!!!!!!!!
+////BU 53 CHI DARSDAN BOSHLAB LOYIHA XAMPPDA OCHILISHI KERAK AKS HOLDA SERVER ISHLAMAYDI!!!!!!!!!!!!!

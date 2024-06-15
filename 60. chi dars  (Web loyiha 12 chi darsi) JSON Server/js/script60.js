@@ -440,5 +440,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //60. chi dars  (Web loyiha 12 chi darsi) JSON Server
 
-    ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar shu dars ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI BU 60 CHI DARS OCHILGANDA DOIM XAMPPDA VA --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI
+   ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI 53 CHI DARSdan boshlab loyiha OCHILGANDA DOIM XAMPPDA VA 60 CHI DARSDAN BOSHLAB --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI!!!!!!!!!!!!
+////BU 53 CHI DARSDAN BOSHLAB LOYIHA XAMPPDA OCHILISHI KERAK AKS HOLDA SERVER ISHLAMAYDI!!!!!!!!!!!!!
 });

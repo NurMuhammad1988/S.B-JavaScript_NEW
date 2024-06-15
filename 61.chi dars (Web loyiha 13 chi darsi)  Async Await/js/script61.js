@@ -329,7 +329,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const forms = document.querySelectorAll("form"); ////forms o'zgaruvchisida html documentdan formlarni hammasini ALL qilib ovoldik htmlda order va modal classlari bor formalar bor bular saytga kirganda contact us buttonlariga bosilganda va sayt ishga tushgandan keyin 5 sekunddan keyin chiqadigan modal oyna (МЫ СВЯЖЕМСЯ С ВАМИ КАК МОЖНО БЫСТРЕЕ!)
     forms.forEach((form) => {
         ///intrigatsada parametrda form yozildi chunki bu form pastda postdata funksiyasida chaqiriladi shunda bu joyda intirigatsa bo'lgan[] form classlarga post datada hodisa ilinadi
-        bindPostData(form); ////yani endi ALL qilib chaqirilganda kelgan hamma massiv ichidagi form classlar endi postdata funksiyasiga tushadi
+        bindPostData(form); ////yani endi ALL qilib chaqirilganda kelgan hamma massiv ichidagi form classlar endi bindpostdata funksiyasiga tushadi
     });
     // console.log(forms);////formani ishlayotgan yoki ishlamayotganini tekshirish uchun yozildi logda ikkita formni kelganini ko'rish mumkun
     const msg = {
@@ -339,17 +339,19 @@ window.addEventListener("DOMContentLoaded", () => {
         failre: "Something went wrong",
     };
 
+    ////async va await functionlari async va await funksiya doim birga ishlaydi bittasi chaqirilib bittasi chaqirilmasligi mumkunmas bu holatda async bu postdatani asinhron funksiya qiladi await res o'zgaruvchidagi fetchni urlga so'rov jo'natishini kutishni buyuradi
     async function postData(url, data) {
         const res = await fetch(url, {
-            ////fetch api bilan yozilganda server link fetch apini parametriga birinchi yoziladi
-            method: "POST", ////yani fetchni post metodidan foydalanish
+            ////fetch promise qaytaradi va bu promiseni res nomli o'zgaruvchiga oldik
+            ////fetch api bilan yozilganda server linki fetch apini parametriga birinchi yoziladi
+            method: "POST", ////yani fetchni post metodidan foydalanish bu metod post qilisni fetchdan post qilish yani formga post,yani userni post qilishini nazarda tutadi
             headers: {
-                "Content-Type": "application/json", ////sarlavha chunki server json bilan ishlanganda sarlavha yoziladi
+                "Content-Type": "application/json", ////sarlavha chunki server json bilan ishlanganda sarlavha yoziladi  agar yozilmasa js fetchni ishlataolmaydi tushunmaydi
             },
-            body: data, ///yani serverga jo'natilgan userni malumotlari jsonda object ko'rinisha o'tib obj objectiga jo'natilishi
+            body: data, //yani POST, PUT,  va hokazo kabi HTTP usullaridan foydalanganda DETELE, so'rovi bilan birga bazi malumotlarni yuborishingiz kerak Bu malumotlar bazasidan ochirmoqchi bo'lgan obekt identifikatori yoki malumotlar bazasida saqlamoqchi bo'lgan yangi obekt bo'lishi mumkin. Bu ma'lumotlarning barchasi body obektiga kiradi shuning uchun body fetchda chaqiriladi
         });
 
-        return await res.json();
+        return await res.json(); ////db.json filega so'rov jo'natish funksiyasi////yani json metodi bilan serverga boradigan javobni json formatga o'tqizvoldik  yani bu holatda postdata nomli async (asinhron) funksiya yaratilib parametriga url chaqirildi yani bu url dynamic hissoblanadi
     }
 
     function bindPostData(form) {
@@ -365,18 +367,18 @@ window.addEventListener("DOMContentLoaded", () => {
             form.insertAdjacentElement("afterend", statusMessage); //endi shu loading hodisasida sodir bo'lishi kerak bo'lgan hodisani statusmesseg o'zgaruvchiga insertAdjacentElement metodi bilan joylashtirdik statsusmessege o'zgaruvchida esa yangi img bor bu imgga esa msg o'zgaruvchidagi qiymatlardan loading qiymatidagi img qo'shib qo'yildi bu joyda afterend parametri spinnerni ohirida chiqishini nazarda tutadi yani insertAdjacentHTML metodi ikkita parametr qabul qiladi birinchi parametr pozitsiyasi ikkinchi parametri html texti yani bu holatda insertAdjacentHTML metodi statusmessageni formdan keyinga qo'shib berdi yani loading sodir bo'layotgda spinner.svg form classiga aloqador divdan keyin pastda turadi margin 0 spinnerni o'rtada turishini taminlaydi
             const formData = new FormData(form); //yani bu holatda FormDataga form classlarni malumotlari berildi yani FormData bu HTML formasi malumotlarini ko'rsatish objektidir yani serverga ko'rsatadi    yani FormData objecti formdagi o'ziga kirtilgan elementdagi namelarga qaraydi bu holatda htmldagi inputlarni namelariga qaraydi yani atributlarni nomlariga qarab malumotlarni serverga moslaydi??? yani masalan name atributi formdata objectini name hususiyatiga teng bo'ladi formdata objecti yani html atributlarni nomlariga mos o'z qiymatlariga ega construktor (huddiki this.name va hakozo) shu uchun forms o'zgaruvchisi all qilinib chaqirildi va foreach qilindi va form holatida formdatani parametriga kiritildi va bu formdata objecti o'zini parametridagi malumotlarni server taniydigan mlumot turiga aylantiradi lekin json emas yani shunda formga kelgan malumot serverga jo'natishga serverbop malumot turiga aylantirilib tayyor qilindi yani FormData objecti formga yoziladigan client kirtgan malumotlarni va faillarni serverga server tushunadigan tilda tayyorlab beradi lekin json fileda emas ////FormData html form classidan yuboriladigan malumotlar formatlaridan biridir. Xususan, u shaklga kiritilgan qiymatlarni name: value juftlari sifatida kodlaydi va ularni Content-Type sarlavhasi bilan  multipart/form-data ga yuboradi FormDtaning asosiy xususiyatlariga quyidagilar kiradi: Faqat matnni emas, balki fayllarni ham yuborish imkoniyati.////form data objectiga sarlavha qo'yish shartmas (setRequestHeadern) chunki formdata objectida sarlavga aftamatik qo'yiladi
 
-            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+            const json = JSON.stringify(Object.fromEntries(formData.entries())); //metod ichida metod//yani bu holatda formDatada chaqirilgan FormData global objecti doim massiv qaytaradi bu holatda enteries massivni yana massiv qilib beradi fromenteries esa massivni object qilib beradi JSON.stringify esa bu objectni json formatga o'girib beradi yani FormData objectidan keladigan (yani formga yozilganda keladigan) massiv malumotlarni objectga va jsonga aylantirdik yani server tushunadigan malumot turi hissoblangan jsonga aylantirdik
 
-            ////Object.entries metodi
-            //// const obj = {x:10, y:20}
-            //// console.log(Object.entries(obj));//entres metodi jsda global Objectni metodi hissoblanadi yani objectni massivga o'girib beradi yani obj objectidagi qiymatlarni har birini alohida ishlasa bo'ladigan massivga o'girib beradi
+            //Object.entries metodi
+            // const obj = {x:10, y:20}
+            // console.log(Object.entries(obj));//entres metodi jsda global Objectni metodi hissoblanadi yani objectni massivga o'girib beradi yani obj objectidagi qiymatlarni har birini alohida ishlasa bo'ladigan massivga o'girib beradi
 
             // const obj = {}; ////yani serverga borgan malumotlar object ko'rinishida shu bo'sh objectga tushadi
             // formData.forEach((val, key) => {
             //     ////yani formdata o'zgaruvchidagi FormData js objecti parametridagi form FormDataga intirigatsa qilinib formDatani valulari FormData objectiga keylariham FormDatani keylariga intirigatsa qilindi yani ulandi desaham bo'ladi shudna FormData objecti formga yanni parametrridagi formdan kelgan malumotlarni shunday context thizga o'hshab tartiblaydi va logda userni kiritgan malumotlariga qaralganda tartib bilan value keylari bilan tushadi
             //     obj[key] = val;
             // })
-            postData("http://localhost:3000/request", json)
+            postData("http://localhost:3000/request", json) //yani server (db.json) bilan ishlash unversal async postdata funksiyasiga db.jsondagi server linki ichidagi request papkaga post jo'natish va uni (FormData objecti massiv qaytaradi ) massivni objectga aylantiradigan  json o'zgaruvchi bilan chaqirdik
                 // fetch("http://localhost:3000/request", {
                 //     ////fetch api bilan yozilganda server link fetch apini parametriga birinchi yoziladi
                 //     method: "POST", ////yani fetchni post metodidan foydalanish
@@ -416,4 +418,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
 });
-////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI 59 CHI DARSdan boshlab loyiha OCHILGANDA DOIM XAMPPDA VA --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI
+////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI 53 CHI DARSdan boshlab loyiha OCHILGANDA DOIM XAMPPDA VA 60 CHI DARSDAN BOSHLAB --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI!!!!!!!!!!!!
+////BU 53 CHI DARSDAN BOSHLAB LOYIHA XAMPPDA OCHILISHI KERAK AKS HOLDA SERVER ISHLAMAYDI!!!!!!!!!!!!!
