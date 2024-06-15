@@ -1,0 +1,26 @@
+{
+    "menu": [
+        {
+            "img": "img/tabs/1.png",
+            "altimg": "vegy",
+            "title": "Plan 'Usual'",
+            "descr": "1-BU BIRINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+            "price": 10
+        },
+        {
+            "img": "img/tabs/2.png",
+            "altimg": "elite",
+            "title": "Plan 'Premium'",
+            "descr": "2-BU IKKINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+            "price": 20
+        },
+        {
+            "img": "img/tabs/3.png",
+            "altimg": "post",
+            "title": "Plan 'VIP'",
+            "descr": "3-BU UCHINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+            "price": 30
+        }
+    ],
+    "request": []
+}
