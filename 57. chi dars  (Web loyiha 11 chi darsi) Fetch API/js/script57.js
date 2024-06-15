@@ -418,7 +418,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     statusMessage.remove(); ////yani server malumotlarni omadli jo'natib bo'lgandan keyin spinner rasimi remove yani udalit qilindi aks holda spinner ishlab turaveradi yani contact us buttoniga qaytadan bosilgandaham spinner ishlab turgan bo'ladi shu sabab success holati sodir bo'lgandan keyin bu statsumessege o'zgaruvchi udalit qilinadi
                 })
                 .catch(() => {
-                    ///promise//yani agar server bilan muloqot yani serverga malumot jo'natish omadsiz bo'lsa  failre: "Something went wrong" qiymati ishga tushadi chunki .chatch metodi false bo'lgandagina ishga tushadi promiseni
+                    ///promise//yani agar server bilan muloqot yani serverga malumot jo'natish omadsiz bo'lsa  failre: "Something went wrong" qiymati ishga tushadi chunki promiseni    .chatch metodi false bo'lgandagina ishga tushadi 
                     showThanksModal(msg.failre);
                 })
                 .finally(() => {

@@ -414,7 +414,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 .then((data) => data.text()) //bu holatda .then Promise objectini metodi hissoblanadi lekin fetch bilan ishlaganda promiseni o'zini chaqirish shartmasmi??? yani .then va formni ifoda qiladigan data va text metodi bilan serverdan keladigan malumotni shunchaki text qilindi yani jsonmas shunchaki text //bu holatda data formData o'zgaruvchida chaqirilgan FormData objecti parametrida chaqirilgan All qilib htmldan chaqirilgan form classlarni  foreach qilinib yig'ilgan formalarni ifoda etadi
                 .then((data) => {
                     console.log(data); ////yani tepadagi text metodi sabab formni inputlariga user tomonidan kiritiladigan malumotlar serverga jo'natilganda text holatida logda ko'rish uchun yozildi
-                    showThanksModal(msg.success); ////server urli hato bo'lganda shu funksiya ishlamasligi kerak edi lekin ishlab ketepti??? sabab fetch faqat urllarga yani server ssilkalarga faqat so'rov jo'natadi holos yani yani fetch api faqatgina statusni ko'rsatib beradi yani linklarga so'rovlarni jo'natib faqat statusni ko'rsatib beradi va fetch net o'chiq bo'lsa yani offline bo'lsagina hatoniham ko'rsatadi (something went wrong) yani offline holatida bo'lganda fetch api server.php ga so'rov yubormaydi shu sabab hatoni ko'rsatadi agar online bo'lsa so'rov jo'natilgani sabab hato ko'rsatmeydi
+                    showThanksModal(msg.success); ////server urli hato bo'lganda shu funksiya ishlamasligi kerak edi lekin ishlab ketepti??? sabab fetch faqat urllarga yani server ssilkalarga faqat so'rov jo'natadi holos yani  fetch api faqatgina statusni ko'rsatib beradi yani linklarga so'rovlarni jo'natib faqat statusni ko'rsatib beradi va fetch net o'chiq bo'lsa yani offline bo'lsagina hatoniham ko'rsatadi (something went wrong) yani offline holatida bo'lganda fetch api server.php ga so'rov yubormaydi shu sabab hatoni ko'rsatadi agar online bo'lsa so'rov jo'natilgani sabab hato ko'rsatmeydi
                     statusMessage.remove(); ////yani server malumotlarni omadli jo'natib bo'lgandan keyin spinner rasimi remove yani udalit qilindi aks holda spinner ishlab turaveradi yani contact us buttoniga qaytadan bosilgandaham spinner ishlab turgan bo'ladi shu sabab success holati sodir bo'lgandan keyin bu statsumessege o'zgaruvchi udalit qilinadi
                 })
                 .catch(() => {
@@ -424,7 +424,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 .finally(() => {
                     form.reset(); //user serverga malumot jo'natib bo'lgandan keyin formni reset yani udalit qilib tozalab qo'yish reset metodi bilan buyurilib qo'yildi //user serverga malumot jo'natib bo'lgandan keyin formni reset yani udalit qilib tozalab qo'yish reset metodi bilan buyurilib qo'yildi yani promiseni .finally metodi yani nima bo'lgandaham server bilan bordi keldi omadli yoki omadsiz o'tgandaham form tozalansin yani reset qilinsin
                 });
-            console.log(obj); ////yani bu log text metodi bo'lsaham aslida jsda hamma narsa object ekanligini ko'rish uchun yani OOP objectga yo'naltirilgann programmalash
+            // console.log(obj); ////yani bu log text metodi bo'lsaham aslida jsda hamma narsa object ekanligini ko'rish uchun yani OOP objectga yo'naltirilgann programmalash
             ////server bilan muloqotni fetch api json  bilan qilingani json bilan ishlanganda server.php filedagi json nastroyka yoqib qo'yilishi kerak
         });
     }
@@ -432,6 +432,13 @@ window.addEventListener("DOMContentLoaded", () => {
     ////57. chi dars  (Web loyiha 11 chi darsi) Fetch API
     //////////////////////////////////////////////////////////////////////////////////////////
     //60. chi dars  (Web loyiha 12 chi darsi) JSON Server
-    
+
+    fetch("http://localhost:3000/menu")
+        .then((data) => data.json())
+        .then((res) => console.log(res));
+    ///fetch metodi bilan db.json filedan local server sifatida foydalanildi
+
     //60. chi dars  (Web loyiha 12 chi darsi) JSON Server
+
+    ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar shu dars ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI BU 60 CHI DARS OCHILGANDA DOIM XAMPPDA VA --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI
 });
