@@ -419,6 +419,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ///////////////////////////////////////////////////////////////////////////////////////////
 
     //62.chi dars (Web loyiha 14 chi darsi)  Get request
+    //xamppda
     
     //62.chi dars (Web loyiha 14 chi darsi)  Get request
 });
