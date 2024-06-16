@@ -232,7 +232,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return await res.json();//yani async funksiya bilan fetch ishlatildi getRecource nomli asyng funksiya yaratib parametriga url dynamic tarzda qo'yildi va res nomli await hususiyatli o'zgaruvchi yaratib unga resni json formatga o'girish buyurildi shunda bu getrecorce funksiyasi serverga get so'rov yani db.jsondagi(local serverdagi) malumotlarni dynamic tarzda jsga qo'shepmiz bu unversal funksiya hissoblanadi
     }
     getRecource("http://localhost:3000/menu").then((data) => {
-        console.log(data);//get getRecource async funksiyasi parametrida birinchi url yoziladi bu urldb.jsondan kelepti yani db.jsondagi menu json objectidan kelepti//yani data bu holatda massiv qaytaradi??? chunki bu data dynamic hissoblanadi bu holatda data local hostdagi(serverdagi) db.json filedagi menu json objectini nazarda tutadi 
+        console.log(data);//log datani qayerdan kelishini ko'rish uchun yozildi yani db.son dan yani>>>"http://localhost:3000/menu"dan kelepti //get getRecource async funksiyasi parametrida birinchi url yoziladi bu url db.jsondan kelepti yani db.jsondagi menu json objectidan kelepti//yani data bu holatda massiv qaytaradi??? chunki bu data dynamic hissoblanadi bu holatda data local hostdagi(serverdagi) db.json filedagi menu json objectini nazarda tutadi 
         data.forEach(({ img, altimg, title, descr, price }) => {
             new MenuCard(
                 img,
