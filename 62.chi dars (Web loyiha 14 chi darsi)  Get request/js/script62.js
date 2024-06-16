@@ -177,11 +177,11 @@ window.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", showModalByScroll); //yani bu holatda windowga scroll hodisasi berilganda showModalByScroll funksiyasi chaqirildi showModalByScroll local funksiyasi esa yuqorida yozilgan yani user saytni eng ohiriga tushganda openModal funksiyasi yana ishga tushadi
     //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
 
-    //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
+     //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi va  62.chi dars (Web loyiha 14 chi darsi)  Get request darsi
     ////Class
     class MenuCard {
         //jsda classlar doim katta hariflar bilan yoziladi shunda js Carni class component ekanligini tushunadi
-        ////rest operator constructorni parametrida eng ohirida yoziladi agar constructorni parametrida rest operatordan keyin birita parametryozilsa rest operator uni massivni ichiga yozvoradi
+        ////rest operator constructorni parametrida eng ohirida yoziladi agar constructorni parametrida rest operatordan keyin birorta parametr yozilsa rest operator uni massivni ichiga yozvoradi
         constructor(src, alt, title, descr, price, parentSelector, ...classes) {
             //bu holatda MenuCard nomli class yaratilib unga konstructor chaqirildi va parametriga kelejakda ishlatilishi rejalashtirilgan qiymatlar berib chiqildi this contex bilan har biri chaqirildi
             this.src = src; //rasim uchun atribut
@@ -189,7 +189,7 @@ window.addEventListener("DOMContentLoaded", () => {
             this.title = title;
             this.descr = descr;
             this.price = price;
-            this.classes = classes; //yani bu massivg ateng chunki rest operator massiv qaytaradi
+            this.classes = classes; //yani bu massivga teng chunki rest operator massiv qaytaradi
             this.parent = document.querySelector(parentSelector);
             this.transfer = 12000; //dollorni so'mga ko'paytirish
             this.changeToUZS(); //yani har safar menucard classi ishlaganda bu metodham ishlaydi
@@ -201,7 +201,6 @@ window.addEventListener("DOMContentLoaded", () => {
         render() {
             //qo'lda yozilgan metod
             const element = document.createElement("div");
-
             //// console.log(this.classes);
             if (this.classes.length === 0) {
                 //yani massivni uzunligi 0 bo'lsa
@@ -212,7 +211,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     element.classList.add(classname)
                 ); //yani rest operator yordamida classlar diynamic qo'shildi yani rest operator(...)bor classes parametri massiv qaytaradi shu classes parametrini foreach bilan intirgatsa qilib element o'zgaruvchi ichidagi classnamelarga add qilib classnamelarni qo'shdik endi new MenuCardlardagi ohirgi parametr hissoblangan "menu__item" classi qayerga chaqirilsaham doim yangi classlarni qo'shadi
             }
-
             //element.inerhtml ichidagi menu__item classi olib tashlandi chunki endi rest operator orqali classlar qo'shildi
             element.innerHTML = `
             <img src=${this.src} alt=${this.alt} />
@@ -223,44 +221,36 @@ window.addEventListener("DOMContentLoaded", () => {
               <div class="menu__item-cost">Price:</div>
               <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
             </div>
-          `; //innerhtmlda htmlda classlari yozilgan elementlar chaqirildi stylelar shu sabab ishlayapti chunki shu stylelar yozilgan css papka js ulangan htmlda chaqiriligan (link)!!! dynamic tarzda kelgan bu html css filga jsda dynamic tarzda pastda yozilgan new menucardlarni qiymatlari interpalatsiya bilan (becet) berib qo'yilgan va hohlagancha yangi cartani new menucard qilib ochib qiymatlarini o'zgartirib qo'ysa bo'ladi yani cardlarni ko'paytirsa bo'ladi
+          `; //innerhtmlda htmlda classlari yozilgan elementlar chaqirildi stylelar shu sabab ishlayapti chunki shu stylelar yozilgan css papka js ulangan htmlda chaqiriligan (link)!!! dynamic tarzda kelgan bu html css filga jsda dynamic tarzda db.jsonda yozilgan
             this.parent.append(element); //yani bu holatda menucard classiga dynamic tarzda html element qo'shildi yani menucardda parentselector bor constructori ichida esa  this.parent = document.querySelector(parentSelector); qilib ona div chaqirilgan va parentga append qilib yangi dynamic yaratilgan divi  bor element nomli o'zgaruvchi kiritilgan
         }
     }
+    //62.chi dars (Web loyiha 14 chi darsi)  Get request
+    async function getRecource(url) {
+        //get so'rov???
+        const res = await fetch(url);
+        return await res.json();//yani async funksiya bilan fetch ishlatildi getRecource nomli asyng funksiya yaratib parametriga url dynamic tarzda qo'yildi va res nomli await hususiyatli o'zgaruvchi yaratib unga resni json formatga o'girish buyurildi shunda bu getrecorce funksiyasi serverga get so'rov yani db.jsondagi(local serverdagi) malumotlarni dynamic tarzda jsga qo'shepmiz bu unversal funksiya hissoblanadi
+    }
+    getRecource("http://localhost:3000/menu").then((data) => {
+        console.log(data);//get getRecource async funksiyasi parametrida birinchi url yoziladi bu urldb.jsondan kelepti yani db.jsondagi menu json objectidan kelepti//yani data bu holatda massiv qaytaradi??? chunki bu data dynamic hissoblanadi bu holatda data local hostdagi(serverdagi) db.json filedagi menu json objectini nazarda tutadi 
+        data.forEach(({ img, altimg, title, descr, price }) => {
+            new MenuCard(
+                img,
+                altimg,
+                title,
+                descr,
+                price,
+                ".menu .container"//endi db.jsondan cartalar dynamic tarzda keladi// yani bu holatda data yani db.jsondagi menu json objecti foreach bilan intrigatsa qilinib foreachni parametriga destruptizatsiya qilindi yani datani bu {img, altimg, title, descr, price} qiymatlari nusxalab olindi va menucard classiga css classlari bilan birga render qilindui yani obshi datalarni foreach qilib menucardaga berib qo'yildi menucard classida esa (menucard classi yuqoririqda) bu cartalar bilan ishlash classlarni diynamic berish kodlari bor// Destruptizatsiya massivni yoki objectni  yo'q qilmaydi. U objectni arrayni topshiriq va malumotlari bilan hech narsa qilmaydi  uning vazifasi faqat kerakli qiymatlarni o'zgaruvchilarga nusxalashdir
+            ).render(); //render metodi yani ko'rsatish nimani ko'rsatish???? htmlni ko'rsatish
+        });
+    });
+    //62.chi dars (Web loyiha 14 chi darsi)  Get request
 
-    new MenuCard( //birnchi card
-        "img/tabs/1.png",
-        "vegy",
-        "Plan 'Usual'",
-        "1-BU BIRINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
-        10,
-        ".menu .container"
-        //default bo'yicha rest operatori sabab bu joyda class menu__item yo'q yani default holatida massivni nolinchi elementiga class berib qo'yildi yuqoridagi if else bilan
-    ).render();
-
-    new MenuCard( //ikkinchi card
-        "img/tabs/2.jpg",
-        "elite",
-        "Plan 'Premium'",
-        "2-BU IKKINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
-        20,
-        ".menu .container",
-        "menu__item"
-    ).render();
-
-    new MenuCard( //uchinchi card
-        "img/tabs/3.jpg",
-        "post",
-        "Plan 'VIP'",
-        "3-BU UCHINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
-        30,
-        ".menu .container",
-        "menu__item"
-    ).render(); //new MenuCard ga parametr sifatida MenuCard classidagi parametrlar chaqirilgan bu parametrlarda esa css qiymatlar mavjud shu ona divlar sabab>>>.menu .container
+    //new MenuCard ga parametr sifatida MenuCard classidagi parametrlar chaqirilgan bu parametrlarda esa css qiymatlar mavjud shu ona divlar sabab>>>.menu .container
 
     //MenuCard nomli class yaratib parametrlariga src, alt, title, descr, price, parentSelector nomli qiymatlar berib chiqildi bular htmldagi atributlar yani atrtibutlar bilan html elementlar chaqirildi masalar src=imgni atributi alt=imgni atributi???  descr=descrni titeli va hakozo bu htmldagi filelarni atribut va atributsizham jsga kelishiga sabab this.parent = document.querySelector(parentSelector); shu bilan ona div .menu va .container classlarini olib kelinishi sabab quereselector bilan parentselector qilib ona div chaqirilganda ichidagi elementlar 0 dan boshlab 0,1,2,3 bo'lib massivda keladi shu sabab har bir html element alohida chaqirib o'tirilmadi uchta cardni classlari esa cssda yozib qo'yilgan va shu sabab yangi ochilgan element o'zgaruvchidagi yangi divga innerhtml bilan yozilgani uchun classlarham keldi
 
-    //48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi kospekti
+    //48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi konspekti
     ////rest operatori argumentlarni bitta joyga massiv ichiga yig'ib beradi misollar>>>
     // function logger(a, b, ...rest) {
     //     console.log(a, b, rest);
@@ -274,7 +264,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // }
     // calc(10);
     //48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi konspekti
-    //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi
+    //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi va  62.chi dars (Web loyiha 14 chi darsi)  Get request darsi
 
     ////53.chi dars (Web loyiha 9 chi dars (server))  Ma'lumot yuborish
     ////53. chi darsdagi formda user server bilan muloqot yani malumot yuborish darsi 57.chi darsda Fetch API bilan pastroqda  qaytadan qilindi shu sabab bu 53 chi dars o'chirib turildi
@@ -417,11 +407,6 @@ window.addEventListener("DOMContentLoaded", () => {
     // //60. chi dars  (Web loyiha 12 chi darsi) JSON Server
 
     ///////////////////////////////////////////////////////////////////////////////////////////
-
-    //62.chi dars (Web loyiha 14 chi darsi)  Get request
-    //xamppda
-    
-    //62.chi dars (Web loyiha 14 chi darsi)  Get request
 });
 ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI 53 CHI DARSdan boshlab loyiha OCHILGANDA DOIM XAMPPDA VA 60 CHI DARSDAN BOSHLAB --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI!!!!!!!!!!!!
 ////BU 53 CHI DARSDAN BOSHLAB LOYIHA XAMPPDA OCHILISHI KERAK AKS HOLDA SERVER ISHLAMAYDI!!!!!!!!!!!!!

@@ -192,7 +192,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         changeToUZS() {
             //qo'lda yozilgan metod
-            this.price = this.price * this.transfer; //yani endi pricega qandaydir narh qo'shsak transferdagi 12000 ga ko'paytiriliadi
+            this.price = this.price * this.transfer; //yani endi pricega qandaydir narh qo'shsak transferdagi 12000 ga ko'paytiriladi
         }
         render() {
             //qo'lda yozilgan metod
