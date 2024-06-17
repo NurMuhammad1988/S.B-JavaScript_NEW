@@ -1,0 +1,60 @@
+{
+  "menu": [
+    {
+      "img": "img/tabs/1.png",
+      "altimg": "vegy",
+      "title": "Plan 'Usual'",
+      "descr": "1-BU BIRINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+      "price": 10,
+      "id": "9181"
+    },
+    {
+      "img": "img/tabs/2.jpg",
+      "altimg": "elite",
+      "title": "Plan 'Premium'",
+      "descr": "2-BU IKKINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+      "price": 20,
+      "id": "2d54"
+    },
+    {
+      "img": "img/tabs/3.jpg",
+      "altimg": "post",
+      "title": "Plan 'VIP'",
+      "descr": "3-BU UCHINCHI DYNAMIC CARD Loremmm ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum innnn.",
+      "price": 30,
+      "id": "7864"
+    }
+  ],
+  "request": [
+    {
+      "id": "7f95",
+      "name": "aaaaaaaaaaaaaaaaaaaaaaa",
+      "phone": "mmmmmmmmmmmmmmmmmmmmmmmmmm"
+    },
+    {
+      "id": "965c",
+      "name": "Nurmuhammad",
+      "phone": "+998-91-590-0406"
+    },
+    {
+      "id": "a063",
+      "name": "Yorov Nurmamat",
+      "phone": "+998-91-590-0406"
+    },
+    {
+      "id": "98f1",
+      "name": "Yorov Nurmamat",
+      "phone": "+998-91-590-0406"
+    },
+    {
+      "id": "6cc2",
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11"
+    },
+    {
+      "id": "0e3f",
+      "name": "nur",
+      "phone": "+998-91-590-0406"
+    }
+  ]
+}
