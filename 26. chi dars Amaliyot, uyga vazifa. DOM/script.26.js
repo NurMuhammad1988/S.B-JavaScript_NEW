@@ -25,7 +25,7 @@ seriesDB.series.forEach((item, index) => {
     <div class="delete"></div>
 </li>
     `;
-}); //yani seriesdb objecti foreach meofi bilan  intrigatsa qilinib ichidagi itemlar innerHTML qiymati orqali promo__interactive-item clasiga itrigatsa bo'lgan objectdagi itemlar yani qiymatlar dynamic tarzda kiritib qo'yildi  seriesdbdagi series massiv bo'lgani uchun tartib raqamlar noldan boshlanadi shu uchun massivni indexlariham olinib userga tushunarli bo'lishu uchun 1 dan boslanadigan qilib qo'yildi>>${index + 1}
+}); //yani seriesdb objecti foreach metodi bilan  intrigatsa qilinib ichidagi itemlar innerHTML qiymati orqali promo__interactive-item clasiga itrigatsa bo'lgan objectdagi itemlar yani qiymatlar dynamic tarzda kiritib qo'yildi  seriesdbdagi series massiv bo'lgani uchun tartib raqamlar noldan boshlanadi shu uchun massivni indexlariham olinib userga tushunarli bo'lishi uchun 1 dan boslanadigan qilib qo'yildi>>${index + 1}
 
 
 
