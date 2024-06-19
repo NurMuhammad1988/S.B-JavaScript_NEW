@@ -435,64 +435,138 @@ window.addEventListener("DOMContentLoaded", () => {
     //64.chi dars (Web loyiha 16 chi darsi) Slider
 
     //Slider
+    // const slides = document.querySelectorAll(".offer__slide"), //massiv qaytaradi yani offer__slide classlari 5 ta //htmlda offer ona divini ichida 5 ta odder__slide classlari bor ichida 5 ta card bor img descrepshini bilan
+    //     next = document.querySelector(".offer__slider-next"),
+    //     prev = document.querySelector(".offer__slider-prev"),
+    //     total = document.querySelector("#total"),
+    //     current = document.querySelector("#current"); //sliderga aloqador html documentlar jsga chaqirib olindi
+
+    // let slideIndex = 1;
+
+    // showSlides(slideIndex); //slideondex o'zgaruvchi showSlides funksiyasini  parametrida chaqirilidi yani bu showSlides bilan slideIndex bir biriga ulandi
+
+    // if (slides.length < 10) {
+    //     //agar slidesni uzunligi 10 dan kichik bo'lsa total yani htmldagi default 5 ni oldiga 0 va undan keyin slidesni uzunligi qo'yildi yani shunda htmldagi total classi bor spanda avval yozilgan default qiymatlar dynamic tarzda qo'yildi va totaldagi oddiy html qiymatlar o'chirildi(yani total classi bor spanda default qiymatlar yozilgandi yani sliderni sonini ko'rsatib turgandi)
+    //     total.textContent = `0${slides.length}`;
+    // } else {
+    //     //yokida total slidesni uzulgi dynamic qo'shilsin  yani total classi bor spanda default qiymatlar yozilgandi yani sliderni sonini ko'rsatib turgandi endi shu raqamlar dynamic tarzda keladi htmlda spandagi default holatda yozilgan raqamlar o'chirildi shundaham dynmaic keldi
+    //     total.textContent = slides.length;
+    // }
+
+    // function showSlides(index) {
+    //     if (index > slides.length) {
+    //         //bu joyga indexni qo'yilishiga sabab slides foreach qilingan shu sabab asosan slides bor joyda index deyilganda slidesni massivlar indexlari tushunladi //agarda index yani showslides funksiyadagi indexlar ko'p bo'lsa slidesdan yani slidesda massiv bor htmldagi beshtda offer__slide classlari massiv holatida kelgan yani indexlar yani massivlarni uzunligi yani soni ko'p bo'lsa  slidesni ichidagi massivlaridan(yani umuman massivlar sonidan)ko'p bo'lsa slideIndex o'zgaruvchini qiymati 1 ga teng bo'lsin bu yerda uzunlik 5 ga teng shunda oltinchi martta bosilganda birinchi elementga qaytib qoladi va yana qaytadan birdan beshgacha davom etadi
+    //         slideIndex = 1;
+    //     }
+    //     if (index < 1) {
+    //         //yokida index 1 dan kichkina bo'lsa yani 0 bo'lib qolsa slideindex o'zgaruvchi teng bo'lsin slides o'zgaruvchini uzunligiga yani agar slider orqaga bosilsa va nol bo'b qosa slidesni uzunligiga teng bo'lsin deyildi yani shunda orqaga bosilganda noldan naryoqga o'tmasdan yana umumiy uzunlikga yani beshga o'tib qolish buyurildi shunda sllider orqaga bosilgandaham noldan keyin yana beshga qaytib qoladi
+    //         slideIndex = slides.length;
+    //     }
+
+    //     slides.forEach((item) => (item.style.display = "none")); //slides bu holatda massiv shu uchun foreach qilinepti//slides o'zgaruvchida chaqirilgan offer__slide classlarini (5ta) itemlariga yani qiymatlariga dynamic tarzda display none css classini berdik shunda htmldagi 5 ta offer__slide classini hammasi display none bo'lib ko'rinmay turipti hozircha endi faqat bitta slider yani birinchi slider kerak yani htmldagi birinchi slider kerak defaul holat uchun
+    //     slides[slideIndex - 1].style.display = "block"; ////yuqorida   showSlides(slideIndex); qilib slideIndex o'zgaruvchi showslides funksiyasiga ulab qo'yilgan ////slides massiviga yani htmldan kelgan 5 ta offer__slide classlari bor  slides o'zgaruvchiga yuqoridagi qiymatida 1 bor slideIndex o'zgaruvchi massiv qilib chaqirib olindi va -1 yani dasturlashda sonlar nodan boshlanadi shu sabab -1 nol degani bo'ladi bu holatdagi -1 htmldan kelgan slidesni 1 chisini ifoda qiladi yani shu birinchi elementga default qilib dynamic tarzda display block classi berildi yani shunda htmldagi 5 ta offer__slide classlari bor bo'lsaham faqat birinchisi defaul bo'lib turadi endi shu showSlides funksiyasi ishga tushganda birinchi hama sliderlarni display none qiladi va displayda faqat birinchi slider ishga tushib default holatda bo'lib turadi
+
+    //     if (slides.length < 10) {
+    //         //////agar slidesni uzunligi 10 dan kichik bo'lsa current yani htmldagi default 3 ni oldiga 0 va undan keyin slidesni uzunligi qo'yildi yani shunda htmldagi current classi bor spanda avval yozilgan default qiymatlar dynamic tarzda qo'yildi va totaldagi oddiy html qiymatlar o'chirildi(yani total classi bor spanda default qiymatlar yozilgandi yani sliderni sonini ko'rsatib turgandi)//yani currentda birinchi qiymat turadi bu holatda birinchi qiymat slideIndexni qiymati yani 1 oldiga  nol dynamic qo'yildi slideIndexga esa slides ulangan
+    //         current.textContent = `0${slideIndex}`;
+    //     } else {
+    //         current.textContent = slideIndex;
+    //     }
+    // }
+
+    // function plusSlides(index) {
+    //     showSlides((slideIndex += index));
+    //     ////bu holatda plusslider funksiyasi yuqoridagi showslides funksiyani ishga tushuradi va parametrida yuqoridagi qiymatida 1 bor slideIndex o'zgaruvchiga endi birmas boshqa indexlarniham qo'shadi yani qolgan 4 ta indexniham qo'shadi chunki slideIndex o'zgaruvchini nolinchi elementi showSlides o'zgaruvchida chaqirilgan endi plusSlider funksiyasi chaqirilganda sliderlar pilus minus bo'lib o'zgaradi shu sabab plus sliderga index berilgan yani
+    // }
+
+    // next.addEventListener("click", () => {
+    //     plusSlides(1);
+    //     ////bu holatda htmldan chaqirilgan next yani bossa keyingi sliderga o'tish uchun yaratilgan o'ng tomonga strelkasi bor .offer__slider-next classiga hodisa ilinepti yani .offer__slider-next classiga yani o'ng strelkaga click hodisasi sodir bo'lganda plusSlider funksiyasi ishga tushsin va plussliderni indexi yani ichidagi elementlar tartib raqami bir bo'lsin deyildi shunda slides[slideIndex - 1].style.display = "block" funksiyasi bo'yicha nolinchi elementdan birinchi elementga o'tadi  yani plusSlider funksiyasi yuqoridagi showslides funksiyani ishga tushuradi va parametrida yuqoridagi qiymatida 1 bor slideIndex o'zgaruvchiga endi birmas boshqa indexlarniham qo'shadi yani qolgan 4 ta indexniham qo'shadi chunki slideIndex o'zgaruvchini nolinchi elementi showSlides o'zgaruvchida chaqirilgan endi plusSlider funksiyasi chaqirilganda sliderlar pilus minus bo'lib o'zgaradi
+    // });
+
+    // prev.addEventListener("click", () => {
+    //     plusSlides(-1);
+    //     ////next.addEventListener ga yozilgan coment bilan bir hil faqat orqaga ishleydi yani - ga
+    // });
+
+    //64.chi dars (Web loyiha 16 chi darsi) Slider
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
+    //65.chi dars (Web loyiha 17 chi darsi) Carousel
+    ////Carousel
     const slides = document.querySelectorAll(".offer__slide"), //massiv qaytaradi yani offer__slide classlari 5 ta //htmlda offer ona divini ichida 5 ta odder__slide classlari bor ichida 5 ta card bor img descrepshini bilan
         next = document.querySelector(".offer__slider-next"),
         prev = document.querySelector(".offer__slider-prev"),
         total = document.querySelector("#total"),
-        current = document.querySelector("#current"); //sliderga aloqador html documentlar jsga chaqirib olindi
+        current = document.querySelector("#current"),
+        slidesWrapper = document.querySelector(".offer__slider-wrapper"),
+        slidesField = document.querySelector(".offer__slider-inner"), //yani offer__slider-wrapper ona divini ichidagi ikkinchi ona div yani 5 ta carousel qilinishi kerak bo'lgan cardsalarni birinchi ona divi
+        width = window.getComputedStyle(slidesWrapper).width; //yani htmldan slidesWrapper o'zgaruvchida chaqirilgan offer__slider-wrapper classini widthi olindi yani carouselga aloqador ona divni ovoldik
+    // console.log(width); //offer__slider-wrapper ona divini widthini olinganini logda ko'rish uchun yozildi
 
     let slideIndex = 1;
 
-    showSlides(slideIndex); //slideondex o'zgaruvchi showSlides funksiyasini  parametrida chaqirilidi yani bu showSlides bilan slideIndex bir biriga ulandi
+    let offset = 0;
 
     if (slides.length < 10) {
-        //agar slidesni uzunligi 10 dan kichik bo'lsa total yani htmldagi default 5 ni oldiga 0 va undan keyin slidesni uzunligi qo'yildi yani shunda htmldagi total classi bor spanda avval yozilgan default qiymatlar dynamic tarzda qo'yildi va totaldagi oddiy html qiymatlar o'chirildi(yani total classi bor spanda default qiymatlar yozilgandi yani sliderni sonini ko'rsatib turgandi)
         total.textContent = `0${slides.length}`;
+        current.textContent = `0${slideIndex}`;
     } else {
-        //yokida total slidesni uzulgi dynamic qo'shilsin  yani total classi bor spanda default qiymatlar yozilgandi yani sliderni sonini ko'rsatib turgandi endi shu raqamlar dynamic tarzda keladi htmlda spandagi default holatda yozilgan raqamlar o'chirildi shundaham dynmaic keldi
         total.textContent = slides.length;
+        current.textContent = slideIndex;
     }
 
-    function showSlides(index) {
-        if (index > slides.length) {
-            //bu joyga indexni qo'yilishiga sabab slides foreach qilingan shu sabab asosan slides bor joyda index deyilganda slidesni massivlar indexlari tushunladi //agarda index yani showslides funksiyadagi indexlar ko'p bo'lsa slidesdan yani slidesda massiv bor htmldagi beshtda offer__slide classlari massiv holatida kelgan yani indexlar yani massivlarni uzunligi yani soni ko'p bo'lsa  slidesni ichidagi massivlaridan(yani umuman massivlar sonidan)ko'p bo'lsa slideIndex o'zgaruvchini qiymati 1 ga teng bo'lsin bu yerda uzunlik 5 ga teng shunda oltinchi martta bosilganda birinchi elementga qaytib qoladi va yana qaytadan birdan beshgacha davom etadi
-            slideIndex = 1;
-        }
-        if (index < 1) {
-            //yokida index 1 dan kichkina bo'lsa yani 0 bo'lib qolsa slideindex o'zgaruvchi teng bo'lsin slides o'zgaruvchini uzunligiga yani agar slider orqaga bosilsa va nol bo'b qosa slidesni uzunligiga teng bo'lsin deyildi yani shunda orqaga bosilganda noldan naryoqga o'tmasdan yana umumiy uzunlikga yani beshga o'tib qolish buyurildi shunda sllider orqaga bosilgandaham noldan keyin yana beshga qaytib qoladi
-            slideIndex = slides.length;
+    slidesField.style.width = 100 * slides.length + "%"; //bu holatda slidesFieldda chaqirilgan carousel cardlarni yani 5 ta cardni 100ga ko'paytirib foiz berib qo'yildi shunda 5 ta card ekranda 500 foiz (width) joyni egalladi
+    slides.forEach((slide) => {
+        slide.style.width = width; //bu holatda sariq bilan yozilgan ohirgi width o'zgaruvchi nomi!!! endi slides o'zgaruvchida chaqirilgan eng katta ona divni widthi ekran eni bilan bir hil bo'ldi yani endi 500 foizmas//foreachni parametridagi slide bu ilmoq yani foreachni bergan natijasi yani bu holatda slidesni qiymatlarini massiv holati bu holatga style berib widthini width o'zgaruvchidagi qiymatga teng qilib qo'yildi yani ekran eniga
+    });
+    slidesField.style.display = "flex"; //slidesfield o'zgaruvchida chaqiriligan offer__slider-inner classli ona divni bollari yani 5 ta card//endi cardalar flex sabab bir qator bo'lib turadi
+    slidesWrapper.style.overflow = "hidden"; //yani bu holatda endi overflow sabab faqat birinchi card ekranda qoladi lqekin aslida hammasi ekranda bor bo'ladi faqar overflow css classi sabab slidesWrapperda chaqirilgan .offer__slider-wrapper ona divni ekran endi ko'rinayapti holos qolgani esa hidden qilindi overflow sishlashiga sabab esa getComputedStyle metodida slideswrapper borligi yani overfllow ekran enidan tashqari hamma narsani hidden qildi holos nimasini hidden qildi scrollini hidden qildi holos yani ekran uzoqlashtirilsa scroll bo'lmasaham qolgan 4 ta card turganligini ko'rish mumkun
+    slidesField.style.transition = ".5s ease all";
+
+    next.addEventListener("click", () => {
+        //?????????????????????????????
+        if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
+            offset = 0;
+        } else {
+            offset += +width.slice(0, width.length - 2);
         }
 
-        slides.forEach((item) => (item.style.display = "none")); //slides bu holatda massiv shu uchun foreach qilinepti//slides o'zgaruvchida chaqirilgan offer__slide classlarini (5ta) itemlariga yani qiymatlariga dynamic tarzda display none css classini berdik shunda htmldagi 5 ta offer__slide classini hammasi display none bo'lib ko'rinmay turipti hozircha endi faqat bitta slider yani birinchi slider kerak yani htmldagi birinchi slider kerak defaul holat uchun
-        slides[slideIndex - 1].style.display = "block"; ////yuqorida   showSlides(slideIndex); qilib slideIndex o'zgaruvchi showslides funksiyasiga ulab qo'yilgan ////slides massiviga yani htmldan kelgan 5 ta offer__slide classlari bor  slides o'zgaruvchiga yuqoridagi qiymatida 1 bor slideIndex o'zgaruvchi massiv qilib chaqirib olindi va -1 yani dasturlashda sonlar nodan boshlanadi shu sabab -1 nol degani bo'ladi bu holatdagi -1 htmldan kelgan slidesni 1 chisini ifoda qiladi yani shu birinchi elementga default qilib dynamic tarzda display block classi berildi yani shunda htmldagi 5 ta offer__slide classlari bor bo'lsaham faqat birinchisi defaul bo'lib turadi endi shu showSlides funksiyasi ishga tushganda birinchi hama sliderlarni display none qiladi va displayda faqat birinchi slider ishga tushib default holatda bo'lib turadi
+        slidesField.style.transform = `translateX(-${offset}px)`; //yani endi next buttoni bosilganda content chapga suriladi yani trnaslate x minusga ishlatildi va ofsset o'zgaruvchi berildi//yani bu holatda slideFieldda chaqirilgan offer__slider-wrapper ona diviga style dynamic berilepti va stylega tranform css qiymati chaqirilib minusga ishlatrish buyurilepti va har safar next buttonga click bo'lganda offset o'zgaruvchini qiymati berib qo'yildi yani nol. shunda har safar click qilinganda slidesField 0 bo'ladi yani o'z widthida qoladi yani har safar aftamatik tarzda nolga aylanadi
+        if (slideIndex == slides.length) {
+            slideIndex = 1;
+        } else {
+            slideIndex++;
+        }
 
         if (slides.length < 10) {
-            //////agar slidesni uzunligi 10 dan kichik bo'lsa current yani htmldagi default 3 ni oldiga 0 va undan keyin slidesni uzunligi qo'yildi yani shunda htmldagi current classi bor spanda avval yozilgan default qiymatlar dynamic tarzda qo'yildi va totaldagi oddiy html qiymatlar o'chirildi(yani total classi bor spanda default qiymatlar yozilgandi yani sliderni sonini ko'rsatib turgandi)//yani currentda birinchi qiymat turadi bu holatda birinchi qiymat slideIndexni qiymati yani 1 oldiga  nol dynamic qo'yildi slideIndexga esa slides ulangan
             current.textContent = `0${slideIndex}`;
         } else {
             current.textContent = slideIndex;
         }
-    }
-
-    function plusSlides(index) {
-        showSlides((slideIndex += index));
-        ////bu holatda plusslider funksiyasi yuqoridagi showslides funksiyani ishga tushuradi va parametrida yuqoridagi qiymatida 1 bor slideIndex o'zgaruvchiga endi birmas boshqa indexlarniham qo'shadi yani qolgan 4 ta indexniham qo'shadi chunki slideIndex o'zgaruvchini nolinchi elementi showSlides o'zgaruvchida chaqirilgan endi plusSlider funksiyasi chaqirilganda sliderlar pilus minus bo'lib o'zgaradi shu sabab plus sliderga index berilgan yani
-    }
-
-    next.addEventListener("click", () => {
-        plusSlides(1);
-        ////bu holatda htmldan chaqirilgan next yani bossa keyingi sliderga o'tish uchun yaratilgan o'ng tomonga strelkasi bor .offer__slider-next classiga hodisa ilinepti yani .offer__slider-next classiga yani o'ng strelkaga click hodisasi sodir bo'lganda plusSlider funksiyasi ishga tushsin va plussliderni indexi yani ichidagi elementlar tartib raqami bir bo'lsin deyildi shunda slides[slideIndex - 1].style.display = "block" funksiyasi bo'yicha nolinchi elementdan birinchi elementga o'tadi  yani plusSlider funksiyasi yuqoridagi showslides funksiyani ishga tushuradi va parametrida yuqoridagi qiymatida 1 bor slideIndex o'zgaruvchiga endi birmas boshqa indexlarniham qo'shadi yani qolgan 4 ta indexniham qo'shadi chunki slideIndex o'zgaruvchini nolinchi elementi showSlides o'zgaruvchida chaqirilgan endi plusSlider funksiyasi chaqirilganda sliderlar pilus minus bo'lib o'zgaradi
     });
 
     prev.addEventListener("click", () => {
-        plusSlides(-1);
-        ////next.addEventListener ga yozilgan coment bilan bir hil faqat orqaga ishleydi yani - ga
+        if (offset == 0) {
+            offset = +width.slice(0, width.length - 2) * (slides.length - 1);
+        } else {
+            offset -= +width.slice(0, width.length - 2);
+        }
+
+        slidesField.style.transform = `translateX(-${offset}px)`; //yani endi next buttoni bosilganda content chapga suriladi yani trnaslate x minusga ishlatildi va ofsset o'zgaruvchi berildi//yani bu holatda slideFieldda chaqirilgan offer__slider-wrapper ona diviga style dynamic berilepti va stylega tranform css qiymati chaqirilib minusga ishlatrish buyurilepti va har safar next buttonga click bo'lganda offset o'zgaruvchini qiymati berib qo'yildi yani nol. shunda har safar click qilinganda slidesField 0 bo'ladi yani o'z widthida qoladi yani har safar aftamatik tarzda nolga aylanadi
+
+        if (slideIndex == 1) {
+            slideIndex = slides.length;
+        } else {
+            slideIndex--;
+        }
+
+        if (slides.length < 10) {
+            current.textContent = `0${slideIndex}`;
+        } else {
+            current.textContent = slideIndex;
+        }
     });
-
-    //64.chi dars (Web loyiha 16 chi darsi) Slider
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    //65.chi dars (Web loyiha 17 chi darsi) Carousel
-
     //65.chi dars (Web loyiha 17 chi darsi) Carousel
 });
 ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak //YANI ENDI 53 CHI DARSdan boshlab loyiha OCHILGANDA DOIM XAMPPDA VA 60 CHI DARSDAN BOSHLAB --WATCH DB.JSON DA OCHILISHI KERAK BO'LMASA SERVERLAR ISHLAMAYDI!!!!!!!!!!!!
