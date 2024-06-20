@@ -1,8 +1,22 @@
-body{
+body {
     background-color: rgb(59, 11, 59);
     color: silver;
 }
-a{
+
+a {
     color: silver;
     text-decoration: none;
+    margin-left: 20px;
+}
+
+b {
+    margin-left: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.aaa {
+    margin-top: 100px;
 }
