@@ -69,7 +69,7 @@
 
 const name = prompt("Name", "");
 const regexp = /\d/gi; //bu joyga d,w,s va D,W,S qiymatlariham qo'yib hammasini sinab ko'rish mumkun
-console.log(name.match(regexp)); //yani logda raqamlarni ko'rsatadi yani modalga raqam yozilsa aynan yozilgan raqamlarni ko'rsatadi yani text ichida raqam bor yani butun textdan faqat raqamlarni ajratib oladi
+console.log(name.match(regexp)); //yani logda raqamlarni ko'rsatadi yani modalga raqam yozilsa aynan yozilgan raqamlarni ko'rsatadi yani text ichida raqam bor yani butun textdan faqat raqamlarni ajratib olib massiv qilib qaytaradi
 
 //   \d   RegExpda /d/ yozilsa faqat sonlarni izlaydi     d-number
 //   \w   RegExpda /w/ yozilsa faqat hariflarni qidiradi  w-word
