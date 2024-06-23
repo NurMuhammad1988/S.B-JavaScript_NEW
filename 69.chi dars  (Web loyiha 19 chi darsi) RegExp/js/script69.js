@@ -546,7 +546,8 @@ window.addEventListener("DOMContentLoaded", () => {
     ////RegExpni alohida funksiyada yozildi va kerakli joylarda chaqirilib parametridagi width o'zgaruvchida ishlatildi
     ////darsda shu>>(/D\/g, "") sintaksizdan foydalanildi lekin ishlamadi shu sabab bu>>(/D/g, "") sontaksiz ishlatildi
     ////deleteNotDigits bilan carouseldagi eski bagham yo'q bo'ldi
-    function deleteNotDigits(str) {//yani stringni numberga aylatrildi
+    function deleteNotDigits(str) {
+        //yani stringni numberga aylatrildi
         return parseInt(str.replace(/D/g, ""));
     }
     ////RegExpni alohida funksiyada yozildi va kerakli joylarda chaqirilib parametridagi width o'zgaruvchida ishlatildi
@@ -622,4 +623,5 @@ window.addEventListener("DOMContentLoaded", () => {
 ////BU 53 CHI DARSDAN BOSHLAB LOYIHA XAMPPDA OCHILISHI KERAK AKS HOLDA SERVER ISHLAMAYDI!!!!!!!!!!!!!
 ////XAMPPDA ISHLASH UCHUN C DISKDAGI XAMPP PAPKANI ICHIDAGI htdocs PAPKANI ICHIDAN OCHILISHI KERAK VA http://localhost/ DA SLASHDAN KEYIN HTDOCS PAPKANI ICHIDAGI KERAKLI FILENI LINKI YOZILISHI KERAK
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIKLARNI UDALIT QILIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
