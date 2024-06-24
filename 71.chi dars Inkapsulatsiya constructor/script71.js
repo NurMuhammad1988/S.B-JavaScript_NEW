@@ -89,7 +89,7 @@
 // bmw.info();
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-////Inkapsulatsiya constructor yuqoridagi yakuniy kodi qaytadan izohlar bilan yozilgani yani darsni asosiy qismi
+////Inkapsulatsiya constructor//yuqoridagi yakuniy kodni qaytadan izohlar bilan yozilgani yani darsni asosiy qismi
 function Car(name, color, bonus) {
     this.name = name;
     this.color = color;
@@ -114,4 +114,11 @@ const bmw = new Car("bmw", "black", 10);
 console.log(bmw.getBonus());
 bmw.setBonus(20);
 bmw.info();
-//Name of car bmw, color is black, There is some bonus 20
+///////////////////console.log(bmw)
+////bmw.getBonus()ni javobi>>>10
+////bmw.info()ni javobi>>>Name of car bmw, color is black, There is some bonus 20
+//Car nomli constructor class yaratildi va parametriga 3 ta argument berildi name, color, bonus va name va color argumentlari oddiy this contexga olindi bonus esa let o'zgaruvchida extraBonusga teng qilindi va Car constructorga 4 chi qiymat qilib info nomli local function metod yaratildi va logda yuqoridagi 3 ta hususiyatlar interpalatsa ichida yozildi va Carga 5 chi qiymat qilib this contexda getBonus local function metod yaratildi va extraBonusni return qilish aytildi va Carga 6 chi qiymat qilib setBonus local function metod yaratildi setbonusga chaqirilganda beriladigan joyi yani argumentiga bonus berildi va agar bonusni yani setbonus chaqirilganda parametridagi malumotni turi "number" malumot turiga teng bo'lsa va bonusni yani setbonus chaqirilganda parametridagi qiymat 0 katta bo'lsa va bonusni yani setbonus chaqirilganda parametridagi qiymat 100dan kichik bo'lagina extraBonus o'zgaruvchiga bu setBonusdagi if else shartiga mos bonus teng bo'lsin deyildi yokida logda "Something went wrong" chiqsin yani number bo'lmasa  0 dan katta bo'lmasa 100dan katta bo'lsa "Something went wrong" chiqsin deyildi va endi bmw nomli yangi const o'zgaruvchi yaratib unga Car constructorni new kalit sozi bilan chaqirdik va birinchi parametr namega "bmw" ikkinchi parametr colorga "black" uchinchi parametr bonusga 10 qiymatini yozdik shunda logda oddiy holatda shu odatiy javob chiqdi Car {name: 'bmw', color: 'black', (logdan qaytgan ananim funskiyalar o'chirildi chalg'itmaslik uchun)} va logda bmw o'zgaruvchini ichida getBonus function metodi bilan chaqirildi javob>>10 va bmwni ichida setBonus parametriga 20 yozilib chaqirildi javob>>Name of car bmw, color is black, There is some bonus 20 chunki setBonusda shartlar to'g'ri bo'lsa extraBonus bosunsga teng yani endi setBonus chaqirilganda parametridagi malumot number bo'lsa 0 dan katta 100dan kichkina bo'lsa parametridagi qiymatni uchunchi parametrga qo'shadi
+
+////bmw.getBonus()dan kelayotgan default 10
+////           1-par=bmw     2-par=bmw                  3-par=setBonus
+////Name of car bmw, color is black, There is some bonus 20
