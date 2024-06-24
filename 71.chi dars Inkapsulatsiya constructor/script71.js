@@ -122,3 +122,4 @@ bmw.info();
 ////bmw.getBonus()dan kelayotgan default 10
 ////           1-par=bmw     2-par=bmw                  3-par=setBonus
 ////Name of car bmw, color is black, There is some bonus 20
+//yani let esxtraBonusga tushadigan malumot setBonusni ichiga olindi
