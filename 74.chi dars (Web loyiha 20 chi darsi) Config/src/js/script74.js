@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ////74.chi dars Webpack
 
-    //// SHU JOYDAN LOYIGA S.B-JavaScript_NEW NI 74 CHI DARSIDA OCHILGANDA class.jsdagi MenuCard ishlamaydi chunki xammpda ochilmaydi yani server yo'qligi sabab class.js dagi "http://localhost:3000/menu" linki ochilmaydi bu JOYGA kevolib loyihani server bilan ishlataman deb ovora bo'ma bu server link"http://localhost:3000/menu" faqat local serverda yani xamppda ochilsagina ishlaydi
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
     //////////////////////////////////////////////////////////////////////////////////////////////////
