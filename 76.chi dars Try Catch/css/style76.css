@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(67, 9, 122);
+    color: silver;
+    margin: 40px;
+}
+a{
+    color: silver;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+}

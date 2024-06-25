@@ -1,3 +1,30 @@
 body{
     background-color: blueviolet;
+    color: silver;
+}
+a{
+    color: silver;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.bosh{
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.bosh_bir{
+    width: 45%;
+    margin: 20px;
+}
+
+.bosh_ikki{
+    width: 45%;
+    margin: 20px;
 }

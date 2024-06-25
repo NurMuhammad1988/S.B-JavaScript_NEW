@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style75.css">
+  <link rel="stylesheet" href="./css/style75.css">
 
   <title>75.chi dars Module ES6</title>
-  <link rel="stylesheet" href="./css/style74.css" />
+  
 </head>
 
 <body>
@@ -19,12 +19,93 @@
     <h1 class="own-h1">75.chi dars Module ES6</h1>
     <br>
 
-    <h1 class="own-a">Comentlar JS fileda</h1>
+
 
     <br>
     <a class="own-a" target="_blank"
-      href="https://sammi.ac/course/javascript/dashboard/653d44ee28da4c78b7e07b86?section=653d2d2028da4c78b7e07955">75.chi dars Module ES6 darsi videosi</a>
-    <br>
+      href="https://sammi.ac/course/javascript/dashboard/653d44ee28da4c78b7e07b86?section=653d2d2028da4c78b7e07955">75.chi
+      dars Module ES6 darsi videosi</a>
+    <br><br><br>
+
+    <div class="bosh">
+
+      <div class="bosh_bir">
+        <p>
+         
+          ////ES6 DA IMPORT EXPORTLAR
+          //// bu 75 chi Module ES6 darsi takrorlanayotganda npx webpacke shu papkaga kirib ishlatilishi kerak
+
+          ////boshqa js filedan o'zgaruvchini import qilish
+
+          ////birinchi yo'li import
+          // import { firstVar } from "./main";
+          // console.log(firstVar);
+
+          ////ikkinchi yo'li import
+          // import { secondVar } from "./main";
+          // console.log(secondVar);
+
+          ////uchinchi yo'li import
+          // import logger from "./main";
+          // logger();
+          ///////////////////////////////////////////////////
+
+          //// bir nechta funksya yoki o'zgaruvchini import qilishni yahshi yo'li
+          // import { firstVar1, secondVar2, thirdVar3 } from "./main";
+          // console.log(firstVar1, secondVar2, thirdVar3);
+          ///////////////////////////////////////////////////
+
+          ////* as Bir nechta funksya yoki o'zgaruvchini import qilishni yahshi yo'lini import qilishni * as usuli
+          import * as main from "./main";
+          console.log(`${main.firstVar1} ${main.secondVar2} ${main.thirdVar3}`);
+        </p>
+      </div>
+
+      <div class="bosh_ikki">
+        <p>
+
+
+          ////ES6 DA IMPORT EXPORTLAR
+          //// bu 75 chi Module ES6 darsi takrorlanayotganda npx webpacke shu papkaga kirib ishlatilishi kerak
+
+          ////boshqa js failga o'zgaruvchini export qilish
+
+          ////birinchi yo'li export 
+          // const firstVar = "Hello World first"
+          // export{firstVar}//export
+
+          ////ikkinchi yo'li export
+          // export const secondVar = "Hello World second"//funksiya yoki o'zgaruvchini oldiga export kalit so'zi
+          yozlishi yani aftamatik tarzda export qiladi
+
+          ////uchinchi yo'li export default
+          // export default function logger() {
+          // console.log("Hello World third");
+          // } //export defaultni yuqoridagi ikki hil export qilishdan farqi export defaultda bitta filedan faqat bitta
+          funksiyani yoki o'zgaruvchini export default qilib export qilish mumkun bu holatda main.jsdan faqat bitta shu
+          logger funksiyani export qilishi mumkun yani agar main.jsdan faqat bitta narsa export qilish kerak bo'lsa
+          export defaultdan foydalanish mumkun lekin main.jsdan bir nechta o'zgaruvchi yoki funksiya export qilish kerak
+          bo'lsa yuqoridagi birinchi yo'ldan foydalangan maqul
+          ///////////////////////////////////////////////////////
+
+          //// bir nechta funksya yoki o'zgaruvchini export qilishni yahshi yo'li
+          // const firstVar1 = "Hello World first-1";
+          // const secondVar2 = "Hello World second-2";
+          // const thirdVar3 = "Hello World third-3 ";
+          // export { firstVar1, secondVar2,thirdVar3 };
+          ///////////////////////////////////////////////////////
+
+          ////* as Bir nechta funksya yoki o'zgaruvchini export qilishni yahshi yo'lini import qilishni * as usuli
+          const firstVar1 = "Hello World first-1";
+          const secondVar2 = "Hello World second-2";
+          const thirdVar3 = "Hello World third-3 ";
+          export { firstVar1, secondVar2,thirdVar3 };
+
+        </p>
+      </div>
+
+    </div>
+
   </div>
 
   <script src="./dist/js/bundle.js"></script>

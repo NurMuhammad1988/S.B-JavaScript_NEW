@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- bootstrap 5 link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./css/style76.css" />
+
+
+  <title>76.chi dars Try Catch</title>
+
+</head>
+
+<body>
+  <div class="own-div">
+    <br>
+    <a class="own-a" href="../index.html">Bosh sahifa</a>
+    <br>
+
+    <h1 class="own-h1">76.chi dars Try Catch</h1>
+    <br>
+
+
+
+    <br>
+    <a class="own-a" target="_blank"
+      href="https://sammi.ac/course/javascript/dashboard/653d450428da4c78b7e07b8a?section=653d2d2028da4c78b7e07955">76.chi
+      Try Catch darsi videosi</a>
+    <br>
+
+    <br><br>
+
+    <p>
+
+      //bu 76 chi Try Catch darsi takrorlanayotganda npx webpacke shu papkaga kirib ishlatilishi kerak
+      ///////////////////////try chatch
+      // console.log(a);//a o'zgaruvchi aslida yo'q bo'lgani uchun pastdagi hello worldham isjlamaydi yani butun
+      loyihada bitt a hato bo'lsa hamma kod ishlamay qoladi agar try chatch qilinsa bu holatdan qochish mumkun
+      // console.log("Hello world");
+
+      //try catch
+
+      // try {
+      // console.log("Working code");
+      // console.log(a); //tryni ichida shu hatodan keyin pastdagi proccesing logini o'qimasdan hatoni topish uchun
+      to'htaydi lekin try chatchdan tashqaridagi kodlarga masalan done logiga tasir qilmaydi
+      // console.log("Proccesing");
+      // } catch (error) {
+      // //errorga yabni catchga object keladi
+      // console.log("Error code");//yani hato chiqganda chatchdan olindagian habar "error code"
+      // }
+
+      // console.log("Done");
+      ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+      // try {
+      // console.log("Working code");
+      // console.log(a);
+      // console.log("Proccesing");
+      // } catch (error) {
+      // ////error har hil habarlar qaytaradi yani tyni ichidagi hatolarni chatchda ko'rish mumkun va buni hodilsar
+      bilan funksiyalar bilan yozib bu hatolarni usergaham ko'rsatish mumkun
+
+      // // console.log(error.name);//1//error.name yani hatoni nomini aytadi "ReferenceError" yani noto'gri havola
+      berildi degani
+
+      // // console.log(error.message); //2//yani hatoni message nima hato ekanligini habar qiladi "a is not defined"
+      yani a o'zgaruvchi topilmadi degani
+
+      // console.log(error.stack);//3// stack hato qayerda qaysi papkada qaysi qatordaligigacha ko'rsatadi va o'sha
+      joyga olib boradi logda
+      // }
+
+      // console.log("Done");
+      ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+      // //yani bu holatda bundli.jsga ulangan index76.html filedagi buttonga hodisa ilindi va asosiy papkaga yana bitta
+      about.html fileham ochildi va bundle js about.htmlgaham ulab qo'yildi shunda index76.html papkaga click bosilganda
+      about.htmlda TypeError: Cannot read properties of null (reading 'addEventListener') hatosi chiqdi yani byndle.js
+      webpacke yani js papkalarni ulaydi yani jslarda yozilgan js kodlar htmllarga tasir qiladi about.htmlgaham
+      bundle.js ulangani uchun index75.jsda yozilgan hodisa tasir qildi faqat about.htmlda click classli button yo'qligi
+      sabab about.htmlda hato chiqdi
+      // const btn = document.querySelector(".click");
+      // btn.addEventListener("click", () => {
+      // console.log("Click");
+      // });
+      ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+      try {
+      const btn = document.querySelector(".click");
+      btn.addEventListener("click", () => {
+      console.log("Click");
+      });
+      } catch (error) {
+      console.log(error.message); //Cannot read properties of null (reading 'addEventListener')//yani hatoni chatch
+      blokida ushlab olindi
+      }
+
+    </p>
+
+  </div>
+  <br><br><br>
+  <button class="btn btn-primary w-25 d-flex m-auto justify-content-center click"> Click me</button>
+
+  <script src="./dist/js/bundle.js"></script>
+
+</body>
+
+</html>
