@@ -1,7 +1,4 @@
-function clas(){
-
-     //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi va  62.chi dars (Web loyiha 14 chi darsi)  Get request darsi
-    ////Class
+function clas() {
     class MenuCard {
         //jsda classlar doim katta hariflar bilan yoziladi shunda js Carni class component ekanligini tushunadi
         ////rest operator constructorni parametrida eng ohirida yoziladi agar constructorni parametrida rest operatordan keyin birorta parametr yozilsa rest operator uni massivni ichiga yozvoradi
@@ -34,7 +31,6 @@ function clas(){
                     element.classList.add(classname)
                 ); //yani rest operator yordamida classlar diynamic qo'shildi yani rest operator(...)bor classes parametri massiv qaytaradi shu classes parametrini foreach bilan intirgatsa qilib element o'zgaruvchi ichidagi classnamelarga add qilib classnamelarni qo'shdik endi new MenuCardlardagi ohirgi parametr hissoblangan "menu__item" classi qayerga chaqirilsaham doim yangi classlarni qo'shadi
             }
-            //element.inerhtml ichidagi menu__item classi olib tashlandi chunki endi rest operator orqali classlar qo'shildi
             element.innerHTML = `
             <img src=${this.src} alt=${this.alt} />
             <h3 class="menu__item-subtitle">${this.title}</h3>
@@ -44,16 +40,14 @@ function clas(){
               <div class="menu__item-cost">Price:</div>
               <div class="menu__item-total"><span>${this.price}</span> uzs/month</div>
             </div>
-          `; //innerhtmlda htmlda classlari yozilgan elementlar chaqirildi stylelar shu sabab ishlayapti chunki shu stylelar yozilgan css papka js ulangan htmlda chaqiriligan (link)!!! dynamic tarzda kelgan bu html css filga jsda dynamic tarzda db.jsonda yozilgan
-            this.parent.append(element); //yani bu holatda menucard classiga dynamic tarzda html element qo'shildi yani menucardda parentselector bor constructori ichida esa  this.parent = document.querySelector(parentSelector); qilib ona div chaqirilgan va parentga append qilib yangi dynamic yaratilgan divi  bor element nomli o'zgaruvchi kiritilgan
+          `; //innerhtmlda htmlda classlari yozilgan elementlar chaqirildi stylelar shu sabab ishlayapti chunki shu stylelar yozilgan css papka js ulangan htmlda chaqirilgan (link)!!! dynamic tarzda kelgan bu html css filga jsda dynamic tarzda db.jsonda yozilgan
+            this.parent.append(element); //yani bu holatda menucard classiga dynamic tarzda html element qo'shildi yani menucardda parentselector bor constructori ichida esa  this.parent = document.querySelector(parentSelector); qilib ona div chaqirilgan nimani ona divi chaqirilgan??? src, alt, title, descr, price,(.menu .container MenuCardga chaqirilganiga etibor qarat) atributlari bor divni va src, alt, title, descr, price, nomli atributlari (.menu .container MenuCardga chaqirilganiga etibor qarat) bor  parentga append qilib yangi dynamic yaratilgan divi  bor element nomli o'zgaruvchi kiritilgan
         }
     }
-    //62.chi dars (Web loyiha 14 chi darsi)  Get request va //63.chi dars (Web loyiha 15 chi darsi) Axios
 
-    //63.chi dars (Web loyiha 15 chi darsi) Axios
-    //Axios get qilayotganda>>then(data => console.log(data)) doimo bject qaytaradi agar bunday holatda yozilsa massiv qaytaradi>>>(data => console.log(data.data))
+    //Axios get qilayotganda>>then(data => console.log(data)) doimo object qaytaradi agar bunday holatda yozilsa massiv qaytaradi>>>(data => console.log(data.data))
     axios.get("http://localhost:3000/menu").then((data) => {
-        ////db.jsondagi menuga get so'rovni axios bilan qilingani
+        ////db.jsondagi menuga get so'rovni axios bilan qilingani yani db.jsondagi cardlarni html documentga dynamic chaqirish
         data.data.forEach(({ img, altimg, title, descr, price }) => {
             new MenuCard(
                 img,
@@ -61,11 +55,10 @@ function clas(){
                 title,
                 descr,
                 price,
-                ".menu .container" //endi db.jsondan cartalar dynamic tarzda keladi// yani bu holatda data yani db.jsondagi menu json objecti foreach bilan intrigatsa qilinib foreachni parametriga destruptizatsiya qilindi yani datani bu {img, altimg, title, descr, price} qiymatlari nusxalab olindi va menucard classiga css classlari bilan birga render qilindui yani obshi datalarni foreach qilib menucardaga berib qo'yildi menucard classida esa (menucard classi yuqoriroqda) bu cartalar bilan ishlash classlarni diynamic berish kodlari bor// Destruptizatsiya massivni yoki objectni  yo'q qilmaydi. U objectni arrayni topshiriq va malumotlari bilan hech narsa qilmaydi  uning vazifasi faqat kerakli qiymatlarni o'zgaruvchilarga nusxalashdir
+                ".menu .container" //endi db.jsondan cartalar dynamic tarzda keladi// yani bu holatda data yani db.jsondagi menu json objecti foreach bilan intrigatsa qilinib foreachni parametriga destruptizatsiya qilindi yani datani bu {img, altimg, title, descr, price} qiymatlari nusxalab olindi va menucard classiga css classlari bilan birga render qilindi yani obshi datalarni foreach qilib menucardaga berib qo'yildi menucard classida esa (menucard classi yuqoriroqda) bu cartalar bilan ishlash classlarni diynamic berish kodlari bor// Destruptizatsiya massivni yoki objectni  yo'q qilmaydi. U objectni arrayni topshiriq va malumotlari bilan hech narsa qilmaydi  uning vazifasi faqat kerakli qiymatlarni o'zgaruvchilarga nusxalashdir
             ).render(); //render metodi yani ko'rsatish nimani ko'rsatish????>>> htmlni ko'rsatish
         });
     });
-
 }
-
-export default clas
+//the end for today
+export default clas;

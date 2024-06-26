@@ -3,31 +3,31 @@
 import clas from "../modules/class";
 import form from "../modules/form";
 import loader from "../modules/lodaer";
-import modal, { openModal } from "../modules/modal";
+import modal, { openModal } from "../modules/modal"; //importni eng qisa yo'li aftamatik qo'yib beradi
 import slider from "../modules/slider";
 import tab from "../modules/tab";
 import timer from "../modules/timer";
-
 
 window.addEventListener("DOMContentLoaded", () => {
     //yani butun window bo'yicha DOMContentLoaded hodisasi qo'shildi yani html DOMdocumentlar butunlay ochilib bo'lgandan keyingina js kodlarimiz ishlaydi
     const modalTimerId = setTimeout(
         () => openModal(".modal", modalTimerId),
         5000
-    );
+    );////IQ above the SKY!!!
 
     clas();
     form(modalTimerId);
     loader();
-    modal("[data-modal]", ".modal", modalTimerId); //openModal va closeModal funksiyasi shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal va closeModal funksiyalari ishlamayapti chunki openModal va closeModal funksyalari form.js ga chaqirilmagan endi openModal va closeModal funskiyalarini  o'zini alohida form.js ga chaqirish kerak shu hato sabab logdagi hato habari>>>form.js:109 Uncaught (in promise) ReferenceError: openModal is not definedat showThanksModal (form.js:109:1)at form.js:92:1
+    modal("[data-modal]", ".modal", modalTimerId);////IQ above the SKY!!!
     slider();
     tab();
     timer();
 
     ////webpacke kutubhonasi bilan script77.js filedagi loyihani uzun kodini har bir ishga aloqador funksiyalarni alohida alohida modullarga ajratib chiqildi endi dastur real loyihaga o'hshadi yani webpacke yuklanganda dist papka bilan keladi va disk papkada webpacke kutubhonasi bundle jsda hamma kodlarni tartiblab ishlatib beradi va aosiy script77.js fileda yuqoridagi kabi chaqiriladi yani require funksiyasi bilan chaqiriladi window.addEventListener("DOMContentLoaded" ichiga yozilishini sababi endi hamma kodlar modulga ajratilgan bo'lsada shu window.addEventListener("DOMContentLoaded"ni ichida ishlasa doimgiday ishlayveradi yani birinchi html csslar ochilib bo'lgandan keyingina ichidagi modullarga bo'lingan kodlarni ishlatadi
+
     ////74.chi dars Webpack
     ////npx webpack //endi webpacketni ishlatish uchun loyihani ochganda npx webpack buyrug'ini yozish kerak
-    ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak LEKIN AGAR XAMPP LOCAL SERVER PORTNI BO'SH BO'LSA YANI XAMMPNI SAYTIDA DASHBOARDDA BOSHQA LINK BO'LMASA YANI BO'SH BO'LSA  SERVER LOCAL BO'LIB ISHLAYVERADI LEKIN HAFSIZ BO'LMAYDI
+    ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak LEKIN AGAR XAMPP LOCAL SERVER PORTI BO'SH BO'LSA YANI XAMMPNI SAYTIDA DASHBOARDDA BOSHQA LINK BO'LMASA YANI BO'SH BO'LSA  SERVER LOCAL BO'LIB ISHLAYVERADI LEKIN HAFSIZ BO'LMAYDI
     ////74.chi dars Webpack
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
