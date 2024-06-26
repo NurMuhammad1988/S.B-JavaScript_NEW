@@ -1,13 +1,11 @@
 function slider() {
-    //65.chi dars (Web loyiha 17 chi darsi) Carousel va 66.chi dars (Web loyiha 18 chi darsi)  Dot Carousel va 69.chi dars (Web loyiha 19 chi darsi) RegExp
-    ////Carousel
     const slides = document.querySelectorAll(".offer__slide"), //massiv qaytaradi yani offer__slide classlari 5 ta //htmlda offer ona divini ichida 5 ta odder__slide classlari bor ichida 5 ta card bor img descrepshini bilan
         next = document.querySelector(".offer__slider-next"),
         prev = document.querySelector(".offer__slider-prev"),
         total = document.querySelector("#total"),
         current = document.querySelector("#current"),
         slidesWrapper = document.querySelector(".offer__slider-wrapper"),
-        slidesField = document.querySelector(".offer__slider-inner"), //yani offer__slider-wrapper ona divini ichidagi ikkinchi ona div yani 5 ta carousel qilinishi kerak bo'lgan cardsalarni birinchi ona divi
+        slidesField = document.querySelector(".offer__slider-inner"), //yani offer__slider-wrapper ona divini ichidagi ikkinchi ona div yani 5 ta carousel qilinishi kerak bo'lgan cardaalarni birinchi ona divi
         width = window.getComputedStyle(slidesWrapper).width, //yani htmldan slidesWrapper o'zgaruvchida chaqirilgan offer__slider-wrapper classini widthi olindi yani carouselga aloqador ona divni ovoldik
         // console.log(width); //offer__slider-wrapper ona divini widthini olinganini logda ko'rish uchun yozildi
         slider = document.querySelector(".offer__slider"); //offer slider yani sliderlarni eng katta ona divi
@@ -28,6 +26,7 @@ function slider() {
     slides.forEach((slide) => {
         slide.style.width = width; //bu holatda sariq bilan yozilgan ohirgi width o'zgaruvchi nomi!!! endi slides o'zgaruvchida chaqirilgan eng katta ona divni widthi ekran eni bilan bir hil bo'ldi yani endi 500 foizmas//foreachni parametridagi slide bu ilmoq yani foreachni bergan natijasi yani bu holatda slidesni qiymatlarini massiv holati bu holatga style berib widthini width o'zgaruvchidagi qiymatga teng qilib qo'yildi yani ekran eniga
     });
+
     //indikator nuqtalar yani sliderni qaysi sliderda turganini ko'rsatib turadigan va hohglagan sliderga tanlab o'tib ketish mumkun bo'lhan sliderni nuqtalari
     const indicators = document.createElement("ol"); //yangi order list yani ol html class jsdadynamic tarzda yaratildi
     const dots = []; //dynamic yaratilgan dot o'zgaruvchini dots massiviga push qilindi
@@ -51,7 +50,7 @@ function slider() {
     slidesField.style.transition = ".5s ease all";
 
     ////RegExpni alohida funksiyada yozildi va kerakli joylarda chaqirilib parametridagi width o'zgaruvchida ishlatildi
-    ////darsda shu>>(/D\/g, "") sintaksizdan foydalanildi lekin ishlamadi shu sabab bu>>(/D/g, "") sontaksiz ishlatildi
+    ////darsda shu>>(/D\/g, "") sintaksizdan foydalanildi lekin ishlamadi shu sabab bu>>(/D/g, "") sintaksiz ishlatildi
     ////deleteNotDigits bilan carouseldagi eski bagham yo'q bo'ldi
     function deleteNotDigits(str) {
         //yani stringni numberga aylatrildi
@@ -122,8 +121,6 @@ function slider() {
             dots[slideIndex - 1].style.opacity = 1;
         });
     });
-
-    //65.chi dars (Web loyiha 17 chi darsi) Carousel va 66.chi dars (Web loyiha 18 chi darsi)  Dot Carousel va 69.chi dars (Web loyiha 19 chi darsi) RegExp
 }
-
-export default slider
+//the end for today
+export default slider;

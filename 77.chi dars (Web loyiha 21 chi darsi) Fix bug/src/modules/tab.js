@@ -1,10 +1,8 @@
 function tab() {
-    ////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
 
     const tabsParent = document.querySelector(".tabheader__items"), //htmldagi preview katta ona dividagi tabheader__items bola divi chaqirib olindi yani bu bola div saytdagi  Category Of Series bolimi hissoblanadi Category Of Series bo'limi esa preview bo'limini boshi yani catrgoryalarni tanlash bo'limi hissoblanadi
         tabs = document.querySelectorAll(".tabheader__item"), //tabheader__item classli divlar categoreylarni nomi yani comedy sport fantastic bo'limlarga olib o'tish uchun kerak bo'ladigan html documentlar chaqirib olindi
         tabsContent = document.querySelectorAll(".tabcontent"); //htmldagi tabcontent classlari yani divlari 5 ta bo'lgani uchun komentariyga olingan edi endi esa komentariydan chiqariladi chunki js bilan dynamic tarzda o'zgartirilishlar kiritilishi kerak yani Category Of Series bo'limidagi categoriylarga bosilganda yani har biriga bosilgada shu categoriyga tegishli content tabcontent diviga asoisy bo'lib kelishi kerak !!!console.log(tabParent)!!!
-    ////TAB
     function hideTabContent() {
         tabsContent.forEach((item) => {
             //item bu yerda querySelectorAll bilan chaqirilgan massivni ichidagi elementlar yani tabcontent classlari
@@ -40,8 +38,7 @@ function tab() {
             });
         }
     });
-    ////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
 
 }
-
+//the end for today
 export default tab

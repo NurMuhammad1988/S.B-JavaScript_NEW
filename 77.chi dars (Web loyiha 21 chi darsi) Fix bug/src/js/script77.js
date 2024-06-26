@@ -12,23 +12,25 @@ window.addEventListener("DOMContentLoaded", () => {
     //yani butun window bo'yicha DOMContentLoaded hodisasi qo'shildi yani html DOMdocumentlar butunlay ochilib bo'lgandan keyingina js kodlarimiz ishlaydi
     const modalTimerId = setTimeout(
         () => openModal(".modal", modalTimerId),
-        5000
-    );////IQ above the SKY!!!
+        5000 //yani bu holatda  modalTimerId o'zgaruvchisiga clearinterval berib qo'yildi yani bu clearinterval 5000 milli sekunddan keyin modalni sekin ishlatadi//////yani bu "hidden" holatida modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi////
+    ); ////IQ above the SKY!!!
 
     clas();
-    form(modalTimerId);
+    form(modalTimerId); // yani modalTimerId o'zgaruvchi formgaham berib qo'yildi yani form.jsdagi form functionni parametrida chaqirilgan/yuborilgan
     loader();
-    modal("[data-modal]", ".modal", modalTimerId);////IQ above the SKY!!!
+    modal("[data-modal]", ".modal", modalTimerId); //COMMENTLARI MODAL,JSda
     slider();
     tab();
     timer();
 
     ////webpacke kutubhonasi bilan script77.js filedagi loyihani uzun kodini har bir ishga aloqador funksiyalarni alohida alohida modullarga ajratib chiqildi endi dastur real loyihaga o'hshadi yani webpacke yuklanganda dist papka bilan keladi va disk papkada webpacke kutubhonasi bundle jsda hamma kodlarni tartiblab ishlatib beradi va aosiy script77.js fileda yuqoridagi kabi chaqiriladi yani require funksiyasi bilan chaqiriladi window.addEventListener("DOMContentLoaded" ichiga yozilishini sababi endi hamma kodlar modulga ajratilgan bo'lsada shu window.addEventListener("DOMContentLoaded"ni ichida ishlasa doimgiday ishlayveradi yani birinchi html csslar ochilib bo'lgandan keyingina ichidagi modullarga bo'lingan kodlarni ishlatadi
 
-    ////74.chi dars Webpack
+    //// Webpack
+    ////////////////////////////////////////////////
     ////npx webpack //endi webpacketni ishlatish uchun loyihani ochganda npx webpack buyrug'ini yozish kerak
+    /////////////////////////////////////////////////
     ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak LEKIN AGAR XAMPP LOCAL SERVER PORTI BO'SH BO'LSA YANI XAMMPNI SAYTIDA DASHBOARDDA BOSHQA LINK BO'LMASA YANI BO'SH BO'LSA  SERVER LOCAL BO'LIB ISHLAYVERADI LEKIN HAFSIZ BO'LMAYDI
-    ////74.chi dars Webpack
+    ////Webpack
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
     //////////////////////////////////////////////////////////////////////////////////////////////////
