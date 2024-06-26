@@ -1,12 +1,17 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/modules/class.js":
 /*!******************************!*\
   !*** ./src/modules/class.js ***!
   \******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function clas(){
 
      //47.chi dars (Web loyiha 7 chi darsi) Class darsi va 48.chi dars (Web loyiha 8 chi darsi) Loyiha. Rest operator darsi va  62.chi dars (Web loyiha 14 chi darsi)  Get request darsi
@@ -77,7 +82,7 @@ function clas(){
 
 }
 
-module.exports = clas
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clas);
 
 
 /***/ }),
@@ -86,9 +91,16 @@ module.exports = clas
 /*!*****************************!*\
   !*** ./src/modules/form.js ***!
   \*****************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-function form() {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/modules/modal.js");
+
+
+function form(modalTimerId) {
     ////57.chi dars (Web loyiha 11 chi darsi) Fetch API va 61.chi dars (Web loyiha 13 chi darsi) Async va Await 54.chi dars (Web loyiha 10 chi darsi) Dynamic styling
     ////API  yani Application Programming Interface
     ////API turlari DOM API, Google map API, Google place API, va Fetch API bu fetch api browserda bo'ladi yani bu fetch api browserdan tashqaridagi apilarga so'rov yuborishga yordam beradigan interface hissoblanadi masalan server bilan
@@ -196,7 +208,7 @@ function form() {
         ///madal oynani "THANK'S FOR SUBMITING OUR FORM" texti
         const prevModalDialog = document.querySelector(".modal__dialog"); //yani modal dialogni eski holati ////yani bu holatda htmldagi modal__dilaog classi yani sayt ochilganda va contact us buttoni bosilganda chiqadigan serverga clientni malumotlarini jo'natadigan modal__dialog classi chaqirib olindi va classlist parametri va add metodi bilan cssdagi hide classi qo'shildi yani yo'q qilib qo'yildi cssdagi hide classida   display: none; qiymati bor
         prevModalDialog.classList.add("hide"); //display: none;
-        openModal(); //yani modal oyna yuqorida hide classi bilan yopilib bu ancha yuqorida boshida yozilgan openmodal functsiyasi bilan yana ochildi
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.openModal)(".modal", modalTimerId); //yani modal oyna yuqorida hide classi bilan yopilib bu ancha yuqorida boshida yozilgan openmodal functsiyasi bilan yana ochildi
         const thanksModal = document.createElement("div"); //va dynamic yangi div ochib classiga modal__dialog classsi yana qo'shildi yani endi modal oyna dynamic tarzda qo'shilepti
         thanksModal.classList.add("modal__dialog");
         //// thanksModal.innerHTML bilan dynamic content qo'shish yani htmldagi modal dynamic tarzda shu joyda yozildi va htmlagi kodlar shu tartibda `becet` ichiga yoziladi shunda innerhtml parametri bilan js kodlar ichida html taglarni yozish mumkun
@@ -211,14 +223,14 @@ function form() {
             thanksModal.remove(); //yannisettimeout funksiyasi bilan 4 sekunddan keyin dynamic tarzda qo'shilhan thanksmodal o'zgaruvchini udalit qildik yani shunda user serverga malumotlarni jo'natgandan keyin 4 sekunddan keyin modal oyna aftamatik tarzda yopiladi
             prevModalDialog.classList.add("show"); // display: block;//va add qilib ichida modal__dialog classlari chaqirilgan  prevModalDialog o'zgaruvchi classini qo'shdik
             prevModalDialog.classList.remove("hide"); //display: none;//yani endi yuqorida hide qilingan ichida modal__dialog classlari chaqirilgan  prevModalDialog o'zgaruvchini hide classini remove qildik yani udalit qildik va shundan so'ng closemodal funksiyasini chaqirib qo'ydik bu close modal funksiyasi modalni inputlari bilan tozalab yopadi
-            closeModal();
+            (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.closeModal)(".modal");
         }, 4000);
     } ///yani endi user modal oynaga malumot kiritib contact us buttoniga bosgandan keyin 4 sekund vaqt o'tib modal yopiladi va  modal yana qaytadan malumot jo'natish uchun top tozza holatga qaytadi
     ////54.chi dars (Web loyiha 10 chi darsi) Dynamic styling
 
     ////57.chi dars (Web loyiha 11 chi darsi) Fetch API va 61.chi dars (Web loyiha 13 chi darsi) Async va Await 54.chi dars (Web loyiha 10 chi darsi) Dynamic styling
 }
-module.exports =  form
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (form);
 
 
 /***/ }),
@@ -227,8 +239,12 @@ module.exports =  form
 /*!*******************************!*\
   !*** ./src/modules/lodaer.js ***!
   \*******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function loader() {
     ////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader darsi
     loader = document.querySelector(".loader"); //htmldagi section divini classi loaderga cssda ichiga paper man nomli animatsya berilgan
@@ -240,8 +256,7 @@ function loader() {
     }, 2000);
     ////36.chi dars (Web Loyiha-2 chi darsi) Loyiha loader darsi
 }
-module.exports = loader
-
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loader);
 
 /***/ }),
 
@@ -249,29 +264,62 @@ module.exports = loader
 /*!******************************!*\
   !*** ./src/modules/modal.js ***!
   \******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-function modal(){
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   closeModal: () => (/* binding */ closeModal),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   openModal: () => (/* binding */ openModal)
+/* harmony export */ });
+function openModal(modalSelector, modalTimerId) {
+    const modal = document.querySelector(modalSelector); //yani modal ona divini jsga chaqirvoldik
+    //openModal shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal ishlamayapti chunki openModal form.js ga chaqirilmagan endi openModal funksiyani o'zini alohida form.js ga chaqirish kerak bu faqat 74 chi darsga aloqador comment
+    modal.classList.add("show");
+    modal.classList.remove("hide"); //yani openModal funksiyasi chaqirilganda modal ona divini  classiga show classini qo'sh va hide clasini udalit qil deyildi va overflovga hidden yani scrollni ko'rinmey turishi buyurildi
+    document.body.style.overflow = "hidden";
 
+    // console.log(modalTimerId);
+
+    if (modalTimerId) {
+        clearInterval(modalTimerId);
+    }
+    //yani bu holatda pastroqda yozilgan modalTimerId o'zgaruvchisiga clearinterval berib qo'yildi yani bu clearinterval 5000 milli sekunddan keyin modalni sekin ishlatadi//////yani bu "hidden" holatida modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi////
+}
+function closeModal(modalSelector) {
+    //closeModal shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu closeModal ishlamayapti chunki closeModal form.js ga chaqirilmagan endi closeModal funksiyani o'zini alohida form.js ga chaqirish kerak bu faqat 74 chi darsga aloqador comment
+    const modal = document.querySelector(modalSelector); //yani modal ona divini jsga chaqirvoldik
+
+    modal.classList.add("hide"); //yani modal ona diviga hide classi qo'shilganda show classini udalit qilish buyurildi
+    modal.classList.remove("show");
+    document.body.style.overflow = ""; //yani hide classi ishga tushganda overflow hiddenmas yani bo'sh qilib qo'yiladi shunda bodyda scroll qiymati paydo bo'ladi
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+function modal(triggerSelector, modalSelector, modalTimerId) {
     //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
     ////Modal
-    const modalTrigger = document.querySelectorAll("[data-modal]"), //data atribut bilan modal oynaga aloqador buttonlarni jsga chaqirvoldik data atributlar htmlda bir nechta bo'lsa querySelector bilan chaqirilganda js codlar faqat birinchisiga tasir qilar ekan va agar htmlda data atributlar yozilib lekin jsda ishlatilmasaham hech narsa qilmaydi chunki data atributlar birinchi qiymati falsga teng bo'ladi yani hech narsaga tasir qilmaydi //querySelectorAll bilan chaqirilganda esa htmldagi hamma data-modal atributlarni jsga chaqirib oladi
-        modal = document.querySelector(".modal"); //yani modal ona divini jsga chaqirvoldik
+    const modalTrigger = document.querySelectorAll(triggerSelector), //data atribut bilan modal oynaga aloqador buttonlarni jsga chaqirvoldik data atributlar htmlda bir nechta bo'lsa querySelector bilan chaqirilganda js codlar faqat birinchisiga tasir qilar ekan va agar htmlda data atributlar yozilib lekin jsda ishlatilmasaham hech narsa qilmaydi chunki data atributlar birinchi qiymati falsga teng bo'ladi yani hech narsaga tasir qilmaydi //querySelectorAll bilan chaqirilganda esa htmldagi hamma data-modal atributlarni jsga chaqirib oladi
+        modal = document.querySelector(modalSelector); //yani modal ona divini jsga chaqirvoldik
 
-    function openModal() {//openModal shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal ishlamayapti chunki openModal form.js ga chaqirilmagan endi openModal funksiyani o'zini alohida form.js ga chaqirish kerak bu faqat 74 chi darsga aloqador comment
-        modal.classList.add("show");
-        modal.classList.remove("hide"); //yani openModal funksiyasi chaqirilganda modal ona divini  classiga show classini qo'sh va hide clasini udalit qil deyildi va overflovga hidden yani scrollni ko'rinmey turishi buyurildi
-        document.body.style.overflow = "hidden";
-        clearInterval(modalTimerId); //yani bu holatda pastroqda yozilgan modalTimerId o'zgaruvchisiga clearinterval berib qo'yildi yani bu clearinterval 5000 milli sekunddan keyin modalni sekin ishlatadi//////yani bu "hidden" holatida modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi////
-    }
-    function closeModal() {//closeModal shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu closeModal ishlamayapti chunki closeModal form.js ga chaqirilmagan endi closeModal funksiyani o'zini alohida form.js ga chaqirish kerak bu faqat 74 chi darsga aloqador comment
-        modal.classList.add("hide"); //yani modal ona diviga hide classi qo'shilganda show classini udalit qilish buyurildi
-        modal.classList.remove("show");
-        document.body.style.overflow = ""; //yani hide classi ishga tushganda overflow hiddenmas yani bo'sh qilib qo'yiladi shunda bodyda scroll qiymati paydo bo'ladi
-    }
+    // function openModal() {
+    //     //openModal shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal ishlamayapti chunki openModal form.js ga chaqirilmagan endi openModal funksiyani o'zini alohida form.js ga chaqirish kerak bu faqat 74 chi darsga aloqador comment
+    //     modal.classList.add("show");
+    //     modal.classList.remove("hide"); //yani openModal funksiyasi chaqirilganda modal ona divini  classiga show classini qo'sh va hide clasini udalit qil deyildi va overflovga hidden yani scrollni ko'rinmey turishi buyurildi
+    //     document.body.style.overflow = "hidden";
+    //     clearInterval(modalTimerId); //yani bu holatda pastroqda yozilgan modalTimerId o'zgaruvchisiga clearinterval berib qo'yildi yani bu clearinterval 5000 milli sekunddan keyin modalni sekin ishlatadi//////yani bu "hidden" holatida modal oyna ochilganda bodyga diynamic tarzda ovwerflow css classi berildi yani modal chiqgandan keyin orqasini ko'rinmeydigan yanaham to'g'rirog'i qimillameydigan qiladi yani scrollni hidden qiladi yani sayt qimirlamaydi////
+    // }
+    // function closeModal() {
+    //     //closeModal shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu closeModal ishlamayapti chunki closeModal form.js ga chaqirilmagan endi closeModal funksiyani o'zini alohida form.js ga chaqirish kerak bu faqat 74 chi darsga aloqador comment
+    //     modal.classList.add("hide"); //yani modal ona diviga hide classi qo'shilganda show classini udalit qilish buyurildi
+    //     modal.classList.remove("show");
+    //     document.body.style.overflow = ""; //yani hide classi ishga tushganda overflow hiddenmas yani bo'sh qilib qo'yiladi shunda bodyda scroll qiymati paydo bo'ladi
+    // }
     modalTrigger.forEach((item) => {
         //yani madal bo'yicha asosiy  o'zgaruvchi hissoblangan modalTrigger o'zgaruvchisini itemlarini yani elementlari foreach metodi bilan intirgatsa qilib shu itemlar yani elementlarga click hodisasi sodir bo'lganda openmodal funksiyasi ishga tushirilsin deyildi
-        item.addEventListener("click", openModal); //yani bitta click hodisasini barcha data-modal atributibor elementlarga berib chiqdik va keyinchalik faqat bitta joyda data atributni qoldirdik???=> sababi bir nechta buttongaham bitta funksiyasni ishlatib ko'rdik
+        item.addEventListener("click", () => openModal(modalSelector, modalTimerId)); //yani bitta click hodisasini barcha data-modal atributibor elementlarga berib chiqdik va keyinchalik faqat bitta joyda data atributni qoldirdik???=> sababi bir nechta buttongaham bitta funksiyasni ishlatib ko'rdik
     });
 
     modal.addEventListener("click", (e) => {
@@ -282,15 +330,15 @@ function modal(){
 
             //yani modalga click hodisasi sodir bo'lganda yani umumiy html documentda modal classi yani o'zgaruvchisi aktiv bo'lsa closeModal funksiyasi chaqirilsin deyildi
             //yani agar e.target ichida yani document ichida modal o'zgaruvchi yani modal o'zgaruvchini html elementlari bor bo'lsa yani butun html documentda event targetda pastdagi classlar bor bo'lsa click hodisasi sodir bo'lganda pastdagi classlar ishlasin
-            closeModal(); //bu joyda closeModal addEventListener funksiyasi parametrda chaqirilmagani sabab alohida(shu) bilan chaqiriladi
+            closeModal(modalSelector); //bu joyda closeModal addEventListener funksiyasi parametrda chaqirilmagani sabab alohida(shu) bilan chaqiriladi
         }
     });
     document.addEventListener("keydown", (e) => {
         if (e.code === "Escape" && modal.classList.contains("show")) {
-            closeModal();
+            closeModal(modalSelector);
         }
     }); //bu holatdaesc klyavaturasi bosilgandahan closeModal funksiyasi chaqirilsin deyildi////yani agar butun document bo'ylab keydown hodisasi sodir bo'lganda yani claviyaturalar bosilganda clyavituralardan espace bosilganda yani evenni kodi espage bo'lganda va modalni classlilarida show degan class bor bo'lganda closeModal funksiyasi ishga tushsin //yani modal chiqganda escni bosibham modalda chiqib ketish mumkun
-    const modalTimerId = setTimeout(openModal, 5000); //bu holatda modalTimerId nomli o'zgaruvchi yaratilib unga settimeout funksiyasi chaqirildi va argumentiga open modsal funksiyasi 5000 millisikund bo'lganda openmodal funksiyasi ishga tushsin deyildi
+    // const modalTimerId = setTimeout(openModal, 5000); //bu holatda modalTimerId nomli o'zgaruvchi yaratilib unga settimeout funksiyasi chaqirildi va argumentiga open modsal funksiyasi 5000 millisikund bo'lganda openmodal funksiyasi ishga tushsin deyildi
     ////////////////////////////////////////////////////////////////////////////////////////////
     // console.log(window.pageYOffset); //darsda pageYOffset qiymati bilan qilindi lekin bu jsda eskirgan o'rniga yangisi scrollY qiymati bo'lgan//bu scrollY bo'yiga o'lchasa scrollX eniga o'lchaydi
     // console.log(window.scrollY + document.documentElement.clientHeight);//yani bu holatda scrolly bilanyani ekrani tepadan pastga ko'rinib turgan qismi bilan butun documentni bo'yi qo'shildi shunda saytni butun bo'yi nechchi pixel ekanligi bilinadi//bu scrollY bo'yiga o'lchasa scrollX eniga o'lchaydi
@@ -301,16 +349,16 @@ function modal(){
             document.documentElement.scrollHeight - 1
         ) {
             //yani bu holatda showModalByScroll nomli local function yaratilib umumiy windowni umumiy uzunligi bo'lgan scrollY qiymatiga document elementdan clientheigh qiymati qo'shilib va documentda element scrollheightdan -1px qilindi va agar shu yuqoridagi holat sodir bo'lganda openModal funksiyasi chaqirildi
-            openModal();
+            openModal(modalSelector, modalTimerId);
             window.removeEventListener("scroll", showModalByScroll); //yani open modal bir martta ishlagandan keyingi qatorda removeEventListener metodi ishga tushib openmodalni o'chiradi
         }
     }
     window.addEventListener("scroll", showModalByScroll); //yani bu holatda windowga scroll hodisasi berilganda showModalByScroll funksiyasi chaqirildi showModalByScroll local funksiyasi esa yuqorida yozilgan yani user saytni eng ohiriga tushganda openModal funksiyasi yana ishga tushadi
     //41.chi dars va 42.chi darslar (Web loyiha 5 va 6 chi darslar) Modal va Optimize qilish
-
 }
 
-module.exports = modal
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
+
 
 
 /***/ }),
@@ -319,8 +367,12 @@ module.exports = modal
 /*!*******************************!*\
   !*** ./src/modules/slider.js ***!
   \*******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function slider() {
     //65.chi dars (Web loyiha 17 chi darsi) Carousel va 66.chi dars (Web loyiha 18 chi darsi)  Dot Carousel va 69.chi dars (Web loyiha 19 chi darsi) RegExp
     ////Carousel
@@ -448,8 +500,8 @@ function slider() {
 
     //65.chi dars (Web loyiha 17 chi darsi) Carousel va 66.chi dars (Web loyiha 18 chi darsi)  Dot Carousel va 69.chi dars (Web loyiha 19 chi darsi) RegExp
 }
-module.exports = slider
 
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);
 
 /***/ }),
 
@@ -457,8 +509,12 @@ module.exports = slider
 /*!****************************!*\
   !*** ./src/modules/tab.js ***!
   \****************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function tab() {
     ////34.chi dars (Web Loyiha-1 chi darsi) Loyiha, Tab darsi
 
@@ -505,7 +561,7 @@ function tab() {
 
 }
 
-module.exports =  tab
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tab);
 
 /***/ }),
 
@@ -513,8 +569,12 @@ module.exports =  tab
 /*!******************************!*\
   !*** ./src/modules/timer.js ***!
   \******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function timer(){
 
     //38.chi va 39.chi darslar (Web Loyiha-3 va 4 chi darslari) 38.chi dars Loyiha chegara va 39.chi dars Qo'shimcha loyihaga
@@ -578,7 +638,7 @@ function timer(){
 
 }
 
-module.exports = timer
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (timer);
 
 
 /***/ })
@@ -610,42 +670,78 @@ module.exports = timer
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
 /*!****************************!*\
-  !*** ./src/js/script74.js ***!
+  !*** ./src/js/script77.js ***!
   \****************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_class__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/class */ "./src/modules/class.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/form */ "./src/modules/form.js");
+/* harmony import */ var _modules_lodaer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/lodaer */ "./src/modules/lodaer.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/modal */ "./src/modules/modal.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/slider */ "./src/modules/slider.js");
+/* harmony import */ var _modules_tab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/tab */ "./src/modules/tab.js");
+/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/timer */ "./src/modules/timer.js");
 
 ////BU LOYIHA BUTUNLAY TUGAGANDAN KEYIN HAMMA KODLARNI JS VA CSS KODLARNI HTMLGA SOLISHTIRIB LOYIHANI 100 FOIZ TUSHUNMAGANCHA BOSHQA DARSGA O'TMA YANI DARSDA TUSHUNMASANG BOSHQA JOYDAN IZLANIB BO'LSHAMAM  LOYIHANI 100 FOIZ TUSHUNIB BO'LGANDAN KEYINGINA BOSHQA DARSGA O'T
+
+
+
+
+
+
+
+// import { openModal } from "../modules/modal";
+
 window.addEventListener("DOMContentLoaded", () => {
     //yani butun window bo'yicha DOMContentLoaded hodisasi qo'shildi yani html DOMdocumentlar butunlay ochilib bo'lgandan keyingina js kodlarimiz ishlaydi
-    const clas = __webpack_require__(/*! ../modules/class */ "./src/modules/class.js"),
-        form = __webpack_require__(/*! ../modules/form */ "./src/modules/form.js"),
-        loader = __webpack_require__(/*! ../modules/lodaer */ "./src/modules/lodaer.js"),
-        modal = __webpack_require__(/*! ../modules/modal */ "./src/modules/modal.js"),
-        slider = __webpack_require__(/*! ../modules/slider */ "./src/modules/slider.js"),
-        tab = __webpack_require__(/*! ../modules/tab */ "./src/modules/tab.js"),
-        timer = __webpack_require__(/*! ../modules/timer */ "./src/modules/timer.js");
+    const modalTimerId = setTimeout(
+        () => (0,_modules_modal__WEBPACK_IMPORTED_MODULE_3__.openModal)(".modal", modalTimerId),
+        5000
+    );
 
-    clas();
-    form();
-    loader();
-    modal(); //openModal va closeModal funksiyasi shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal va closeModal funksiyalari ishlamayapti chunki openModal va closeModal funksyalari form.js ga chaqirilmagan endi openModal va closeModal funskiyalarini  o'zini alohida form.js ga chaqirish kerak shu hato sabab logdagi hato habari>>>form.js:109 Uncaught (in promise) ReferenceError: openModal is not definedat showThanksModal (form.js:109:1)at form.js:92:1
-    slider();
-    tab();
-    timer();
+    (0,_modules_class__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    (0,_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])(modalTimerId);
+    (0,_modules_lodaer__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_modules_modal__WEBPACK_IMPORTED_MODULE_3__["default"])("[data-modal]", ".modal", modalTimerId); //openModal va closeModal funksiyasi shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal va closeModal funksiyalari ishlamayapti chunki openModal va closeModal funksyalari form.js ga chaqirilmagan endi openModal va closeModal funskiyalarini  o'zini alohida form.js ga chaqirish kerak shu hato sabab logdagi hato habari>>>form.js:109 Uncaught (in promise) ReferenceError: openModal is not definedat showThanksModal (form.js:109:1)at form.js:92:1
+    (0,_modules_slider__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    (0,_modules_tab__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    (0,_modules_timer__WEBPACK_IMPORTED_MODULE_6__["default"])();
 
+    ////webpacke kutubhonasi bilan script74.js filedagi loyihani uzun kodini har bir ishga aloqador funksiyalarni alohida alohida modullarga ajratib chiqildi endi dastur real loyihaga o'hshadi yani webpacke yuklanganda dist papka bilan keladi va disk papkada webpacke kutubhonasi bundle jsda hamma kodlarni tartiblab ishlatib beradi va aosiy script74.js fileda yuqoridagi kabi chaqiriladi yani require funksiyasi bilan chaqiriladi window.addEventListener("DOMContentLoaded" ichiga yozilishini sababi endi hamma kodlar modulga ajratilgan bo'lsada shu window.addEventListener("DOMContentLoaded"ni ichida ishlasa doimgiday ishlayveradi yani birinchi html csslar ochilib bo'lgandan keyingina ichidagi modullarga bo'lingan kodlarni ishlatadi
     ////74.chi dars Webpack
-    ////webpacke kutubhonasi bilan script74.js filedagi loyihani uzun kodini har bir ishga aloqador funksiyalarni alohida alohida modullarga ajratib chiqildi endi dastur real loyihaga o'hshadi yani webpacke yuklanganda dist papka bilan keladi va disk papkada webpacke kutubhonasi bundle jsda hamma kodlarni tartiblab ishlatib beradi va asosiy script74.js fileda yuqoridagi kabi chaqiriladi yani require funksiyasi bilan chaqiriladi window.addEventListener("DOMContentLoaded" ichiga yozilishini sababi endi hamma kodlar modulga ajratilgan bo'lsada shu window.addEventListener("DOMContentLoaded"ni ichida ishlasa doimgiday ishlayveradi yani birinchi html csslar ochilib bo'lgandan keyingina ichidagi modullarga bo'lingan kodlarni ishlatadi
-
     ////npx webpack //endi webpacketni ishlatish uchun loyihani ochganda npx webpack buyrug'ini yozish kerak
-
     ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak
-
     ////74.chi dars Webpack
-
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -668,7 +764,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
-    ////PASTDAGI 60 CHI VA 64 CHI DARSLAR LOYIHADA QAYTADAN DARSLARDA QILINGAN SHUNING UCHUN WEBPACK, CONFIG DARSIDA modules PAPKAGA QO'SHILMADI LEKIN BULAR DARSLIK BO'LGANI UCHUN ASOSIY JS FILENI O'ZIDA QOLDIRILDI
+    ////PASTDAGI 60 CHI VA 64 CHI DARSLAR LOYIHADA QAYTADAN DARSLARDA QILINGAN SHUNING UCHUN WEBPACK, CONFIG DARSIDA modules PSPKSGS QO'SHILMADI LEKIN BULAR DARSLIK BO'LGANI UCHUN ASOSI JS FILENI O'ZIDA QOLDIRILDI
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //60. chi dars  (Web loyiha 12 chi darsi) JSON Server
     ////server-json bilan ishlashni darsi shu loyihadan foydalanib shunchaki yozib turildi
@@ -726,10 +822,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // });
     //64.chi dars (Web loyiha 16 chi darsi) Slider
 });
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-})();
+////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
 
 /******/ })()
 ;

@@ -1,32 +1,34 @@
 "use strict";
 ////BU LOYIHA BUTUNLAY TUGAGANDAN KEYIN HAMMA KODLARNI JS VA CSS KODLARNI HTMLGA SOLISHTIRIB LOYIHANI 100 FOIZ TUSHUNMAGANCHA BOSHQA DARSGA O'TMA YANI DARSDA TUSHUNMASANG BOSHQA JOYDAN IZLANIB BO'LSHAMAM  LOYIHANI 100 FOIZ TUSHUNIB BO'LGANDAN KEYINGINA BOSHQA DARSGA O'T
+import clas from "../modules/class";
+import form from "../modules/form";
+import loader from "../modules/lodaer";
+import modal, { openModal } from "../modules/modal";
+import slider from "../modules/slider";
+import tab from "../modules/tab";
+import timer from "../modules/timer";
+// import { openModal } from "../modules/modal";
+
 window.addEventListener("DOMContentLoaded", () => {
     //yani butun window bo'yicha DOMContentLoaded hodisasi qo'shildi yani html DOMdocumentlar butunlay ochilib bo'lgandan keyingina js kodlarimiz ishlaydi
-    const clas = require("../modules/class"),
-        form = require("../modules/form"),
-        loader = require("../modules/lodaer"),
-        modal = require("../modules/modal"),
-        slider = require("../modules/slider"),
-        tab = require("../modules/tab"),
-        timer = require("../modules/timer");
+    const modalTimerId = setTimeout(
+        () => openModal(".modal", modalTimerId),
+        5000
+    );
 
     clas();
-    form();
+    form(modalTimerId);
     loader();
-    modal(); //openModal va closeModal funksiyasi shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal va closeModal funksiyalari ishlamayapti chunki openModal va closeModal funksyalari form.js ga chaqirilmagan endi openModal va closeModal funskiyalarini  o'zini alohida form.js ga chaqirish kerak shu hato sabab logdagi hato habari>>>form.js:109 Uncaught (in promise) ReferenceError: openModal is not definedat showThanksModal (form.js:109:1)at form.js:92:1
+    modal("[data-modal]", ".modal", modalTimerId); //openModal va closeModal funksiyasi shu modal.js da yaratilgan va form.js daham ishlatilgan shu sabab form jsda bu openModal va closeModal funksiyalari ishlamayapti chunki openModal va closeModal funksyalari form.js ga chaqirilmagan endi openModal va closeModal funskiyalarini  o'zini alohida form.js ga chaqirish kerak shu hato sabab logdagi hato habari>>>form.js:109 Uncaught (in promise) ReferenceError: openModal is not definedat showThanksModal (form.js:109:1)at form.js:92:1
     slider();
     tab();
     timer();
 
+    ////webpacke kutubhonasi bilan script74.js filedagi loyihani uzun kodini har bir ishga aloqador funksiyalarni alohida alohida modullarga ajratib chiqildi endi dastur real loyihaga o'hshadi yani webpacke yuklanganda dist papka bilan keladi va disk papkada webpacke kutubhonasi bundle jsda hamma kodlarni tartiblab ishlatib beradi va aosiy script74.js fileda yuqoridagi kabi chaqiriladi yani require funksiyasi bilan chaqiriladi window.addEventListener("DOMContentLoaded" ichiga yozilishini sababi endi hamma kodlar modulga ajratilgan bo'lsada shu window.addEventListener("DOMContentLoaded"ni ichida ishlasa doimgiday ishlayveradi yani birinchi html csslar ochilib bo'lgandan keyingina ichidagi modullarga bo'lingan kodlarni ishlatadi
     ////74.chi dars Webpack
-    ////webpacke kutubhonasi bilan script74.js filedagi loyihani uzun kodini har bir ishga aloqador funksiyalarni alohida alohida modullarga ajratib chiqildi endi dastur real loyihaga o'hshadi yani webpacke yuklanganda dist papka bilan keladi va disk papkada webpacke kutubhonasi bundle jsda hamma kodlarni tartiblab ishlatib beradi va asosiy script74.js fileda yuqoridagi kabi chaqiriladi yani require funksiyasi bilan chaqiriladi window.addEventListener("DOMContentLoaded" ichiga yozilishini sababi endi hamma kodlar modulga ajratilgan bo'lsada shu window.addEventListener("DOMContentLoaded"ni ichida ishlasa doimgiday ishlayveradi yani birinchi html csslar ochilib bo'lgandan keyingina ichidagi modullarga bo'lingan kodlarni ishlatadi
-
     ////npx webpack //endi webpacketni ishlatish uchun loyihani ochganda npx webpack buyrug'ini yozish kerak
-
     ////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak
-
     ////74.chi dars Webpack
-
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
-    ////PASTDAGI 60 CHI VA 64 CHI DARSLAR LOYIHADA QAYTADAN DARSLARDA QILINGAN SHUNING UCHUN WEBPACK, CONFIG DARSIDA modules PAPKAGA QO'SHILMADI LEKIN BULAR DARSLIK BO'LGANI UCHUN ASOSIY JS FILENI O'ZIDA QOLDIRILDI
+    ////PASTDAGI 60 CHI VA 64 CHI DARSLAR LOYIHADA QAYTADAN DARSLARDA QILINGAN SHUNING UCHUN WEBPACK, CONFIG DARSIDA modules PSPKSGS QO'SHILMADI LEKIN BULAR DARSLIK BO'LGANI UCHUN ASOSI JS FILENI O'ZIDA QOLDIRILDI
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //60. chi dars  (Web loyiha 12 chi darsi) JSON Server
     ////server-json bilan ishlashni darsi shu loyihadan foydalanib shunchaki yozib turildi
@@ -107,5 +109,5 @@ window.addEventListener("DOMContentLoaded", () => {
     // });
     //64.chi dars (Web loyiha 16 chi darsi) Slider
 });
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+////npx json-server --watch db.json //db.jsonni ishlatish uchun json-server npm packeti skachat qilingan shu sabab endi xamppda har safar bu loyiha ochilganda npx json-server --watch db.json shu buyruq bilan ochilishi kerak
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOYIHA BUTUNLAY TUGAGANDAN KEYIN OHIRGI DARSDAN KEYIN ALOHIDA TAYYORLAB CHERNAVIK CODLARNI UDALIT QILIB FAQAT AMALDA ISHLAB TURGAN KODLARNI YAHSHILAB QAYTADAN O'QIB TUSHUNIB COMMENTLARINI YAHSHILAB TEKSHIRIB TO'LDIRIB GITHUBGA ALOHODA JOYLA NETLIFYGAHAM
