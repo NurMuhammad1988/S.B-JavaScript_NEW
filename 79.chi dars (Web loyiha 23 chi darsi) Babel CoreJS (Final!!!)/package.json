@@ -1,0 +1,31 @@
+{
+    "name": "61-chi-dars-web-loyiha-13-chi-darsi-asyng-await",
+    "version": "1.0.0",
+    "description": "JavaScript from zero to hero",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "scriptsComments": {
+        "start": "browsersListdagi >1% eskiroq browser versiyalaridaham loyiha kodlari ishlashi kerakligini bildiradi   'package json filega comment yozish'  "
+    },
+    "browsersList": [
+        ">1%"
+        
+    ],
+    "author": "Nur Yorov",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.24.7",
+        "@babel/core": "^7.24.7",
+        "@babel/preset-env": "^7.24.7",
+        "json-server": "^1.0.0-beta.1"
+    },
+    "dependencies": {
+        "babel-loader": "^9.1.3",
+        "core-js": "^3.37.1",
+        "webpack": "^5.92.1",
+        "webpack-cli": "^5.1.4"
+    }
+}
